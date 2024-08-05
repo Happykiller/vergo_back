@@ -6,14 +6,20 @@
       "slug": "warm-up",
       "sets": [
         {
-          "slugs": ["man_jumping_jacks"],
+          "slugs": [
+            "man_jumping_jacks"
+          ],
           "rep": 1,
           "duration": 40,
           "rest": 20
         },
         {
           "rep": 3,
-          "slugs": ["arm_circles", "bodyweight_squats", "high_knees"],
+          "slugs": [
+            "arm_circles",
+            "bodyweight_squats",
+            "high_knees"
+          ],
           "duration": 40,
           "rest": 20,
           "pause": 60
@@ -30,7 +36,16 @@
           "sets": [
             {
               "rep": 8,
-              "slugs": ["burpees", "mountain_climbers", "jumb_rope", " jump_squats", "push-ups", "russian_twists", "bank_jumb", "jumping_lunges"],
+              "slugs": [
+                "burpees",
+                "mountain_climbers",
+                "jumb_rope",
+                "jump_squats",
+                "push-ups",
+                "russian_twists",
+                "bank_jumb",
+                "jumping_lunges"
+              ],
               "duration": 40,
               "rest": 20
             }
@@ -43,16 +58,24 @@
       "sets": [
         {
           "rep": 2,
-          "slugs": ["standing_hamstring_stretch", "quadriceps_stretch"],
+          "slugs": [
+            "standing_hamstring_stretch",
+            "quadriceps_stretch"
+          ],
           "duration": 60
         },
         {
           "rep": 1,
-          "slugs": ["shoulder_stretch"],
+          "slugs": [
+            "shoulder_stretch"
+          ],
           "sets": [
             {
               "rep": 2,
-              "slugs": ["left", "right"],
+              "slugs": [
+                "left",
+                "right"
+              ],
               "sets": [
                 {
                   "rep": 3,
@@ -64,7 +87,9 @@
         },
         {
           "rep": 1,
-          "slugs": ["child_s_pose"],
+          "slugs": [
+            "child_s_pose"
+          ],
           "duration": 60
         }
       ]

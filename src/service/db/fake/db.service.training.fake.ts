@@ -4,7 +4,7 @@ import { TrainingDbModel } from '../model/training.db.model';
 
 export class BdbServiceTrainingFake
   implements
-    Pick<BddService, 'getTrainings'>
+    Pick<BddService, 'getTrainings' | 'getTraining'>
 {
   trainingCollection: TrainingDbModel[];
 
@@ -17,5 +17,9 @@ export class BdbServiceTrainingFake
 
   getTrainings(): Promise<TrainingDbModel[]> {
     return Promise.resolve(this.getUserCollection());
+  }
+
+  getTraining(): Promise<TrainingDbModel> {
+    return Promise.resolve(null);
   }
 }

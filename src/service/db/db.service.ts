@@ -4,8 +4,10 @@ import PasskeyDbModel from '@service/db/model/passkey.db.model';
 import { CreateUserDbDto } from '@service/db/dto/create.user.db.dto';
 import { UpdateUserDbDto } from '@service/db/dto/update.user.db.dto';
 import { GetPasskeyDbDto } from '@service/db/dto/get.passkey.db.dto';
+import { ExerciceDbModel } from '@service/db/model/exercice.db.model';
 import { TrainingDbModel } from '@service/db/model/training.db.model';
 import CreatePasskeyDbDto from '@service/db/dto/create.passkey.db.dto';
+import { GetTrainingDbDto } from '@service/db/dto/get.training.db.dto';
 import { DeletePasskeyDbDto } from '@service/db/dto/delete.passkey.db.dto';
 import { GetPasskeyByUserIdDbDto } from '@service/db/dto/getByUserId.passkey.db.dto';
 
@@ -30,4 +32,9 @@ export interface BddService {
    * Training
    */
   getTrainings(): Promise<TrainingDbModel[]>;
+  getTraining(dto: GetTrainingDbDto): Promise<TrainingDbModel>;
+  /**
+   * Exercice
+   */
+  getExercices(): Promise<ExerciceDbModel[]>;
 }

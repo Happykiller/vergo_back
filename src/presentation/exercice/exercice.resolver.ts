@@ -28,6 +28,6 @@ export class ExerciceResolver {
   async exercices(
     @CurrentSession() session: UserSession,
   ): Promise<ExerciceModelResolver[]> {
-    return null;
+    return this.inversify.getExercicesUsecase.execute();
   }
 }
