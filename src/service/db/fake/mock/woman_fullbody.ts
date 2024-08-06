@@ -13,7 +13,7 @@ export const woman_fullbody: TrainingDbModel = {
           ],
           "rep": 1,
           "duration": 120,
-          "rest": 20
+          "rest": 5
         },
         {
           "rep": 1,
@@ -21,7 +21,7 @@ export const woman_fullbody: TrainingDbModel = {
             "arm_circles"
           ],
           "duration": 60,
-          "rest": 20
+          "rest": 5
         },
         {
           "rep": 1,
@@ -29,7 +29,7 @@ export const woman_fullbody: TrainingDbModel = {
             "hip_circles"
           ],
           "duration": 60,
-          "rest": 20
+          "rest": 5
         },
         {
           "rep": 1,
@@ -50,7 +50,7 @@ export const woman_fullbody: TrainingDbModel = {
           "pause": 60,
           "sets": [
             {
-              "rep": 1,
+              "rep": 8,
               "slugs": [
                 "squat_5kg",
                 "reverse_lunge_4kg",

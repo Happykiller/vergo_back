@@ -15,7 +15,7 @@ export const woman_fullbody_normalized: TrainingNormalizedUsecaseModel[] = [
       "walk"
     ],
     "type": "rest",
-    "duration": 20
+    "duration": 5
   },
   {
     "slugs": [
@@ -31,7 +31,7 @@ export const woman_fullbody_normalized: TrainingNormalizedUsecaseModel[] = [
       "arm_circles"
     ],
     "type": "rest",
-    "duration": 20
+    "duration": 5
   },
   {
     "slugs": [
@@ -47,7 +47,7 @@ export const woman_fullbody_normalized: TrainingNormalizedUsecaseModel[] = [
       "hip_circles"
     ],
     "type": "rest",
-    "duration": 20
+    "duration": 5
   },
   {
     "slugs": [
@@ -83,15 +83,8 @@ export const woman_fullbody_normalized: TrainingNormalizedUsecaseModel[] = [
   },
   {
     "slugs": [
-      "fullbody"
-    ],
-    "type": "rest",
-    "duration": 60
-  },
-  {
-    "slugs": [
       "fullbody",
-      "squat_5kg"
+      "reverse_lunge_4kg"
     ],
     "type": "effort",
     "duration": 60
@@ -99,7 +92,103 @@ export const woman_fullbody_normalized: TrainingNormalizedUsecaseModel[] = [
   {
     "slugs": [
       "fullbody",
-      "squat_5kg"
+      "reverse_lunge_4kg"
+    ],
+    "type": "rest",
+    "duration": 20
+  },
+  {
+    "slugs": [
+      "fullbody",
+      "plank_row_2kg"
+    ],
+    "type": "effort",
+    "duration": 60
+  },
+  {
+    "slugs": [
+      "fullbody",
+      "plank_row_2kg"
+    ],
+    "type": "rest",
+    "duration": 20
+  },
+  {
+    "slugs": [
+      "fullbody",
+      "military_press_5kg"
+    ],
+    "type": "effort",
+    "duration": 60
+  },
+  {
+    "slugs": [
+      "fullbody",
+      "military_press_5kg"
+    ],
+    "type": "rest",
+    "duration": 20
+  },
+  {
+    "slugs": [
+      "fullbody",
+      "side_plank"
+    ],
+    "type": "effort",
+    "duration": 60
+  },
+  {
+    "slugs": [
+      "fullbody",
+      "side_plank"
+    ],
+    "type": "rest",
+    "duration": 20
+  },
+  {
+    "slugs": [
+      "fullbody",
+      "deadlift_10kg"
+    ],
+    "type": "effort",
+    "duration": 60
+  },
+  {
+    "slugs": [
+      "fullbody",
+      "deadlift_10kg"
+    ],
+    "type": "rest",
+    "duration": 20
+  },
+  {
+    "slugs": [
+      "fullbody",
+      "bicep_curl_5kg"
+    ],
+    "type": "effort",
+    "duration": 60
+  },
+  {
+    "slugs": [
+      "fullbody",
+      "bicep_curl_5kg"
+    ],
+    "type": "rest",
+    "duration": 20
+  },
+  {
+    "slugs": [
+      "fullbody",
+      "superwoman"
+    ],
+    "type": "effort",
+    "duration": 60
+  },
+  {
+    "slugs": [
+      "fullbody",
+      "superwoman"
     ],
     "type": "rest",
     "duration": 20
@@ -123,6 +212,253 @@ export const woman_fullbody_normalized: TrainingNormalizedUsecaseModel[] = [
     "slugs": [
       "fullbody",
       "squat_5kg"
+    ],
+    "type": "rest",
+    "duration": 20
+  },
+  {
+    "slugs": [
+      "fullbody",
+      "reverse_lunge_4kg"
+    ],
+    "type": "effort",
+    "duration": 60
+  },
+  {
+    "slugs": [
+      "fullbody",
+      "reverse_lunge_4kg"
+    ],
+    "type": "rest",
+    "duration": 20
+  },
+  {
+    "slugs": [
+      "fullbody",
+      "plank_row_2kg"
+    ],
+    "type": "effort",
+    "duration": 60
+  },
+  {
+    "slugs": [
+      "fullbody",
+      "plank_row_2kg"
+    ],
+    "type": "rest",
+    "duration": 20
+  },
+  {
+    "slugs": [
+      "fullbody",
+      "military_press_5kg"
+    ],
+    "type": "effort",
+    "duration": 60
+  },
+  {
+    "slugs": [
+      "fullbody",
+      "military_press_5kg"
+    ],
+    "type": "rest",
+    "duration": 20
+  },
+  {
+    "slugs": [
+      "fullbody",
+      "side_plank"
+    ],
+    "type": "effort",
+    "duration": 60
+  },
+  {
+    "slugs": [
+      "fullbody",
+      "side_plank"
+    ],
+    "type": "rest",
+    "duration": 20
+  },
+  {
+    "slugs": [
+      "fullbody",
+      "deadlift_10kg"
+    ],
+    "type": "effort",
+    "duration": 60
+  },
+  {
+    "slugs": [
+      "fullbody",
+      "deadlift_10kg"
+    ],
+    "type": "rest",
+    "duration": 20
+  },
+  {
+    "slugs": [
+      "fullbody",
+      "bicep_curl_5kg"
+    ],
+    "type": "effort",
+    "duration": 60
+  },
+  {
+    "slugs": [
+      "fullbody",
+      "bicep_curl_5kg"
+    ],
+    "type": "rest",
+    "duration": 20
+  },
+  {
+    "slugs": [
+      "fullbody",
+      "superwoman"
+    ],
+    "type": "effort",
+    "duration": 60
+  },
+  {
+    "slugs": [
+      "fullbody",
+      "superwoman"
+    ],
+    "type": "rest",
+    "duration": 20
+  },
+  {
+    "slugs": [
+      "fullbody"
+    ],
+    "type": "rest",
+    "duration": 60
+  },
+  {
+    "slugs": [
+      "fullbody",
+      "squat_5kg"
+    ],
+    "type": "effort",
+    "duration": 60
+  },
+  {
+    "slugs": [
+      "fullbody",
+      "squat_5kg"
+    ],
+    "type": "rest",
+    "duration": 20
+  },
+  {
+    "slugs": [
+      "fullbody",
+      "reverse_lunge_4kg"
+    ],
+    "type": "effort",
+    "duration": 60
+  },
+  {
+    "slugs": [
+      "fullbody",
+      "reverse_lunge_4kg"
+    ],
+    "type": "rest",
+    "duration": 20
+  },
+  {
+    "slugs": [
+      "fullbody",
+      "plank_row_2kg"
+    ],
+    "type": "effort",
+    "duration": 60
+  },
+  {
+    "slugs": [
+      "fullbody",
+      "plank_row_2kg"
+    ],
+    "type": "rest",
+    "duration": 20
+  },
+  {
+    "slugs": [
+      "fullbody",
+      "military_press_5kg"
+    ],
+    "type": "effort",
+    "duration": 60
+  },
+  {
+    "slugs": [
+      "fullbody",
+      "military_press_5kg"
+    ],
+    "type": "rest",
+    "duration": 20
+  },
+  {
+    "slugs": [
+      "fullbody",
+      "side_plank"
+    ],
+    "type": "effort",
+    "duration": 60
+  },
+  {
+    "slugs": [
+      "fullbody",
+      "side_plank"
+    ],
+    "type": "rest",
+    "duration": 20
+  },
+  {
+    "slugs": [
+      "fullbody",
+      "deadlift_10kg"
+    ],
+    "type": "effort",
+    "duration": 60
+  },
+  {
+    "slugs": [
+      "fullbody",
+      "deadlift_10kg"
+    ],
+    "type": "rest",
+    "duration": 20
+  },
+  {
+    "slugs": [
+      "fullbody",
+      "bicep_curl_5kg"
+    ],
+    "type": "effort",
+    "duration": 60
+  },
+  {
+    "slugs": [
+      "fullbody",
+      "bicep_curl_5kg"
+    ],
+    "type": "rest",
+    "duration": 20
+  },
+  {
+    "slugs": [
+      "fullbody",
+      "superwoman"
+    ],
+    "type": "effort",
+    "duration": 60
+  },
+  {
+    "slugs": [
+      "fullbody",
+      "superwoman"
     ],
     "type": "rest",
     "duration": 20

@@ -31,10 +31,14 @@ export class GetNormalizedTrainingUsecase {
 
   flattenSequence = (set: any, slugs: string[]): [] => {
     let response:any = [];
+    let last_slug = null;
     for (let i = 0; i < set.rep; i++) {
       let under_slugs = [...slugs]
       if(set.slugs && set.slugs[i]) {
+        last_slug = set.slugs[i];
         under_slugs.push(set.slugs[i]);
+      } else if (set.slugs && last_slug) {
+        under_slugs.push(last_slug);
       }
       if(set.duration) {
         response.push({
