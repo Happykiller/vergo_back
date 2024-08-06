@@ -6,34 +6,26 @@
       "slug": "warm-up",
       "sets": [
         {
-          "slugs": [
-            "walk"
-          ],
+          "slugs": ["walk"],
           "rep": 1,
           "duration": 120,
           "rest": 20
         },
         {
           "rep": 1,
-          "slugs": [
-            "arm_circles"
-          ],
+          "slugs": ["arm_circles"],
           "duration": 60,
           "rest": 20
         },
         {
           "rep": 1,
-          "slugs": [
-            "hip_circles"
-          ],
+          "slugs": ["hip_circles"],
           "duration": 60,
           "rest": 20
         },
         {
           "rep": 1,
-          "slugs": [
-            "shoulder_strech"
-          ],
+          "slugs": ["shoulder_strech"],
           "duration": 60,
           "rest": 20
         }
@@ -49,16 +41,28 @@
           "sets": [
             {
               "rep": 1,
-              "slugs": [
-                "squat_5kg",
-                "reverse_lunge_4kg",
-                "plank_row_2kg",
-                "military_press_5kg",
-                "side_plank",
-                "deadlift_10kg",
-                "bicep_curl_5kg",
-                "superwoman"
-              ],
+              "slugs": ["squat_5kg", "reverse_lunge_4kg", "plank_row_2kg", " military_press_5kg"],
+              "duration": 60,
+              "rest": 20
+            },
+            {
+              "rep": 1,
+              "slugs": ["side_plank"],
+              "sets": [{
+                "rep": 1,
+                "slugs": ["left", "right"],
+                "sets": [
+                  {
+                    "rep": 1,
+                    "duration": 30,
+                    "rest" : 10
+                  }
+                ]
+              }]
+            },
+            {
+              "rep": 1,
+              "slugs": ["deadlift_10kg", "bicep_curl_5kg", "superwoman"],
               "duration": 60,
               "rest": 20
             }
@@ -71,30 +75,22 @@
       "sets": [
         {
           "rep": 1,
-          "slugs": [
-            "shoulder_strech"
-          ],
+          "slugs": ["shoulder_strech"],
           "duration": 60
         },
         {
           "rep": 1,
-          "slugs": [
-            "quadriceps_stretch"
-          ],
+          "slugs": ["quadriceps_stretch"],
           "duration": 60
         },
         {
           "rep": 1,
-          "slugs": [
-            "ischio_stretch"
-          ],
+          "slugs": ["ischio_stretch"],
           "duration": 60
         },
         {
           "rep": 1,
-          "slugs": [
-            "child_s_pose"
-          ],
+          "slugs": ["child_s_pose"],
           "duration": 60
         }
       ]
