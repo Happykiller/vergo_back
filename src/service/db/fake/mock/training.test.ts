@@ -26,12 +26,12 @@ export const training_test: TrainingDbModel = {
       "slug": "workout",
       "sets": [
         {
-          "rep": 4,
+          "rep": 2,
           "rest": 6,
           "pause": 6,
           "sets": [
             {
-              "rep": 8,
+              "rep": 4,
               "slugs": ["burpees", "mountain_climbers"],
               "duration": 5,
               "rest": 4

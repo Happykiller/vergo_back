@@ -62,3 +62,4 @@ src/config/prod.ts
 .vscode/settings.json
 vergo_back.tar
 account.md
+images/
