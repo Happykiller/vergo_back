@@ -14,6 +14,7 @@ import { GqlAuthGuard } from '@presentation/guard/gql.auth.guard';
 import { CurrentSession } from '@presentation/guard/userSession.decorator';
 import { TrainingModelResolver } from '@presentation/training/model/training.resolver.model';
 import { GetTrainingResolverDto } from '@presentation/training/dto/get.training.resolver.dto';
+import { TrainingNormalizedResolverModel } from '@presentation/training/model/training.normalized.resolver.model';
 
 /* eslint-disable @typescript-eslint/no-unused-vars */
 @Resolver((of) => TrainingModelResolver)
@@ -42,5 +43,16 @@ export class TrainingResolver {
     @Args('dto') dto: GetTrainingResolverDto,
   ): Promise<TrainingModelResolver> {
     return this.inversify.getTrainingUsecase.execute(dto);
+  }
+
+  @Roles(USER_ROLE.USER, USER_ROLE.ADMIN)
+  @UseGuards(GqlAuthGuard, RolesGuard)
+  /* eslint-disable @typescript-eslint/no-unused-vars */
+  @Query((returns) => [TrainingNormalizedResolverModel])
+  async training_normalized(
+    @CurrentSession() session: UserSession,
+    @Args('dto') dto: GetTrainingResolverDto,
+  ): Promise<TrainingNormalizedResolverModel[]> {
+    return this.inversify.getNormalizedTrainingUsecase.execute(dto);
   }
 }

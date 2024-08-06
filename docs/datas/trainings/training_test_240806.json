@@ -1,0 +1,63 @@
+{
+  "_id": ObjectId(),
+  "slug": "training_test",
+  "workout": [
+    {
+      "slug": "warm-up",
+      "sets": [
+        {
+          "slugs": ["man_jumping_jacks"],
+          "rep": 1,
+          "duration": 5,
+          "rest": 6
+        },
+        {
+          "rep": 3,
+          "slugs": ["arm_circles", "bodyweight_squats", "high_knees"],
+          "duration": 5,
+          "rest": 4,
+          "pause": 6
+        }
+      ]
+    },
+    {
+      "slug": "workout",
+      "sets": [
+        {
+          "rep": 4,
+          "rest": 6,
+          "pause": 6,
+          "sets": [
+            {
+              "rep": 8,
+              "slugs": ["burpees", "mountain_climbers"],
+              "duration": 5,
+              "rest": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "cooldown",
+      "sets": [
+        {
+          "rep": 1,
+          "slugs": ["shoulder_stretch"],
+          "sets": [
+            {
+              "rep": 2,
+              "slugs": ["left", "right"],
+              "sets": [
+                {
+                  "rep": 3,
+                  "duration": 5
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+import { describe, expect, it } from '@jest/globals';
+import { mock, MockProxy } from 'jest-mock-extended';
+
+import { hiit } from '@service/db/fake/mock/hiit';
+import { BddService } from '@service/db/db.service';
+import { Inversify } from '@src/inversify/investify';
+import { woman_fullbody } from '@service/db/fake/mock/woman_fullbody';
+import { hiit_normalized } from '@service/db/fake/mock/hiit.normalized';
+import { woman_fullbody_normalized } from '@service/db/fake/mock/woman_fullbody.normalized';
+import { GetNormalizedTrainingUsecase } from '@usecase/training/getNormalized.training.usecase';
+
+fdescribe('GetAllUserUsecase', () => {
+  const mockInversify: MockProxy<Inversify> = mock<Inversify>();
+  const mockBddService: MockProxy<BddService> = mock<BddService>();
+
+  mockInversify.bddService = mockBddService;
+
+  const usecase: GetNormalizedTrainingUsecase = new GetNormalizedTrainingUsecase(mockInversify);
+
+  describe('#execute', () => {
+    it('should build', () => {
+      // arrange
+      // act
+      // assert
+      expect(usecase).toBeDefined();
+    });
+
+    it('should transform hiit', async () => {
+      // arrange
+      mockBddService.getTraining.mockResolvedValue(hiit);
+      // act
+      const response = await usecase.execute({
+        id: '65d4d015261e894a1da31a64',
+      });
+      // assert
+      expect(response).toEqual(hiit_normalized);
+    });
+
+    it('should transform woman_fullbody', async () => {
+      // arrange
+      mockBddService.getTraining.mockResolvedValue(woman_fullbody);
+      // act
+      const response = await usecase.execute({
+        id: '65d4d015261e894a1da31a64',
+      });
+      // assert
+      expect(response).toEqual(woman_fullbody_normalized);
+    });
+  });
+});

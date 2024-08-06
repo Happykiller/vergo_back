@@ -1,8 +1,8 @@
 import { TrainingDbModel } from "@service/db/model/training.db.model";
 
-export const hiit: TrainingDbModel = {
+export const training_test: TrainingDbModel = {
   "id": '65d4d015261e894a1da31a65',
-  "slug": "man_hiit_240804",
+  "slug": "training_test",
   "workout": [
     {
       "slug": "warm-up",
@@ -10,31 +10,31 @@ export const hiit: TrainingDbModel = {
         {
           "slugs": ["man_jumping_jacks"],
           "rep": 1,
-          "duration": 40,
-          "rest": 20
+          "duration": 5,
+          "rest": 6
         },
         {
           "rep": 3,
           "slugs": ["arm_circles", "bodyweight_squats", "high_knees"],
-          "duration": 40,
-          "rest": 20,
-          "pause": 60
+          "duration": 5,
+          "rest": 4,
+          "pause": 6
         }
       ]
     },
     {
-      "slug": "hiit",
+      "slug": "workout",
       "sets": [
         {
           "rep": 4,
-          "rest": 60,
-          "pause": 60,
+          "rest": 6,
+          "pause": 6,
           "sets": [
             {
               "rep": 8,
-              "slugs": ["burpees", "mountain_climbers", "jumb_rope", "jump_squats", "push-ups", "russian_twists", "bank_jumb", "jumping_lunges"],
-              "duration": 40,
-              "rest": 20
+              "slugs": ["burpees", "mountain_climbers"],
+              "duration": 5,
+              "rest": 4
             }
           ]
         }
@@ -43,11 +43,6 @@ export const hiit: TrainingDbModel = {
     {
       "slug": "cooldown",
       "sets": [
-        {
-          "rep": 2,
-          "slugs": ["standing_hamstring_stretch", "quadriceps_stretch"],
-          "duration": 60
-        },
         {
           "rep": 1,
           "slugs": ["shoulder_stretch"],
@@ -58,16 +53,11 @@ export const hiit: TrainingDbModel = {
               "sets": [
                 {
                   "rep": 3,
-                  "duration": 10
+                  "duration": 5
                 }
               ]
             }
           ]
-        },
-        {
-          "rep": 1,
-          "slugs": ["child_s_pose"],
-          "duration": 60
         }
       ]
     }
