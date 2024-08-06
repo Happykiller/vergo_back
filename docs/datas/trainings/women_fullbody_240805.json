@@ -49,7 +49,7 @@
               "rep": 1,
               "slugs": ["side_plank"],
               "sets": [{
-                "rep": 1,
+                "rep": 2,
                 "slugs": ["left", "right"],
                 "sets": [
                   {
