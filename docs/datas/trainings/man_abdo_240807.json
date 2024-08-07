@@ -1,0 +1,97 @@
+{
+  "_id": ObjectId(),
+  "slug": "man_abdo_240807",
+  "workout": [
+    {
+      "slug": "warm-up",
+      "sets": [
+        {
+          "rep": 4,
+          "slugs": [
+            "man_trunk_rotations",
+            "man_high_knees",
+            "man_jumping_jacks",
+            "woman_hip_circles"
+          ],
+          "duration": 40,
+          "rest": 20,
+          "pause": 30
+        }
+      ]
+    },
+    {
+      "slug": "chest_harm",
+      "sets": [
+        {
+          "rep": 7,
+          "duration": 45,
+          "rest": 30,
+          "pause": 30,
+          "slugs": [
+            "man_plank",
+            "man_crunches_with_weight",
+            "man_leg_raises",
+            "man_russian_twists_with_weight",
+            "man_hip_raises",
+            "man_scissor_kicks",
+            "man_montain_climbers"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "cooldown",
+      "sets": [
+        {
+          "rep": 1,
+          "duration": 40,
+          "rest": 20,
+          "slugs": [
+            "man_cat_strech"
+          ]
+        },
+        {
+          "rep": 1,
+          "slugs": [
+            "man_oblique_stretch"
+          ],
+          "rest": 20,
+          "sets": [
+            {
+              "rep": 2,
+              "duration": 20,
+              "slugs": [
+                "left",
+                "right"
+              ]
+            }
+          ]
+        },
+        {
+          "rep": 1,
+          "slugs": [
+            "man_hamstring_stretch"
+          ],
+          "rest": 20,
+          "sets": [
+            {
+              "rep": 2,
+              "slugs": [
+                "left",
+                "right"
+              ],
+              "duration": 20
+            }
+          ]
+        },
+        {
+          "rep": 1,
+          "slugs": [
+            "man_child_s_pose"
+          ],
+          "duration": 60
+        }
+      ]
+    }
+  ]
+}
