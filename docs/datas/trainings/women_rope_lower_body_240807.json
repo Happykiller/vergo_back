@@ -1,0 +1,144 @@
+{
+    "_id": ObjectId(),
+    "slug": "women_fullbody_240805",
+    "workout": [
+      {
+        "slug": "warm-up",
+        "sets": [
+          {
+            "slugs": [
+              "smalljumps"
+            ],
+            "rep": 1,
+            "duration": 40,
+            "rest": 20
+          },
+          {
+            "rep": 1,
+            "slugs": [
+              "arm_circles"
+            ],
+            "duration": 40,
+            "rest": 20
+          },
+          {
+            "rep": 1,
+            "slugs": [
+              "squat"
+            ],
+            "duration": 40,
+            "rest": 20
+          },
+          {
+            "rep": 1,
+            "slugs": [
+              "shoulder_strech"
+            ],
+            "duration": 40,
+            "rest": 20
+          }
+        ]
+      },
+      {
+        "slug": "rope_lower_body",
+        "sets": [
+          {
+            "rep": 1,
+            "rest": 0,
+            "pause": 0,
+            "sets": [
+              {
+                "rep": 3,
+                "slugs": [
+                  "squat_5kg"
+                ],
+                "duration": 30,
+                "rest": 60
+              },
+              {
+                "rep": 3,
+                "slugs": [
+                  "reverse_lunge_5kg"
+                ],
+                "duration": 30,
+                "rest": 60
+              },
+              {
+                "rep": 1,
+                "slugs": [
+                  "jump_rope"
+                ],
+                "duration": 60,
+                "rest": 60
+              },
+              {
+                "rep": 3,
+                "slugs": [
+                  "bridge_5kg"
+                ],
+                "duration": 30,
+                "rest": 60
+              },
+              {
+                "rep": 3,
+                "slugs": [
+                  "elastic_left_leg"
+                ],
+                "duration": 15,
+                "rest": 20
+              },
+              {
+                "rep": 3,
+                "slugs": [
+                  "elastic_right_leg"
+                ],
+                "duration": 15,
+                "rest": 60
+              },
+              {
+                "rep": 2,
+                "slugs": [
+                  "woodblock_step_up"
+                ],
+                "duration": 30,
+                "rest": 60
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "slug": "cooldown",
+        "sets": [
+          {
+            "rep": 1,
+            "slugs": [
+              "ischio_stretch"
+            ],
+            "duration": 60
+          },
+          {
+            "rep": 1,
+            "slugs": [
+              "quadriceps_stretch"
+            ],
+            "duration": 60
+          },
+          {
+            "rep": 1,
+            "slugs": [
+              "bottom_stretch"
+            ],
+            "duration": 60
+          },
+          {
+            "rep": 1,
+            "slugs": [
+              "child_s_pose"
+            ],
+            "duration": 60
+          }
+        ]
+      }
+    ]
+  }
