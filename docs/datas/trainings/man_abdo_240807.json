@@ -14,8 +14,7 @@
             "woman_hip_circles"
           ],
           "duration": 40,
-          "rest": 20,
-          "pause": 30
+          "rest": 20
         }
       ]
     },
@@ -23,17 +22,66 @@
       "slug": "abdo",
       "sets": [
         {
-          "rep": 7,
-          "duration": 45,
+          "rep": 4,
+          "duration": 60,
           "rest": 30,
-          "pause": 30,
           "slugs": [
-            "man_plank",
-            "man_crunches_with_weight",
-            "man_leg_raises",
-            "man_russian_twists_with_weight",
-            "man_hip_raises",
-            "man_scissor_kicks",
+            "man_plank"
+          ]
+        },
+        {
+          "rep": 4,
+          "duration": 60,
+          "rest": 30,
+          "ite": 20,
+          "weight": 10,
+          "slugs": [
+            "man_crunches_with_weight"
+          ]
+        },
+        {
+          "rep": 4,
+          "duration": 60,
+          "rest": 30,
+          "ite": 15,
+          "slugs": [
+            "man_leg_raises"
+          ]
+        },
+        {
+          "rep": 4,
+          "duration": 60,
+          "rest": 30,
+          "ite": 20,
+          "weight": 5,
+          "slugs": [
+            "man_russian_twists_with_weight"
+          ]
+        },
+        {
+          "rep": 4,
+          "duration": 60,
+          "rest": 30,
+          "ite": 20,
+          "slugs": [
+            "man_hip_raises"
+          ]
+        },
+        {
+          "rep": 4,
+          "duration": 60,
+          "rest": 30,
+          "ite": 20,
+          "weight": 5,
+          "slugs": [
+            "man_sit-ups"
+          ]
+        },
+        {
+          "rep": 4,
+          "duration": 40,
+          "rest": 20,
+          "slugs": [
             "man_montain_climbers"
           ]
         }
