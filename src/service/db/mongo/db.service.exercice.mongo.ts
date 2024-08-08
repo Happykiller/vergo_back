@@ -8,7 +8,7 @@ export class BdbServiceExerciceMongo
   implements
     Pick<BddService, 'getExercices'>
 {
-  private async getTraingCollection(): Promise<Collection> {
+  private async getExerciceCollection(): Promise<Collection> {
     return inversify.mongo.collection('exercices');
   }
 
@@ -17,7 +17,7 @@ export class BdbServiceExerciceMongo
     const query = {};
     const options = {};
     // Execute query
-    const results = (await this.getTraingCollection()).find(query, options);
+    const results = (await this.getExerciceCollection()).find(query, options);
 
     const response: ExerciceDbModel[] = [];
     // Print returned documents

@@ -4,9 +4,18 @@ Content-Type: application/json
 Authorization: Bearer {{token}}
 X-REQUEST-TYPE: GraphQL
 
-query trainings {
-  trainings {
+query exercices {
+  exercices {
     id
     slug
+    title {
+      lang
+      value
+    }
+    description {
+      lang
+      value
+    }
+    image
   }
 }

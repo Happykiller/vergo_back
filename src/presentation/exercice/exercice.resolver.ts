@@ -25,7 +25,7 @@ export class ExerciceResolver {
   @UseGuards(GqlAuthGuard, RolesGuard)
   /* eslint-disable @typescript-eslint/no-unused-vars */
   @Query((returns) => [ExerciceModelResolver])
-  async exercices(
+  async exercices (
     @CurrentSession() session: UserSession,
   ): Promise<ExerciceModelResolver[]> {
     return this.inversify.getExercicesUsecase.execute();

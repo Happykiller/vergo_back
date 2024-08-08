@@ -8,7 +8,7 @@ import { GetTrainingDbDto } from '@service/db/dto/get.training.db.dto';
 export class BddServiceTrainingMongo
   implements Pick<BddService, 'getTrainings' | 'getTraining'>
 {
-  private async getTraingCollection(): Promise<Collection> {
+  private async getTrainingCollection(): Promise<Collection> {
     return inversify.mongo.collection('trainings');
   }
 
@@ -17,9 +17,10 @@ export class BddServiceTrainingMongo
     const query = {};
     const options = {};
     // Execute query
-    const results = (await this.getTraingCollection()).find(query, options);
+    const results = (await this.getTrainingCollection()).find(query, options);
 
     const response: TrainingDbModel[] = [];
+
     // Print returned documents
     for await (const doc of results) {
       const tmp: any = {
@@ -40,7 +41,7 @@ export class BddServiceTrainingMongo
       const options = {};
       // Execute query
       const doc: any = await (
-        await this.getTraingCollection()
+        await this.getTrainingCollection()
       ).findOne(query, options);
 
       return Promise.resolve({
