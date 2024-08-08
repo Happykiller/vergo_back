@@ -13,7 +13,7 @@
         },
         {
           "rep": 3,
-          "slugs": ["arm_circles", "bodyweight_squats", "high_knees"],
+          "slugs": ["man_arm_circles", "man_bodyweight_squats", "woman_high_knees"],
           "duration": 5,
           "rest": 4,
           "pause": 6
@@ -29,8 +29,8 @@
           "pause": 6,
           "sets": [
             {
-              "rep": 8,
-              "slugs": ["burpees", "mountain_climbers"],
+              "rep": 2,
+              "slugs": ["man_burpees", "woman_mountain_climbers"],
               "duration": 5,
               "rest": 4
             }
@@ -43,7 +43,7 @@
       "sets": [
         {
           "rep": 1,
-          "slugs": ["shoulder_stretch"],
+          "slugs": ["woman_shoulder_stretch"],
           "sets": [
             {
               "rep": 2,

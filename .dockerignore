@@ -36,3 +36,12 @@ coverage
 
 docs
 *.tar
+images
+.eslintrc.js
+.prettierrc
+jest-e2e.json
+jest.json
+LICENSE
+Makefile
+nest-cli.json
+README.md

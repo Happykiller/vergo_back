@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "man_arm_circles",
+  "title": [
+    {
+      "lang": "fr",
+      "value": "Cercles avec les Bras"
+    },
+    {
+      "lang": "en",
+      "value": "Arm Circles"
+    }
+  ],
+  "description": [
+    {
+      "lang": "fr",
+      "value": "Debout, tendez les bras sur les côtés à hauteur des épaules. Faites de petits cercles avec les bras, d'abord dans un sens puis dans l'autre. Cet exercice aide à échauffer et renforcer les muscles des épaules."
+    },
+    {
+      "lang": "en",
+      "value": "Stand with your arms extended to the sides at shoulder height. Make small circles with your arms, first in one direction and then in the other. This exercise helps to warm up and strengthen the shoulder muscles."
+    }
+  ],
+  "image": "man-arm-circles.jpg"
+}

@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "gender_exercice_template",
+  "title": [
+    {
+      "lang": "fr",
+      "value": "Nom de l'exercice"
+    },
+    {
+      "lang": "en",
+      "value": "Exercice name"
+    }
+  ],
+  "description": [
+    {
+      "lang": "fr",
+      "value": "Bouger votre gros cul"
+    },
+    {
+      "lang": "en",
+      "value": "do something"
+    }
+  ],
+  "image": "no_gender_fluid_do_thing.png"
+}

@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "man_bodyweight_squats",
+  "title": [
+    {
+      "lang": "fr",
+      "value": "Squats au Poids du Corps"
+    },
+    {
+      "lang": "en",
+      "value": "Bodyweight Squats"
+    }
+  ],
+  "description": [
+    {
+      "lang": "fr",
+      "value": "Debout, les pieds écartés à la largeur des épaules, pliez les genoux et descendez les hanches comme si vous alliez vous asseoir sur une chaise. Gardez le dos droit et les genoux alignés avec les pieds. Revenez à la position de départ."
+    },
+    {
+      "lang": "en",
+      "value": "Stand with your feet shoulder-width apart, bend your knees and lower your hips as if you were sitting on a chair. Keep your back straight and your knees aligned with your feet. Return to the starting position."
+    }
+  ],
+  "image": "man-bodyweight-squats.jpg"
+}
