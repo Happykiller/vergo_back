@@ -1,6 +1,7 @@
 {
   "_id": ObjectId(),
   "slug": "woman_tabata_240808",
+  "gender": "woman",
   "workout": [
     {
       "slug": "warm-up",
@@ -8,9 +9,9 @@
         {
           "rep": 3,
           "slugs": [
-            "woman_jumping_jacks",
-            "woman_high_knees",
-            "woman_dynamic_stretch"
+            "jumping_jacks",
+            "high_knees",
+            "dynamic_stretch"
           ],
           "duration": 40,
           "rest": 20
@@ -29,12 +30,12 @@
               "rest": 10,
               "pause": 60,
               "slugs": [
-                "woman_burpees",
-                "woman_montain_climbers",
-                "woman_jumping_squats",
-                "woman_push-ups_with_rotation",
-                "woman_russian_twists_with_weight",
-                "woman_jumping_lunges"
+                "burpees",
+                "mountain_climbers",
+                "jumping_squats",
+                "push-ups_with_rotation",
+                "russian_twists_with_weight",
+                "jumping_lunges"
               ]
             }
           ]
@@ -47,7 +48,7 @@
         {
           "rep": 1,
           "slugs": [
-            "woman_shoulder_stretch"
+            "shoulder_stretch"
           ],
           "sets": [
             {
@@ -68,7 +69,7 @@
         {
           "rep": 1,
           "slugs": [
-            "woman_quad_stretch"
+            "quad_stretch"
           ],
           "sets": [
             {
@@ -84,7 +85,7 @@
         {
           "rep": 1,
           "slugs": [
-            "woman_hamstring_stretch"
+            "hamstring_stretch"
           ],
           "sets": [
             {
@@ -100,7 +101,7 @@
         {
           "rep": 1,
           "slugs": [
-            "woman_child_s_pose"
+            "child_s_pose"
           ],
           "duration": 60
         }

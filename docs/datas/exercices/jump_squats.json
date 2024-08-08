@@ -1,0 +1,17 @@
+{
+  "_id": ObjectId(),
+  "slug": "jump_squats",
+  "title": [
+    {
+      "lang": "fr",
+      "value": "Jump Squats"
+    }
+  ],
+  "description": [
+    {
+      "lang": "fr",
+      "value": "Faites un squat puis sautez aussi haut que possible en tendant les bras vers le plafond."
+    }
+  ],
+  "image": "jump_squats.jpg"
+}

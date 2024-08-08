@@ -1,9 +1,13 @@
 {
   "_id": ObjectId(),
-  "slug": "man_jumping_jacks",
+  "slug": "jumping_jacks",
   "title": [
     {
       "lang": "fr",
+      "value": "Jumping Jacks"
+    },
+    {
+      "lang": "en",
       "value": "Jumping Jacks"
     }
   ],
@@ -11,7 +15,11 @@
     {
       "lang": "fr",
       "value": "Debout, sautez en écartant les jambes et en levant les bras au-dessus de la tête, puis revenez à la position de départ."
+    },
+    {
+      "lang": "en",
+      "value": "Stand upright, jump while spreading your legs and raising your arms above your head, then return to the starting position."
     }
   ],
-  "image": "jumping-jacks.png"
+  "image": "jumping_jacks.png"
 }

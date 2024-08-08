@@ -1,0 +1,17 @@
+{
+  "_id": ObjectId(),
+  "slug": "dynamic_stretch",
+  "title": [
+    {
+      "lang": "fr",
+      "value": "Etirement dynamique"
+    }
+  ],
+  "description": [
+    {
+      "lang": "fr",
+      "value": "Effectuez des étirements dynamiques comme des balancements de jambes et des rotations de bras."
+    }
+  ],
+  "image": "dynamic_stretch.jpg"
+}

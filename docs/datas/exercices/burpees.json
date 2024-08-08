@@ -1,0 +1,17 @@
+{
+  "_id": ObjectId(),
+  "slug": "burpees",
+  "title": [
+    {
+      "lang": "fr",
+      "value": "burpees"
+    }
+  ],
+  "description": [
+    {
+      "lang": "fr",
+      "value": "Depuis une position debout, descendez en position de squat, placez vos mains au sol, sautez vos pieds en arrière pour atteindre une position de planche, faites une pompe, puis revenez à la position de squat et sautez en l'air."
+    }
+  ],
+  "image": "burpees.jpg"
+}

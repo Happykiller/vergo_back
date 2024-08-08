@@ -1,0 +1,17 @@
+{
+  "_id": ObjectId(),
+  "slug": "mountain_climbers",
+  "title": [
+    {
+      "lang": "fr",
+      "value": "Mountain Climbers"
+    }
+  ],
+  "description": [
+    {
+      "lang": "fr",
+      "value": "En position de planche, alternez en ramenant vos genoux vers votre poitrine rapidement, comme si vous couriez."
+    }
+  ],
+  "image": "mountain_climbers.jpg"
+}
