@@ -44,7 +44,9 @@ export class GetNormalizedTrainingUsecase {
         response.push({
           slugs: under_slugs,
           type: 'effort',
-          duration: set.duration
+          duration: set.duration,
+          ite: set.ite,
+          weight: set.weight
         });
       }
       if(set.sets) {

@@ -28,7 +28,7 @@ export class ImageController {
   ): Promise<void> {
     try {
       const image = await this.inversify.imageService.getImage(filename, width?parseInt(width as unknown as string):null, height?parseInt(height as unknown as string):null);
-      res.writeHead(HttpStatus.OK, { 'Content-Type': this.getContentType(filename) });
+      res.writeHead(HttpStatus.OK, { 'Content-Type': 'image/jpeg' });
       res.end(image);
     } catch (error) {
       res.status(HttpStatus.NOT_FOUND).json({ message: 'Image not found' });

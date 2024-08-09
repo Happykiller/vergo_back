@@ -8,4 +8,8 @@ export class TrainingNormalizedResolverModel {
   type: string;
   @Field(() => Number)
   duration: number;
+  @Field(() => Number, { nullable: true })
+  ite?: number;
+  @Field(() => Number, { nullable: true })
+  weight?: number;
 }

@@ -1,7 +1,7 @@
 {
   "_id": ObjectId(),
   "slug": "man_triceps_buttocks_legs",
-  "gender": "man",
+  "gender": "male",
   "workout": [
     {
       "slug": "warm-up",
@@ -27,7 +27,7 @@
           "rep": 3,
           "duration": 40,
           "ite": 12,
-          "rest": 60,
+          "rest": 40,
           "slugs": [
             "dips"
           ]
@@ -37,7 +37,7 @@
           "ite": 10,
           "weight": 10,
           "duration": 40,
-          "rest": 60,
+          "rest": 40,
           "slugs": [
             "tricep_extensions_with_weight"
           ]
@@ -53,12 +53,21 @@
         },
         {
           "rep": 3,
-          "ite": 10,
-          "weight": 8,
-          "duration": 40,
           "rest": 60,
           "slugs": [
             "tricep_kickback_with_weight"
+          ], 
+          "sets": [
+            {
+              "rep": 2,
+              "ite": 10,
+              "weight": 8,
+              "duration": 25,
+              "slugs": [
+                "left",
+                "right"
+              ]
+            }
           ]
         }
       ]

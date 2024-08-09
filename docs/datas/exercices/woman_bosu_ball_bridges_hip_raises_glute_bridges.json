@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "woman_bosu_ball_bridges_hip_raises_glute_bridges",
+  "title": [
+    {
+      "lang": "fr",
+      "value": "Ponts sur Bosu Ball pour Femme"
+    },
+    {
+      "lang": "en",
+      "value": "Woman Bosu Ball Bridges Hip Raises Glute Bridges"
+    }
+  ],
+  "description": [
+    {
+      "lang": "fr",
+      "value": "Allongez-vous sur le dos avec les pieds sur un Bosu Ball et les genoux pliés. Placez vos bras le long du corps, paumes vers le bas. Poussez à travers vos talons pour soulever vos hanches vers le plafond, en contractant vos fessiers en haut du mouvement. Maintenez la position pendant une seconde, puis redescendez lentement. Répétez pour 10 à 15 répétitions. Cet exercice renforce les muscles des fessiers et du bas du dos tout en améliorant la stabilité et l'équilibre."
+    },
+    {
+      "lang": "en",
+      "value": "Lie on your back with your feet on a Bosu Ball and knees bent. Place your arms along your sides, palms facing down. Push through your heels to lift your hips towards the ceiling, squeezing your glutes at the top of the movement. Hold the position for one second, then slowly lower back down. Repeat for 10 to 15 repetitions. This exercise strengthens the glute and lower back muscles while improving stability and balance."
+    }
+  ],
+  "image": "woman_bosu_ball_bridges_hip_raises_glute_bridges.jpg"
+}

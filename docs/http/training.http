@@ -8,5 +8,26 @@ query trainings {
   trainings {
     id
     slug
+    gender
+  }
+}
+
+###
+POST {{host}}/graphql
+Content-Type: application/json
+Authorization: Bearer {{token}}
+X-REQUEST-TYPE: GraphQL
+
+query {
+  training_normalized (
+    dto: {
+      id: "66b1ecee43812dbcda7843fa"
+    }
+  ) {
+    slugs
+    type
+    duration
+    ite
+    weight
   }
 }

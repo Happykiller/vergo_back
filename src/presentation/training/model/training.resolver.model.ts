@@ -7,6 +7,10 @@ export class SetModelResolver {
   @Field(() => [String], { nullable: true })
   slugs?: string[];
   @Field(() => Number, { nullable: true })
+  ite?: number;
+  @Field(() => Number, { nullable: true })
+  weight?: number;
+  @Field(() => Number, { nullable: true })
   duration?: number;
   @Field(() => Number, { nullable: true })
   rest?: number;
@@ -30,6 +34,8 @@ export class TrainingModelResolver {
   id: string;
   @Field(() => String)
   slug: string;
+  @Field(() => String, { nullable: true })
+  gender?: string;
   @Field(() => [WorkoutModelResolver])
   workout: WorkoutModelResolver[];
 }

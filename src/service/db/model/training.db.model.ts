@@ -1,6 +1,7 @@
 export interface TrainingDbModel {
   id: string;
   slug: string;
+  gender?: string;
   workout: WorkoutDbModel[];
 }
 
@@ -12,6 +13,8 @@ export interface WorkoutDbModel {
 export interface SetDbModel {
   rep?: number;
   slugs?: string[];
+  ite?: number,
+  weight?: number,
   duration?: number;
   rest?: number;
   pause?: number;
