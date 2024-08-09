@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "walking_lunges_with_weight",
+  "title": [
+    {
+      "lang": "fr",
+      "value": "Fentes Marchées avec Poids"
+    },
+    {
+      "lang": "en",
+      "value": "Walking Lunges with Weight"
+    }
+  ],
+  "description": [
+    {
+      "lang": "fr",
+      "value": "Tenez-vous droit avec un poids dans chaque main. Faites un grand pas en avant avec une jambe et abaissez votre corps jusqu'à ce que les deux genoux soient pliés à un angle de 90 degrés. Poussez à travers le talon de votre pied avant pour revenir à la position debout et avancez l'autre jambe pour la prochaine répétition. Continuez à alterner les jambes en marchant. Répétez pour 10 à 15 répétitions de chaque côté. Cet exercice renforce les muscles des jambes et des fessiers."
+    },
+    {
+      "lang": "en",
+      "value": "Stand upright with a weight in each hand. Take a large step forward with one leg and lower your body until both knees are bent at a 90-degree angle. Push through the heel of your front foot to return to standing and bring the other leg forward for the next repetition. Continue alternating legs as you walk. Repeat for 10 to 15 repetitions on each side. This exercise strengthens the leg and glute muscles."
+    }
+  ],
+  "image": "walking_lunges_with_weight.jpg"
+}

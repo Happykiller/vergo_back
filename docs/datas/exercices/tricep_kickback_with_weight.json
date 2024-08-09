@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "tricep_kickback_with_weight",
+  "title": [
+    {
+      "lang": "fr",
+      "value": "Kickback des Triceps avec Poids"
+    },
+    {
+      "lang": "en",
+      "value": "Tricep Kickback with Weight"
+    }
+  ],
+  "description": [
+    {
+      "lang": "fr",
+      "value": "Tenez-vous avec les pieds écartés à la largeur des hanches et penchez-vous légèrement en avant à partir des hanches, en gardant le dos droit. Tenez un poids dans chaque main, les coudes pliés à 90 degrés près de votre corps. Étendez vos bras vers l'arrière en contractant les triceps, puis revenez à la position de départ. Répétez pour 10 à 15 répétitions de chaque côté. Cet exercice cible les muscles des triceps."
+    },
+    {
+      "lang": "en",
+      "value": "Stand with your feet hip-width apart and lean slightly forward from your hips, keeping your back straight. Hold a weight in each hand, elbows bent at 90 degrees close to your body. Extend your arms backward by contracting your triceps, then return to the starting position. Repeat for 10 to 15 repetitions on each side. This exercise targets the tricep muscles."
+    }
+  ],
+  "image": "tricep_kickback_with_weight.jpg"
+}

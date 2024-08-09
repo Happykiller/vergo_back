@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "dips",
+  "title": [
+    {
+      "lang": "fr",
+      "value": "Dips"
+    },
+    {
+      "lang": "en",
+      "value": "Dips"
+    }
+  ],
+  "description": [
+    {
+      "lang": "fr",
+      "value": "Placez vos mains sur le bord d'une chaise ou d'un banc, les doigts vers l'avant et les jambes tendues devant vous. Abaissez lentement votre corps en pliant les coudes jusqu'à ce que vos bras forment des angles de 90 degrés. Poussez ensuite vers le haut pour revenir à la position de départ. Gardez le dos près de la chaise ou du banc tout au long du mouvement. Répétez pour 10 à 15 répétitions. Cet exercice renforce les triceps, les épaules et les pectoraux."
+    },
+    {
+      "lang": "en",
+      "value": "Place your hands on the edge of a chair or bench, fingers facing forward and legs extended in front of you. Slowly lower your body by bending your elbows until your arms form 90-degree angles. Then push up to return to the starting position. Keep your back close to the chair or bench throughout the movement. Repeat for 10 to 15 repetitions. This exercise strengthens the triceps, shoulders, and chest muscles."
+    }
+  ],
+  "image": "dips.jpg"
+}

@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "jumping_squats",
+  "title": [
+    {
+      "lang": "fr",
+      "value": "Squats Sautés"
+    },
+    {
+      "lang": "en",
+      "value": "Jumping Squats"
+    }
+  ],
+  "description": [
+    {
+      "lang": "fr",
+      "value": "Commencez en position de squat avec les pieds écartés à la largeur des épaules. Abaissez-vous en pliant les genoux jusqu'à ce que vos cuisses soient parallèles au sol. Poussez ensuite de manière explosive vers le haut pour sauter, en étendant complètement les jambes. Atterrissez doucement et revenez immédiatement en position de squat pour la répétition suivante. Cet exercice renforce les muscles des jambes, améliore la puissance et l'endurance."
+    },
+    {
+      "lang": "en",
+      "value": "Start in a squat position with your feet shoulder-width apart. Lower yourself by bending your knees until your thighs are parallel to the ground. Then, push explosively upwards to jump, fully extending your legs. Land softly and immediately return to the squat position for the next repetition. This exercise strengthens the leg muscles, improves power, and endurance."
+    }
+  ],
+  "image": "jumping_squats.jpg"
+}

@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "air_squats",
+  "title": [
+    {
+      "lang": "fr",
+      "value": "Squats Aériens"
+    },
+    {
+      "lang": "en",
+      "value": "Air Squats"
+    }
+  ],
+  "description": [
+    {
+      "lang": "fr",
+      "value": "Tenez-vous droit avec les pieds écartés à la largeur des épaules. Abaissez votre corps en pliant les genoux et en poussant les hanches vers l'arrière, comme si vous alliez vous asseoir sur une chaise. Descendez jusqu'à ce que vos cuisses soient parallèles au sol, puis revenez à la position de départ en poussant à travers vos talons. Gardez le dos droit et le regard vers l'avant. Répétez pour 10 à 15 répétitions. Cet exercice renforce les muscles des jambes et des fessiers."
+    },
+    {
+      "lang": "en",
+      "value": "Stand upright with feet shoulder-width apart. Lower your body by bending your knees and pushing your hips back, as if sitting down on a chair. Descend until your thighs are parallel to the ground, then return to the starting position by pushing through your heels. Keep your back straight and gaze forward. Repeat for 10 to 15 repetitions. This exercise strengthens the leg and glute muscles."
+    }
+  ],
+  "image": "air_squats.jpg"
+}

@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "push-ups_with_rotation",
+  "title": [
+    {
+      "lang": "fr",
+      "value": "Pompes avec Rotation"
+    },
+    {
+      "lang": "en",
+      "value": "Push-ups with Rotation"
+    }
+  ],
+  "description": [
+    {
+      "lang": "fr",
+      "value": "Commencez en position de planche haute. Effectuez une pompe classique en descendant votre poitrine vers le sol. Lorsque vous remontez, tournez votre corps vers la droite en levant le bras droit vers le plafond, formant un T avec votre corps. Revenez à la position initiale et répétez de l'autre côté. Alternez les côtés à chaque répétition pour travailler les muscles de la poitrine, des épaules, des bras et des abdominaux."
+    },
+    {
+      "lang": "en",
+      "value": "Start in a high plank position. Perform a standard push-up by lowering your chest towards the ground. As you push back up, rotate your body to the right, raising your right arm towards the ceiling, forming a T shape with your body. Return to the starting position and repeat on the other side. Alternate sides with each rep to work your chest, shoulders, arms, and core muscles."
+    }
+  ],
+  "image": "push-ups_with_rotation.jpg"
+}

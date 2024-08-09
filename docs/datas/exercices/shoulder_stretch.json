@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "shoulder_stretch",
+  "title": [
+    {
+      "lang": "fr",
+      "value": "Étirement des Épaules"
+    },
+    {
+      "lang": "en",
+      "value": "Shoulder Stretch"
+    }
+  ],
+  "description": [
+    {
+      "lang": "fr",
+      "value": "Tenez-vous debout ou asseyez-vous avec le dos droit. Amenez un bras à travers votre corps à hauteur de la poitrine. Utilisez l'autre bras pour tirer doucement le bras étendu vers vous, en sentant l'étirement dans l'épaule. Maintenez la position pendant 20 à 30 secondes, puis changez de côté. Cet étirement aide à améliorer la flexibilité et à réduire les tensions dans les épaules."
+    },
+    {
+      "lang": "en",
+      "value": "Stand or sit with a straight back. Bring one arm across your body at chest height. Use the other arm to gently pull the extended arm towards you, feeling the stretch in your shoulder. Hold the position for 20 to 30 seconds, then switch sides. This stretch helps improve flexibility and reduce tension in the shoulders."
+    }
+  ],
+  "image": "shoulder_stretch.jpg"
+}

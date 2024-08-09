@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "leg_swings",
+  "title": [
+    {
+      "lang": "fr",
+      "value": "Balancements de Jambes"
+    },
+    {
+      "lang": "en",
+      "value": "Leg Swings"
+    }
+  ],
+  "description": [
+    {
+      "lang": "fr",
+      "value": "Tenez-vous droit avec un support pour l'équilibre, comme un mur ou une chaise. Balancez une jambe vers l'avant aussi haut que possible, puis vers l'arrière sans plier le genou. Gardez le mouvement fluide et contrôlé. Répétez pour 10 à 15 balancements, puis changez de jambe. Cet exercice aide à améliorer la flexibilité dynamique des hanches et des ischio-jambiers."
+    },
+    {
+      "lang": "en",
+      "value": "Stand upright with a support for balance, such as a wall or chair. Swing one leg forward as high as possible, then backward without bending the knee. Keep the movement smooth and controlled. Repeat for 10 to 15 swings, then switch legs. This exercise helps improve dynamic flexibility of the hips and hamstrings."
+    }
+  ],
+  "image": "leg_swings.jpg"
+}

@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "diamond_push-ups",
+  "title": [
+    {
+      "lang": "fr",
+      "value": "Pompes Diamant"
+    },
+    {
+      "lang": "en",
+      "value": "Diamond Push-ups"
+    }
+  ],
+  "description": [
+    {
+      "lang": "fr",
+      "value": "Commencez en position de planche haute avec les mains rapprochées sous votre poitrine, formant un losange avec vos pouces et index. Abaissez votre corps en pliant les coudes, en gardant les bras près du corps. Poussez vers le haut pour revenir à la position de départ. Répétez pour 10 à 15 répétitions. Cet exercice cible principalement les triceps et la poitrine, et renforce également les épaules et les muscles du tronc."
+    },
+    {
+      "lang": "en",
+      "value": "Start in a high plank position with your hands close together under your chest, forming a diamond shape with your thumbs and index fingers. Lower your body by bending your elbows, keeping your arms close to your body. Push up to return to the starting position. Repeat for 10 to 15 repetitions. This exercise primarily targets the triceps and chest, and also strengthens the shoulders and core muscles."
+    }
+  ],
+  "image": "diamond_push-ups.jpg"
+}

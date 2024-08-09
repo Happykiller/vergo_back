@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "hamstring_stretch",
+  "title": [
+    {
+      "lang": "fr",
+      "value": "Étirement des Ischio-Jambiers"
+    },
+    {
+      "lang": "en",
+      "value": "Hamstring Stretch"
+    }
+  ],
+  "description": [
+    {
+      "lang": "fr",
+      "value": "Asseyez-vous par terre avec les jambes étendues devant vous. Inclinez-vous doucement vers l'avant à partir des hanches, en essayant de toucher vos orteils avec vos mains. Gardez le dos droit autant que possible et sentez l'étirement le long de l'arrière de vos jambes. Maintenez la position pendant 20 à 30 secondes, puis relâchez. Cet étirement aide à améliorer la flexibilité et à réduire les tensions dans les ischio-jambiers."
+    },
+    {
+      "lang": "en",
+      "value": "Sit on the floor with your legs extended in front of you. Gently lean forward from your hips, trying to reach your toes with your hands. Keep your back as straight as possible and feel the stretch along the back of your legs. Hold the position for 20 to 30 seconds, then release. This stretch helps improve flexibility and reduce tension in the hamstrings."
+    }
+  ],
+  "image": "hamstring_stretch.jpg"
+}

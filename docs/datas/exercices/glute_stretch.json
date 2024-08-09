@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "glute_stretch",
+  "title": [
+    {
+      "lang": "fr",
+      "value": "Étirement des Fessiers"
+    },
+    {
+      "lang": "en",
+      "value": "Glute Stretch"
+    }
+  ],
+  "description": [
+    {
+      "lang": "fr",
+      "value": "Asseyez-vous par terre avec les jambes étendues devant vous. Pliez une jambe et croisez-la par-dessus l'autre, en plaçant votre pied à plat sur le sol à l'extérieur de votre genou opposé. Tournez votre torse vers la jambe pliée et utilisez votre coude opposé pour appuyer contre le genou plié, augmentant ainsi l'étirement. Maintenez la position pendant 20 à 30 secondes, puis changez de côté. Cet étirement aide à améliorer la flexibilité des fessiers et à réduire les tensions."
+    },
+    {
+      "lang": "en",
+      "value": "Sit on the floor with your legs extended in front of you. Bend one leg and cross it over the other, placing your foot flat on the floor outside your opposite knee. Twist your torso towards the bent leg and use your opposite elbow to press against the bent knee, increasing the stretch. Hold the position for 20 to 30 seconds, then switch sides. This stretch helps improve glute flexibility and reduce tension."
+    }
+  ],
+  "image": "glute_stretch.jpg"
+}

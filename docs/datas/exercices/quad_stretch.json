@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "quad_stretch",
+  "title": [
+    {
+      "lang": "fr",
+      "value": "Étirement des Quadriceps"
+    },
+    {
+      "lang": "en",
+      "value": "Quad Stretch"
+    }
+  ],
+  "description": [
+    {
+      "lang": "fr",
+      "value": "Tenez-vous droit avec les pieds écartés à la largeur des hanches. Pliez un genou et ramenez votre pied vers vos fesses, en attrapant votre cheville avec la main correspondante. Gardez les genoux proches et poussez doucement les hanches vers l'avant pour intensifier l'étirement. Maintenez la position pendant 20 à 30 secondes, puis changez de côté. Cet étirement aide à améliorer la flexibilité et à réduire les tensions dans les quadriceps."
+    },
+    {
+      "lang": "en",
+      "value": "Stand upright with feet hip-width apart. Bend one knee and bring your foot towards your buttocks, grabbing your ankle with the corresponding hand. Keep your knees close together and gently push your hips forward to intensify the stretch. Hold the position for 20 to 30 seconds, then switch sides. This stretch helps improve flexibility and reduce tension in the quadriceps."
+    }
+  ],
+  "image": "quad_stretch.jpg"
+}

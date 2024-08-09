@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "step-ups_on_plyo_box_with_weight",
+  "title": [
+    {
+      "lang": "fr",
+      "value": "Montées sur Box Plyo avec Poids"
+    },
+    {
+      "lang": "en",
+      "value": "Step-ups on Plyo Box with Weight"
+    }
+  ],
+  "description": [
+    {
+      "lang": "fr",
+      "value": "Tenez-vous devant une box plyo avec un poids dans chaque main. Placez un pied sur la box et poussez à travers le talon pour monter, en amenant l'autre pied sur la box. Descendez lentement en revenant à la position de départ. Alternez les pieds pour chaque répétition. Répétez pour 10 à 15 répétitions de chaque côté. Cet exercice renforce les muscles des jambes et des fessiers tout en améliorant l'équilibre et la coordination."
+    },
+    {
+      "lang": "en",
+      "value": "Stand in front of a plyo box with a weight in each hand. Place one foot on the box and push through your heel to step up, bringing the other foot onto the box. Slowly step back down to return to the starting position. Alternate feet with each repetition. Repeat for 10 to 15 repetitions on each side. This exercise strengthens the leg and glute muscles while improving balance and coordination."
+    }
+  ],
+  "image": "step-ups_on_plyo_box_with_weight.jpg"
+}

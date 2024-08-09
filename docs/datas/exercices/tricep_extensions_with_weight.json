@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "tricep_extensions_with_weight",
+  "title": [
+    {
+      "lang": "fr",
+      "value": "Extensions des Triceps avec Poids"
+    },
+    {
+      "lang": "en",
+      "value": "Tricep Extensions with Weight"
+    }
+  ],
+  "description": [
+    {
+      "lang": "fr",
+      "value": "Tenez-vous droit avec les pieds écartés à la largeur des hanches. Tenez un poids avec les deux mains et levez-le au-dessus de votre tête. Gardez les coudes près de vos oreilles et abaissez lentement le poids derrière votre tête en pliant les coudes. Remontez le poids à la position de départ en contractant les triceps. Répétez pour 10 à 15 répétitions. Cet exercice renforce les muscles des triceps."
+    },
+    {
+      "lang": "en",
+      "value": "Stand upright with feet hip-width apart. Hold a weight with both hands and lift it above your head. Keep your elbows close to your ears and slowly lower the weight behind your head by bending your elbows. Raise the weight back to the starting position by contracting your triceps. Repeat for 10 to 15 repetitions. This exercise strengthens the tricep muscles."
+    }
+  ],
+  "image": "tricep_extensions_with_weight.jpg"
+}

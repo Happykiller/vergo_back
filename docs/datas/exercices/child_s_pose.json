@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "child_s_pose",
+  "title": [
+    {
+      "lang": "fr",
+      "value": "Posture de l'Enfant"
+    },
+    {
+      "lang": "en",
+      "value": "Child's Pose"
+    }
+  ],
+  "description": [
+    {
+      "lang": "fr",
+      "value": "Agenouillez-vous sur le sol avec les gros orteils qui se touchent et les genoux écartés à la largeur des hanches. Asseyez-vous sur vos talons, puis penchez-vous en avant, en étendant vos bras devant vous et en reposant votre front sur le sol. Détendez-vous et respirez profondément, en maintenant la position pendant 20 à 30 secondes. Cette posture aide à étirer le dos, les hanches et les cuisses, tout en favorisant la relaxation."
+    },
+    {
+      "lang": "en",
+      "value": "Kneel on the floor with your big toes touching and knees spread apart at hip-width. Sit back on your heels, then lean forward, extending your arms in front of you and resting your forehead on the floor. Relax and breathe deeply, holding the position for 20 to 30 seconds. This pose helps stretch the back, hips, and thighs while promoting relaxation."
+    }
+  ],
+  "image": "child_s_pose.jpg"
+}

@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "jumping_lunges",
+  "title": [
+    {
+      "lang": "fr",
+      "value": "Fentes Sautées"
+    },
+    {
+      "lang": "en",
+      "value": "Jumping Lunges"
+    }
+  ],
+  "description": [
+    {
+      "lang": "fr",
+      "value": "Commencez en position de fente avec une jambe en avant et l'autre en arrière. Pliez les genoux pour abaisser votre corps jusqu'à ce que les deux genoux forment des angles de 90 degrés. Sautez de manière explosive en changeant la position de vos jambes en l'air, en atterrissant avec la jambe opposée en avant. Répétez en alternant les jambes à chaque saut. Cet exercice améliore la puissance, l'endurance et la coordination des jambes."
+    },
+    {
+      "lang": "en",
+      "value": "Start in a lunge position with one leg forward and the other leg back. Bend your knees to lower your body until both knees form 90-degree angles. Jump explosively, switching the position of your legs in the air, landing with the opposite leg forward. Repeat, alternating legs with each jump. This exercise enhances leg power, endurance, and coordination."
+    }
+  ],
+  "image": "jumping_lunges.jpg"
+}

@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "russian_twists_with_weight",
+  "title": [
+    {
+      "lang": "fr",
+      "value": "Twists Russes avec Poids"
+    },
+    {
+      "lang": "en",
+      "value": "Russian Twists with Weight"
+    }
+  ],
+  "description": [
+    {
+      "lang": "fr",
+      "value": "Asseyez-vous par terre avec les genoux pliés et les pieds légèrement surélevés. Tenez un poids ou une médecine-ball avec les deux mains devant votre poitrine. Inclinez légèrement votre torse vers l'arrière, en gardant le dos droit. Tournez lentement votre torse et le poids vers la droite, puis vers la gauche, en faisant travailler vos muscles abdominaux et obliques. Alternez les côtés pour chaque répétition."
+    },
+    {
+      "lang": "en",
+      "value": "Sit on the floor with your knees bent and feet slightly elevated. Hold a weight or medicine ball with both hands in front of your chest. Lean your torso slightly back while keeping your back straight. Slowly twist your torso and the weight to the right, then to the left, engaging your abdominal and oblique muscles. Alternate sides with each repetition."
+    }
+  ],
+  "image": "russian_twists_with_weight.jpg"
+}

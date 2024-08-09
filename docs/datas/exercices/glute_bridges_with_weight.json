@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "glute_bridges_with_weight",
+  "title": [
+    {
+      "lang": "fr",
+      "value": "Ponts Fessiers avec Poids"
+    },
+    {
+      "lang": "en",
+      "value": "Glute Bridges with Weight"
+    }
+  ],
+  "description": [
+    {
+      "lang": "fr",
+      "value": "Allongez-vous sur le dos avec les genoux pliés et les pieds à plat sur le sol, écartés à la largeur des hanches. Placez un poids sur vos hanches et tenez-le avec vos mains pour le stabiliser. Poussez à travers vos talons pour soulever vos hanches vers le plafond, en contractant vos fessiers en haut du mouvement. Maintenez la position pendant une seconde, puis redescendez lentement. Répétez pour 10 à 15 répétitions. Cet exercice renforce les muscles des fessiers et du bas du dos."
+    },
+    {
+      "lang": "en",
+      "value": "Lie on your back with your knees bent and feet flat on the floor, hip-width apart. Place a weight on your hips and hold it with your hands to stabilize. Push through your heels to lift your hips towards the ceiling, squeezing your glutes at the top of the movement. Hold the position for one second, then slowly lower back down. Repeat for 10 to 15 repetitions. This exercise strengthens the glute and lower back muscles."
+    }
+  ],
+  "image": "glute_bridges_with_weight.jpg"
+}

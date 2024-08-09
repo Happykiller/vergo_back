@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "butt_kicks",
+  "title": [
+    {
+      "lang": "fr",
+      "value": "Talons-fesses"
+    },
+    {
+      "lang": "en",
+      "value": "Butt Kicks"
+    }
+  ],
+  "description": [
+    {
+      "lang": "fr",
+      "value": "Tenez-vous droit avec les pieds écartés à la largeur des hanches. Alternez en levant rapidement un talon vers les fesses, puis l'autre, en gardant le rythme. Utilisez vos bras pour vous aider à maintenir la vitesse et l'équilibre. Répétez pendant 30 à 60 secondes. Cet exercice aide à améliorer la flexibilité des quadriceps et l'endurance cardiovasculaire."
+    },
+    {
+      "lang": "en",
+      "value": "Stand upright with feet hip-width apart. Alternate by quickly lifting one heel towards your buttocks, then the other, maintaining the pace. Use your arms to help keep the speed and balance. Repeat for 30 to 60 seconds. This exercise helps improve quadriceps flexibility and cardiovascular endurance."
+    }
+  ],
+  "image": "butt_kicks.jpg"
+}

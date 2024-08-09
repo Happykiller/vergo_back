@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "glute_bridges",
+  "title": [
+    {
+      "lang": "fr",
+      "value": "Ponts Fessiers"
+    },
+    {
+      "lang": "en",
+      "value": "Glute Bridges"
+    }
+  ],
+  "description": [
+    {
+      "lang": "fr",
+      "value": "Allongez-vous sur le dos avec les genoux pliés et les pieds à plat sur le sol, écartés à la largeur des hanches. Placez vos bras le long du corps, paumes vers le bas. Poussez à travers vos talons pour soulever vos hanches vers le plafond, en contractant vos fessiers en haut du mouvement. Maintenez la position pendant une seconde, puis redescendez lentement. Répétez pour 10 à 15 répétitions. Cet exercice renforce les muscles des fessiers et du bas du dos."
+    },
+    {
+      "lang": "en",
+      "value": "Lie on your back with your knees bent and feet flat on the floor, hip-width apart. Place your arms along your sides, palms facing down. Push through your heels to lift your hips towards the ceiling, squeezing your glutes at the top of the movement. Hold the position for one second, then slowly lower back down. Repeat for 10 to 15 repetitions. This exercise strengthens the glute and lower back muscles."
+    }
+  ],
+  "image": "glute_bridges.jpg"
+}
