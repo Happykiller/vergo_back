@@ -1,19 +1,20 @@
 {
   "_id": ObjectId(),
   "slug": "training_test",
+  "gender": "woman",
   "workout": [
     {
       "slug": "warm-up",
       "sets": [
         {
-          "slugs": ["man_jumping_jacks"],
+          "slugs": ["jumping_jack"],
           "rep": 1,
           "duration": 5,
           "rest": 6
         },
         {
           "rep": 3,
-          "slugs": ["man_arm_circles", "man_bodyweight_squats", "woman_high_knees"],
+          "slugs": ["arm_circles", "man_bodyweight_squats", "high_knees"],
           "duration": 5,
           "rest": 4,
           "pause": 6
@@ -30,7 +31,7 @@
           "sets": [
             {
               "rep": 2,
-              "slugs": ["man_burpees", "woman_mountain_climbers"],
+              "slugs": ["burpees", "mountain_climbers"],
               "duration": 5,
               "rest": 4
             }
@@ -43,7 +44,7 @@
       "sets": [
         {
           "rep": 1,
-          "slugs": ["woman_shoulder_stretch"],
+          "slugs": ["shoulder_stretch"],
           "sets": [
             {
               "rep": 2,

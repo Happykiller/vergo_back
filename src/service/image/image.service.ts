@@ -1,104 +1,22 @@
 import * as fs from 'fs';
 import { join } from 'path';
 import * as sharp from 'sharp';
-import { removeStopwords } from 'stopword';
-import inversify from '../../inversify/investify';
+
+import inversify, { Inversify } from '@src/inversify/investify';
 
 interface CachedData {
   files: any[];
   timestamp: number;
 }
 
-type FileData = {
-  name: string;
-  metaName: string[];
-  isDirectory: boolean;
-  size: number;
-  lastModified: Date;
-  accuracy?: number
-};
-
 export class ImageService {
+  private readonly inversify: Inversify;
   private readonly imagesPath = 'images/';
   private cachedFileList: CachedData | null = null;
   private cacheTTL: number = 5 * 60 * 1000; // 5min * 60s * 1000 ms
 
-  removeFileExtension(fileName: string): string {
-    const lastDotIndex = fileName.lastIndexOf('.');
-    if (lastDotIndex === -1) return fileName; // Aucun point trouvé, retourner le nom original
-  
-    return fileName.substring(0, lastDotIndex);
-  }
-
-  processFileName(fileName: string): string[] {
-    // Retirer l'extension du fichier
-    const lastDotIndex = fileName.lastIndexOf('.');
-    const baseName = lastDotIndex !== -1 ? fileName.substring(0, lastDotIndex) : fileName;
-    
-    // Remplacer les caractères '_', '-', '.' par un espace
-    const cleanedName = baseName.replace(/[_\-.]/g, ' ');
-    
-    // Diviser en mots
-    const words = cleanedName.split(' ').filter(word => word.length > 0);
-  
-    return words;
-  }
-
-  // Fonction pour traduire les mots
-  async translateWords(words: string[]): Promise<string[]> {
-    return words;
-  }
-
-  // Fonction pour retirer les stopwords d'une liste de mots
-  removeStopWords(words: string[]): string[] {
-    return removeStopwords(words, removeStopwords.fr);
-  }
-
-  // Fonction pour obtenir la liste des fichiers
-  getFileList = async (): Promise<any[]> => {
-    const files = fs.readdirSync(this.imagesPath);
-
-    let fileList = [];
-    for(let file of files) {
-      const fullPath = join(this.imagesPath, file);
-      const stats = fs.statSync(fullPath);
-
-      let tmp = this.removeFileExtension(file);
-      let listWord = this.processFileName(tmp);
-      listWord = await this.translateWords(listWord);
-      listWord = this.removeStopWords(listWord);
-
-      fileList.push({
-        name: file,
-        metaName: listWord,
-        isDirectory: stats.isDirectory(),
-        size: stats.size,
-        lastModified: stats.mtime
-      });
-    }
-
-    return fileList;
-  }
-
-  calculateAccuracy(metaName: string[], words: string[]): number {
-    const commonWords = metaName.filter(word => words.includes(word));
-    return commonWords.length / Math.max(metaName.length, words.length);
-  }
-  
-  findMostAccurateFile(datas: FileData[], words: string[]): FileData | null {
-    let maxAccuracy = 0;
-    let mostAccurateFile: FileData | null = null;
-  
-    for (const data of datas) {
-      const accuracy = this.calculateAccuracy(data.metaName, words);
-      data.accuracy = accuracy;
-      if (accuracy > maxAccuracy) {
-        maxAccuracy = accuracy;
-        mostAccurateFile = data;
-      }
-    }
-  
-    return mostAccurateFile;
+  constructor(inversify: Inversify) {
+    this.inversify = inversify;
   }
 
   /**
@@ -110,16 +28,16 @@ export class ImageService {
    */
   async getImage(filename: string, width?: number, height?: number): Promise<Buffer> {
     try {
-      const currentTime = Date.now();
-      let from = 'cache';
-      let tmp = this.removeFileExtension(filename);
-      let listWord = this.processFileName(tmp);
-      listWord = await this.translateWords(listWord);
-      listWord = this.removeStopWords(listWord);
+      /**
+       * tokenize request
+       */
+      let words = this.inversify.tokenizeUsecase.execute(filename);
 
       /***
        * The list
        */
+      const currentTime = Date.now();
+      let from = 'cache';
       let fileList: any[];
       if (this.cachedFileList && currentTime - this.cachedFileList.timestamp < this.cacheTTL) {
         fileList = this.cachedFileList.files;
@@ -132,8 +50,14 @@ export class ImageService {
         };
       }
 
-      let mostAccurateFile = this.findMostAccurateFile(fileList, listWord);
+      /**
+       * find response
+       */
+      let mostAccurateFile = this.inversify.findMostAccurateFileUsecase.execute(fileList, words);
 
+      /**
+       * display response
+       */
       let filePath = 'not_found.jpg';
       if(mostAccurateFile) {
         inversify.loggerService.log(
@@ -175,7 +99,31 @@ export class ImageService {
 
       return image;
     } catch (error) {
+      console.log('ImageService', error.message);
       throw new Error('Image error processing image');
     }
+  }
+
+  // Fonction pour obtenir la liste des fichiers
+  getFileList = async (): Promise<any[]> => {
+    const files = fs.readdirSync(this.imagesPath);
+
+    let fileList = [];
+    for(let file of files) {
+      const fullPath = join(this.imagesPath, file);
+      const stats = fs.statSync(fullPath);
+
+      let listWord = this.inversify.tokenizeUsecase.execute(file);
+
+      fileList.push({
+        name: file,
+        words: listWord,
+        isDirectory: stats.isDirectory(),
+        size: stats.size,
+        lastModified: stats.mtime
+      });
+    }
+
+    return fileList;
   }
 }

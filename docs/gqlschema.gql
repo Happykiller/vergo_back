@@ -49,6 +49,8 @@ type PasskeyResolverModel {
 type SetModelResolver {
   rep: Float
   slugs: [String!]
+  ite: Float
+  weight: Float
   duration: Float
   rest: Float
   pause: Float
@@ -63,7 +65,16 @@ type WorkoutModelResolver {
 type TrainingModelResolver {
   id: String!
   slug: String!
+  gender: String
   workout: [WorkoutModelResolver!]!
+}
+
+type TrainingNormalizedResolverModel {
+  slugs: [String!]!
+  type: String!
+  duration: Float!
+  ite: Float
+  weight: Float
 }
 
 type LanguageModelResolver {
@@ -76,7 +87,7 @@ type ExerciceModelResolver {
   slug: String!
   title: [LanguageModelResolver!]!
   description: [LanguageModelResolver!]!
-  image: String!
+  image: String
 }
 
 type Query {
@@ -90,6 +101,8 @@ type Query {
   passkeys_for_user: [PasskeyResolverModel!]!
   exercices: [ExerciceModelResolver!]!
   trainings: [TrainingModelResolver!]!
+  training(dto: GetTrainingResolverDto!): TrainingModelResolver!
+  training_normalized(dto: GetTrainingResolverDto!): [TrainingNormalizedResolverModel!]!
 }
 
 input GetUserResolverDto {
@@ -112,6 +125,10 @@ input PasskeyAuthResolverDto {
   clientData: String!
   signature: String!
   userHandle: String!
+}
+
+input GetTrainingResolverDto {
+  id: String!
 }
 
 type Mutation {

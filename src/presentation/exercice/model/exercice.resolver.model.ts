@@ -18,6 +18,6 @@ export class ExerciceModelResolver {
   title: LanguageModelResolver[];
   @Field(() => [LanguageModelResolver])
   description: LanguageModelResolver[];
-  @Field(() => String)
-  image: string;
+  @Field(() => String, { nullable: true })
+  image?: string;
 }

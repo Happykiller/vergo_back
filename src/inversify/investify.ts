@@ -6,6 +6,7 @@ import { AuthUsecase } from '@usecase/auth/auth.usecase';
 import { ImageService } from '@service/image/image.service';
 import { CryptService } from '@service/crypt/crypt.service';
 import { EncodeService } from '@service/encode/encode.service';
+import { TokenizeUsecase } from '@usecase/ai/tokenize.usecase';
 import { GetUserUsecase } from '@usecase/user/get.user.usecase';
 import { BddServiceFake } from '@service/db/fake/db.service.fake';
 import { PasswordService } from '@service/password/password.service';
@@ -24,6 +25,7 @@ import { PasswordServiceReal } from '@service/password/password.service.real';
 import { DeletePasskeyUsecase } from '@usecase/passkey/delete.passkey.usecase';
 import { CreatePasskeyUsecase } from '@usecase/passkey/create.passkey.usecase';
 import { PasswordLessService } from '@service/passwordless/passwordless.service';
+import { FindMostAccurateFileUsecase } from '@usecase/ai/findMostAccurateFile.usecase';
 import { GetByUserIdPasskeyUsecase } from '@usecase/passkey/getByUserId.passkey.usecase';
 import { PasswordLessServiceFake } from '@service/passwordless/passwordless.service.fake';
 import { PasswordLessServiceReal } from '@service/passwordless/passwordlless.service.real';
@@ -39,6 +41,7 @@ export class Inversify {
   imageService: ImageService;
   encodeService: EncodeService;
   getUserUsecase: GetUserUsecase;
+  tokenizeUsecase: TokenizeUsecase;
   passwordService: PasswordService;
   getAllUserUsecase: GetAllUserUsecase;
   createUserUsecase: CreateUserUsecase;
@@ -51,6 +54,7 @@ export class Inversify {
   deletePasskeyUsecase: DeletePasskeyUsecase;
   createPasskeyUsecase: CreatePasskeyUsecase;
   getByUserIdPasskeyUsecase: GetByUserIdPasskeyUsecase;
+  findMostAccurateFileUsecase: FindMostAccurateFileUsecase;
   getNormalizedTrainingUsecase: GetNormalizedTrainingUsecase;
 
   constructor() {
@@ -60,7 +64,7 @@ export class Inversify {
     this.cryptService = new CryptServiceReal();
     this.encodeService = new EncodeServiceReal();
     this.passwordService = new PasswordServiceReal();
-    this.imageService = new ImageService();
+    this.imageService = new ImageService(this);
     if (config.env.mode === 'prod') {
       this.loggerService = logger;
       this.bddService = new BddServiceMongo() as BddService;
@@ -82,6 +86,7 @@ export class Inversify {
      */
     this.authUsecase = new AuthUsecase(this);
     this.getUserUsecase = new GetUserUsecase(this);
+    this.tokenizeUsecase = new TokenizeUsecase(this);
     this.getAllUserUsecase = new GetAllUserUsecase(this);
     this.createUserUsecase = new CreateUserUsecase(this);
     this.getTrainingUsecase = new GetTrainingUsecase(this);
@@ -92,6 +97,7 @@ export class Inversify {
     this.deletePasskeyUsecase = new DeletePasskeyUsecase(this);
     this.createPasskeyUsecase = new CreatePasskeyUsecase(this);
     this.getByUserIdPasskeyUsecase = new GetByUserIdPasskeyUsecase(this);
+    this.findMostAccurateFileUsecase = new FindMostAccurateFileUsecase(this);
     this.getNormalizedTrainingUsecase = new GetNormalizedTrainingUsecase(this);
   }
 }

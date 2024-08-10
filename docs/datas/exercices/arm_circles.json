@@ -1,6 +1,6 @@
 {
   "_id": ObjectId(),
-  "slug": "man_arm_circles",
+  "slug": "arm_circles",
   "title": [
     {
       "lang": "fr",
@@ -20,6 +20,5 @@
       "lang": "en",
       "value": "Stand with your arms extended to the sides at shoulder height. Make small circles with your arms, first in one direction and then in the other. This exercise helps to warm up and strengthen the shoulder muscles."
     }
-  ],
-  "image": "man-arm-circles.jpg"
+  ]
 }
