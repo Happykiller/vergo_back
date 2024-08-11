@@ -13,7 +13,7 @@ export class ImageService {
   private readonly inversify: Inversify;
   private readonly imagesPath = 'images/';
   private cachedFileList: CachedData | null = null;
-  private cacheTTL: number = 5 * 60 * 1000; // 5min * 60s * 1000 ms
+  private cacheTTL: number = 60 * 60 * 1000; // 5min * 60s * 1000 ms
 
   constructor(inversify: Inversify) {
     this.inversify = inversify;
@@ -62,7 +62,7 @@ export class ImageService {
       if(mostAccurateFile) {
         inversify.loggerService.log(
           'info',
-          `Successfully found '${mostAccurateFile.name}' (from ${from}) with accuracy:${mostAccurateFile.accuracy} for ${filename}`,
+          `Successfully found '${mostAccurateFile.name}' (from ${from}) for ${filename}`,
         );
         filePath = join(this.imagesPath, mostAccurateFile.name);
       } else {
@@ -99,7 +99,6 @@ export class ImageService {
 
       return image;
     } catch (error) {
-      console.log('ImageService', error.message);
       throw new Error('Image error processing image');
     }
   }

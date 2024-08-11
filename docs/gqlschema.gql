@@ -99,7 +99,7 @@ type Query {
   hello: HelloModelResolver!
   systemInfo: SystemInfoResolverModel!
   passkeys_for_user: [PasskeyResolverModel!]!
-  exercices: [ExerciceModelResolver!]!
+  exercices(dto: GetTrainingResolverDto!): [ExerciceModelResolver!]!
   trainings: [TrainingModelResolver!]!
   training(dto: GetTrainingResolverDto!): TrainingModelResolver!
   training_normalized(dto: GetTrainingResolverDto!): [TrainingNormalizedResolverModel!]!
