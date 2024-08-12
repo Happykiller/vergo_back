@@ -1,0 +1,24 @@
+{
+  "_id": ObjectId(),
+  "slug": "stretch_spinal_twist",
+  "title": [
+    {
+      "lang": "fr",
+      "value": "Étirement Torsion Spinale"
+    },
+    {
+      "lang": "en",
+      "value": "Stretch Spinal Twist"
+    }
+  ],
+  "description": [
+    {
+      "lang": "fr",
+      "value": "Cet exercice aide à étirer et à détendre les muscles du dos tout en améliorant la flexibilité de la colonne vertébrale. Asseyez-vous sur le sol avec les jambes étendues devant vous. Pliez le genou droit et placez le pied droit à l'extérieur du genou gauche. Tournez votre torse vers la droite, placez votre main gauche sur le genou droit et votre main droite derrière vous pour soutenir. Maintenez la position pendant 20 à 30 secondes, puis répétez de l'autre côté."
+    },
+    {
+      "lang": "en",
+      "value": "This exercise helps to stretch and relax the back muscles while improving spinal flexibility. Sit on the floor with your legs extended in front of you. Bend your right knee and place your right foot outside your left knee. Twist your torso to the right, placing your left hand on your right knee and your right hand behind you for support. Hold the position for 20 to 30 seconds, then repeat on the other side."
+    }
+  ]
+}

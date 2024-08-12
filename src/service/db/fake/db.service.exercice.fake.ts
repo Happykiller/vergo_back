@@ -8,7 +8,7 @@ export class BdbServiceExerciceFake
 {
   exerciceCollection: ExerciceDbModel[];
 
-  getUserCollection(): ExerciceDbModel[] {
+  getExerciceCollection(): ExerciceDbModel[] {
     if (!this.exerciceCollection) {
       this.exerciceCollection = [jumping_jacks];
     }
@@ -16,7 +16,7 @@ export class BdbServiceExerciceFake
   }
 
   getExercices(): Promise<ExerciceDbModel[]> {
-    return Promise.resolve(this.getUserCollection());
+    return Promise.resolve(this.getExerciceCollection());
   }
 
   getExercice(): Promise<ExerciceDbModel> {

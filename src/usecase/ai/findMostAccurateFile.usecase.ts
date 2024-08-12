@@ -2,11 +2,6 @@ import { Inversify } from '@src/inversify/investify';
 
 type CollectionItem = { words: string[] };
 
-interface ResultItem {
-  item: CollectionItem;
-  positions: number[];
-}
-
 export class FindMostAccurateFileUsecase {
   inversify: Inversify;
 
@@ -15,36 +10,138 @@ export class FindMostAccurateFileUsecase {
   }
 
   execute(collection: CollectionItem[], words: string[]): any  {
-    // Function to find the positions of matching subsequences respecting the order
-  const findMatchingSubsequencePositions = (itemWords: string[], words: string[]): number[] => {
-    let positions: number[] = [];
-    let j = 0;
+    try {
+      //console.log(words);
 
-    for (let i = 0; i < itemWords.length && j < words.length; i++) {
-      if (itemWords[i] === words[j]) {
-        positions.push(i);
-        j++;
+      // Function to find the positions of matching subsequences
+      const findMatchingSubsequencePositions = (itemWords: string[], words: string[]): number[] => {
+        let positions: number[] = [];
+
+        for(let word of words) {
+          const pos = itemWords.indexOf(word);
+          if(pos >= 0) {
+            positions.push(pos)
+          }
+        }
+
+        return positions;
+      };
+
+      const getResultWithMostPositions = (data: any[]): any[] => {
+        let maxPositions = 0;
+        let result: any[] = [];
+      
+        data.forEach(item => {
+          if (item.positions.length > maxPositions) {
+            maxPositions = item.positions.length;
+          }
+        });
+
+        data.forEach(item => {
+          if (item.positions.length === maxPositions) {
+            result.push({
+              ...item,
+              weight: item.positions.reduce((acc, curr) => acc + curr, 0)
+            });
+          }
+        });
+      
+        return result;
       }
+
+      const getResultWithWeight = (data: any[]): any[] => {
+        let min = 999;
+        let result: any[] = [];
+      
+        data.forEach(item => {
+          if (item.weight < min) {
+            min = item.weight;
+          }
+        });
+
+        data.forEach(item => {
+          if (item.weight === min) {
+            result.push(item);
+          }
+        });
+      
+        return result;
+      }
+
+      const getResultSmaller = (datas: any[]): any[] => {
+        let min = 999;
+        let result: any[] = [];
+      
+        datas.forEach(data => {
+          if (data.item.words.length < min) {
+            min = data.item.words.length;
+          }
+        });
+
+        datas.forEach(data => {
+          if (data.item.words.length === min) {
+            result.push(data);
+          }
+        });
+      
+        return result;
+      }
+
+      /**
+       * Collect the results with positions
+       */
+      let results: any[] = collection.map(item => {
+        return { item, positions: findMatchingSubsequencePositions(item.words, words) };
+      });
+
+      /*console.log('collect', results.filter(result => result.positions.length > 0).map(result => {
+        return {
+          words: result.item.words,
+          positions: result.positions
+        }
+      }))*/
+
+      /**
+       * Filter out results with max positions
+       */
+      results = getResultWithMostPositions(results.filter(result => result.positions.length > 0));
+
+      /*console.log('max match', results.map(result => {
+        return {
+          words: result.item.words,
+          positions: result.positions
+        }
+      }))*/
+
+      /**
+       * Get by min Weight
+       */  
+      results = getResultWithWeight(results);
+
+      /*console.log('sorting', results.map(result => {
+        return {
+          words: result.item.words,
+          positions: result.positions,
+          weight: result.weight
+        }
+      }))*/
+
+      /**
+       * Search smaller result
+       */
+      results = getResultSmaller(results);
+
+      /*console.log('sorting', results.map(result => {
+        return {
+          words: result.item.words,
+          positions: result.positions,
+          weight: result.weight
+        }
+      }))*/
+
+      return results[0]?.item;
+    } catch(ex) {
+      console.log(ex.message)
     }
-
-    return j === words.length ? positions : [];
-  };
-
-  // Collect the results with positions
-  let results: ResultItem[] = collection.map(item => {
-    return { item, positions: findMatchingSubsequencePositions(item.words, words) };
-  });
-
-  // Filter out results with no matching subsequences
-  results = results.filter(result => result.positions.length > 0);
-
-  // Sort results by the sum of positions
-  results.sort((a, b) => {
-    const sumA = a.positions.reduce((acc, pos) => acc + pos, 0);
-    const sumB = b.positions.reduce((acc, pos) => acc + pos, 0);
-    return sumA - sumB;
-  });
-
-    return results[0]?.item;
   }
 }

@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "warm_up_hip_circle",
+  "title": [
+    {
+      "lang": "fr",
+      "value": "Cercle de Hanche d'Échauffement"
+    },
+    {
+      "lang": "en",
+      "value": "Warm Up Hip Circle"
+    }
+  ],
+  "description": [
+    {
+      "lang": "fr",
+      "value": "Cet exercice aide à échauffer les hanches et à améliorer la mobilité des articulations. Tenez-vous debout, les pieds écartés à la largeur des épaules. Placez vos mains sur vos hanches et faites des cercles lents et contrôlés avec vos hanches dans le sens des aiguilles d'une montre. Après 10 à 15 cercles, changez de direction et faites des cercles dans le sens inverse des aiguilles d'une montre. Cet exercice peut être fait pendant 1 à 2 minutes."
+    },
+    {
+      "lang": "en",
+      "value": "This exercise helps to warm up the hips and improve joint mobility. Stand with your feet shoulder-width apart. Place your hands on your hips and make slow, controlled circles with your hips in a clockwise direction. After 10 to 15 circles, change direction and make circles counterclockwise. This exercise can be performed for 1 to 2 minutes."
+    }
+  ],
+  "image": ""
+}

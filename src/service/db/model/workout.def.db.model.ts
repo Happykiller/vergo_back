@@ -1,6 +1,6 @@
 import { LanguageDbModel } from "@service/db/model/language.db.model";
 
-export class ExerciceDbModel {
+export class WorkoutDefDbModel {
   id: string;
   slug: string;
   title: LanguageDbModel[];
