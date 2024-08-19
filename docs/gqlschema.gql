@@ -69,6 +69,11 @@ type TrainingModelResolver {
   workout: [WorkoutModelResolver!]!
 }
 
+type PaginatedTrainingsResolverModel {
+  nodes: [TrainingModelResolver!]
+  totalCount: Int!
+}
+
 type TrainingNormalizedResolverModel {
   slugs: [String!]!
   type: String!
@@ -101,6 +106,7 @@ type Query {
   passkeys_for_user: [PasskeyResolverModel!]!
   exercices(dto: GetTrainingResolverDto!): [ExerciceModelResolver!]!
   trainings: [TrainingModelResolver!]!
+  trainingsPaginated(offset: Int, limit: Int, orderBy: OrderResolverDto): PaginatedTrainingsResolverModel!
   training(dto: GetTrainingResolverDto!): TrainingModelResolver!
   training_normalized(dto: GetTrainingResolverDto!): [TrainingNormalizedResolverModel!]!
 }
@@ -129,6 +135,16 @@ input PasskeyAuthResolverDto {
 
 input GetTrainingResolverDto {
   id: String!
+}
+
+input OrderResolverDto {
+  field: String!
+  order: SortOrder!
+}
+
+enum SortOrder {
+  ASC
+  DESC
 }
 
 type Mutation {

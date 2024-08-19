@@ -18,6 +18,40 @@ Content-Type: application/json
 Authorization: Bearer {{token}}
 X-REQUEST-TYPE: GraphQL
 
+query trainingsPaginable {
+  trainingsPaginable {
+    nodes {
+      id
+      slug
+      gender
+    }
+    totalCount
+  }
+}
+
+###
+POST {{host}}/graphql
+Content-Type: application/json
+Authorization: Bearer {{token}}
+X-REQUEST-TYPE: GraphQL
+
+query trainingsPaginated {
+  trainingsPaginated(limit:2, orderBy: { field: "id", order: DESC }) {
+    nodes {
+      id
+      slug
+      gender
+    }
+    totalCount
+  }
+}
+
+###
+POST {{host}}/graphql
+Content-Type: application/json
+Authorization: Bearer {{token}}
+X-REQUEST-TYPE: GraphQL
+
 query {
   training_normalized (
     dto: {

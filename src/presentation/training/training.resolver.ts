@@ -3,6 +3,8 @@ import {
   Resolver,
   Query,
   Args,
+  Int,
+  ObjectType,
 } from '@nestjs/graphql';
 
 import { Inversify } from '@src/inversify/investify';
@@ -11,9 +13,12 @@ import { Roles } from '@presentation/guard/roles.decorator';
 import { RolesGuard } from '@presentation/guard/roles.guard';
 import { UserSession } from '@presentation/auth/jwt.strategy';
 import { GqlAuthGuard } from '@presentation/guard/gql.auth.guard';
+import { OrderResolverDto } from '@presentation/dto/order.resolver.dto';
 import { CurrentSession } from '@presentation/guard/userSession.decorator';
+import { TrainingUsecaseModel } from '@usecase/training/model/training.usecase.model';
 import { TrainingModelResolver } from '@presentation/training/model/training.resolver.model';
 import { GetTrainingResolverDto } from '@presentation/training/dto/get.training.resolver.dto';
+import { PaginatedTrainingsResolverModel } from '@presentation/training/model/pagined.trainings.resolver.model';
 import { TrainingNormalizedResolverModel } from '@presentation/training/model/training.normalized.resolver.model';
 
 /* eslint-disable @typescript-eslint/no-unused-vars */
@@ -32,6 +37,23 @@ export class TrainingResolver {
     @CurrentSession() session: UserSession,
   ): Promise<TrainingModelResolver[]> {
     return this.inversify.getTrainingsUsecase.execute();
+  }
+
+  @Roles(USER_ROLE.USER, USER_ROLE.ADMIN)
+  @UseGuards(GqlAuthGuard, RolesGuard)
+  /* eslint-disable @typescript-eslint/no-unused-vars */
+  @Query(() => PaginatedTrainingsResolverModel)
+  async trainingsPaginated(
+    @CurrentSession() session: UserSession,
+    @Args('offset', { type: () => Int, nullable: true }) offset = 1,
+    @Args('limit', { type: () => Int, nullable: true }) limit = 10,
+    @Args('orderBy', { type: () => OrderResolverDto, nullable: true }) orderBy?: OrderResolverDto,
+  ): Promise<PaginatedTrainingsResolverModel> {
+    const items:TrainingUsecaseModel[] = await this.inversify.getTrainingsUsecase.execute()
+    return {
+      nodes: items,
+      totalCount: items.length
+    };
   }
 
   @Roles(USER_ROLE.USER, USER_ROLE.ADMIN)
