@@ -1,13 +1,15 @@
 {
     "_id": ObjectId(),
-    "slug": "women_rope_lower_body_240807",
+    "slug": "women_rope_and_lower_body",
+    "gender": "woman",
+    "label": "Céline corde à sauter et le bas du corps",
     "workout": [
       {
         "slug": "warm-up",
         "sets": [
           {
             "slugs": [
-              "smalljumps"
+              "small_jumps"
             ],
             "rep": 1,
             "duration": 40,
@@ -24,7 +26,7 @@
           {
             "rep": 1,
             "slugs": [
-              "squat"
+              "bodyweight_squats"
             ],
             "duration": 40,
             "rest": 20
@@ -43,67 +45,69 @@
         "slug": "rope_lower_body",
         "sets": [
           {
-            "rep": 1,
-            "rest": 0,
-            "pause": 0,
+            "rep": 3,
+            "ite": 12,
+            "weight": 5,
+            "slugs": [
+              "squat_with_weight"
+            ],
+            "duration": 30,
+            "rest": 30
+          },
+          {
+            "rep": 3,
+            "ite": 12,
+            "weight": 5,
+            "slugs": [
+              "lunge_with_weight"
+            ],
+            "duration": 30,
+            "rest": 30
+          },
+          {
+            "rep": 3,
+            "slugs": [
+              "jump_rope"
+            ],
+            "duration": 30,
+            "rest": 30
+          },
+          {
+            "rep": 3,
+            "ite": 12,
+            "weight": 5,
+            "slugs": [
+              "half_bridge_with_weight"
+            ],
+            "duration": 30,
+            "rest": 30
+          },
+          {
+            "rep": 3,
+            "slugs": [
+              "lateral_leg_swing_with_elastic"
+            ],
             "sets": [
               {
-                "rep": 3,
-                "slugs": [
-                  "squat_5kg"
-                ],
-                "duration": 30,
-                "rest": 60
-              },
-              {
-                "rep": 3,
-                "slugs": [
-                  "reverse_lunge_5kg"
-                ],
-                "duration": 30,
-                "rest": 60
-              },
-              {
-                "rep": 1,
-                "slugs": [
-                  "jump_rope"
-                ],
-                "duration": 60,
-                "rest": 60
-              },
-              {
-                "rep": 3,
-                "slugs": [
-                  "bridge_5kg"
-                ],
-                "duration": 30,
-                "rest": 60
-              },
-              {
-                "rep": 3,
-                "slugs": [
-                  "elastic_left_leg"
-                ],
-                "duration": 15,
-                "rest": 20
-              },
-              {
-                "rep": 3,
-                "slugs": [
-                  "elastic_right_leg"
-                ],
-                "duration": 15,
-                "rest": 60
-              },
-              {
                 "rep": 2,
+                "ite": 12,
                 "slugs": [
-                  "woodblock_step_up"
+                  "left",
+                  "right"
                 ],
                 "duration": 30,
-                "rest": 60
+                "rest": 30
               }
             ]
+          },
+          {
+            "rep": 2,
+            "ite": 20,
+            "slugs": [
+              "step_up_knee_raise"
+            ],
+            "duration": 40,
+            "rest": 40
           }
         ]
       },

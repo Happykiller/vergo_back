@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "jump_rope",
+  "title": [
+      {
+          "lang": "fr",
+          "value": "Corde à Sauter"
+      },
+      {
+          "lang": "en",
+          "value": "Jump Rope"
+      }
+  ],
+  "description": [
+      {
+          "lang": "fr",
+          "value": "Tenez les poignées de la corde, pieds joints, et sautez en rythme tout en faisant tourner la corde sous vos pieds et au-dessus de votre tête. Maintenez une posture droite et une cadence régulière."
+      },
+      {
+          "lang": "en",
+          "value": "Hold the jump rope handles, keep your feet together, and jump in rhythm while swinging the rope under your feet and over your head. Maintain an upright posture and a steady pace."
+      }
+  ],
+  "image": "jump-rope.jpg"
+}

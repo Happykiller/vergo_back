@@ -1,6 +1,8 @@
 {
   "_id": ObjectId(),
-  "slug": "man_abdo_240807",
+  "slug": "man_abdo_home",
+  "gender": "man",
+  "label": "Fabrice abdo maison",
   "workout": [
     {
       "slug": "warm-up",
@@ -8,10 +10,10 @@
         {
           "rep": 4,
           "slugs": [
-            "man_trunk_rotations",
-            "man_high_knees",
-            "man_jumping_jacks",
-            "woman_hip_circles"
+            "spinal_twist",
+            "high_knees",
+            "jumping_jacks",
+            "hip_circles"
           ],
           "duration": 40,
           "rest": 20
@@ -26,7 +28,7 @@
           "duration": 60,
           "rest": 30,
           "slugs": [
-            "man_plank"
+            "plank"
           ]
         },
         {
@@ -36,7 +38,7 @@
           "ite": 20,
           "weight": 10,
           "slugs": [
-            "man_crunches_with_weight"
+            "crunches_with_weight"
           ]
         },
         {
@@ -45,7 +47,7 @@
           "rest": 30,
           "ite": 15,
           "slugs": [
-            "man_leg_raises"
+            "leg_raises"
           ]
         },
         {
@@ -55,7 +57,7 @@
           "ite": 20,
           "weight": 5,
           "slugs": [
-            "man_russian_twists_with_weight"
+            "russian_twists_with_weight"
           ]
         },
         {
@@ -64,7 +66,7 @@
           "rest": 30,
           "ite": 20,
           "slugs": [
-            "man_hip_raises"
+            "_hip_raises"
           ]
         },
         {
@@ -74,7 +76,7 @@
           "ite": 20,
           "weight": 5,
           "slugs": [
-            "man_sit-ups"
+            "sit-ups"
           ]
         },
         {
@@ -82,7 +84,7 @@
           "duration": 40,
           "rest": 20,
           "slugs": [
-            "man_montain_climbers"
+            "montain_climbers"
           ]
         }
       ]
@@ -95,13 +97,13 @@
           "duration": 40,
           "rest": 20,
           "slugs": [
-            "man_cat_strech"
+            "cat_strech"
           ]
         },
         {
           "rep": 1,
           "slugs": [
-            "man_oblique_stretch"
+            "oblique_stretch"
           ],
           "rest": 20,
           "sets": [
@@ -118,7 +120,7 @@
         {
           "rep": 1,
           "slugs": [
-            "man_hamstring_stretch"
+            "hamstring_stretch"
           ],
           "rest": 20,
           "sets": [
@@ -135,7 +137,7 @@
         {
           "rep": 1,
           "slugs": [
-            "man_child_s_pose"
+            "child_s_pose"
           ],
           "duration": 60
         }

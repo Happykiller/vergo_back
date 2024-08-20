@@ -395,35 +395,25 @@
   "exercise": {
     "english": {
       "base": "exercise",
-      "synonyms": [
-        "workout",
-        "training"
-      ],
+      "synonyms": [],
       "plural": "exercises",
       "singular": "exercise",
       "common_misspellings": [
         "exersice",
         "exercice"
       ],
-      "slang": [
-        "workout"
-      ]
+      "slang": []
     },
     "french": {
       "base": "exercice",
-      "synonyms": [
-        "entraînement",
-        "pratique"
-      ],
+      "synonyms": [],
       "plural": "exercices",
       "singular": "exercice",
       "common_misspellings": [
         "exercice",
         "exercie"
       ],
-      "slang": [
-        "entraînement"
-      ]
+      "slang": []
     }
   },
   "flat": {
@@ -1059,7 +1049,6 @@
     "english": {
       "base": "practice",
       "synonyms": [
-        "training",
         "exercise"
       ],
       "plural": "practices",
@@ -1075,7 +1064,6 @@
     "french": {
       "base": "pratique",
       "synonyms": [
-        "entraînement",
         "exercice"
       ],
       "plural": "pratiques",
@@ -1189,7 +1177,6 @@
       "plural": "toes",
       "singular": "toe",
       "common_misspellings": [
-        "to",
         "toee"
       ],
       "slang": [
@@ -1992,10 +1979,7 @@
   "turning": {
     "english": {
       "base": "turning",
-      "synonyms": [
-        "twisting",
-        "rotating"
-      ],
+      "synonyms": [],
       "plural": "turnings",
       "singular": "turning",
       "common_misspellings": [
@@ -2007,8 +1991,7 @@
     "french": {
       "base": "tournant",
       "synonyms": [
-        "tournage",
-        "rotation"
+        "tournage"
       ],
       "plural": "tournants",
       "singular": "tournant",
@@ -2024,7 +2007,8 @@
       "base": "rotation",
       "synonyms": [
         "turn",
-        "spin"
+        "spin",
+        "rotating"
       ],
       "plural": "rotations",
       "singular": "rotation",
@@ -2039,8 +2023,7 @@
     "french": {
       "base": "rotation",
       "synonyms": [
-        "tour",
-        "spinning"
+        "tour"
       ],
       "plural": "rotations",
       "singular": "rotation",
@@ -2340,8 +2323,7 @@
     "english": {
       "base": "yoga",
       "synonyms": [
-        "asana",
-        "practice"
+        "asana"
       ],
       "plural": "yogas",
       "singular": "yoga",
@@ -2354,8 +2336,7 @@
     "french": {
       "base": "yoga",
       "synonyms": [
-        "asana",
-        "pratique"
+        "asana"
       ],
       "plural": "yogas",
       "singular": "yoga",
@@ -2432,7 +2413,6 @@
     "english": {
       "base": "alternating",
       "synonyms": [
-        "rotating",
         "changing"
       ],
       "plural": "alternatings",
@@ -2446,7 +2426,6 @@
     "french": {
       "base": "alterné",
       "synonyms": [
-        "rotation",
         "changement"
       ],
       "plural": "alternés",
@@ -4049,8 +4028,7 @@
     "english": {
       "base": "practicing",
       "synonyms": [
-        "rehearsing",
-        "training"
+        "rehearsing"
       ],
       "plural": "practicings",
       "singular": "practicing",
@@ -4058,9 +4036,7 @@
         "practising",
         "practcing"
       ],
-      "slang": [
-        "training"
-      ]
+      "slang": []
     },
     "french": {
       "base": "pratiquant",
@@ -4297,8 +4273,7 @@
     "english": {
       "base": "single",
       "synonyms": [
-        "individual",
-        "one"
+        "individual"
       ],
       "plural": "singles",
       "singular": "single",
@@ -5479,8 +5454,7 @@
     "english": {
       "base": "deck",
       "synonyms": [
-        "platform",
-        "floor"
+        "platform"
       ],
       "plural": "decks",
       "singular": "deck",
@@ -13299,35 +13273,28 @@
   "workout": {
     "english": {
       "base": "workout",
-      "synonyms": [
-        "exercise",
-        "training"
-      ],
+      "synonyms": [],
       "plural": "workouts",
       "singular": "workout",
       "common_misspellings": [
         "workouut",
         "wokout"
       ],
-      "slang": [
-        "sesh"
-      ]
+      "slang": []
     },
     "french": {
-      "base": "entraînement",
+      "base": "session",
       "synonyms": [
-        "exercice",
         "séance"
       ],
-      "plural": "entraînements",
-      "singular": "entraînement",
+      "plural": "sessions",
+      "singular": "session",
       "common_misspellings": [
-        "entrainement",
-        "entraienement"
+        "seance",
+        "sèance",
+        "séanse"
       ],
-      "slang": [
-        "sesh"
-      ]
+      "slang": []
     }
   },
   "fitness": {
@@ -13499,35 +13466,25 @@
   "training": {
     "english": {
       "base": "training",
-      "synonyms": [
-        "practice",
-        "workout"
-      ],
+      "synonyms": [],
       "plural": "trainings",
       "singular": "training",
       "common_misspellings": [
         "traning",
         "trainingg"
       ],
-      "slang": [
-        "session"
-      ]
+      "slang": []
     },
     "french": {
       "base": "entraînement",
-      "synonyms": [
-        "pratique",
-        "exercice"
-      ],
+      "synonyms": [],
       "plural": "entraînements",
       "singular": "entraînement",
       "common_misspellings": [
         "entrainement",
         "entraienement"
       ],
-      "slang": [
-        "session"
-      ]
+      "slang": []
     }
   },
   "small": {
@@ -13910,40 +13867,6 @@
       ],
       "slang": [
         "action"
-      ]
-    }
-  },
-  "one": {
-    "english": {
-      "base": "one",
-      "synonyms": [
-        "single",
-        "unit"
-      ],
-      "plural": "ones",
-      "singular": "one",
-      "common_misspellings": [
-        "on",
-        "onne"
-      ],
-      "slang": [
-        "solo"
-      ]
-    },
-    "french": {
-      "base": "un",
-      "synonyms": [
-        "seul",
-        "unité"
-      ],
-      "plural": "uns",
-      "singular": "un",
-      "common_misspellings": [
-        "une",
-        "unn"
-      ],
-      "slang": [
-        "solo"
       ]
     }
   },
