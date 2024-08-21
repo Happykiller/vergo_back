@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "lateral_raises",
+  "title": [
+      {
+          "lang": "fr",
+          "value": "Élévations Latérales"
+      },
+      {
+          "lang": "en",
+          "value": "Lateral Raises"
+      }
+  ],
+  "description": [
+      {
+          "lang": "fr",
+          "value": "Debout, tenez une haltère dans chaque main, les bras le long du corps. Levez les bras sur les côtés jusqu'à ce qu'ils soient à la hauteur des épaules, en gardant une légère flexion des coudes. Redescendez lentement les bras à la position de départ. Maintenez le dos droit et engagez les abdominaux pendant tout le mouvement."
+      },
+      {
+          "lang": "en",
+          "value": "Stand upright, holding a dumbbell in each hand with your arms at your sides. Raise your arms out to the sides until they are at shoulder height, keeping a slight bend in your elbows. Slowly lower the weights back to the starting position. Keep your back straight and engage your core throughout the movement."
+      }
+  ],
+  "image": "lateral-raises.jpg"
+}

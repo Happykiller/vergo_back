@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "bicep_stretch",
+  "title": [
+      {
+          "lang": "fr",
+          "value": "Étirement des Biceps"
+      },
+      {
+          "lang": "en",
+          "value": "Bicep Stretch"
+      }
+  ],
+  "description": [
+      {
+          "lang": "fr",
+          "value": "Debout, tendez un bras sur le côté à hauteur d'épaule, avec la paume tournée vers l'avant. Tournez lentement votre torse dans la direction opposée à l'étirement, en gardant le bras tendu. Maintenez l'étirement pendant 20 à 30 secondes, puis changez de bras."
+      },
+      {
+          "lang": "en",
+          "value": "Stand upright, extend one arm out to the side at shoulder height with the palm facing forward. Slowly turn your torso in the opposite direction of the stretch while keeping your arm extended. Hold the stretch for 20 to 30 seconds, then switch arms."
+      }
+  ],
+  "image": "bicep-stretch"
+}

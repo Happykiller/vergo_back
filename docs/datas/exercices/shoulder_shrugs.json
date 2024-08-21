@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "shoulder_shrugs",
+  "title": [
+      {
+          "lang": "fr",
+          "value": "Haussements d'Épaules"
+      },
+      {
+          "lang": "en",
+          "value": "Shoulder Shrugs"
+      }
+  ],
+  "description": [
+      {
+          "lang": "fr",
+          "value": "Debout, tenez un haltère dans chaque main, les bras le long du corps. Haussez les épaules vers vos oreilles aussi haut que possible, en contractant les muscles trapèzes. Maintenez la position pendant une seconde, puis abaissez lentement les épaules à la position de départ. Gardez les bras droits tout au long du mouvement."
+      },
+      {
+          "lang": "en",
+          "value": "Stand upright, holding a dumbbell in each hand with your arms at your sides. Shrug your shoulders up towards your ears as high as possible, squeezing your trapezius muscles. Hold for a second, then slowly lower your shoulders back to the starting position. Keep your arms straight throughout the movement."
+      }
+  ],
+  "image": "shoulder-shrugs"
+}

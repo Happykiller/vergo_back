@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "dynamic_chest_stretch",
+  "title": [
+      {
+          "lang": "fr",
+          "value": "Étirement Dynamique de la Poitrine"
+      },
+      {
+          "lang": "en",
+          "value": "Dynamic Chest Stretch"
+      }
+  ],
+  "description": [
+      {
+          "lang": "fr",
+          "value": "Debout, les pieds écartés à la largeur des épaules, étendez vos bras sur les côtés à la hauteur des épaules. Faites de petits cercles vers l'arrière avec vos bras, en augmentant progressivement l'amplitude du mouvement. Après quelques secondes, changez de direction pour faire des cercles vers l'avant. Gardez le dos droit et les abdominaux engagés tout au long du mouvement."
+      },
+      {
+          "lang": "en",
+          "value": "Stand with your feet shoulder-width apart, extend your arms out to the sides at shoulder height. Begin making small circles backward with your arms, gradually increasing the range of motion. After a few seconds, reverse the direction and make circles forward. Keep your back straight and engage your core throughout the movement."
+      }
+  ],
+  "image": "dynamic-chest-stretch"
+}

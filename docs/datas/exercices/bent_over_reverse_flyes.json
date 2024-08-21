@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "bent_over_reverse_flyes",
+  "title": [
+      {
+          "lang": "fr",
+          "value": "Élévations Latérales Buste Penché"
+      },
+      {
+          "lang": "en",
+          "value": "Bent-Over Reverse Flyes"
+      }
+  ],
+  "description": [
+      {
+          "lang": "fr",
+          "value": "En position debout, penchez-vous en avant avec les genoux légèrement fléchis, un haltère dans chaque main, bras tendus vers le sol. Élevez les bras sur les côtés jusqu'à ce qu'ils soient à la hauteur des épaules, en gardant une légère flexion des coudes. Redescendez lentement à la position de départ. Gardez le dos droit et engagez les abdominaux pendant tout le mouvement."
+      },
+      {
+          "lang": "en",
+          "value": "Stand with your feet shoulder-width apart, bend over at the hips with a slight bend in your knees, holding a dumbbell in each hand, arms extended toward the floor. Raise your arms out to the sides until they are at shoulder height, keeping a slight bend in your elbows. Slowly lower the weights back to the starting position. Keep your back straight and engage your core throughout the movement."
+      }
+  ],
+  "image": "bent-over-reverse-flyes"
+}

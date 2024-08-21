@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "tricep_stretch",
+  "title": [
+      {
+          "lang": "fr",
+          "value": "Étirement des Triceps"
+      },
+      {
+          "lang": "en",
+          "value": "Tricep Stretch"
+      }
+  ],
+  "description": [
+      {
+          "lang": "fr",
+          "value": "Tenez-vous droit, levez un bras au-dessus de votre tête et pliez le coude pour que votre main touche l'arrière de votre épaule. Avec l'autre main, appuyez doucement sur le coude pour approfondir l'étirement. Maintenez cette position pendant 20 à 30 secondes, puis changez de bras."
+      },
+      {
+          "lang": "en",
+          "value": "Stand upright, raise one arm above your head and bend the elbow so that your hand touches the back of your shoulder. With the other hand, gently press on the elbow to deepen the stretch. Hold this position for 20 to 30 seconds, then switch arms."
+      }
+  ],
+  "image": "tricep-stretch"
+}

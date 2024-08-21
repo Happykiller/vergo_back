@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "bicep_curls",
+  "title": [
+      {
+          "lang": "fr",
+          "value": "Flexions des Biceps"
+      },
+      {
+          "lang": "en",
+          "value": "Bicep Curls"
+      }
+  ],
+  "description": [
+      {
+          "lang": "fr",
+          "value": "Debout, tenez un haltère dans chaque main avec les bras le long du corps et les paumes tournées vers l'avant. Fléchissez les coudes pour soulever les haltères jusqu'aux épaules, puis redescendez lentement à la position de départ. Gardez les coudes proches du corps tout au long du mouvement."
+      },
+      {
+          "lang": "en",
+          "value": "Stand upright, holding a dumbbell in each hand with your arms at your sides and palms facing forward. Curl the weights up towards your shoulders by bending your elbows, then slowly lower them back to the starting position. Keep your elbows close to your body throughout the movement."
+      }
+  ],
+  "image": "bicep-curls"
+}

@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "hammer_curls",
+  "title": [
+      {
+          "lang": "fr",
+          "value": "Flexions Marteau"
+      },
+      {
+          "lang": "en",
+          "value": "Hammer Curls"
+      }
+  ],
+  "description": [
+      {
+          "lang": "fr",
+          "value": "Debout, tenez un haltère dans chaque main avec les bras le long du corps et les paumes tournées l'une vers l'autre. Fléchissez les coudes pour soulever les haltères vers vos épaules, en gardant les poignets dans une position neutre. Redescendez lentement à la position de départ. Gardez les coudes proches du corps tout au long du mouvement."
+      },
+      {
+          "lang": "en",
+          "value": "Stand upright, holding a dumbbell in each hand with your arms at your sides and palms facing each other. Curl the weights towards your shoulders by bending your elbows, keeping your wrists in a neutral position. Slowly lower the weights back to the starting position. Keep your elbows close to your body throughout the movement."
+      }
+  ],
+  "image": "hammer-curls"
+}

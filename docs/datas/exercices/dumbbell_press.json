@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "dumbbell_press",
+  "title": [
+      {
+          "lang": "fr",
+          "value": "Développé avec Haltères"
+      },
+      {
+          "lang": "en",
+          "value": "Dumbbell Press"
+      }
+  ],
+  "description": [
+      {
+          "lang": "fr",
+          "value": "Allongez-vous sur un banc avec un haltère dans chaque main, les bras tendus vers le haut, au-dessus de la poitrine. Abaissez lentement les haltères de chaque côté de votre poitrine, puis poussez-les vers le haut pour revenir à la position de départ. Gardez les pieds à plat sur le sol et les coudes légèrement fléchis."
+      },
+      {
+          "lang": "en",
+          "value": "Lie on a bench with a dumbbell in each hand, arms extended straight up over your chest. Slowly lower the dumbbells to the sides of your chest, then press them back up to the starting position. Keep your feet flat on the floor and your elbows slightly bent."
+      }
+  ],
+  "image": "dumbbell-press"
+}

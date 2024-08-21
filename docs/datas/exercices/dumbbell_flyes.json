@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "dumbbell_flyes",
+  "title": [
+      {
+          "lang": "fr",
+          "value": "Écarté Couché avec Haltères"
+      },
+      {
+          "lang": "en",
+          "value": "Dumbbell Flyes"
+      }
+  ],
+  "description": [
+      {
+          "lang": "fr",
+          "value": "Allongez-vous sur un banc avec un haltère dans chaque main, les bras légèrement fléchis et tendus vers le haut, au-dessus de la poitrine. Abaissez lentement les haltères de chaque côté en écartant les bras, jusqu'à ce qu'ils soient à la hauteur des épaules. Ramenez ensuite les haltères à la position de départ en utilisant les muscles de la poitrine. Gardez une légère flexion des coudes tout au long du mouvement."
+      },
+      {
+          "lang": "en",
+          "value": "Lie on a bench with a dumbbell in each hand, arms slightly bent and extended straight up over your chest. Slowly lower the dumbbells out to the sides, keeping your arms extended, until they are at shoulder level. Bring the dumbbells back up to the starting position using your chest muscles. Keep a slight bend in your elbows throughout the movement."
+      }
+  ],
+  "image": "dumbbell-flyes"
+}

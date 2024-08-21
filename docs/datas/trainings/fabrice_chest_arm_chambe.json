@@ -1,6 +1,8 @@
 {
   "_id": ObjectId(),
-  "slug": "man_chest_arm_240806",
+  "slug": "fabrice_chest_arm_chambe",
+  "gender": "man",
+  "label": "Fabrice: Torse et Bras à Chambéry",
   "workout": [
     {
       "slug": "warm-up",
@@ -8,7 +10,7 @@
         {
           "rep": 4,
           "slugs": [
-            "man_jumping_jacks",
+            "jumping_jacks",
             "arm_circles",
             "dynamic_chest_stretch",
             "shoulder_shrugs"
@@ -24,6 +26,8 @@
       "sets": [
         {
           "rep": 3,
+          "ite": 12,
+          "weight": 12,
           "duration": 40,
           "rest": 60,
           "slugs": [
@@ -32,6 +36,8 @@
         },
         {
           "rep": 3,
+          "ite": 12,
+          "weight": 8,
           "duration": 40,
           "rest": 60,
           "slugs": [
@@ -40,6 +46,8 @@
         },
         {
           "rep": 3,
+          "ite": 12,
+          "weight": 6,
           "duration": 40,
           "rest": 60,
           "slugs": [
@@ -48,6 +56,8 @@
         },
         {
           "rep": 3,
+          "ite": 12,
+          "weight": 12,
           "duration": 40,
           "rest": 60,
           "slugs": [
@@ -56,6 +66,7 @@
         },
         {
           "rep": 3,
+          "ite": 12,
           "duration": 40,
           "rest": 60,
           "slugs": [
@@ -64,6 +75,8 @@
         },
         {
           "rep": 3,
+          "ite": 10,
+          "weight": 8,
           "duration": 40,
           "rest": 60,
           "slugs": [
@@ -72,10 +85,22 @@
         },
         {
           "rep": 3,
+          "ite": 12,
+          "weight": 18,
           "duration": 40,
           "rest": 60,
           "slugs": [
             "dumbbell_press"
+          ]
+        },
+        {
+          "rep": 3,
+          "ite": 12,
+          "weight": 10,
+          "duration": 40,
+          "rest": 60,
+          "slugs": [
+            "dumbbell_flyes"
           ]
         },
         {
@@ -94,7 +119,7 @@
         {
           "rep": 1,
           "slugs": [
-            "Chest Stretch"
+            "chest_stretch"
           ],
           "sets": [
             {

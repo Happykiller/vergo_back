@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "tricep_dips",
+  "title": [
+      {
+          "lang": "fr",
+          "value": "Dips pour Triceps"
+      },
+      {
+          "lang": "en",
+          "value": "Tricep Dips"
+      }
+  ],
+  "description": [
+      {
+          "lang": "fr",
+          "value": "Asseyez-vous sur le bord d'un banc, les mains posées de chaque côté des hanches. Avancez vos pieds pour que vos fesses soient suspendues devant le banc, puis pliez les coudes pour abaisser votre corps vers le sol. Poussez avec vos bras pour revenir à la position de départ. Gardez le dos près du banc tout au long du mouvement."
+      },
+      {
+          "lang": "en",
+          "value": "Sit on the edge of a bench with your hands placed on either side of your hips. Move your feet forward so your hips are suspended off the bench, then bend your elbows to lower your body towards the floor. Push through your arms to return to the starting position. Keep your back close to the bench throughout the movement."
+      }
+  ],
+  "image": "tricep-dips"
+}

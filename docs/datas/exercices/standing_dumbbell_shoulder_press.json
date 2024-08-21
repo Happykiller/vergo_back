@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "standing_dumbbell_shoulder_press",
+  "title": [
+      {
+          "lang": "fr",
+          "value": "Développé Militaire avec Haltères Debout"
+      },
+      {
+          "lang": "en",
+          "value": "Standing Dumbbell Shoulder Press"
+      }
+  ],
+  "description": [
+      {
+          "lang": "fr",
+          "value": "Debout, tenez une haltère dans chaque main à hauteur des épaules, paumes tournées vers l'avant. Poussez les haltères vers le haut jusqu'à ce que vos bras soient complètement étendus, puis redescendez lentement à la position de départ. Gardez le dos droit et engagez les abdominaux pendant tout le mouvement."
+      },
+      {
+          "lang": "en",
+          "value": "Stand upright, holding a dumbbell in each hand at shoulder height with palms facing forward. Press the dumbbells overhead until your arms are fully extended, then slowly lower them back to the starting position. Keep your back straight and engage your core throughout the movement."
+      }
+  ],
+  "image": "standing-dumbbell-shoulder-press.jpg"
+}

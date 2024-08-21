@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "chest_stretch",
+  "title": [
+      {
+          "lang": "fr",
+          "value": "Étirement de la Poitrine"
+      },
+      {
+          "lang": "en",
+          "value": "Chest Stretch"
+      }
+  ],
+  "description": [
+      {
+          "lang": "fr",
+          "value": "Tenez-vous droit, les pieds écartés à la largeur des épaules. Placez vos mains derrière votre dos et entrelacez vos doigts. Redressez les bras et soulevez doucement vos mains vers l'arrière tout en ouvrant votre poitrine. Maintenez l'étirement pendant 20 à 30 secondes, en respirant profondément."
+      },
+      {
+          "lang": "en",
+          "value": "Stand upright with your feet shoulder-width apart. Place your hands behind your back and interlace your fingers. Straighten your arms and gently lift your hands backward while opening up your chest. Hold the stretch for 20 to 30 seconds, breathing deeply."
+      }
+  ],
+  "image": "chest-stretch"
+}

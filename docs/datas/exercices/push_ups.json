@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "push_ups",
+  "title": [
+      {
+          "lang": "fr",
+          "value": "Pompes"
+      },
+      {
+          "lang": "en",
+          "value": "Push-Ups"
+      }
+  ],
+  "description": [
+      {
+          "lang": "fr",
+          "value": "Placez-vous en position de planche, les mains placées légèrement plus larges que la largeur des épaules. Pliez les coudes pour abaisser votre corps jusqu'à ce que votre poitrine touche presque le sol, puis poussez avec vos bras pour revenir à la position de départ. Gardez le corps aligné tout au long du mouvement."
+      },
+      {
+          "lang": "en",
+          "value": "Position yourself in a plank position with your hands slightly wider than shoulder-width apart. Bend your elbows to lower your body until your chest nearly touches the floor, then push through your arms to return to the starting position. Keep your body in a straight line throughout the movement."
+      }
+  ],
+  "image": "push-ups"
+}
