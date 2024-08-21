@@ -1,0 +1,24 @@
+{
+  "_id": ObjectId(),
+  "slug": "bank_jump",
+  "title": [
+      {
+          "lang": "fr",
+          "value": "Saut de Banc"
+      },
+      {
+          "lang": "en",
+          "value": "Bank Jump"
+      }
+  ],
+  "description": [
+      {
+          "lang": "fr",
+          "value": "Debout face à un banc, sautez avec les deux pieds dessus, puis redescendez de l'autre côté. Répétez le mouvement en sens inverse pour revenir à votre position de départ. Gardez le dos droit et engagez vos abdominaux tout au long du mouvement."
+      },
+      {
+          "lang": "en",
+          "value": "Stand facing a bench, jump onto it with both feet, then step or jump down to the other side. Repeat the movement in reverse to return to your starting position. Keep your back straight and engage your core throughout the movement."
+      }
+  ]
+}

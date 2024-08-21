@@ -1525,7 +1525,8 @@
       "base": "bench",
       "synonyms": [
         "seat",
-        "pew"
+        "pew",
+        "bank"
       ],
       "plural": "benches",
       "singular": "bench",
