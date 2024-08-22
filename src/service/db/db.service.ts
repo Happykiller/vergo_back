@@ -1,6 +1,7 @@
 import { UserDbModel } from '@service/db/model/user.db.model';
 import { GetUserDbDto } from '@service/db/dto/get.user.db.dto';
 import PasskeyDbModel from '@service/db/model/passkey.db.model';
+import GlossaryDbModel from '@service/db/model/glossary.db.model';
 import { CreateUserDbDto } from '@service/db/dto/create.user.db.dto';
 import { UpdateUserDbDto } from '@service/db/dto/update.user.db.dto';
 import { GetPasskeyDbDto } from '@service/db/dto/get.passkey.db.dto';
@@ -42,4 +43,8 @@ export interface BddService {
    * Workout
    */
   getWorkouts(): Promise<WorkoutDefDbModel[]>;
+  /**
+   * Glossary
+   */
+  getGlossary(): Promise<GlossaryDbModel>;
 }

@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "ischio_stretch",
+  "title": [
+      {
+          "lang": "fr",
+          "value": "Étirement des Ischio-Jambiers"
+      },
+      {
+          "lang": "en",
+          "value": "Hamstring Stretch"
+      }
+  ],
+  "description": [
+      {
+          "lang": "fr",
+          "value": "Debout, placez une jambe sur une surface surélevée (comme une chaise ou un banc), gardez la jambe droite, et penchez-vous en avant à partir des hanches pour atteindre votre pied. Maintenez la position pendant 20-30 secondes, puis changez de jambe."
+      },
+      {
+          "lang": "en",
+          "value": "Stand upright, place one leg on an elevated surface (like a chair or bench), keep the leg straight, and bend forward from the hips to reach your foot. Hold the position for 20-30 seconds, then switch legs."
+      }
+  ],
+  "image": "ischio-stretch"
+}

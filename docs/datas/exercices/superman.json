@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "superman",
+  "title": [
+      {
+          "lang": "fr",
+          "value": "Superman"
+      },
+      {
+          "lang": "en",
+          "value": "Superman"
+      }
+  ],
+  "description": [
+      {
+          "lang": "fr",
+          "value": "Allongé sur le ventre, levez simultanément vos bras et vos jambes aussi haut que possible, puis redescendez."
+      },
+      {
+          "lang": "en",
+          "value": "Lying on your stomach, lift your arms and legs simultaneously as high as possible, then lower them back down."
+      }
+  ],
+  "image": "superman"
+}

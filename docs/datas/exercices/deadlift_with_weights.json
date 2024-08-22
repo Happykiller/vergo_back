@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "deadlift_with_weights",
+  "title": [
+      {
+          "lang": "fr",
+          "value": "Deadlift avec Poids"
+      },
+      {
+          "lang": "en",
+          "value": "Deadlift with Weights"
+      }
+  ],
+  "description": [
+      {
+          "lang": "fr",
+          "value": "Tenez le poids devant vous, penchez-vous en avant en gardant le dos droit, puis revenez à la position debout."
+      },
+      {
+          "lang": "en",
+          "value": "Hold the weight in front of you, bend forward while keeping your back straight, then return to the standing position."
+      }
+  ],
+  "image": "deadlift-with-weights"
+}

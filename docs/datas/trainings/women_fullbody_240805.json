@@ -1,43 +1,42 @@
 {
   "_id": ObjectId(),
-  "slug": "women_fullbody_240805",
+  "slug": "women_fullbody_with_weight",
+  "gender": "woman",
+  "label": "Igballe: Renfocement complet avec poids",
   "workout": [
     {
       "slug": "warm-up",
       "sets": [
         {
           "slugs": [
-            "walk"
+            "warm_up_walk"
           ],
           "rep": 1,
-          "duration": 120,
-          "rest": 5
+          "duration": 60
         },
         {
           "rep": 1,
           "slugs": [
             "arm_circles"
           ],
-          "duration": 60,
-          "rest": 5
+          "duration": 60
         },
         {
           "rep": 1,
           "slugs": [
-            "hip_circles"
+            "warm_up_hip_circles"
           ],
-          "duration": 60,
-          "rest": 5
+          "duration": 60
         },
         {
           "rep": 1,
           "slugs": [
             "shoulder_strech"
           ],
-          "duration": 60,
-          "rest": 20
+          "duration": 60
         }
-      ]
+      ],
+      "pause": 20
     },
     {
       "slug": "fullbody",
@@ -48,16 +47,80 @@
           "pause": 60,
           "sets": [
             {
-              "rep": 8,
+              "rep": 1,
+              "weight": 5,
               "slugs": [
-                "squat_5kg",
-                "reverse_lunge_4kg",
-                "plank_row_2kg",
-                "military_press_5kg",
-                "side_plank",
-                "deadlift_10kg",
-                "bicep_curl_5kg",
-                "superwoman"
+                "squat_with_weight"
+              ],
+              "duration": 60,
+              "rest": 20
+            },
+            {
+              "rep": 1,
+              "weight": 2.5,
+              "slugs": [
+                "lunge_with_weight"
+              ],
+              "duration": 60,
+              "rest": 20
+            },
+            {
+              "rep": 1,
+              "weight": 2,
+              "slugs": [
+                "plank_row_with_weights"
+              ],
+              "duration": 60,
+              "rest": 20
+            },
+            {
+              "rep": 1,
+              "weight": 5,
+              "slugs": [
+                "standing_dumbbell_shoulder_press"
+              ],
+              "duration": 60,
+              "rest": 20
+            },
+            {
+              "rep": 1,
+              "slugs": [
+                "side_plank"
+              ],
+              "sets": [
+                {
+                  "rep": 2,
+                  "slugs": [
+                    "left",
+                    "right"
+                  ],
+                  "duration": 30
+                }
+              ],
+              "rest": 20
+            },
+            {
+              "rep": 1,
+              "weight": 10,
+              "slugs": [
+                "deadlift"
+              ],
+              "duration": 60,
+              "rest": 20
+            },
+            {
+              "rep": 1,
+              "weight": 5,
+              "slugs": [
+                "bicep_curl"
+              ],
+              "duration": 60,
+              "rest": 20
+            },
+            {
+              "rep": 1,
+              "slugs": [
+                "superman"
               ],
               "duration": 60,
               "rest": 20
@@ -74,21 +137,53 @@
           "slugs": [
             "shoulder_strech"
           ],
-          "duration": 60
+          "sets": [
+            {
+              "rep": 2,
+              "slugs": [
+                "left",
+                "right"
+              ],
+              "sets": [
+                {
+                  "rep": 3,
+                  "duration": 10
+                }
+              ]
+            }
+          ]
         },
         {
           "rep": 1,
           "slugs": [
             "quadriceps_stretch"
           ],
-          "duration": 60
+          "sets": [
+            {
+              "rep": 2,
+              "slugs": [
+                "left",
+                "right"
+              ],
+              "duration": 30
+            }
+          ]
         },
         {
           "rep": 1,
           "slugs": [
             "ischio_stretch"
           ],
-          "duration": 60
+          "sets": [
+            {
+              "rep": 2,
+              "slugs": [
+                "left",
+                "right"
+              ],
+              "duration": 30
+            }
+          ]
         },
         {
           "rep": 1,

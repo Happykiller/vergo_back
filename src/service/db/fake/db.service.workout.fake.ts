@@ -1,5 +1,5 @@
 import { BddService } from '@service/db/db.service';
-import { WorkoutDefDbModel } from '../model/workout.def.db.model';
+import { WorkoutDefDbModel } from '@service/db/model/workout.def.db.model';
 
 export class BdbServiceWorkoutFake
   implements

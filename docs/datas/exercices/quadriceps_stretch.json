@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "quadriceps_stretch",
+  "title": [
+      {
+          "lang": "fr",
+          "value": "Étirement des Quadriceps"
+      },
+      {
+          "lang": "en",
+          "value": "Quadriceps Stretch"
+      }
+  ],
+  "description": [
+      {
+          "lang": "fr",
+          "value": "Debout, attrapez votre pied derrière vous avec une main, en tirant doucement le talon vers vos fesses pour étirer l'avant de la cuisse. Maintenez la position pendant 20-30 secondes, puis changez de jambe."
+      },
+      {
+          "lang": "en",
+          "value": "Stand upright, grab your foot behind you with one hand, gently pulling your heel towards your buttocks to stretch the front of your thigh. Hold the position for 20-30 seconds, then switch legs."
+      }
+  ],
+  "image": "quadriceps-stretch"
+}

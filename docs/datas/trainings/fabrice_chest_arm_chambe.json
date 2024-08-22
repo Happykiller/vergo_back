@@ -41,7 +41,7 @@
           "duration": 40,
           "rest": 60,
           "slugs": [
-            "lateral_raises"
+            "lateral_raises_with_dumbbell"
           ]
         },
         {
@@ -51,7 +51,7 @@
           "duration": 40,
           "rest": 60,
           "slugs": [
-            "bent-over_reverse_flyes"
+            "bent-over_reverse_flyes_with_dumbbell"
           ]
         },
         {
@@ -61,7 +61,7 @@
           "duration": 40,
           "rest": 60,
           "slugs": [
-            "bicep_curls"
+            "bicep_curls_with_dumbbell"
           ]
         },
         {
@@ -77,36 +77,36 @@
           "rep": 3,
           "ite": 10,
           "weight": 8,
-          "duration": 40,
-          "rest": 60,
+          "duration": 60,
+          "rest": 40,
           "slugs": [
-            "hammer_curls"
+            "hammer_curls_with_dumbbell"
           ]
         },
         {
           "rep": 3,
           "ite": 12,
           "weight": 18,
-          "duration": 40,
-          "rest": 60,
+          "duration": 60,
+          "rest": 40,
           "slugs": [
-            "dumbbell_press"
+            "bench_dumbbell_press"
           ]
         },
         {
           "rep": 3,
           "ite": 12,
           "weight": 10,
-          "duration": 40,
-          "rest": 60,
+          "duration": 60,
+          "rest": 40,
           "slugs": [
-            "dumbbell_flyes"
+            "bench_dumbbell_flyes"
           ]
         },
         {
           "rep": 3,
           "duration": 40,
-          "rest": 60,
+          "rest": 40,
           "slugs": [
             "push-ups"
           ]

@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "warm_up_walk",
+  "title": [
+      {
+          "lang": "fr",
+          "value": "Marche d'Échauffement"
+      },
+      {
+          "lang": "en",
+          "value": "Warm Up Walk"
+      }
+  ],
+  "description": [
+      {
+          "lang": "fr",
+          "value": "Marchez à un rythme modéré pendant 5 à 10 minutes pour préparer votre corps à l'exercice. Concentrez-vous sur une respiration régulière et une bonne posture, en gardant les épaules détendues et les bras en mouvement naturel."
+      },
+      {
+          "lang": "en",
+          "value": "Walk at a moderate pace for 5 to 10 minutes to prepare your body for exercise. Focus on steady breathing and good posture, keeping your shoulders relaxed and your arms moving naturally."
+      }
+  ],
+  "image": "walking-cardio"
+}

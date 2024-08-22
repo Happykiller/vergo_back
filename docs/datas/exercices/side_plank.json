@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "side_plank",
+  "title": [
+      {
+          "lang": "fr",
+          "value": "Planche Latérale"
+      },
+      {
+          "lang": "en",
+          "value": "Side Plank"
+      }
+  ],
+  "description": [
+      {
+          "lang": "fr",
+          "value": "Allongez-vous sur le côté, en appui sur un avant-bras, l'autre bras le long du corps ou tendu vers le haut. Soulevez vos hanches pour former une ligne droite de la tête aux pieds. Maintenez cette position pendant 20 à 60 secondes, puis changez de côté."
+      },
+      {
+          "lang": "en",
+          "value": "Lie on your side, supporting your body with one forearm, with the other arm along your body or extended upwards. Lift your hips to form a straight line from your head to your feet. Hold this position for 20 to 60 seconds, then switch sides."
+      }
+  ],
+  "image": "side-plank"
+}

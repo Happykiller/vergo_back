@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "warm_up_hip_circles",
+  "title": [
+      {
+          "lang": "fr",
+          "value": "Cercle de Hanches d'Échauffement"
+      },
+      {
+          "lang": "en",
+          "value": "Warm Up Hip Circles"
+      }
+  ],
+  "description": [
+      {
+          "lang": "fr",
+          "value": "Tenez-vous droit avec les pieds écartés à la largeur des épaules. Placez vos mains sur vos hanches et effectuez des cercles lents et contrôlés avec vos hanches dans le sens des aiguilles d'une montre, puis dans le sens inverse. Répétez pendant 30 à 60 secondes pour chaque sens."
+      },
+      {
+          "lang": "en",
+          "value": "Stand upright with your feet shoulder-width apart. Place your hands on your hips and slowly rotate your hips in a controlled, circular motion clockwise, then counterclockwise. Repeat for 30 to 60 seconds in each direction."
+      }
+  ],
+  "image": "warm-up-hip-circles"
+}
