@@ -29,7 +29,7 @@ export class ExerciceResolver {
   @Query((returns) => [ExerciceModelResolver])
   async exercices (
     @CurrentSession() session: UserSession,
-    @Args('dto') dto?: GetTrainingResolverDto,
+    @Args('dto', { nullable: true }) dto?: GetTrainingResolverDto,
   ): Promise<ExerciceModelResolver[]> {
     return this.inversify.getExercicesUsecase.execute();
   }

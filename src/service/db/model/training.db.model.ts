@@ -1,6 +1,7 @@
 export interface TrainingDbModel {
   id: string;
   slug: string;
+  label?: string;
   gender?: string;
   workout: WorkoutDbModel[];
 }

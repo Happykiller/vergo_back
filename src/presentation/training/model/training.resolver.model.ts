@@ -36,6 +36,8 @@ export class TrainingModelResolver {
   slug: string;
   @Field(() => String, { nullable: true })
   gender?: string;
+  @Field(() => String, { nullable: true })
+  label?: string;
   @Field(() => [WorkoutModelResolver])
   workout: WorkoutModelResolver[];
 }
