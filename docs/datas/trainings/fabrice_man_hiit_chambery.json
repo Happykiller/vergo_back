@@ -1,6 +1,8 @@
 {
   "_id": ObjectId(),
-  "slug": "man_hiit_240804",
+  "slug": "fabrice_man_hiit_chambery",
+  "gender": "man",
+  "label": "Fabrice: HIIT Chambéry",
   "workout": [
     {
       "slug": "warm-up",

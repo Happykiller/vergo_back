@@ -1,8 +1,8 @@
 {
   "_id": ObjectId(),
-  "slug": "man_abdo_home",
+  "slug": "fabrice_man_abdo_home",
   "gender": "man",
-  "label": "Fabrice abdo maison",
+  "label": "Fabrice: abdo maison",
   "workout": [
     {
       "slug": "warm-up",

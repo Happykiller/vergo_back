@@ -1,6 +1,7 @@
 {
   "_id": ObjectId(),
   "slug": "training_test",
+  "label": "Programme de test",
   "gender": "woman",
   "workout": [
     {
@@ -9,6 +10,7 @@
         {
           "slugs": ["jumping_jack"],
           "rep": 1,
+          "ite": 42,
           "duration": 5,
           "rest": 6
         },
@@ -24,6 +26,16 @@
     {
       "slug": "workout",
       "sets": [
+        {
+          "rep": 3,
+          "ite": 12,
+          "weight": 12,
+          "duration": 6,
+          "rest": 4,
+          "slugs": [
+            "standing_dumbbell_shoulder_press"
+          ]
+        },
         {
           "rep": 4,
           "rest": 6,
