@@ -24,7 +24,7 @@ export class BddServiceTestMongo
       const user: CreateUserDbDto = {
         code: 'admin',
         password:
-          'uDLybl8FgPRbBicleIp/Hbb7ujedTr5gukZlcygGnYz4zyJsMAAdL0WEwxfwO6+1jI93qSR676s2QuyuKVD57w==',
+          'B5DicCkBcu6twsf95mosv5wfjrR9YeCBl/v26tHQDwQB1fwoNjzipo51R8+IuCUQ7yijXFSzktxaSR3+9LXqyA==',
         name_first: 'admin',
         name_last: 'admin',
         description: 'password avec le secret secretKey',

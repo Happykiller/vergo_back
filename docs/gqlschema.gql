@@ -66,6 +66,7 @@ type TrainingModelResolver {
   id: String!
   slug: String!
   gender: String
+  label: String
   workout: [WorkoutModelResolver!]!
 }
 
@@ -104,7 +105,7 @@ type Query {
   hello: HelloModelResolver!
   systemInfo: SystemInfoResolverModel!
   passkeys_for_user: [PasskeyResolverModel!]!
-  exercices(dto: GetTrainingResolverDto!): [ExerciceModelResolver!]!
+  exercices(dto: GetTrainingResolverDto): [ExerciceModelResolver!]!
   trainings: [TrainingModelResolver!]!
   trainingsPaginated(offset: Int, limit: Int, orderBy: OrderResolverDto): PaginatedTrainingsResolverModel!
   training(dto: GetTrainingResolverDto!): TrainingModelResolver!
