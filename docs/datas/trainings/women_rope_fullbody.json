@@ -1,6 +1,8 @@
 {
     "_id": ObjectId(),
-    "slug": "women_rope_fullbody_240807",
+    "slug": "women_rope_fullbody",
+    "gender": "woman",
+    "label": "Céline: Renfocement complet avec poids et corde",
     "workout": [
       {
         "slug": "warm-up",

@@ -1,6 +1,7 @@
 {
   "_id": ObjectId(),
-  "slug": "woman_tabata_240808",
+  "slug": "woman_tabata",
+  "label": "Tabata sans matériel",
   "gender": "woman",
   "workout": [
     {
