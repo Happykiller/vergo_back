@@ -141,7 +141,7 @@ export class FindMostAccurateFileUsecase {
 
       return results[0]?.item;
     } catch(ex) {
-      console.log(ex.message)
+      this.inversify.loggerService.error(ex.message);
     }
   }
 }

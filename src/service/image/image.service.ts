@@ -31,7 +31,7 @@ export class ImageService {
       /**
        * tokenize request
        */
-      let words = this.inversify.tokenizeUsecase.execute(filename);
+      let words = await this.inversify.tokenizeUsecase.execute(filename);
 
       /***
        * The list
@@ -112,7 +112,7 @@ export class ImageService {
       const fullPath = join(this.imagesPath, file);
       const stats = fs.statSync(fullPath);
 
-      let listWord = this.inversify.tokenizeUsecase.execute(file);
+      let listWord = await this.inversify.tokenizeUsecase.execute(file);
 
       fileList.push({
         name: file,
