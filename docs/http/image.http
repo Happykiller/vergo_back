@@ -1,2 +1,2 @@
 ###
-GET {{host}}/image/woman_step_up_knee_raise?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb2RlIjoiYWRtaW4iLCJpZCI6IjY2YjBiOGFkM2FjYmExMTdiMjdjNjA3YyIsImlhdCI6MTcyNDE1NDczMywiZXhwIjoxNzI0MTgzNTMzfQ.10G8hRod2pKb7CK6yvf7N2gyh9am7YyKV2m5MS1IiUg
+GET {{host}}/image/woman_step_up_knee_raise?token={{token}}
