@@ -19,6 +19,7 @@ import { LoggerServiceFake } from '@service/logger/logger.service.fake';
 import { EncodeServiceReal } from '@service/encode/encode.service.real';
 import { AuthPasskeyUsecase } from '@usecase/auth/passkey.auth.usecase';
 import { GetTrainingUsecase } from '@usecase/training/getTraining.usecase';
+import { GetGlossaryUsecase } from '@usecase/glossary/get.glossary.usecase';
 import { GetTrainingsUsecase } from '@usecase/training/getTrainings.usecase';
 import { GetExercicesUsecase } from '@usecase/exercice/getExercices.usecase';
 import { PasswordServiceReal } from '@service/password/password.service.real';
@@ -30,7 +31,6 @@ import { GetByUserIdPasskeyUsecase } from '@usecase/passkey/getByUserId.passkey.
 import { PasswordLessServiceFake } from '@service/passwordless/passwordless.service.fake';
 import { PasswordLessServiceReal } from '@service/passwordless/passwordlless.service.real';
 import { GetNormalizedTrainingUsecase } from '@usecase/training/getNormalized.training.usecase';
-
 
 export class Inversify {
   mongo: Db;
@@ -45,6 +45,7 @@ export class Inversify {
   passwordService: PasswordService;
   getAllUserUsecase: GetAllUserUsecase;
   createUserUsecase: CreateUserUsecase;
+  getGlossaryUsecase: GetGlossaryUsecase;
   getTrainingUsecase: GetTrainingUsecase;
   updPasswordUsecase: UpdPasswordUsecase;
   authPasskeyUsecase: AuthPasskeyUsecase;
@@ -92,6 +93,7 @@ export class Inversify {
     this.getTrainingUsecase = new GetTrainingUsecase(this);
     this.authPasskeyUsecase = new AuthPasskeyUsecase(this);
     this.updPasswordUsecase = new UpdPasswordUsecase(this);
+    this.getGlossaryUsecase = new GetGlossaryUsecase(this);
     this.getExercicesUsecase = new GetExercicesUsecase(this);
     this.getTrainingsUsecase = new GetTrainingsUsecase(this);
     this.deletePasskeyUsecase = new DeletePasskeyUsecase(this);

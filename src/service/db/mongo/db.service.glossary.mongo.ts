@@ -23,9 +23,9 @@ export class BdbServiceGlossaryMongo
     // Print returned documents
     for await (const doc of results) {
       const tmp: any = {
-        id: doc._id.toString(),
         ... doc
       };
+      delete tmp._id;
       response.push(tmp);
     }
 

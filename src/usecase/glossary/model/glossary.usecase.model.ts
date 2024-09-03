@@ -1,3 +1,3 @@
-import { WorkoutDefDbModel } from "@src/service/db/model/workout.def.db.model";
+import GlossaryDbModel from "@service/db/model/glossary.db.model";
 
-export interface WorkoutDefUsecaseModel extends WorkoutDefDbModel {}
+export interface GlossaryUsecaseModel extends GlossaryDbModel {}

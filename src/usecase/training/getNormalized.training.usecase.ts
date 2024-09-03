@@ -21,13 +21,13 @@ export class GetNormalizedTrainingUsecase {
       for(let exercice of exercices) {
         exercices_db.push({
           slug: exercice.slug,
-          words: this.inversify.tokenizeUsecase.execute(exercice.slug)
+          words: await this.inversify.tokenizeUsecase.execute(exercice.slug)
         })
       }
 
       const exercice_slugs_asked = this.getExercices(training);
       for(let exercice_slug_asked of exercice_slugs_asked) {
-        const words = this.inversify.tokenizeUsecase.execute(exercice_slug_asked);
+        const words:string[] = await this.inversify.tokenizeUsecase.execute(exercice_slug_asked);
         let resp = this.inversify.findMostAccurateFileUsecase.execute(exercices_db, words);
         if (resp) {
           this.mapping_slug[exercice_slug_asked] = resp.slug;

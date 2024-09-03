@@ -11,8 +11,6 @@ export class FindMostAccurateFileUsecase {
 
   execute(collection: CollectionItem[], words: string[]): any  {
     try {
-      //console.log(words);
-
       // Function to find the positions of matching subsequences
       const findMatchingSubsequencePositions = (itemWords: string[], words: string[]): number[] => {
         let positions: number[] = [];
@@ -91,57 +89,41 @@ export class FindMostAccurateFileUsecase {
        * Collect the results with positions
        */
       let results: any[] = collection.map(item => {
-        return { item, positions: findMatchingSubsequencePositions(item.words, words) };
+        return { 
+          item, 
+          positions: findMatchingSubsequencePositions(item.words, words) 
+        };
       });
 
-      /*console.log('collect', results.filter(result => result.positions.length > 0).map(result => {
-        return {
-          words: result.item.words,
-          positions: result.positions
-        }
-      }))*/
+      /**
+       * Calcul accurency
+       */
+      results = results.map(result => {
+        return { 
+          ... result,
+          accurency: result.positions.length / words.length,
+          wordsWeight: words.length / result.item.words.length
+        };
+      });
 
       /**
        * Filter out results with max positions
        */
       results = getResultWithMostPositions(results.filter(result => result.positions.length > 0));
 
-      /*console.log('max match', results.map(result => {
-        return {
-          words: result.item.words,
-          positions: result.positions
-        }
-      }))*/
-
       /**
        * Get by min Weight
        */  
       results = getResultWithWeight(results);
-
-      /*console.log('sorting', results.map(result => {
-        return {
-          words: result.item.words,
-          positions: result.positions,
-          weight: result.weight
-        }
-      }))*/
 
       /**
        * Search smaller result
        */
       results = getResultSmaller(results);
 
-      /*console.log('sorting', results.map(result => {
-        return {
-          words: result.item.words,
-          positions: result.positions,
-          weight: result.weight
-        }
-      }))*/
-
       return results[0]?.item;
     } catch(ex) {
-      console.log(ex.message)
+      this.inversify.loggerService.error(ex.message);
     }
   }
 }

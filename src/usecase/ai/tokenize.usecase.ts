@@ -25,17 +25,15 @@ class GlossaryEntry {
 
 export class TokenizeUsecase {
   inversify: Inversify;
-  glossary: { [key: string]: GlossaryEntry };
+  glossary: { [key: string]: GlossaryEntry } = null;
 
   constructor(inversify: Inversify) {
     this.inversify = inversify;
-
-    // Charger le glossary depuis le fichier JSON
-    this.glossary = this.loadGlossary('src/datas/glossary.json');
   }
 
-  execute(dto: string): string[] {
+  async execute(dto: string): Promise<string[]> {
     let response = [];
+    this.glossary = await this.inversify.getGlossaryUsecase.execute();
 
     dto = this.removeFileExtension(dto);
     dto = this.replaceTermsWithKeys(dto, this.glossary);
@@ -66,11 +64,6 @@ export class TokenizeUsecase {
     if (lastDotIndex === -1) return fileName; // Aucun point trouvé, retourner le nom original
   
     return fileName.substring(0, lastDotIndex);
-  }
-
-  loadGlossary(filePath: string): { [key: string]: GlossaryEntry } {
-    const data = readFileSync(filePath, 'utf-8');
-    return JSON.parse(data);
   }
   
   escapeRegExp(string: string): string {
