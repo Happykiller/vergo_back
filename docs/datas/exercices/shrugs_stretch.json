@@ -1,6 +1,6 @@
 {
   "_id": ObjectId(),
-  "slug": "shoulder_shrugs",
+  "slug": "shrugs_stretch",
   "title": [
       {
           "lang": "fr",
@@ -21,5 +21,5 @@
           "value": "Stand upright, holding a dumbbell in each hand with your arms at your sides. Shrug your shoulders up towards your ears as high as possible, squeezing your trapezius muscles. Hold for a second, then slowly lower your shoulders back to the starting position. Keep your arms straight throughout the movement."
       }
   ],
-  "image": "shoulder-shrugs"
+  "image": "shrugs_stretch"
 }
