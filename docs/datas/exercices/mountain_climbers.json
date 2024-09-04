@@ -2,16 +2,26 @@
   "_id": ObjectId(),
   "slug": "mountain_climbers",
   "title": [
-    {
-      "lang": "fr",
-      "value": "Mountain Climbers"
-    }
+      {
+          "lang": "fr",
+          "value": "Mountain climbers"
+      },
+      {
+          "lang": "en",
+          "value": "Mountain Climbers"
+      }
   ],
   "description": [
-    {
-      "lang": "fr",
-      "value": "En position de planche, alternez en ramenant vos genoux vers votre poitrine rapidement, comme si vous couriez."
-    }
+      {
+          "lang": "fr",
+          "value": "En position de planche haute, amenez alternativement un genou vers la poitrine en maintenant un rythme rapide."
+      },
+      {
+          "lang": "en",
+          "value": "In a high plank position, alternately bring one knee towards your chest while maintaining a fast pace."
+      }
   ],
-  "image": "mountain_climbers.jpg"
+  "sets": 3,
+  "duration_per_set": "30 seconds",
+  "image": "mountain-climbers"
 }

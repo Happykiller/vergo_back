@@ -1,0 +1,27 @@
+{
+  "_id": ObjectId(),
+  "slug": "leg_raises",
+  "title": [
+      {
+          "lang": "fr",
+          "value": "Relevés de jambes au sol"
+      },
+      {
+          "lang": "en",
+          "value": "Leg Raises"
+      }
+  ],
+  "description": [
+      {
+          "lang": "fr",
+          "value": "Allongé sur le dos, bras le long du corps. Levez vos jambes droites vers le plafond, puis redescendez-les lentement sans toucher le sol pour engager vos abdominaux inférieurs."
+      },
+      {
+          "lang": "en",
+          "value": "Lie on your back with arms along your sides. Lift your straight legs towards the ceiling, then slowly lower them without touching the ground to engage your lower abs."
+      }
+  ],
+  "sets": 3,
+  "reps_per_set": 15,
+  "image": "leg-raises"
+}

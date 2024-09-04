@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "lying_leg_raises",
+  "title": [
+      {
+          "lang": "fr",
+          "value": "Relevés de jambes allongé"
+      },
+      {
+          "lang": "en",
+          "value": "Lying Leg Raises"
+      }
+  ],
+  "description": [
+      {
+          "lang": "fr",
+          "value": "Allongé sur le dos, bras le long du corps, levez les jambes tendues vers le plafond en contractant les abdominaux. Redescendez-les lentement sans toucher le sol."
+      },
+      {
+          "lang": "en",
+          "value": "Lie on your back with arms along your sides, raise your legs straight towards the ceiling by contracting your abs. Slowly lower them without touching the ground."
+      }
+  ],
+  "image": "lying-leg-raises"
+}

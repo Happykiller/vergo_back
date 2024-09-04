@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "reverse_crunches",
+  "title": [
+      {
+          "lang": "fr",
+          "value": "Crunchs inversés"
+      },
+      {
+          "lang": "en",
+          "value": "Reverse Crunches"
+      }
+  ],
+  "description": [
+      {
+          "lang": "fr",
+          "value": "Allongé sur le dos, bras le long du corps, ramenez vos genoux vers votre poitrine en soulevant légèrement les hanches du sol. Contrôlez la descente."
+      },
+      {
+          "lang": "en",
+          "value": "Lie on your back with arms along your sides, bring your knees towards your chest while slightly lifting your hips off the ground. Control the descent."
+      }
+  ],
+  "image": "reverse-crunches"
+}

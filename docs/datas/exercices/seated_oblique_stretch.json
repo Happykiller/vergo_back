@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "seated_oblique_stretch",
+  "title": [
+      {
+          "lang": "fr",
+          "value": "Étirement des obliques en position assise"
+      },
+      {
+          "lang": "en",
+          "value": "Seated Oblique Stretch"
+      }
+  ],
+  "description": [
+      {
+          "lang": "fr",
+          "value": "Assis, jambes croisées, levez un bras et inclinez votre buste sur le côté pour étirer vos obliques."
+      },
+      {
+          "lang": "en",
+          "value": "Seated with legs crossed, raise one arm and lean your torso to the side to stretch your obliques."
+      }
+  ],
+  "image": "seated-oblique-stretch"
+}

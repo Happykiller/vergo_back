@@ -1,0 +1,27 @@
+{
+  "_id": ObjectId(),
+  "slug": "crunches",
+  "title": [
+      {
+          "lang": "fr",
+          "value": "Crunchs classiques"
+      },
+      {
+          "lang": "en",
+          "value": "Crunches"
+      }
+  ],
+  "description": [
+      {
+          "lang": "fr",
+          "value": "Allongé sur le dos, genoux fléchis, soulevez vos épaules du sol en contractant vos abdominaux."
+      },
+      {
+          "lang": "en",
+          "value": "Lie on your back with your knees bent, lift your shoulders off the ground by contracting your abdominal muscles."
+      }
+  ],
+  "sets": 3,
+  "reps_per_set": 20,
+  "image": "crunches"
+}

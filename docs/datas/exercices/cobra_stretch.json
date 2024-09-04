@@ -1,0 +1,26 @@
+{
+  "_id": ObjectId(),
+  "slug": "cobra_stretch",
+  "title": [
+      {
+          "lang": "fr",
+          "value": "Étirement du cobra"
+      },
+      {
+          "lang": "en",
+          "value": "Cobra Stretch"
+      }
+  ],
+  "description": [
+      {
+          "lang": "fr",
+          "value": "Allongé sur le ventre, placez vos mains sous vos épaules et poussez vers le haut pour étirer les abdominaux, en gardant les hanches au sol."
+      },
+      {
+          "lang": "en",
+          "value": "Lying on your stomach, place your hands under your shoulders and push up to stretch your abdominals, keeping your hips on the ground."
+      }
+  ],
+  "duration": "1 minute",
+  "image": "cobra-stretch"
+}

@@ -1,0 +1,27 @@
+{
+  "_id": ObjectId(),
+  "slug": "bicycle_crunches",
+  "title": [
+      {
+          "lang": "fr",
+          "value": "Crunchs obliques"
+      },
+      {
+          "lang": "en",
+          "value": "Bicycle Crunches"
+      }
+  ],
+  "description": [
+      {
+          "lang": "fr",
+          "value": "Allongé sur le dos, ramenez votre coude gauche vers votre genou droit tout en étendant la jambe opposée. Alternez les côtés."
+      },
+      {
+          "lang": "en",
+          "value": "Lie on your back, bring your left elbow towards your right knee while extending the opposite leg. Alternate sides."
+      }
+  ],
+  "sets": 3,
+  "reps_per_set": 20,
+  "image": "bicycle-crunches"
+}

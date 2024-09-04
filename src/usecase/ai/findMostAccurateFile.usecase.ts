@@ -1,5 +1,5 @@
+import { ERRORS } from '@src/common/ERROR';
 import { Inversify } from '@src/inversify/investify';
-import { ERRORS } from '../../common/ERROR';
 
 type CollectionItem = { words: string[] };
 

@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "torso_twists",
+  "title": [
+      {
+          "lang": "fr",
+          "value": "Torsions du buste"
+      },
+      {
+          "lang": "en",
+          "value": "Torso Twists"
+      }
+  ],
+  "description": [
+      {
+          "lang": "fr",
+          "value": "Debout, jambes légèrement fléchies, faites des torsions contrôlées à gauche puis à droite avec les bras à hauteur de poitrine."
+      },
+      {
+          "lang": "en",
+          "value": "Stand upright with knees slightly bent, and perform controlled twists to the left and right with your arms at chest height."
+      }
+  ],
+  "image": "torso-twists"
+}

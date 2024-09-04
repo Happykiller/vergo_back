@@ -1,0 +1,144 @@
+{
+  "_id": ObjectId(),
+  "slug": "fabrice_abdo_chambery",
+  "gender": "man",
+  "label": "Fabrice: Ceinture abdos Chambéry",
+  "workout": [
+    {
+      "slug": "warm-up",
+      "sets": [
+        {
+          "rep": 3,
+          "slugs": [
+            "jump_rope",
+            "warm_up_hip_circles",
+            "torso_twists"
+          ],
+          "duration": 40,
+          "rest": 20,
+          "pause": 60
+        }
+      ]
+    }, 
+    {
+      "slug": "renfo_abdo_sup",
+      "sets": [
+        {
+          "rep": 3,
+          "slugs": [
+            "crunches"
+          ],
+          "ite": 20,
+          "duration": 30,
+          "rest": 30
+        },
+        {
+          "rep": 3,
+          "slugs": [
+            "lying_leg_raises"
+          ],
+          "ite": 12,
+          "duration": 40,
+          "rest": 40
+        },
+        {
+          "rep": 3,
+          "slugs": [
+            "reverse_crunches"
+          ],
+          "ite": 15,
+          "duration": 30,
+          "rest": 30
+        }
+      ]
+    }, 
+    {
+      "slug": "renfo_abdo_inf",
+      "sets": [
+        {
+          "rep": 3,
+          "slugs": [
+            "leg_raises"
+          ],
+          "ite": 15,
+          "duration": 40,
+          "rest": 40
+        },
+        {
+          "rep": 3,
+          "slugs": [
+            "plank_with_leg_lifts"
+          ],
+          "duration": 30,
+          "rest": 30
+        },
+        {
+          "rep": 3,
+          "slugs": [
+            "mountain_climbers"
+          ],
+          "duration": 30,
+          "rest": 30
+        }
+      ]
+    }, 
+    {
+      "slug": "renfo_abdo_oblic",
+      "sets": [
+        {
+          "rep": 3,
+          "slugs": [
+            "bicycle_crunches"
+          ],
+          "ite": 20,
+          "duration": 30,
+          "rest": 30
+        },
+        {
+          "rep": 3,
+          "slugs": [
+            "russian_twists_with_weight"
+          ],
+          "ite": 16,
+          "weight": 4,
+          "duration": 40,
+          "rest": 40
+        },
+        {
+          "rep": 3,
+          "slugs": [
+            "side_plank"
+          ],
+          "duration": 60,
+          "rest": 30
+        }
+      ]
+    }, 
+    {
+      "slug": "cooldown",
+      "sets": [
+        {
+          "rep": 1,
+          "slugs": [
+            "cobra_stretch"
+          ],
+          "duration": 60
+        },
+        {
+          "rep": 1,
+          "slugs": [
+            "seated_oblique_stretch"
+          ],
+          "duration": 60
+        },
+        {
+          "rep": 1,
+          "slugs": [
+            "child_s_pose"
+          ],
+          "duration": 60
+        }
+      ]
+    }
+  ]
+}

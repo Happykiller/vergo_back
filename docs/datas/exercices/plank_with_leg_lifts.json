@@ -1,0 +1,27 @@
+{
+  "_id": ObjectId(),
+  "slug": "plank_with_leg_lifts",
+  "title": [
+      {
+          "lang": "fr",
+          "value": "Planche avec lever de jambes"
+      },
+      {
+          "lang": "en",
+          "value": "Plank with Leg Lifts"
+      }
+  ],
+  "description": [
+      {
+          "lang": "fr",
+          "value": "En position de planche classique, soulevez une jambe vers l’arrière tout en maintenant une contraction abdominale. Alternez les jambes à chaque série."
+      },
+      {
+          "lang": "en",
+          "value": "In a standard plank position, lift one leg towards the back while maintaining core engagement. Alternate legs with each set."
+      }
+  ],
+  "sets": 3,
+  "duration_per_set": "30 seconds",
+  "image": "plank-with-leg-lifts"
+}
