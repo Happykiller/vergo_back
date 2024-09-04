@@ -51,7 +51,7 @@ export class TokenizeUsecase {
   // Fonction pour retirer les stopwords d'une liste de mots
   removeStopWords(words: string[]): string[] {
     let wordsToRemove: string[] = ['up'];
-    let wordsToAdd: string[] = ['doing', 'doign', 'working', 'view', 'illustration', 'vector', 'praticing', 'background', 'white', 'exercise', 'flat'];
+    let wordsToAdd: string[] = ['doing', 'doign', 'working', 'view', 'illustration', 'vector', 'praticing', 'background', 'white', 'exercise', 'flat', 'nw'];
 
     let filteredWords = eng.filter(word => !wordsToRemove.includes(word));
     filteredWords = filteredWords.concat(wordsToAdd);

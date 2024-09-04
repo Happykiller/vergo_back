@@ -134,7 +134,7 @@ export class FindMostAccurateFileUsecase {
         throw new Error(ERRORS.AI_FIND_INSUFFISANT_ACCURACY);
       }
 
-      console.log(results[0])
+      //console.log(results[0])
 
       const response = results[0]?.item;
 

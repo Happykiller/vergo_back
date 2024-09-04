@@ -13,7 +13,7 @@ export class ImageService {
   private readonly inversify: Inversify;
   private readonly imagesPath = 'images/';
   private cachedFileList: CachedData | null = null;
-  private cacheTTL: number = 60 * 60 * 1000; // 5min * 60s * 1000 ms
+  private cacheTTL: number = 60 * 60 * 1000; // 60min * 60s * 1000 ms
 
   constructor(inversify: Inversify) {
     this.inversify = inversify;
