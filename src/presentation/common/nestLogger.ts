@@ -1,6 +1,6 @@
 import { LoggerService } from '@nestjs/common';
 
-import { logger } from '../../common/logger/logger';
+import { logger } from '@src/common/logger/logger';
 
 export class NestLogger implements LoggerService {
   log(message: string): void {

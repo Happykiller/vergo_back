@@ -3,8 +3,7 @@ import {
   Resolver,
   Query,
   Args,
-  Int,
-  ObjectType,
+  Int
 } from '@nestjs/graphql';
 
 import { Inversify } from '@src/inversify/investify';

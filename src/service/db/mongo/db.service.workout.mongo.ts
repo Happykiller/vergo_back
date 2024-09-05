@@ -26,6 +26,7 @@ export class BdbServiceWorkoutMongo
         id: doc._id.toString(),
         ... doc
       };
+      delete tmp._id;
       response.push(tmp);
     }
 

@@ -1,6 +1,5 @@
-import { readFileSync } from 'fs';
 import * as pluralize from 'pluralize';
-import { eng, removeStopwords } from 'stopword';
+import { fra, eng, removeStopwords } from 'stopword';
 
 import { Inversify } from '@src/inversify/investify';
 
@@ -50,11 +49,15 @@ export class TokenizeUsecase {
   
   // Fonction pour retirer les stopwords d'une liste de mots
   removeStopWords(words: string[]): string[] {
-    let wordsToRemove: string[] = ['up'];
-    let wordsToAdd: string[] = ['doing', 'doign', 'working', 'view', 'illustration', 'vector', 'praticing', 'background', 'white', 'exercise', 'flat', 'nw'];
+    let wordsEnToRemove: string[] = ['up'];
+    let wordsEnToAdd: string[] = ['doing', 'doign', 'working', 'view', 'illustration', 'vector', 'praticing', 'background', 'white', 'exercise', 'flat', 'nw', 'null'];
 
-    let filteredWords = eng.filter(word => !wordsToRemove.includes(word));
-    filteredWords = filteredWords.concat(wordsToAdd);
+    let wordsFrToRemove: string[] = [];
+    let wordsFrToAdd: string[] = [];
+
+    let filteredEnWords = eng.filter(word => !wordsEnToRemove.includes(word));
+    let filteredFrWords = fra.filter(word => !wordsFrToRemove.includes(word));
+    let filteredWords = filteredEnWords.concat(wordsEnToAdd).concat(filteredFrWords).concat(wordsFrToAdd);
 
     return removeStopwords(words, filteredWords);
   }

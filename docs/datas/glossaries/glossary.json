@@ -6367,34 +6367,6 @@
       ]
     }
   },
-  "pada": {
-    "english": {
-      "base": "pada",
-      "synonyms": [
-        "foot"
-      ],
-      "plural": "padas",
-      "singular": "pada",
-      "common_misspellings": [
-        "pda",
-        "padaa"
-      ],
-      "slang": []
-    },
-    "french": {
-      "base": "pada",
-      "synonyms": [
-        "pied"
-      ],
-      "plural": "padas",
-      "singular": "pada",
-      "common_misspellings": [
-        "pda",
-        "padaa"
-      ],
-      "slang": []
-    }
-  },
   "mukta": {
     "english": {
       "base": "mukta",
@@ -7176,7 +7148,6 @@
     "english": {
       "base": "heel",
       "synonyms": [
-        "foot",
         "hindfoot"
       ],
       "plural": "heels",
@@ -7186,13 +7157,11 @@
         "heel"
       ],
       "slang": [
-        "foot"
       ]
     },
     "french": {
       "base": "talon",
       "synonyms": [
-        "pied",
         "arrière-pied"
       ],
       "plural": "talons",
@@ -7202,7 +7171,6 @@
         "talonn"
       ],
       "slang": [
-        "pied"
       ]
     }
   },
@@ -9756,8 +9724,7 @@
     "english": {
       "base": "fallen",
       "synonyms": [
-        "dropped",
-        "down"
+        "dropped"
       ],
       "plural": "fallens",
       "singular": "fallen",

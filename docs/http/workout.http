@@ -1,0 +1,62 @@
+###
+POST {{host}}/graphql
+Content-Type: application/json
+Authorization: Bearer {{token}}
+X-REQUEST-TYPE: GraphQL
+
+query workouts {
+  workouts (
+    limit: 5
+    order_by: {
+      field: "slug"
+      order: DESC
+    }
+  ) {
+    count
+    nodes {
+      id
+      slug
+      title {
+        lang
+        value
+      }
+      description {
+        lang
+        value
+      }
+      image
+    }
+  }
+}
+
+###
+POST {{host}}/graphql
+Content-Type: application/json
+Authorization: Bearer {{token}}
+X-REQUEST-TYPE: GraphQL
+
+query searchWorkoutsPaginated {
+  searchWorkoutsPaginated (
+    dto: {
+      workouts_slug: ["hiit pour les pied", "tabata pour fabrice"]
+    }
+  ) {
+    count
+    nodes {
+      search
+      found {
+        id
+        slug
+        title {
+          lang
+          value
+        }
+        description {
+          lang
+          value
+        }
+        image
+      }
+    }
+  }
+}
