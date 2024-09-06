@@ -38,7 +38,7 @@ X-REQUEST-TYPE: GraphQL
 query searchWorkoutsPaginated {
   searchWorkoutsPaginated (
     dto: {
-      workouts_slug: ["hiit pour les pied", "tabata pour fabrice"]
+      workouts_slug: ["warm-up", "workout", "cooldown"]
     }
   ) {
     count

@@ -6,7 +6,7 @@ import { WorkoutDefModelResolver } from '@presentation/workout/model/workout.def
 export class SearchWorkoutsPaginatedNodeResolverModel {
   @Field(() => String)
   search: string
-  @Field(() => WorkoutDefModelResolver)
+  @Field(() => WorkoutDefModelResolver, { nullable: true })
   found: WorkoutDefModelResolver
 }
 

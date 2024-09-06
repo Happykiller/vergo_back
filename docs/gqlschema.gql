@@ -36,6 +36,42 @@ type SystemInfoResolverModel {
   version: String!
 }
 
+type LanguageModelResolver {
+  lang: String!
+  value: String!
+}
+
+type ExerciceModelResolver {
+  id: String!
+  slug: String!
+  title: [LanguageModelResolver!]!
+  description: [LanguageModelResolver!]!
+  image: String
+}
+
+type WorkoutDefModelResolver {
+  id: String!
+  slug: String!
+  title: [LanguageModelResolver!]!
+  description: [LanguageModelResolver!]!
+  image: String
+}
+
+type WorkoutsPaginatedResolverModel {
+  count: Float!
+  nodes: [WorkoutDefModelResolver!]!
+}
+
+type SearchWorkoutsPaginatedNodeResolverModel {
+  search: String!
+  found: WorkoutDefModelResolver!
+}
+
+type SearchWorkoutsPaginatedResolverModel {
+  count: Float!
+  nodes: [SearchWorkoutsPaginatedNodeResolverModel!]!
+}
+
 type PasskeyResolverModel {
   id: String!
   label: String!
@@ -83,19 +119,6 @@ type TrainingNormalizedResolverModel {
   weight: Float
 }
 
-type LanguageModelResolver {
-  lang: String!
-  value: String!
-}
-
-type ExerciceModelResolver {
-  id: String!
-  slug: String!
-  title: [LanguageModelResolver!]!
-  description: [LanguageModelResolver!]!
-  image: String
-}
-
 type Query {
   users: [UserModelResolver!]!
   user(dto: GetUserResolverDto!): UserModelResolver!
@@ -105,6 +128,8 @@ type Query {
   hello: HelloModelResolver!
   systemInfo: SystemInfoResolverModel!
   passkeys_for_user: [PasskeyResolverModel!]!
+  workouts(offset: Int, limit: Int, order_by: OrderResolverDto): WorkoutsPaginatedResolverModel!
+  searchWorkoutsPaginated(dto: SearchWorkoutsResolverDto!, offset: Int, limit: Int, order_by: OrderResolverDto): SearchWorkoutsPaginatedResolverModel!
   exercices(dto: GetTrainingResolverDto): [ExerciceModelResolver!]!
   trainings: [TrainingModelResolver!]!
   trainingsPaginated(offset: Int, limit: Int, orderBy: OrderResolverDto): PaginatedTrainingsResolverModel!
@@ -134,10 +159,6 @@ input PasskeyAuthResolverDto {
   userHandle: String!
 }
 
-input GetTrainingResolverDto {
-  id: String!
-}
-
 input OrderResolverDto {
   field: String!
   order: SortOrder!
@@ -146,6 +167,14 @@ input OrderResolverDto {
 enum SortOrder {
   ASC
   DESC
+}
+
+input SearchWorkoutsResolverDto {
+  workouts_slug: [String!]!
+}
+
+input GetTrainingResolverDto {
+  id: String!
 }
 
 type Mutation {
