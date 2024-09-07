@@ -41,6 +41,19 @@ export class TrainingResolver {
   @Roles(USER_ROLE.USER, USER_ROLE.ADMIN)
   @UseGuards(GqlAuthGuard, RolesGuard)
   /* eslint-disable @typescript-eslint/no-unused-vars */
+  @Query((returns) => [TrainingModelResolver])
+  async get_private_trainings(
+    @CurrentSession() session: UserSession,
+  ): Promise<TrainingModelResolver[]> {
+    return this.inversify.getTrainingsUsecase.execute({
+      private: true,
+      session
+    });
+  }
+
+  @Roles(USER_ROLE.USER, USER_ROLE.ADMIN)
+  @UseGuards(GqlAuthGuard, RolesGuard)
+  /* eslint-disable @typescript-eslint/no-unused-vars */
   @Query(() => PaginatedTrainingsResolverModel)
   async trainingsPaginated(
     @CurrentSession() session: UserSession,

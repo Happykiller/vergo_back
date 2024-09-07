@@ -25,19 +25,15 @@ export class BddServiceUserMongo
     const results = (await this.getUserCollection()).find(query, options);
 
     const users: UserDbModel[] = [];
+
     // Print returned documents
     for await (const doc of results) {
-      users.push({
+      const tmp: any = {
         id: doc._id.toString(),
-        code: doc.code,
-        password: doc.password,
-        name_first: doc.name_first,
-        name_last: doc.name_last,
-        description: doc.description,
-        mail: doc.mail,
-        role: doc.role,
-        active: doc.active,
-      });
+        ... doc
+      };
+      delete tmp._id;
+      users.push(tmp);
     }
 
     return users;
@@ -55,17 +51,13 @@ export class BddServiceUserMongo
         await this.getUserCollection()
       ).findOne(query, options);
 
-      return Promise.resolve({
+      const tmp: any = {
         id: doc._id.toString(),
-        code: doc.code,
-        password: doc.password,
-        name_first: doc.name_first,
-        name_last: doc.name_last,
-        description: doc.description,
-        mail: doc.mail,
-        role: doc.role,
-        active: doc.active,
-      });
+        ... doc
+      };
+      delete tmp._id;
+
+      return Promise.resolve(tmp);
     } catch (e) {
       return null;
     }

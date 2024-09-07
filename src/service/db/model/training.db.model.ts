@@ -3,6 +3,7 @@ export interface TrainingDbModel {
   slug: string;
   label?: string;
   gender?: string;
+  isPrivate?: boolean;
   workout: WorkoutDbModel[];
 }
 

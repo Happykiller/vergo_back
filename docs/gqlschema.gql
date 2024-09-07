@@ -64,7 +64,7 @@ type WorkoutsPaginatedResolverModel {
 
 type SearchWorkoutsPaginatedNodeResolverModel {
   search: String!
-  found: WorkoutDefModelResolver!
+  found: WorkoutDefModelResolver
 }
 
 type SearchWorkoutsPaginatedResolverModel {
@@ -132,6 +132,7 @@ type Query {
   searchWorkoutsPaginated(dto: SearchWorkoutsResolverDto!, offset: Int, limit: Int, order_by: OrderResolverDto): SearchWorkoutsPaginatedResolverModel!
   exercices(dto: GetTrainingResolverDto): [ExerciceModelResolver!]!
   trainings: [TrainingModelResolver!]!
+  get_private_trainings: [TrainingModelResolver!]!
   trainingsPaginated(offset: Int, limit: Int, orderBy: OrderResolverDto): PaginatedTrainingsResolverModel!
   training(dto: GetTrainingResolverDto!): TrainingModelResolver!
   training_normalized(dto: GetTrainingResolverDto!): [TrainingNormalizedResolverModel!]!

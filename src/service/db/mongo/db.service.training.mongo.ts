@@ -27,6 +27,7 @@ export class BddServiceTrainingMongo
         id: doc._id.toString(),
         ... doc
       };
+      delete tmp._id;
       response.push(tmp);
     }
 
@@ -44,10 +45,13 @@ export class BddServiceTrainingMongo
         await this.getTrainingCollection()
       ).findOne(query, options);
 
-      return Promise.resolve({
+      const tmp: any = {
         id: doc._id.toString(),
         ... doc
-      });
+      };
+      delete tmp._id;
+
+      return Promise.resolve(tmp);
     } catch (e) {
       return null;
     }
