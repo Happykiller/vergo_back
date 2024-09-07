@@ -8,10 +8,10 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { config } from '@src/config';
 import { USER_ROLE } from '@presentation/guard/userRole';
 import { userRopo } from '@service/db/fake/mock/user.ropo';
-import { ToolModule } from '@presentation/tool/tool.module';
 import { JwtStrategy } from '@presentation/auth/jwt.strategy';
+import { WorkoutModule } from '@presentation/workout/workout.module';
 
-describe('ToolModule (e2e)', () => {
+describe('WorkoutModule (e2e)', () => {
   let app: NestApplication;
   const token: string = jwt.sign(
     {
@@ -30,10 +30,10 @@ describe('ToolModule (e2e)', () => {
     const moduleFixture: TestingModule = await Test.createTestingModule({
       providers: [JwtStrategy],
       imports: [
-        ToolModule,
+        WorkoutModule,
         GraphQLModule.forRoot({
+          autoSchemaFile: true,
           driver: ApolloDriver,
-          autoSchemaFile: config.graphQL.schemaFileName,
           context: ({ req, res }) => {
             return { req, res };
           },
@@ -48,26 +48,79 @@ describe('ToolModule (e2e)', () => {
     await app.close();
   });
 
-  it('#generatePassword', () => {
+  it('#workouts', () => {
     return request(app.getHttpServer())
       .post('/graphql')
       .send({
         operationName: null,
-        query: `query {
-          generatePassword (
-            dto: {
-              length: 8
-              specials: true
-            }
-          ) {
-            password
-          }
-        }`,
+        query: `query workouts {
+  workouts (
+    limit: 5
+    order_by: {
+      field: "slug"
+      order: DESC
+    }
+  ) {
+    count
+    nodes {
+      id
+      slug
+      title {
+        lang
+        value
+      }
+      description {
+        lang
+        value
+      }
+      image
+    }
+  }
+}`,
       })
       .set('Authorization', authorization)
       .expect(({ body }) => {
-        const data = body.data.generatePassword;
-        expect(data.password).toBeDefined();
+        const data = body.data.workouts.nodes;
+        expect(data.length).toBeGreaterThan(1);
+      })
+      .expect(200);
+  });
+
+  it('#searchWorkoutsPaginated', () => {
+    return request(app.getHttpServer())
+      .post('/graphql')
+      .send({
+        operationName: null,
+        query: `query searchWorkoutsPaginated {
+  searchWorkoutsPaginated (
+    dto: {
+      workouts_slug: ["warm-up", "workout", "cooldown"]
+    }
+  ) {
+    count
+    nodes {
+      search
+      found {
+        id
+        slug
+        title {
+          lang
+          value
+        }
+        description {
+          lang
+          value
+        }
+        image
+      }
+    }
+  }
+}`,
+      })
+      .set('Authorization', authorization)
+      .expect(({ body }) => {
+        const data = body.data.searchWorkoutsPaginated.nodes;
+        expect(data.length).toBeGreaterThan(1);
       })
       .expect(200);
   });

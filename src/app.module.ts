@@ -7,9 +7,7 @@ import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { config } from '@src/config';
 import { AuthModule } from '@presentation/auth/auth.module';
 import { UserModule } from '@presentation/user/user.module';
-import { ToolModule } from '@presentation/tool/tool.module';
 import { ImageModule } from '@presentation/image/image.module';
-import { HelloModule } from '@presentation/hello/hello.module';
 import { SystemModule } from '@presentation/system/system.module';
 import { WorkoutModule } from '@presentation/workout/workout.module';
 import { PasskeyModule } from '@presentation/passkey/passkey.module';
@@ -20,8 +18,6 @@ import { ExerciceModule } from '@presentation/exercice/exercice.module';
   imports: [
     UserModule,
     AuthModule,
-    ToolModule,
-    HelloModule,
     ImageModule,
     SystemModule,
     PasskeyModule,

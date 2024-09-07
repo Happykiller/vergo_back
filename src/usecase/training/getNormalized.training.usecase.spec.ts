@@ -4,20 +4,36 @@ import { mock, MockProxy } from 'jest-mock-extended';
 import { hiit } from '@service/db/fake/mock/hiit';
 import { BddService } from '@service/db/db.service';
 import { Inversify } from '@src/inversify/investify';
+import { TokenizeUsecase } from '@usecase/ai/tokenize.usecase';
 import { man_chest_arm } from '@service/db/fake/mock/man_chest_arm';
 import { training_test } from '@service/db/fake/mock/training.test';
 import { woman_fullbody } from '@service/db/fake/mock/woman_fullbody';
 import { hiit_normalized } from '@service/db/fake/mock/hiit.normalized';
+import { LoggerServiceFake } from '@service/logger/logger.service.fake';
+import { GetExercicesUsecase } from '@usecase/exercice/getExercices.usecase';
 import { man_chest_arm_normalized } from '@service/db/fake/mock/man_chest_arm.normalized';
 import { training_test_normalized } from '@service/db/fake/mock/training.test.normalized';
 import { woman_fullbody_normalized } from '@service/db/fake/mock/woman_fullbody.normalized';
 import { GetNormalizedTrainingUsecase } from '@usecase/training/getNormalized.training.usecase';
+import { GetGlossaryUsecase } from '../glossary/get.glossary.usecase';
+import { glossaryFake } from '@src/service/db/fake/mock/glossary';
+import { FindMostAccurateFileUsecase } from '../ai/findMostAccurateFile.usecase';
 
 fdescribe('GetAllUserUsecase', () => {
   const mockInversify: MockProxy<Inversify> = mock<Inversify>();
   const mockBddService: MockProxy<BddService> = mock<BddService>();
+  const mockGetExercicesUsecase: MockProxy<GetExercicesUsecase> = mock<GetExercicesUsecase>();
+  const mockGetGlossaryUsecase: MockProxy<GetGlossaryUsecase> = mock<GetGlossaryUsecase>();
+
+  mockGetExercicesUsecase.execute.mockResolvedValue([]);
+  mockGetGlossaryUsecase.execute.mockResolvedValue(glossaryFake);
 
   mockInversify.bddService = mockBddService;
+  mockInversify.getExercicesUsecase = mockGetExercicesUsecase;
+  mockInversify.loggerService = new LoggerServiceFake();
+  mockInversify.getGlossaryUsecase = mockGetGlossaryUsecase;
+  mockInversify.tokenizeUsecase = new TokenizeUsecase(mockInversify);
+  mockInversify.findMostAccurateFileUsecase = new FindMostAccurateFileUsecase(mockInversify);
 
   const usecase: GetNormalizedTrainingUsecase = new GetNormalizedTrainingUsecase(mockInversify);
 

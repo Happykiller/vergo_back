@@ -5,5 +5,5 @@ export class WorkoutDefDbModel {
   slug: string;
   title: LanguageDbModel[];
   description: LanguageDbModel[];
-  image: string;
+  image?: string;
 }

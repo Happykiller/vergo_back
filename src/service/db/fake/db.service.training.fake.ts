@@ -8,7 +8,7 @@ export class BdbServiceTrainingFake
 {
   trainingCollection: TrainingDbModel[];
 
-  getUserCollection(): TrainingDbModel[] {
+  getTrainingCollection(): TrainingDbModel[] {
     if (!this.trainingCollection) {
       this.trainingCollection = [hiit];
     }
@@ -16,7 +16,7 @@ export class BdbServiceTrainingFake
   }
 
   getTrainings(): Promise<TrainingDbModel[]> {
-    return Promise.resolve(this.getUserCollection());
+    return Promise.resolve(this.getTrainingCollection());
   }
 
   getTraining(): Promise<TrainingDbModel> {

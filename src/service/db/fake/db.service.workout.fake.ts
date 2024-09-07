@@ -1,4 +1,5 @@
 import { BddService } from '@service/db/db.service';
+import { workoutsFake } from '@service/db/fake/mock/workouts';
 import { WorkoutDefDbModel } from '@service/db/model/workout.def.db.model';
 
 export class BdbServiceWorkoutFake
@@ -9,7 +10,7 @@ export class BdbServiceWorkoutFake
 
   getWorkoutCollection(): WorkoutDefDbModel[] {
     if (!this.workoutCollection) {
-      this.workoutCollection = [];
+      this.workoutCollection = workoutsFake;
     }
     return this.workoutCollection;
   }

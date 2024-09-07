@@ -5,7 +5,7 @@ export const userRopo: UserDbModel = {
   id: '65d4d015261e894a1da31a64',
   code: 'ropo',
   password:
-    'uDLybl8FgPRbBicleIp/Hbb7ujedTr5gukZlcygGnYz4zyJsMAAdL0WEwxfwO6+1jI93qSR676s2QuyuKVD57w==',
+    'B5DicCkBcu6twsf95mosv5wfjrR9YeCBl/v26tHQDwQB1fwoNjzipo51R8+IuCUQ7yijXFSzktxaSR3+9LXqyA==',
   name_first: 'Robert',
   name_last: 'Paulson',
   description: 'password with secret secretKey',
