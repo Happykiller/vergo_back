@@ -4,34 +4,36 @@ import { mock, MockProxy } from 'jest-mock-extended';
 import { hiit } from '@service/db/fake/mock/hiit';
 import { BddService } from '@service/db/db.service';
 import { Inversify } from '@src/inversify/investify';
+import { glossaryFake } from '@service/db/fake/mock/glossary';
 import { TokenizeUsecase } from '@usecase/ai/tokenize.usecase';
+import { LoggerService } from '@service/logger/logger.service';
 import { man_chest_arm } from '@service/db/fake/mock/man_chest_arm';
 import { training_test } from '@service/db/fake/mock/training.test';
+import { jumping_jacks } from '@service/db/fake/mock/jumping_jacks';
 import { woman_fullbody } from '@service/db/fake/mock/woman_fullbody';
 import { hiit_normalized } from '@service/db/fake/mock/hiit.normalized';
-import { LoggerServiceFake } from '@service/logger/logger.service.fake';
+import { GetGlossaryUsecase } from '@usecase/glossary/get.glossary.usecase';
 import { GetExercicesUsecase } from '@usecase/exercice/getExercices.usecase';
+import { FindMostAccurateFileUsecase } from '@usecase/ai/findMostAccurateFile.usecase';
 import { man_chest_arm_normalized } from '@service/db/fake/mock/man_chest_arm.normalized';
 import { training_test_normalized } from '@service/db/fake/mock/training.test.normalized';
 import { woman_fullbody_normalized } from '@service/db/fake/mock/woman_fullbody.normalized';
 import { GetNormalizedTrainingUsecase } from '@usecase/training/getNormalized.training.usecase';
-import { GetGlossaryUsecase } from '../glossary/get.glossary.usecase';
-import { glossaryFake } from '@src/service/db/fake/mock/glossary';
-import { FindMostAccurateFileUsecase } from '../ai/findMostAccurateFile.usecase';
 
-fdescribe('GetAllUserUsecase', () => {
+describe('GetNormalizedTrainingUsecase', () => {
   const mockInversify: MockProxy<Inversify> = mock<Inversify>();
   const mockBddService: MockProxy<BddService> = mock<BddService>();
-  const mockGetExercicesUsecase: MockProxy<GetExercicesUsecase> = mock<GetExercicesUsecase>();
+  const mockLoggerService: MockProxy<LoggerService> = mock<LoggerService>();
   const mockGetGlossaryUsecase: MockProxy<GetGlossaryUsecase> = mock<GetGlossaryUsecase>();
+  const mockGetExercicesUsecase: MockProxy<GetExercicesUsecase> = mock<GetExercicesUsecase>();
 
-  mockGetExercicesUsecase.execute.mockResolvedValue([]);
   mockGetGlossaryUsecase.execute.mockResolvedValue(glossaryFake);
+  mockGetExercicesUsecase.execute.mockResolvedValue([jumping_jacks]);
 
   mockInversify.bddService = mockBddService;
-  mockInversify.getExercicesUsecase = mockGetExercicesUsecase;
-  mockInversify.loggerService = new LoggerServiceFake();
+  mockInversify.loggerService = mockLoggerService;
   mockInversify.getGlossaryUsecase = mockGetGlossaryUsecase;
+  mockInversify.getExercicesUsecase = mockGetExercicesUsecase;
   mockInversify.tokenizeUsecase = new TokenizeUsecase(mockInversify);
   mockInversify.findMostAccurateFileUsecase = new FindMostAccurateFileUsecase(mockInversify);
 
@@ -88,6 +90,17 @@ fdescribe('GetAllUserUsecase', () => {
       //console.log(JSON.stringify(response))
       // assert
       expect(response).toEqual(training_test_normalized);
+    });
+
+    it('should error handler', async () => {
+      // arrange
+      mockBddService.getTraining.mockRejectedValue(new Error('ERROR'));
+      // act
+      const response = await usecase.execute({
+        id: '65d4d015261e894a1da31a64',
+      });
+      // assert
+      expect(response).toEqual([]);
     });
   });
 });

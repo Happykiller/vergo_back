@@ -4,7 +4,7 @@ export const training_test_normalized: TrainingNormalizedUsecaseModel[] = [
   {
     "slugs": [
       "warm-up",
-      "man_jumping_jacks"
+      "jumping_jacks"
     ],
     "type": "effort",
     "duration": 5
@@ -12,7 +12,7 @@ export const training_test_normalized: TrainingNormalizedUsecaseModel[] = [
   {
     "slugs": [
       "warm-up",
-      "man_jumping_jacks"
+      "jumping_jacks"
     ],
     "type": "rest",
     "duration": 6

@@ -130,11 +130,9 @@ export class FindMostAccurateFileUsecase {
        */
       if (results.length === 0) {
         throw new Error(ERRORS.AI_FIND_NOTHING_FOUND);
-      } else if (results[0]?.item.accurency < 0.33) {
+      } else if (results[0]?.item.found_stats.accurency < 0.33) {
         throw new Error(ERRORS.AI_FIND_INSUFFISANT_ACCURACY);
       }
-
-      //console.log(results[0])
 
       const response = results[0]?.item;
 

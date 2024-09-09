@@ -10,7 +10,7 @@ export const man_chest_arm: TrainingDbModel = {
         {
           "rep": 4,
           "slugs": [
-            "man_jumping_jacks",
+            "jumping_jacks",
             "arm_circles",
             "dynamic_chest_stretch",
             "shoulder_shrugs"

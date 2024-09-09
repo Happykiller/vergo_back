@@ -1,6 +1,6 @@
 {
   "_id": ObjectId(),
-  "slug": "fabrice_man_hiit_chambery",
+  "slug": "fabrice_hiit_chambery",
   "gender": "man",
   "label": "Fabrice: HIIT Chambéry",
   "workout": [
@@ -9,7 +9,7 @@
       "sets": [
         {
           "slugs": [
-            "man_jumping_jacks"
+            "jumping_jacks"
           ],
           "rep": 1,
           "duration": 40,

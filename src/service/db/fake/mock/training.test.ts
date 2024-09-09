@@ -8,7 +8,7 @@ export const training_test: TrainingDbModel = {
       "slug": "warm-up",
       "sets": [
         {
-          "slugs": ["man_jumping_jacks"],
+          "slugs": ["jumping_jacks"],
           "rep": 1,
           "duration": 5,
           "rest": 6

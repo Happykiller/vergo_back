@@ -39,7 +39,7 @@ export class GetNormalizedTrainingUsecase {
       return normalized;
     } catch (ex) {
       this.inversify.loggerService.error(ex.message)
-      return []
+      return [];
     }
   }
 

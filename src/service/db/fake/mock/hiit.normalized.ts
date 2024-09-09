@@ -4,15 +4,17 @@ export const hiit_normalized: TrainingNormalizedUsecaseModel[] = [
   {
     "slugs": [
       "warm-up",
-      "man_jumping_jacks"
+      "jumping_jacks"
     ],
     "type": "effort",
-    "duration": 40
+    "duration": 40,
+    "ite": undefined,
+    "weight": undefined
   },
   {
     "slugs": [
       "warm-up",
-      "man_jumping_jacks"
+      "jumping_jacks"
     ],
     "type": "rest",
     "duration": 20
@@ -23,7 +25,9 @@ export const hiit_normalized: TrainingNormalizedUsecaseModel[] = [
       "arm_circles"
     ],
     "type": "effort",
-    "duration": 40
+    "duration": 40,
+    "ite": undefined,
+    "weight": undefined
   },
   {
     "slugs": [
@@ -39,7 +43,9 @@ export const hiit_normalized: TrainingNormalizedUsecaseModel[] = [
       "bodyweight_squats"
     ],
     "type": "effort",
-    "duration": 40
+    "duration": 40,
+    "ite": undefined,
+    "weight": undefined
   },
   {
     "slugs": [
@@ -55,7 +61,9 @@ export const hiit_normalized: TrainingNormalizedUsecaseModel[] = [
       "high_knees"
     ],
     "type": "effort",
-    "duration": 40
+    "duration": 40,
+    "ite": undefined,
+    "weight": undefined
   },
   {
     "slugs": [
@@ -78,7 +86,9 @@ export const hiit_normalized: TrainingNormalizedUsecaseModel[] = [
       "burpees"
     ],
     "type": "effort",
-    "duration": 40
+    "duration": 40,
+    "ite": undefined,
+    "weight": undefined
   },
   {
     "slugs": [
@@ -94,7 +104,9 @@ export const hiit_normalized: TrainingNormalizedUsecaseModel[] = [
       "mountain_climbers"
     ],
     "type": "effort",
-    "duration": 40
+    "duration": 40,
+    "ite": undefined,
+    "weight": undefined
   },
   {
     "slugs": [
@@ -110,7 +122,9 @@ export const hiit_normalized: TrainingNormalizedUsecaseModel[] = [
       "jumb_rope"
     ],
     "type": "effort",
-    "duration": 40
+    "duration": 40,
+    "ite": undefined,
+    "weight": undefined
   },
   {
     "slugs": [
@@ -126,7 +140,9 @@ export const hiit_normalized: TrainingNormalizedUsecaseModel[] = [
       "jump_squats"
     ],
     "type": "effort",
-    "duration": 40
+    "duration": 40,
+    "ite": undefined,
+    "weight": undefined
   },
   {
     "slugs": [
@@ -142,7 +158,9 @@ export const hiit_normalized: TrainingNormalizedUsecaseModel[] = [
       "push-ups"
     ],
     "type": "effort",
-    "duration": 40
+    "duration": 40,
+    "ite": undefined,
+    "weight": undefined
   },
   {
     "slugs": [
@@ -158,7 +176,9 @@ export const hiit_normalized: TrainingNormalizedUsecaseModel[] = [
       "russian_twists"
     ],
     "type": "effort",
-    "duration": 40
+    "duration": 40,
+    "ite": undefined,
+    "weight": undefined
   },
   {
     "slugs": [
@@ -174,7 +194,9 @@ export const hiit_normalized: TrainingNormalizedUsecaseModel[] = [
       "bank_jumb"
     ],
     "type": "effort",
-    "duration": 40
+    "duration": 40,
+    "ite": undefined,
+    "weight": undefined
   },
   {
     "slugs": [
@@ -187,15 +209,17 @@ export const hiit_normalized: TrainingNormalizedUsecaseModel[] = [
   {
     "slugs": [
       "hiit",
-      "jumping_lunges"
+      "jumping_jacks"
     ],
     "type": "effort",
-    "duration": 40
+    "duration": 40,
+    "ite": undefined,
+    "weight": undefined
   },
   {
     "slugs": [
       "hiit",
-      "jumping_lunges"
+      "jumping_jacks"
     ],
     "type": "rest",
     "duration": 20
@@ -213,7 +237,9 @@ export const hiit_normalized: TrainingNormalizedUsecaseModel[] = [
       "burpees"
     ],
     "type": "effort",
-    "duration": 40
+    "duration": 40,
+    "ite": undefined,
+    "weight": undefined
   },
   {
     "slugs": [
@@ -229,7 +255,9 @@ export const hiit_normalized: TrainingNormalizedUsecaseModel[] = [
       "mountain_climbers"
     ],
     "type": "effort",
-    "duration": 40
+    "duration": 40,
+    "ite": undefined,
+    "weight": undefined
   },
   {
     "slugs": [
@@ -245,7 +273,9 @@ export const hiit_normalized: TrainingNormalizedUsecaseModel[] = [
       "jumb_rope"
     ],
     "type": "effort",
-    "duration": 40
+    "duration": 40,
+    "ite": undefined,
+    "weight": undefined
   },
   {
     "slugs": [
@@ -261,7 +291,9 @@ export const hiit_normalized: TrainingNormalizedUsecaseModel[] = [
       "jump_squats"
     ],
     "type": "effort",
-    "duration": 40
+    "duration": 40,
+    "ite": undefined,
+    "weight": undefined
   },
   {
     "slugs": [
@@ -277,7 +309,9 @@ export const hiit_normalized: TrainingNormalizedUsecaseModel[] = [
       "push-ups"
     ],
     "type": "effort",
-    "duration": 40
+    "duration": 40,
+    "ite": undefined,
+    "weight": undefined
   },
   {
     "slugs": [
@@ -293,7 +327,9 @@ export const hiit_normalized: TrainingNormalizedUsecaseModel[] = [
       "russian_twists"
     ],
     "type": "effort",
-    "duration": 40
+    "duration": 40,
+    "ite": undefined,
+    "weight": undefined
   },
   {
     "slugs": [
@@ -309,7 +345,9 @@ export const hiit_normalized: TrainingNormalizedUsecaseModel[] = [
       "bank_jumb"
     ],
     "type": "effort",
-    "duration": 40
+    "duration": 40,
+    "ite": undefined,
+    "weight": undefined
   },
   {
     "slugs": [
@@ -322,15 +360,17 @@ export const hiit_normalized: TrainingNormalizedUsecaseModel[] = [
   {
     "slugs": [
       "hiit",
-      "jumping_lunges"
+      "jumping_jacks"
     ],
     "type": "effort",
-    "duration": 40
+    "duration": 40,
+    "ite": undefined,
+    "weight": undefined
   },
   {
     "slugs": [
       "hiit",
-      "jumping_lunges"
+      "jumping_jacks"
     ],
     "type": "rest",
     "duration": 20
@@ -348,7 +388,9 @@ export const hiit_normalized: TrainingNormalizedUsecaseModel[] = [
       "burpees"
     ],
     "type": "effort",
-    "duration": 40
+    "duration": 40,
+    "ite": undefined,
+    "weight": undefined
   },
   {
     "slugs": [
@@ -364,7 +406,9 @@ export const hiit_normalized: TrainingNormalizedUsecaseModel[] = [
       "mountain_climbers"
     ],
     "type": "effort",
-    "duration": 40
+    "duration": 40,
+    "ite": undefined,
+    "weight": undefined
   },
   {
     "slugs": [
@@ -380,7 +424,9 @@ export const hiit_normalized: TrainingNormalizedUsecaseModel[] = [
       "jumb_rope"
     ],
     "type": "effort",
-    "duration": 40
+    "duration": 40,
+    "ite": undefined,
+    "weight": undefined
   },
   {
     "slugs": [
@@ -396,7 +442,9 @@ export const hiit_normalized: TrainingNormalizedUsecaseModel[] = [
       "jump_squats"
     ],
     "type": "effort",
-    "duration": 40
+    "duration": 40,
+    "ite": undefined,
+    "weight": undefined
   },
   {
     "slugs": [
@@ -412,7 +460,9 @@ export const hiit_normalized: TrainingNormalizedUsecaseModel[] = [
       "push-ups"
     ],
     "type": "effort",
-    "duration": 40
+    "duration": 40,
+    "ite": undefined,
+    "weight": undefined
   },
   {
     "slugs": [
@@ -428,7 +478,9 @@ export const hiit_normalized: TrainingNormalizedUsecaseModel[] = [
       "russian_twists"
     ],
     "type": "effort",
-    "duration": 40
+    "duration": 40,
+    "ite": undefined,
+    "weight": undefined
   },
   {
     "slugs": [
@@ -444,7 +496,9 @@ export const hiit_normalized: TrainingNormalizedUsecaseModel[] = [
       "bank_jumb"
     ],
     "type": "effort",
-    "duration": 40
+    "duration": 40,
+    "ite": undefined,
+    "weight": undefined
   },
   {
     "slugs": [
@@ -457,15 +511,17 @@ export const hiit_normalized: TrainingNormalizedUsecaseModel[] = [
   {
     "slugs": [
       "hiit",
-      "jumping_lunges"
+      "jumping_jacks"
     ],
     "type": "effort",
-    "duration": 40
+    "duration": 40,
+    "ite": undefined,
+    "weight": undefined
   },
   {
     "slugs": [
       "hiit",
-      "jumping_lunges"
+      "jumping_jacks"
     ],
     "type": "rest",
     "duration": 20
@@ -483,7 +539,9 @@ export const hiit_normalized: TrainingNormalizedUsecaseModel[] = [
       "burpees"
     ],
     "type": "effort",
-    "duration": 40
+    "duration": 40,
+    "ite": undefined,
+    "weight": undefined
   },
   {
     "slugs": [
@@ -499,7 +557,9 @@ export const hiit_normalized: TrainingNormalizedUsecaseModel[] = [
       "mountain_climbers"
     ],
     "type": "effort",
-    "duration": 40
+    "duration": 40,
+    "ite": undefined,
+    "weight": undefined
   },
   {
     "slugs": [
@@ -515,7 +575,9 @@ export const hiit_normalized: TrainingNormalizedUsecaseModel[] = [
       "jumb_rope"
     ],
     "type": "effort",
-    "duration": 40
+    "duration": 40,
+    "ite": undefined,
+    "weight": undefined
   },
   {
     "slugs": [
@@ -531,7 +593,9 @@ export const hiit_normalized: TrainingNormalizedUsecaseModel[] = [
       "jump_squats"
     ],
     "type": "effort",
-    "duration": 40
+    "duration": 40,
+    "ite": undefined,
+    "weight": undefined
   },
   {
     "slugs": [
@@ -547,7 +611,9 @@ export const hiit_normalized: TrainingNormalizedUsecaseModel[] = [
       "push-ups"
     ],
     "type": "effort",
-    "duration": 40
+    "duration": 40,
+    "ite": undefined,
+    "weight": undefined
   },
   {
     "slugs": [
@@ -563,7 +629,9 @@ export const hiit_normalized: TrainingNormalizedUsecaseModel[] = [
       "russian_twists"
     ],
     "type": "effort",
-    "duration": 40
+    "duration": 40,
+    "ite": undefined,
+    "weight": undefined
   },
   {
     "slugs": [
@@ -579,7 +647,9 @@ export const hiit_normalized: TrainingNormalizedUsecaseModel[] = [
       "bank_jumb"
     ],
     "type": "effort",
-    "duration": 40
+    "duration": 40,
+    "ite": undefined,
+    "weight": undefined
   },
   {
     "slugs": [
@@ -592,15 +662,17 @@ export const hiit_normalized: TrainingNormalizedUsecaseModel[] = [
   {
     "slugs": [
       "hiit",
-      "jumping_lunges"
+      "jumping_jacks"
     ],
     "type": "effort",
-    "duration": 40
+    "duration": 40,
+    "ite": undefined,
+    "weight": undefined
   },
   {
     "slugs": [
       "hiit",
-      "jumping_lunges"
+      "jumping_jacks"
     ],
     "type": "rest",
     "duration": 20
@@ -625,7 +697,9 @@ export const hiit_normalized: TrainingNormalizedUsecaseModel[] = [
       "standing_hamstring_stretch"
     ],
     "type": "effort",
-    "duration": 60
+    "duration": 60,
+    "ite": undefined,
+    "weight": undefined
   },
   {
     "slugs": [
@@ -633,7 +707,9 @@ export const hiit_normalized: TrainingNormalizedUsecaseModel[] = [
       "quadriceps_stretch"
     ],
     "type": "effort",
-    "duration": 60
+    "duration": 60,
+    "ite": undefined,
+    "weight": undefined
   },
   {
     "slugs": [
@@ -642,7 +718,9 @@ export const hiit_normalized: TrainingNormalizedUsecaseModel[] = [
       "left"
     ],
     "type": "effort",
-    "duration": 10
+    "duration": 10,
+    "ite": undefined,
+    "weight": undefined
   },
   {
     "slugs": [
@@ -651,7 +729,9 @@ export const hiit_normalized: TrainingNormalizedUsecaseModel[] = [
       "left"
     ],
     "type": "effort",
-    "duration": 10
+    "duration": 10,
+    "ite": undefined,
+    "weight": undefined
   },
   {
     "slugs": [
@@ -660,7 +740,9 @@ export const hiit_normalized: TrainingNormalizedUsecaseModel[] = [
       "left"
     ],
     "type": "effort",
-    "duration": 10
+    "duration": 10,
+    "ite": undefined,
+    "weight": undefined
   },
   {
     "slugs": [
@@ -669,7 +751,9 @@ export const hiit_normalized: TrainingNormalizedUsecaseModel[] = [
       "right"
     ],
     "type": "effort",
-    "duration": 10
+    "duration": 10,
+    "ite": undefined,
+    "weight": undefined
   },
   {
     "slugs": [
@@ -678,7 +762,9 @@ export const hiit_normalized: TrainingNormalizedUsecaseModel[] = [
       "right"
     ],
     "type": "effort",
-    "duration": 10
+    "duration": 10,
+    "ite": undefined,
+    "weight": undefined
   },
   {
     "slugs": [
@@ -687,7 +773,9 @@ export const hiit_normalized: TrainingNormalizedUsecaseModel[] = [
       "right"
     ],
     "type": "effort",
-    "duration": 10
+    "duration": 10,
+    "ite": undefined,
+    "weight": undefined
   },
   {
     "slugs": [
@@ -695,6 +783,8 @@ export const hiit_normalized: TrainingNormalizedUsecaseModel[] = [
       "child_s_pose"
     ],
     "type": "effort",
-    "duration": 60
+    "duration": 60,
+    "ite": undefined,
+    "weight": undefined
   }
 ];

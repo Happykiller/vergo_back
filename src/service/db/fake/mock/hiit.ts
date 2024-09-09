@@ -2,13 +2,13 @@ import { TrainingDbModel } from "@service/db/model/training.db.model";
 
 export const hiit: TrainingDbModel = {
   "id": '65d4d015261e894a1da31a65',
-  "slug": "man_hiit_240804",
+  "slug": "hiit_240804",
   "workout": [
     {
       "slug": "warm-up",
       "sets": [
         {
-          "slugs": ["man_jumping_jacks"],
+          "slugs": ["jumping_jacks"],
           "rep": 1,
           "duration": 40,
           "rest": 20
