@@ -7110,6 +7110,28 @@
       ]
     }
   },
+  "cool-down": {
+    "english": {
+      "base": "cool-down",
+      "synonyms": [],
+      "plural": "cool-downs",
+      "singular": "cool-down",
+      "common_misspellings": [],
+      "slang": [
+        "cooldown"
+      ]
+    },
+    "french": {
+      "base": "récupération",
+      "synonyms": [],
+      "plural": "récupérations",
+      "singular": "récupération",
+      "common_misspellings": [],
+      "slang": [
+        "recup"
+      ]
+    }
+  },
   "pull": {
     "english": {
       "base": "pull",
@@ -14208,7 +14230,7 @@
         "sideways",
         "horizontally"
       ],
-      "plural": [],
+      "plural": "",
       "singular": "laterally",
       "common_misspellings": [
         "lateral",
@@ -14222,7 +14244,7 @@
         "de côté",
         "horizontalement"
       ],
-      "plural": [],
+      "plural": "",
       "singular": "latéralement",
       "common_misspellings": [
         "latéralment",
@@ -14238,7 +14260,7 @@
         "till",
         "up to"
       ],
-      "plural": [],
+      "plural": "",
       "singular": "until",
       "common_misspellings": [
         "untill",
@@ -14252,7 +14274,7 @@
         "en attendant",
         "jusqu'au"
       ],
-      "plural": [],
+      "plural": "",
       "singular": "jusqu'à",
       "common_misspellings": [
         "jusqua",
@@ -14298,7 +14320,7 @@
         "backed",
         "upheld"
       ],
-      "plural": [],
+      "plural": "",
       "singular": "supported",
       "common_misspellings": [
         "supportd",
@@ -14312,7 +14334,7 @@
         "appuyé",
         "maintenu"
       ],
-      "plural": [],
+      "plural": "",
       "singular": "soutenu",
       "common_misspellings": [
         "soutenue",
@@ -14418,7 +14440,7 @@
         "heavy",
         "burdened"
       ],
-      "plural": [],
+      "plural": "",
       "singular": "weighted",
       "common_misspellings": [
         "weigted",
@@ -14432,7 +14454,7 @@
         "lourd",
         "chargé"
       ],
-      "plural": [],
+      "plural": "",
       "singular": "lesté",
       "common_misspellings": [
         "lesté",
@@ -14622,7 +14644,7 @@
         "employing",
         "utilizing"
       ],
-      "plural": [],
+      "plural": "",
       "singular": "using",
       "common_misspellings": [
         "uisng",
@@ -14636,7 +14658,7 @@
         "en employant",
         "en utilisant"
       ],
-      "plural": [],
+      "plural": "",
       "singular": "en utilisant",
       "common_misspellings": [
         "en utilizant",
@@ -15473,7 +15495,7 @@
         "upside-down",
         "reversed"
       ],
-      "plural": [],
+      "plural": "",
       "singular": "inverted",
       "common_misspellings": [
         "invertd",
@@ -15487,7 +15509,7 @@
         "à l'envers",
         "renversé"
       ],
-      "plural": [],
+      "plural": "",
       "singular": "inversé",
       "common_misspellings": [
         "inversé",
@@ -15622,7 +15644,7 @@
       "synonyms": [
         "northwest"
       ],
-      "plural": [],
+      "plural": "",
       "singular": "nw",
       "common_misspellings": [
         "nw",
@@ -15635,7 +15657,7 @@
       "synonyms": [
         "nord-ouest"
       ],
-      "plural": [],
+      "plural": "",
       "singular": "nw",
       "common_misspellings": [
         "nwo",
@@ -15739,7 +15761,7 @@
         "paddling",
         "sculling"
       ],
-      "plural": [],
+      "plural": "",
       "singular": "rowing",
       "common_misspellings": [
         "rowingg",
@@ -15753,7 +15775,7 @@
         "ramage",
         "scull"
       ],
-      "plural": [],
+      "plural": "",
       "singular": "aviron",
       "common_misspellings": [
         "avirron",
@@ -15799,7 +15821,7 @@
         "genuflecting",
         "crouching"
       ],
-      "plural": [],
+      "plural": "",
       "singular": "kneeling",
       "common_misspellings": [
         "kneeling",
@@ -15813,7 +15835,7 @@
         "se prosterner",
         "s'accroupir"
       ],
-      "plural": [],
+      "plural": "",
       "singular": "agenouillé",
       "common_misspellings": [
         "agenouillé",

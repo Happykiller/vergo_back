@@ -451,6 +451,34 @@ export const glossaryFake: GlossaryDbModel = {
       ]
     }
   },
+  "french": {
+    "english": {
+      "base": "french",
+      "synonyms": [
+        "Français"
+      ],
+      "plural": "French",
+      "singular": "French",
+      "common_misspellings": [
+        "frenchh",
+        "frenh"
+      ],
+      "slang": []
+    },
+    "french": {
+      "base": "français",
+      "synonyms": [
+        "French"
+      ],
+      "plural": "français",
+      "singular": "français",
+      "common_misspellings": [
+        "francais",
+        "françai"
+      ],
+      "slang": []
+    }
+  },
   "guide": {
     "english": {
       "base": "guide",
@@ -4413,7 +4441,8 @@ export const glossaryFake: GlossaryDbModel = {
         "rach",
         "reachh"
       ],
-      "slang": []
+      "slang": [
+      ]
     },
     "french": {
       "base": "atteindre",
@@ -7082,6 +7111,28 @@ export const glossaryFake: GlossaryDbModel = {
       ]
     }
   },
+  "cool-down": {
+    "english": {
+      "base": "cool-down",
+      "synonyms": [],
+      "plural": "cool-downs",
+      "singular": "cool-down",
+      "common_misspellings": [],
+      "slang": [
+        "cooldown"
+      ]
+    },
+    "french": {
+      "base": "récupération",
+      "synonyms": [],
+      "plural": "récupérations",
+      "singular": "récupération",
+      "common_misspellings": [],
+      "slang": [
+        "recup"
+      ]
+    }
+  },
   "pull": {
     "english": {
       "base": "pull",
@@ -7128,7 +7179,8 @@ export const glossaryFake: GlossaryDbModel = {
         "heal",
         "heel"
       ],
-      "slang": []
+      "slang": [
+      ]
     },
     "french": {
       "base": "talon",
@@ -7141,7 +7193,8 @@ export const glossaryFake: GlossaryDbModel = {
         "talon",
         "talonn"
       ],
-      "slang": []
+      "slang": [
+      ]
     }
   },
   "white": {

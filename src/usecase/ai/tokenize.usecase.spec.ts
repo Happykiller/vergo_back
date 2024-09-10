@@ -67,5 +67,15 @@ describe('TokenizeUsecase', () => {
       expect(response).toEqual(["try", "one"]);
     });
   })
+
+  describe('#processFileName', () => {
+    it('should cool-down => cooldown', async () => {
+      // arrange
+      // act
+      const response = usecase.processFileName('cool-down');
+      // assert
+      expect(response).toEqual(["cooldown"]);
+    });
+  })
   
 })
