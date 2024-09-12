@@ -2,9 +2,7 @@ import { authenticatorMetadata } from './authenticatorMetadata';
 import * as utils from './utils';
 
 export function parseAuthBuffer(authData: ArrayBuffer) {
-  //console.debug(authData)
   const flags = new DataView(authData.slice(32, 33)).getUint8(0);
-  //console.debug(flags)
 
   // https://w3c.github.io/webauthn/#sctn-authenticator-data
   let parsed: any = {
@@ -89,13 +87,9 @@ export async function updateDevicesMetadata() {
   // therefore, the result is cached in local storage
   const jwt = await (await fetch('https://mds.fidoalliance.org')).text();
 
-  // the response is a JWT including all AAGUIDs and their metadata
-  console.debug(jwt);
-
   // let us ignore the JWT verification, since this is solely for descriptive purposes, not signed data
   const payload = jwt.split('.')[1].replaceAll('-', '+').replaceAll('_', '/');
   const json = JSON.parse(atob(payload));
-  console.debug(json);
 
   const aaguidMetadata: any = {};
   for (const e of json.entries) {
@@ -104,6 +98,5 @@ export async function updateDevicesMetadata() {
     aaguidMetadata[e.aaguid] = e.metadataStatement.description;
   }
 
-  console.debug(aaguidMetadata);
   updatedAuthenticatorMetadata = aaguidMetadata;
 }

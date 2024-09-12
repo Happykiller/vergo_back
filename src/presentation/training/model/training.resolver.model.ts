@@ -40,4 +40,8 @@ export class TrainingModelResolver {
   label?: string;
   @Field(() => [WorkoutModelResolver])
   workout: WorkoutModelResolver[];
+  @Field(() => String, { nullable: true })
+  creator_id?: string;
+  @Field(() => [String], { nullable: true })
+  contributors_id?: string[];
 }

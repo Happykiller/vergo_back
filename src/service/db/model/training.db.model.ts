@@ -5,6 +5,9 @@ export interface TrainingDbModel {
   gender?: string;
   isPrivate?: boolean;
   workout: WorkoutDbModel[];
+  creator_id?: string;
+  contributors_id?: string[];
+  active?: boolean;
 }
 
 export interface WorkoutDbModel {

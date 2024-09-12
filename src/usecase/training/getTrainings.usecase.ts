@@ -21,14 +21,6 @@ export class GetTrainingsUsecase {
 
     if(dto) {
       const user = await this.inversify.getUserUsecase.execute({id: dto.session.id});
-
-      console.log(entities.map(entity => {
-        return {
-        id: entity.id,
-        isPrivate: entity.isPrivate
-      }}))
-
-      console.log(user, user.private_trainings)
       if(user.private_trainings) {
         entities = entities.filter(entity => (entity.isPrivate && user.private_trainings.includes(entity.id)));
       } else {

@@ -3,7 +3,9 @@ import {
   Resolver,
   Query,
   Args,
-  Int
+  Int,
+  ResolveField,
+  Parent
 } from '@nestjs/graphql';
 
 import { Inversify } from '@src/inversify/investify';
@@ -13,7 +15,9 @@ import { RolesGuard } from '@presentation/guard/roles.guard';
 import { UserSession } from '@presentation/auth/jwt.strategy';
 import { GqlAuthGuard } from '@presentation/guard/gql.auth.guard';
 import { OrderResolverDto } from '@presentation/dto/order.resolver.dto';
+import { UserUsecaseModel } from '@usecase/user/model/user.usecase.model';
 import { CurrentSession } from '@presentation/guard/userSession.decorator';
+import { UserModelResolver } from '@presentation/user/model/user.resolver.model';
 import { TrainingUsecaseModel } from '@usecase/training/model/training.usecase.model';
 import { TrainingModelResolver } from '@presentation/training/model/training.resolver.model';
 import { GetTrainingResolverDto } from '@presentation/training/dto/get.training.resolver.dto';
@@ -27,6 +31,34 @@ export class TrainingResolver {
     @Inject('Inversify')
     private inversify: Inversify,
   ) {}
+
+  @ResolveField(() => UserModelResolver, { nullable: true })
+  async creator(@Parent() training:TrainingModelResolver):Promise<UserModelResolver> {
+    try {
+      const user:UserUsecaseModel = await this.inversify.getUserUsecase.execute({
+        id: training.creator_id
+      })
+      return user;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  @ResolveField(() => [UserModelResolver], { nullable: true })
+  async contributors(@Parent() training:TrainingModelResolver):Promise<UserModelResolver[]> {
+    let contributors = [];
+    try {
+      for(let user_id of training.contributors_id) {
+        const user:UserUsecaseModel = await this.inversify.getUserUsecase.execute({
+          id: user_id
+        })
+        contributors.push(user);
+      }
+      return contributors;
+    } catch (e) {
+      return contributors;
+    }
+  }
   
   @Roles(USER_ROLE.USER, USER_ROLE.ADMIN)
   @UseGuards(GqlAuthGuard, RolesGuard)

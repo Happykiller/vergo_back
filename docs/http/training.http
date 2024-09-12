@@ -4,11 +4,64 @@ Content-Type: application/json
 Authorization: Bearer {{token}}
 X-REQUEST-TYPE: GraphQL
 
+query training {
+  training(dto: { id: "66b0bb7ca4d5b1fc4a27332e" }) {
+    id
+    slug
+    label
+    gender
+    workout {
+      slug
+      sets {
+        rep
+        slugs
+        ite
+        weight
+        duration
+        rest
+        pause
+        sets {
+          rep
+          slugs
+          ite
+          weight
+          duration
+          rest
+          pause
+          sets {
+            rep
+            slugs
+            ite
+            weight
+            duration
+            rest
+            pause
+          }
+        }
+      }
+    }
+  }
+}
+
+###
+POST {{host}}/graphql
+Content-Type: application/json
+Authorization: Bearer {{token}}
+X-REQUEST-TYPE: GraphQL
+
 query trainings {
   trainings {
     id
     slug
     gender
+    creator {
+      id
+      code
+    }
+    contributors {
+      id
+      code
+    }
   }
 }
 
