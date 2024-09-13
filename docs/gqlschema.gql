@@ -28,10 +28,6 @@ type UserModelResolver {
   role: String
 }
 
-type HelloModelResolver {
-  message: String
-}
-
 type SystemInfoResolverModel {
   version: String!
 }
@@ -104,6 +100,10 @@ type TrainingModelResolver {
   gender: String
   label: String
   workout: [WorkoutModelResolver!]!
+  creator_id: String
+  contributors_id: [String!]
+  creator: UserModelResolver
+  contributors: [UserModelResolver!]
 }
 
 type PaginatedTrainingsResolverModel {
@@ -125,7 +125,6 @@ type Query {
   auth(dto: AuthAuthResolverDto!): AuthModelResolver!
   auth_passkey(dto: PasskeyAuthResolverDto!): AuthModelResolver!
   getSessionInfo: AuthModelResolver!
-  hello: HelloModelResolver!
   systemInfo: SystemInfoResolverModel!
   passkeys_for_user: [PasskeyResolverModel!]!
   workouts(offset: Int, limit: Int, order_by: OrderResolverDto): WorkoutsPaginatedResolverModel!

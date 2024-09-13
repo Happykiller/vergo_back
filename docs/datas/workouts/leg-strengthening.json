@@ -1,0 +1,24 @@
+{
+  "_id": ObjectId(),
+  "slug": "leg-strengthening",
+  "title": [
+      {
+          "lang": "fr",
+          "value": "Renforcement des Jambes"
+      },
+      {
+          "lang": "en",
+          "value": "Leg Strengthening"
+      }
+  ],
+  "description": [
+      {
+          "lang": "fr",
+          "value": "Un entraînement axé sur le renforcement des jambes, conçu pour développer la force, l'endurance et la stabilité des muscles du bas du corps, incluant les quadriceps, les ischio-jambiers et les mollets."
+      },
+      {
+          "lang": "en",
+          "value": "A workout focused on strengthening the legs, designed to build strength, endurance, and stability in the lower body muscles, including the quadriceps, hamstrings, and calves."
+      }
+  ]
+}

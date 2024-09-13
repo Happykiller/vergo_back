@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "overhead_dumbbell_triceps",
+  "title": [
+      {
+          "lang": "fr",
+          "value": "Extension Triceps au-dessus de la tête avec haltère"
+      },
+      {
+          "lang": "en",
+          "value": "Overhead Dumbbell Triceps Extension"
+      }
+  ],
+  "description": [
+      {
+          "lang": "fr",
+          "value": "Tenez un haltère à deux mains au-dessus de votre tête, bras tendus. Pliez les coudes pour abaisser l'haltère derrière votre tête, puis étendez à nouveau les bras pour revenir à la position de départ."
+      },
+      {
+          "lang": "en",
+          "value": "Hold a dumbbell with both hands above your head, arms extended. Bend your elbows to lower the dumbbell behind your head, then extend your arms back to the starting position."
+      }
+  ],
+  "image": "man-doing-seated-overhead-dumbbell-triceps-extensions"
+}

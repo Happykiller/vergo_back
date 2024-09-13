@@ -1,0 +1,24 @@
+{
+  "_id": ObjectId(),
+  "slug": "triceps-strengthening",
+  "title": [
+      {
+          "lang": "fr",
+          "value": "Renforcement Triceps"
+      },
+      {
+          "lang": "en",
+          "value": "Triceps Strengthening"
+      }
+  ],
+  "description": [
+      {
+          "lang": "fr",
+          "value": "Un entraînement dédié au renforcement des triceps, visant à développer la force et la résistance musculaire dans l'arrière des bras, tout en améliorant la définition musculaire."
+      },
+      {
+          "lang": "en",
+          "value": "A workout focused on strengthening the triceps, aiming to build muscle strength and endurance in the back of the arms, while improving muscle definition."
+      }
+  ]
+}

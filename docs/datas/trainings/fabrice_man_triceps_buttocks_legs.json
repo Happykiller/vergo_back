@@ -8,12 +8,10 @@
       "slug": "warm-up",
       "sets": [
         {
-          "rep": 4,
+          "rep": 2,
           "slugs": [
-            "leg_swings",
             "butt_kicks",
-            "air_squats",
-            "glute_bridges"
+            "air_squats"
           ],
           "duration": 40,
           "rest": 20,
@@ -30,7 +28,7 @@
           "ite": 12,
           "rest": 40,
           "slugs": [
-            "dips"
+            "bench tricep dips"
           ]
         },
         {
@@ -56,7 +54,7 @@
           "rep": 3,
           "rest": 60,
           "slugs": [
-            "tricep_kickback_with_weight"
+            "overhead dumbbell triceps"
           ], 
           "sets": [
             {
@@ -74,7 +72,7 @@
       ]
     },
     {
-      "slug": "buttocks_legs",
+      "slug": "buttocks strengthening",
       "sets": [
         {
           "rep": 3,
@@ -86,6 +84,21 @@
             "squats_with_weight"
           ]
         },
+        {
+          "rep": 3,
+          "ite": 15,
+          "weight": 18,
+          "duration": 40,
+          "rest": 60,
+          "slugs": [
+            "glute_bridges_with_weight"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "legs strengthening",
+      "sets": [
         {
           "rep": 3,
           "ite": 10,
@@ -105,21 +118,11 @@
           "slugs": [
             "step-ups_on_plyo_box_with_weight"
           ]
-        },
-        {
-          "rep": 3,
-          "ite": 15,
-          "weight": 18,
-          "duration": 40,
-          "rest": 60,
-          "slugs": [
-            "glute_bridges_with_weight"
-          ]
         }
       ]
     },
     {
-      "slug": "cooldown",
+      "slug": "cool-down",
       "sets": [
         {
           "rep": 1,
@@ -162,22 +165,6 @@
           "rep": 1,
           "slugs": [
             "hamstring_stretch"
-          ],
-          "sets": [
-            {
-              "rep": 2,
-              "duration": 30,
-              "slugs": [
-                "left",
-                "right"
-              ]
-            }
-          ]
-        },
-        {
-          "rep": 1,
-          "slugs": [
-            "glute_stretch"
           ],
           "sets": [
             {

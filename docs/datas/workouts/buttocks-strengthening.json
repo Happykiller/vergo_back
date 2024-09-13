@@ -1,0 +1,24 @@
+{
+  "_id": ObjectId(),
+  "slug": "buttocks-strengthening",
+  "title": [
+      {
+          "lang": "fr",
+          "value": "Renforcement Fessiers"
+      },
+      {
+          "lang": "en",
+          "value": "Buttocks Strengthening"
+      }
+  ],
+  "description": [
+      {
+          "lang": "fr",
+          "value": "Un entraînement dédié au renforcement des fessiers, visant à développer la force et la tonification des muscles du bas du corps, en particulier les muscles des fesses, pour améliorer la posture, la puissance et la définition musculaire."
+      },
+      {
+          "lang": "en",
+          "value": "A workout focused on strengthening the buttocks, aiming to build strength and toning the lower body muscles, especially the glutes, to improve posture, power, and muscle definition."
+      }
+  ]
+}
