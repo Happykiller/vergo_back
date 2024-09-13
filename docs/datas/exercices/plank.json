@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "plank",
+  "title": [
+      {
+          "lang": "fr",
+          "value": "Planche"
+      },
+      {
+          "lang": "en",
+          "value": "Plank"
+      }
+  ],
+  "description": [
+      {
+          "lang": "fr",
+          "value": "Allongez-vous face contre terre, puis soulevez votre corps en vous appuyant sur les avant-bras et la pointe des pieds. Gardez le corps droit, les abdominaux contractés et maintenez la position."
+      },
+      {
+          "lang": "en",
+          "value": "Lie face down, then lift your body up, supporting yourself on your forearms and toes. Keep your body straight, engage your core, and hold the position."
+      }
+  ],
+  "image": "forearm plank"
+}

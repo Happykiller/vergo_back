@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "stretching_hip_circles",
+  "title": [
+      {
+          "lang": "fr",
+          "value": "Étirement Cercles de Hanches"
+      },
+      {
+          "lang": "en",
+          "value": "Stretching Hip Circles"
+      }
+  ],
+  "description": [
+      {
+          "lang": "fr",
+          "value": "Debout, pieds écartés à la largeur des épaules, placez vos mains sur les hanches. Effectuez lentement des cercles avec vos hanches dans un sens, puis dans l'autre, pour étirer et mobiliser la région des hanches."
+      },
+      {
+          "lang": "en",
+          "value": "Stand with your feet shoulder-width apart and place your hands on your hips. Slowly rotate your hips in a circular motion in one direction, then the other, to stretch and mobilize the hip area."
+      }
+  ],
+  "image": "stretching-hip-circles"
+}

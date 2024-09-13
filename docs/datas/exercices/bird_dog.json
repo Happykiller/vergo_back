@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "bird_dog",
+  "title": [
+      {
+          "lang": "fr",
+          "value": "Bird Dog"
+      },
+      {
+          "lang": "en",
+          "value": "Bird Dog"
+      }
+  ],
+  "description": [
+      {
+          "lang": "fr",
+          "value": "Commencez à quatre pattes, mains sous les épaules et genoux sous les hanches. Étendez simultanément un bras vers l'avant et la jambe opposée vers l'arrière, en gardant le dos droit. Revenez à la position de départ et répétez de l'autre côté."
+      },
+      {
+          "lang": "en",
+          "value": "Start on all fours with your hands under your shoulders and knees under your hips. Extend one arm forward and the opposite leg backward simultaneously, keeping your back straight. Return to the starting position and repeat on the other side."
+      }
+  ],
+  "image": "bird-dog"
+}

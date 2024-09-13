@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "dead_bug",
+  "title": [
+      {
+          "lang": "fr",
+          "value": "Dead Bug"
+      },
+      {
+          "lang": "en",
+          "value": "Dead Bug"
+      }
+  ],
+  "description": [
+      {
+          "lang": "fr",
+          "value": "Allongez-vous sur le dos, les bras tendus vers le plafond et les genoux pliés à 90 degrés. Abaissez simultanément un bras et la jambe opposée vers le sol tout en maintenant le bas du dos en contact avec le sol. Revenez à la position de départ et répétez de l'autre côté."
+      },
+      {
+          "lang": "en",
+          "value": "Lie on your back with your arms extended towards the ceiling and knees bent at 90 degrees. Lower one arm and the opposite leg toward the floor while keeping your lower back pressed into the ground. Return to the starting position and repeat on the other side."
+      }
+  ],
+  "image": "dead-bug"
+}

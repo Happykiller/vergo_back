@@ -1,0 +1,24 @@
+{
+  "_id": ObjectId(),
+  "slug": "core-strengthening",
+  "title": [
+      {
+          "lang": "fr",
+          "value": "Renforcement de la Ceinture Abdominale"
+      },
+      {
+          "lang": "en",
+          "value": "Core Strengthening"
+      }
+  ],
+  "description": [
+      {
+          "lang": "fr",
+          "value": "Un entraînement conçu pour renforcer la ceinture abdominale, incluant les muscles abdominaux profonds et superficiels, afin d'améliorer la stabilité, la posture et la force fonctionnelle."
+      },
+      {
+          "lang": "en",
+          "value": "A workout designed to strengthen the core, including both deep and superficial abdominal muscles, to improve stability, posture, and functional strength."
+      }
+  ]
+}
