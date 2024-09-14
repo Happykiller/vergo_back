@@ -4,9 +4,10 @@ import inversify from '@src/inversify/investify';
 import { BddService } from '@service/db/db.service';
 import { TrainingDbModel } from '@service/db/model/training.db.model';
 import { GetTrainingDbDto } from '@service/db/dto/get.training.db.dto';
+import { UpdateTrainingDbDto } from '@service/db/dto/update.training.db.dto';
 
 export class BddServiceTrainingMongo
-  implements Pick<BddService, 'getTrainings' | 'getTraining'>
+  implements Pick<BddService, 'getTrainings' | 'getTraining' | 'updateTraining'>
 {
   private async getTrainingCollection(): Promise<Collection> {
     return inversify.mongo.collection('trainings');
@@ -55,5 +56,36 @@ export class BddServiceTrainingMongo
     } catch (e) {
       return null;
     }
+  }
+
+  async updateTraining(dto: UpdateTrainingDbDto): Promise<boolean> {
+    const set: any = {};
+
+    if (dto.gender) {
+      set.gender = dto.gender;
+    }
+
+    if (dto.label) {
+      set.label = dto.label;
+    }
+
+    if (dto.slug) {
+      set.slug = dto.slug;
+    }
+
+    if (dto.workout) {
+      set.workout = dto.workout;
+    }
+
+    await (
+      await this.getTrainingCollection()
+    ).updateOne(
+      { _id: new ObjectId(dto.id) },
+      {
+        $set: set,
+      },
+    );
+
+    return true;
   }
 }

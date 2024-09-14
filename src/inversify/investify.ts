@@ -28,6 +28,7 @@ import { DeletePasskeyUsecase } from '@usecase/passkey/delete.passkey.usecase';
 import { CreatePasskeyUsecase } from '@usecase/passkey/create.passkey.usecase';
 import { PasswordLessService } from '@service/passwordless/passwordless.service';
 import { SearchWorkoutsUsecase } from '@usecase/workout/search.workouts.usecase';
+import { UpdateTrainingUsecase } from '@usecase/training/update.training.usecase';
 import { FindMostAccurateFileUsecase } from '@usecase/ai/findMostAccurateFile.usecase';
 import { GetByUserIdPasskeyUsecase } from '@usecase/passkey/getByUserId.passkey.usecase';
 import { PasswordLessServiceFake } from '@service/passwordless/passwordless.service.fake';
@@ -57,6 +58,7 @@ export class Inversify {
   getExercicesUsecase: GetExercicesUsecase;
   deletePasskeyUsecase: DeletePasskeyUsecase;
   createPasskeyUsecase: CreatePasskeyUsecase;
+  updateTrainingUsecase: UpdateTrainingUsecase;
   searchWorkoutsUsecase: SearchWorkoutsUsecase;
   getByUserIdPasskeyUsecase: GetByUserIdPasskeyUsecase;
   findMostAccurateFileUsecase: FindMostAccurateFileUsecase;
@@ -103,6 +105,7 @@ export class Inversify {
     this.getTrainingsUsecase = new GetTrainingsUsecase(this);
     this.deletePasskeyUsecase = new DeletePasskeyUsecase(this);
     this.createPasskeyUsecase = new CreatePasskeyUsecase(this);
+    this.updateTrainingUsecase = new UpdateTrainingUsecase(this);
     this.searchWorkoutsUsecase = new SearchWorkoutsUsecase(this);
     this.getByUserIdPasskeyUsecase = new GetByUserIdPasskeyUsecase(this);
     this.findMostAccurateFileUsecase = new FindMostAccurateFileUsecase(this);

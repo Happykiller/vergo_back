@@ -182,6 +182,7 @@ type Mutation {
   update_password(dto: UpdPasswordAuthResolverDto!): AuthModelResolver!
   create_passkey(dto: CreatePasskeyResolverDto!): PasskeyResolverModel!
   delete_passkey(dto: DeletePasskeyResolverDto!): Boolean!
+  training_update(dto: UpdateTrainingDtoResolver!): Boolean!
 }
 
 input CreateUserResolverDto {
@@ -223,4 +224,28 @@ input CreatePasskeyRegistrationCredentialResolverDto {
 
 input DeletePasskeyResolverDto {
   passkey_id: String!
+}
+
+input UpdateTrainingDtoResolver {
+  id: String
+  slug: String
+  gender: String
+  label: String
+  workout: [WorkoutDtoResolver!]
+}
+
+input WorkoutDtoResolver {
+  slug: String!
+  sets: [SetDtoResolver!]!
+}
+
+input SetDtoResolver {
+  rep: Float
+  slugs: [String!]
+  ite: Float
+  weight: Float
+  duration: Float
+  rest: Float
+  pause: Float
+  sets: [SetDtoResolver!]
 }

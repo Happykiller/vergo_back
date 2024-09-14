@@ -1,10 +1,11 @@
+import { hiit } from '@service/db/fake/mock/hiit';
 import { BddService } from '@service/db/db.service';
-import { hiit } from '@src/service/db/fake/mock/hiit';
-import { TrainingDbModel } from '../model/training.db.model';
+import { TrainingDbModel } from '@service/db/model/training.db.model';
+import { UpdateTrainingDbDto } from '@service/db/dto/update.training.db.dto';
 
 export class BdbServiceTrainingFake
   implements
-    Pick<BddService, 'getTrainings' | 'getTraining'>
+    Pick<BddService, 'getTrainings' | 'getTraining' | 'updateTraining'>
 {
   trainingCollection: TrainingDbModel[];
 
@@ -21,5 +22,9 @@ export class BdbServiceTrainingFake
 
   getTraining(): Promise<TrainingDbModel> {
     return Promise.resolve(null);
+  }
+
+  updateTraining(dto: UpdateTrainingDbDto): Promise<boolean> {
+    return Promise.resolve(true);
   }
 }

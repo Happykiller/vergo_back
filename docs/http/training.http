@@ -54,10 +54,12 @@ query trainings {
     id
     slug
     gender
+    creator_id
     creator {
       id
       code
     }
+    contributors_id
     contributors {
       id
       code
@@ -117,4 +119,19 @@ query {
     ite
     weight
   }
+}
+
+###
+POST {{host}}/graphql
+Content-Type: application/json
+Authorization: Bearer {{token}}
+X-REQUEST-TYPE: GraphQL
+
+mutation {
+  training_update (
+    dto: {
+      id: "66af92ab43812dbcda7843e6",
+      slug: "test"
+    }
+  )
 }
