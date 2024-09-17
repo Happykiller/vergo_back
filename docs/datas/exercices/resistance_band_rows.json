@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "resistance_band_rows",
+  "title": [
+      {
+          "lang": "fr",
+          "value": "Rowing avec Bande de Résistance"
+      },
+      {
+          "lang": "en",
+          "value": "Resistance Band Rows"
+      }
+  ],
+  "description": [
+      {
+          "lang": "fr",
+          "value": "Asseyez-vous les jambes tendues devant vous, la bande de résistance attachée à un point fixe devant. Tenez chaque extrémité de la bande, tirez les coudes vers l'arrière tout en serrant les omoplates, puis revenez lentement à la position de départ."
+      },
+      {
+          "lang": "en",
+          "value": "Sit with your legs extended in front of you, resistance band anchored to a fixed point ahead. Hold each end of the band, pull your elbows back while squeezing your shoulder blades, then slowly return to the starting position."
+      }
+  ],
+  "image": "resistance-band-rows"
+}

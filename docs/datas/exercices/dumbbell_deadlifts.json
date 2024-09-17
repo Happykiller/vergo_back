@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "dumbbell_deadlifts",
+  "title": [
+      {
+          "lang": "fr",
+          "value": "Soulevé de Terre avec Haltères"
+      },
+      {
+          "lang": "en",
+          "value": "Dumbbell Deadlifts"
+      }
+  ],
+  "description": [
+      {
+          "lang": "fr",
+          "value": "Tenez un haltère dans chaque main, pieds à la largeur des hanches. Pliez légèrement les genoux et inclinez les hanches en gardant le dos droit, abaissez les haltères vers le sol, puis redressez-vous en engageant les fessiers et les ischio-jambiers."
+      },
+      {
+          "lang": "en",
+          "value": "Hold a dumbbell in each hand, feet hip-width apart. Slightly bend your knees and hinge at the hips while keeping your back straight, lowering the dumbbells towards the floor, then stand back up by engaging your glutes and hamstrings."
+      }
+  ],
+  "image": "dumbbell-deadlifts"
+}

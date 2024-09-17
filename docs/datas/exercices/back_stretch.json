@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "back_stretch",
+  "title": [
+      {
+          "lang": "fr",
+          "value": "Étirement du Dos"
+      },
+      {
+          "lang": "en",
+          "value": "Back Stretch"
+      }
+  ],
+  "description": [
+      {
+          "lang": "fr",
+          "value": "Asseyez-vous sur vos talons, étendez les bras devant vous et posez vos mains au sol. Abaissez votre poitrine vers le sol tout en allongeant le dos et en maintenant la position pour étirer les muscles dorsaux."
+      },
+      {
+          "lang": "en",
+          "value": "Sit back on your heels, extend your arms in front of you, and place your hands on the floor. Lower your chest towards the ground while lengthening your back, holding the position to stretch the back muscles."
+      }
+  ],
+  "image": "back-stretch"
+}

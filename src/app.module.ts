@@ -39,6 +39,7 @@ import { ExerciceModule } from '@presentation/exercice/exercice.module';
       playground: config.graphQL.playground,
       introspection: config.graphQL.introspection,
       autoSchemaFile: config.graphQL.schemaFileName,
+      sortSchema: true,  // optionnel, pour trier les types dans le schéma généré
       context: ({ req, res }) => {
         return { req, res };
       },

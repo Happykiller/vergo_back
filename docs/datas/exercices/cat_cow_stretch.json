@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "cat_cow_stretch",
+  "title": [
+      {
+          "lang": "fr",
+          "value": "Étirement du Chat-Vache"
+      },
+      {
+          "lang": "en",
+          "value": "Cat-Cow Stretch"
+      }
+  ],
+  "description": [
+      {
+          "lang": "fr",
+          "value": "Commencez à quatre pattes avec les poignets sous les épaules et les genoux sous les hanches. Inspirez en arquant le dos et en levant la tête (position vache), puis expirez en arrondissant le dos et en rentrant le menton (position chat). Répétez l'exercice lentement."
+      },
+      {
+          "lang": "en",
+          "value": "Start on all fours with wrists under your shoulders and knees under your hips. Inhale while arching your back and lifting your head (cow pose), then exhale while rounding your back and tucking your chin (cat pose). Repeat the movement slowly."
+      }
+  ],
+  "image": "cat-cow-stretch"
+}

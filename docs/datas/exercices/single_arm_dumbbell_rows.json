@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "single_arm_dumbbell_rows",
+  "title": [
+      {
+          "lang": "fr",
+          "value": "Rowing avec Haltère à un Bras"
+      },
+      {
+          "lang": "en",
+          "value": "Single-arm Dumbbell Rows"
+      }
+  ],
+  "description": [
+      {
+          "lang": "fr",
+          "value": "Placez un genou et une main sur un banc pour soutenir votre corps. Avec l'autre main, tirez l'haltère vers votre hanche tout en gardant le dos droit. Revenez lentement à la position de départ."
+      },
+      {
+          "lang": "en",
+          "value": "Place one knee and one hand on a bench to support your body. With the other hand, pull the dumbbell towards your hip while keeping your back straight. Slowly return to the starting position."
+      }
+  ],
+  "image": "single-arm-dumbbell-rows"
+}

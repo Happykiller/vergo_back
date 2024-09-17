@@ -4,6 +4,61 @@ Content-Type: application/json
 Authorization: Bearer {{token}}
 X-REQUEST-TYPE: GraphQL
 
+mutation {
+  training_create (
+    dto: {
+      slug: "new-training-slug-3"
+      label: "Description of the new training 3"
+      gender: "male"
+      workout: [
+        {
+          slug: "warm-up"
+          sets: [
+            {
+              rep: 1
+              slugs: [
+                "jump rope"
+              ]
+              duration: 40
+              rest: 20
+            },
+            {
+              rep: 2
+              slugs: [
+                "hip circles"
+                "stretch_spinal_twist"
+              ],
+              duration: 30
+              rest: 20
+            }
+          ]
+        },
+        {
+          slug: "abdo"
+          sets: [
+            {
+              rep: 1
+              slugs: [
+                "crunch"
+              ]
+              duration: 40
+              rest: 20
+            }
+          ]
+        }
+      ]
+    }
+  ) {
+    id
+  }
+}
+
+###
+POST {{host}}/graphql
+Content-Type: application/json
+Authorization: Bearer {{token}}
+X-REQUEST-TYPE: GraphQL
+
 query training {
   training(dto: { id: "66b0bb7ca4d5b1fc4a27332e" }) {
     id

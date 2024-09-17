@@ -2,146 +2,6 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
-type AuthModelResolver {
-  """Session token"""
-  access_token: String!
-
-  """Id of the user"""
-  id: String!
-
-  """Code of the user"""
-  code: String!
-  name_first: String!
-  name_last: String!
-  description: String!
-  mail: String!
-  role: String!
-}
-
-type UserModelResolver {
-  id: String
-  code: String
-  name_first: String
-  name_last: String
-  description: String
-  mail: String
-  role: String
-}
-
-type SystemInfoResolverModel {
-  version: String!
-}
-
-type LanguageModelResolver {
-  lang: String!
-  value: String!
-}
-
-type ExerciceModelResolver {
-  id: String!
-  slug: String!
-  title: [LanguageModelResolver!]!
-  description: [LanguageModelResolver!]!
-  image: String
-}
-
-type WorkoutDefModelResolver {
-  id: String!
-  slug: String!
-  title: [LanguageModelResolver!]!
-  description: [LanguageModelResolver!]!
-  image: String
-}
-
-type WorkoutsPaginatedResolverModel {
-  count: Float!
-  nodes: [WorkoutDefModelResolver!]!
-}
-
-type SearchWorkoutsPaginatedNodeResolverModel {
-  search: String!
-  found: WorkoutDefModelResolver
-}
-
-type SearchWorkoutsPaginatedResolverModel {
-  count: Float!
-  nodes: [SearchWorkoutsPaginatedNodeResolverModel!]!
-}
-
-type PasskeyResolverModel {
-  id: String!
-  label: String!
-  user_id: String!
-  hostname: String!
-  user_code: String!
-  challenge: String!
-  credential_id: String!
-}
-
-type SetModelResolver {
-  rep: Float
-  slugs: [String!]
-  ite: Float
-  weight: Float
-  duration: Float
-  rest: Float
-  pause: Float
-  sets: [SetModelResolver!]
-}
-
-type WorkoutModelResolver {
-  slug: String!
-  sets: [SetModelResolver!]!
-}
-
-type TrainingModelResolver {
-  id: String!
-  slug: String!
-  gender: String
-  label: String
-  workout: [WorkoutModelResolver!]!
-  creator_id: String
-  contributors_id: [String!]
-  creator: UserModelResolver
-  contributors: [UserModelResolver!]
-}
-
-type PaginatedTrainingsResolverModel {
-  nodes: [TrainingModelResolver!]
-  totalCount: Int!
-}
-
-type TrainingNormalizedResolverModel {
-  slugs: [String!]!
-  type: String!
-  duration: Float!
-  ite: Float
-  weight: Float
-}
-
-type Query {
-  users: [UserModelResolver!]!
-  user(dto: GetUserResolverDto!): UserModelResolver!
-  auth(dto: AuthAuthResolverDto!): AuthModelResolver!
-  auth_passkey(dto: PasskeyAuthResolverDto!): AuthModelResolver!
-  getSessionInfo: AuthModelResolver!
-  systemInfo: SystemInfoResolverModel!
-  passkeys_for_user: [PasskeyResolverModel!]!
-  workouts(offset: Int, limit: Int, order_by: OrderResolverDto): WorkoutsPaginatedResolverModel!
-  searchWorkoutsPaginated(dto: SearchWorkoutsResolverDto!, offset: Int, limit: Int, order_by: OrderResolverDto): SearchWorkoutsPaginatedResolverModel!
-  exercices(dto: GetTrainingResolverDto): [ExerciceModelResolver!]!
-  trainings: [TrainingModelResolver!]!
-  get_private_trainings: [TrainingModelResolver!]!
-  trainingsPaginated(offset: Int, limit: Int, orderBy: OrderResolverDto): PaginatedTrainingsResolverModel!
-  training(dto: GetTrainingResolverDto!): TrainingModelResolver!
-  training_normalized(dto: GetTrainingResolverDto!): [TrainingNormalizedResolverModel!]!
-}
-
-input GetUserResolverDto {
-  id: String
-  code: String
-}
-
 input AuthAuthResolverDto {
   """User code for the session"""
   login: String!
@@ -150,13 +10,110 @@ input AuthAuthResolverDto {
   password: String!
 }
 
-input PasskeyAuthResolverDto {
-  user_code: String!
-  credentialId: String!
+type AuthModelResolver {
+  """Session token"""
+  access_token: String!
+
+  """Code of the user"""
+  code: String!
+  description: String!
+
+  """Id of the user"""
+  id: String!
+  mail: String!
+  name_first: String!
+  name_last: String!
+  role: String!
+}
+
+input CreatePasskeyRegistrationCredentialResolverDto {
+  algorithm: String!
+  id: String!
+  publicKey: String!
+}
+
+input CreatePasskeyRegistrationResolverDto {
+  attestationData: String!
   authenticatorData: String!
   clientData: String!
-  signature: String!
-  userHandle: String!
+  credential: CreatePasskeyRegistrationCredentialResolverDto!
+  username: String!
+}
+
+input CreatePasskeyResolverDto {
+  challenge: String!
+  hostname: String!
+  label: String!
+  registration: CreatePasskeyRegistrationResolverDto!
+}
+
+input CreateTrainingDtoResolver {
+  gender: String
+  is_private: Boolean
+  label: String
+  slug: String!
+  workout: [CreateTrainingWorkoutDtoResolver!]!
+}
+
+input CreateTrainingWorkoutDtoResolver {
+  sets: [CreateTrainingWorkoutSetDtoResolver!]!
+  slug: String!
+}
+
+input CreateTrainingWorkoutSetDtoResolver {
+  duration: Float
+  ite: Float
+  pause: Float
+  rep: Float
+  rest: Float
+  sets: [CreateTrainingWorkoutSetDtoResolver!]
+  slugs: [String!]
+  weight: Float
+}
+
+input CreateUserResolverDto {
+  """Code of the user"""
+  code: String!
+  description: String!
+  mail: String!
+  name_first: String!
+  name_last: String!
+  password: String!
+}
+
+input DeletePasskeyResolverDto {
+  passkey_id: String!
+}
+
+type ExerciceModelResolver {
+  description: [LanguageModelResolver!]!
+  id: String!
+  image: String
+  slug: String!
+  title: [LanguageModelResolver!]!
+}
+
+input GetTrainingResolverDto {
+  id: String!
+}
+
+input GetUserResolverDto {
+  code: String
+  id: String
+}
+
+type LanguageModelResolver {
+  lang: String!
+  value: String!
+}
+
+type Mutation {
+  create_passkey(dto: CreatePasskeyResolverDto!): PasskeyResolverModel!
+  create_user(dto: CreateUserResolverDto!): UserModelResolver!
+  delete_passkey(dto: DeletePasskeyResolverDto!): Boolean!
+  training_create(dto: CreateTrainingDtoResolver!): TrainingModelResolver!
+  training_update(dto: UpdateTrainingDtoResolver!): Boolean!
+  update_password(dto: UpdPasswordAuthResolverDto!): AuthModelResolver!
 }
 
 input OrderResolverDto {
@@ -164,88 +121,156 @@ input OrderResolverDto {
   order: SortOrder!
 }
 
-enum SortOrder {
-  ASC
-  DESC
+type PaginatedTrainingsResolverModel {
+  nodes: [TrainingModelResolver!]
+  totalCount: Int!
+}
+
+input PasskeyAuthResolverDto {
+  authenticatorData: String!
+  clientData: String!
+  credentialId: String!
+  signature: String!
+  userHandle: String!
+  user_code: String!
+}
+
+type PasskeyResolverModel {
+  challenge: String!
+  credential_id: String!
+  hostname: String!
+  id: String!
+  label: String!
+  user_code: String!
+  user_id: String!
+}
+
+type Query {
+  auth(dto: AuthAuthResolverDto!): AuthModelResolver!
+  auth_passkey(dto: PasskeyAuthResolverDto!): AuthModelResolver!
+  exercices(dto: GetTrainingResolverDto): [ExerciceModelResolver!]!
+  getSessionInfo: AuthModelResolver!
+  get_private_trainings: [TrainingModelResolver!]!
+  passkeys_for_user: [PasskeyResolverModel!]!
+  searchWorkoutsPaginated(dto: SearchWorkoutsResolverDto!, limit: Int, offset: Int, order_by: OrderResolverDto): SearchWorkoutsPaginatedResolverModel!
+  systemInfo: SystemInfoResolverModel!
+  training(dto: GetTrainingResolverDto!): TrainingModelResolver!
+  training_normalized(dto: GetTrainingResolverDto!): [TrainingNormalizedResolverModel!]!
+  trainings: [TrainingModelResolver!]!
+  trainingsPaginated(limit: Int, offset: Int, orderBy: OrderResolverDto): PaginatedTrainingsResolverModel!
+  user(dto: GetUserResolverDto!): UserModelResolver!
+  users: [UserModelResolver!]!
+  workouts(limit: Int, offset: Int, order_by: OrderResolverDto): WorkoutsPaginatedResolverModel!
+}
+
+type SearchWorkoutsPaginatedNodeResolverModel {
+  found: WorkoutDefModelResolver
+  search: String!
+}
+
+type SearchWorkoutsPaginatedResolverModel {
+  count: Float!
+  nodes: [SearchWorkoutsPaginatedNodeResolverModel!]!
 }
 
 input SearchWorkoutsResolverDto {
   workouts_slug: [String!]!
 }
 
-input GetTrainingResolverDto {
+input SetDtoResolver {
+  duration: Float
+  ite: Float
+  pause: Float
+  rep: Float
+  rest: Float
+  sets: [SetDtoResolver!]
+  slugs: [String!]
+  weight: Float
+}
+
+type SetModelResolver {
+  duration: Float
+  ite: Float
+  pause: Float
+  rep: Float
+  rest: Float
+  sets: [SetModelResolver!]
+  slugs: [String!]
+  weight: Float
+}
+
+enum SortOrder {
+  ASC
+  DESC
+}
+
+type SystemInfoResolverModel {
+  version: String!
+}
+
+type TrainingModelResolver {
+  contributors: [UserModelResolver!]
+  contributors_id: [String!]
+  creator: UserModelResolver
+  creator_id: String
+  gender: String
   id: String!
+  label: String
+  slug: String!
+  workout: [WorkoutModelResolver!]!
 }
 
-type Mutation {
-  create_user(dto: CreateUserResolverDto!): UserModelResolver!
-  update_password(dto: UpdPasswordAuthResolverDto!): AuthModelResolver!
-  create_passkey(dto: CreatePasskeyResolverDto!): PasskeyResolverModel!
-  delete_passkey(dto: DeletePasskeyResolverDto!): Boolean!
-  training_update(dto: UpdateTrainingDtoResolver!): Boolean!
-}
-
-input CreateUserResolverDto {
-  """Code of the user"""
-  code: String!
-  name_first: String!
-  name_last: String!
-  description: String!
-  mail: String!
-  password: String!
+type TrainingNormalizedResolverModel {
+  duration: Float!
+  ite: Float
+  slugs: [String!]!
+  type: String!
+  weight: Float
 }
 
 input UpdPasswordAuthResolverDto {
-  old_value: String!
-  new_value: String!
   conf_value: String!
-}
-
-input CreatePasskeyResolverDto {
-  label: String!
-  hostname: String!
-  challenge: String!
-  registration: CreatePasskeyRegistrationResolverDto!
-}
-
-input CreatePasskeyRegistrationResolverDto {
-  username: String!
-  credential: CreatePasskeyRegistrationCredentialResolverDto!
-  authenticatorData: String!
-  clientData: String!
-  attestationData: String!
-}
-
-input CreatePasskeyRegistrationCredentialResolverDto {
-  id: String!
-  publicKey: String!
-  algorithm: String!
-}
-
-input DeletePasskeyResolverDto {
-  passkey_id: String!
+  new_value: String!
+  old_value: String!
 }
 
 input UpdateTrainingDtoResolver {
-  id: String
-  slug: String
   gender: String
+  id: String
   label: String
+  slug: String
   workout: [WorkoutDtoResolver!]
 }
 
-input WorkoutDtoResolver {
-  slug: String!
-  sets: [SetDtoResolver!]!
+type UserModelResolver {
+  code: String
+  description: String
+  id: String
+  mail: String
+  name_first: String
+  name_last: String
+  role: String
 }
 
-input SetDtoResolver {
-  rep: Float
-  slugs: [String!]
-  ite: Float
-  weight: Float
-  duration: Float
-  rest: Float
-  pause: Float
-  sets: [SetDtoResolver!]
+type WorkoutDefModelResolver {
+  description: [LanguageModelResolver!]!
+  id: String!
+  image: String
+  slug: String!
+  title: [LanguageModelResolver!]!
+}
+
+input WorkoutDtoResolver {
+  sets: [SetDtoResolver!]!
+  slug: String!
+}
+
+type WorkoutModelResolver {
+  sets: [SetModelResolver!]!
+  slug: String!
+}
+
+type WorkoutsPaginatedResolverModel {
+  count: Float!
+  nodes: [WorkoutDefModelResolver!]!
 }

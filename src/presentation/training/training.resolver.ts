@@ -22,6 +22,7 @@ import { UserModelResolver } from '@presentation/user/model/user.resolver.model'
 import { TrainingUsecaseModel } from '@usecase/training/model/training.usecase.model';
 import { TrainingModelResolver } from '@presentation/training/model/training.resolver.model';
 import { GetTrainingResolverDto } from '@presentation/training/dto/get.training.resolver.dto';
+import { CreateTrainingDtoResolver } from '@presentation/training/dto/create.training.resolver.dto';
 import { UpdateTrainingDtoResolver } from '@presentation/training/dto/update.training.resolver.dto';
 import { PaginatedTrainingsResolverModel } from '@presentation/training/model/pagined.trainings.resolver.model';
 import { TrainingNormalizedResolverModel } from '@presentation/training/model/training.normalized.resolver.model';
@@ -60,6 +61,20 @@ export class TrainingResolver {
     } catch (e) {
       return contributors;
     }
+  }
+
+  @Roles(USER_ROLE.USER, USER_ROLE.ADMIN)
+  @UseGuards(GqlAuthGuard, RolesGuard)
+  /* eslint-disable @typescript-eslint/no-unused-vars */
+  @Mutation((returns) => TrainingModelResolver)
+  async training_create(
+    @CurrentSession() session: UserSession,
+    @Args('dto') dto: CreateTrainingDtoResolver,
+  ): Promise<TrainingModelResolver> {
+    return await this.inversify.createTrainingUsecase.execute({
+      session,
+      training: dto
+    });
   }
   
   @Roles(USER_ROLE.USER, USER_ROLE.ADMIN)

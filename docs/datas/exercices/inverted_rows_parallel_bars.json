@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "inverted_rows_parallel_bars",
+  "title": [
+      {
+          "lang": "fr",
+          "value": "Tractions Inversées avec Barres Parallèles"
+      },
+      {
+          "lang": "en",
+          "value": "Inverted Rows with Parallel Bars"
+      }
+  ],
+  "description": [
+      {
+          "lang": "fr",
+          "value": "Allongez-vous sous des barres parallèles, saisissez-les avec une prise pronation, pieds au sol. Tirez votre poitrine vers les barres tout en gardant le corps droit, puis redescendez lentement."
+      },
+      {
+          "lang": "en",
+          "value": "Lie under parallel bars, grasp them with an overhand grip, feet on the ground. Pull your chest towards the bars while keeping your body straight, then slowly lower yourself back down."
+      }
+  ],
+  "image": "inverted-rows-parallel-bars"
+}

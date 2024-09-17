@@ -3,8 +3,8 @@
   "slug": "lydie_abdo",
   "gender": "woman",
   "label": "Lydie: Ceinture abdos Chambéry",
-  "creator": "66d5beb75451bae5ecfd8d20",
-  "contributors": ["66d5beb75451bae5ecfd8d20", "66af34464cf672944fe0d82c"],
+  "creator_id": "66d5beb75451bae5ecfd8d20",
+  "contributors_id": ["66d5beb75451bae5ecfd8d20", "66af34464cf672944fe0d82c"],
   "workout": [
     {
       "slug": "warm-up",

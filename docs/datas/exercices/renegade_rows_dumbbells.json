@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "renegade_rows_dumbbells",
+  "title": [
+      {
+          "lang": "fr",
+          "value": "Rowing Renegade avec Haltères"
+      },
+      {
+          "lang": "en",
+          "value": "Renegade Rows with Dumbbells"
+      }
+  ],
+  "description": [
+      {
+          "lang": "fr",
+          "value": "Commencez en position de planche haute, avec un haltère dans chaque main. Tout en maintenant la stabilité du tronc, ramez un haltère vers votre hanche, puis reposez-le au sol et alternez avec l'autre bras."
+      },
+      {
+          "lang": "en",
+          "value": "Start in a high plank position with a dumbbell in each hand. While keeping your core stable, row one dumbbell towards your hip, then lower it back to the floor and alternate with the other arm."
+      }
+  ],
+  "image": "renegade-rows-dumbbells"
+}
