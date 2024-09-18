@@ -1,0 +1,24 @@
+{
+  "_id": ObjectId(),
+  "slug": "lower-abs-strengthening",
+  "title": [
+    {
+      "lang": "fr",
+      "value": "Renforcement Abdominaux Inférieurs"
+    },
+    {
+      "lang": "en",
+      "value": "Lower Abs Strengthening"
+    }
+  ],
+  "description": [
+    {
+      "lang": "fr",
+      "value": "Un entraînement spécifique aux abdominaux inférieurs, conçu pour renforcer et tonifier cette zone difficile à cibler. Il aide à améliorer la stabilité du tronc, réduire la graisse abdominale et obtenir un ventre plus défini."
+    },
+    {
+      "lang": "en",
+      "value": "A workout targeting the lower abs, designed to strengthen and tone this challenging area. It helps improve core stability, reduce abdominal fat, and achieve a more defined stomach."
+    }
+  ]
+}

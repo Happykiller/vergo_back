@@ -1,0 +1,24 @@
+{
+  "_id": ObjectId(),
+  "slug": "obliques-strengthening",
+  "title": [
+    {
+      "lang": "fr",
+      "value": "Renforcement Abdominaux Obliques"
+    },
+    {
+      "lang": "en",
+      "value": "Obliques Strengthening"
+    }
+  ],
+  "description": [
+    {
+      "lang": "fr",
+      "value": "Un entraînement axé sur le renforcement des abdominaux obliques, conçu pour améliorer la stabilité latérale, affiner la taille et renforcer la ceinture abdominale pour une meilleure posture et une plus grande mobilité."
+    },
+    {
+      "lang": "en",
+      "value": "A workout focused on strengthening the oblique muscles, designed to enhance lateral stability, slim the waist, and strengthen the core for better posture and greater mobility."
+    }
+  ]
+}

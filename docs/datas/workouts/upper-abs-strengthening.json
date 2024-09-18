@@ -1,0 +1,24 @@
+{
+  "_id": ObjectId(),
+  "slug": "upper-abs-strengthening",
+  "title": [
+    {
+      "lang": "fr",
+      "value": "Renforcement Abdominaux Supérieurs"
+    },
+    {
+      "lang": "en",
+      "value": "Upper Abs Strengthening"
+    }
+  ],
+  "description": [
+    {
+      "lang": "fr",
+      "value": "Un entraînement ciblé sur les abdominaux supérieurs, conçu pour renforcer et tonifier cette zone clé du corps. Idéal pour améliorer la posture, la stabilité du tronc et obtenir un ventre plat."
+    },
+    {
+      "lang": "en",
+      "value": "A workout focused on the upper abs, designed to strengthen and tone this key area of the body. Ideal for improving posture, core stability, and achieving a flat stomach."
+    }
+  ]
+}
