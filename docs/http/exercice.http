@@ -19,3 +19,25 @@ query exercices {
     image
   }
 }
+
+###
+POST {{host}}/graphql
+Content-Type: application/json
+Authorization: Bearer {{token}}
+X-REQUEST-TYPE: GraphQL
+
+query exercice {
+  exercice(dto: { id: "66b0bb8ca4d5b1fc4a273330" }) {
+    id
+    slug
+    title {
+      lang
+      value
+    }
+    description {
+      lang
+      value
+    }
+    image
+  }
+}

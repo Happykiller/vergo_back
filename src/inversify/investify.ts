@@ -21,6 +21,7 @@ import { AuthPasskeyUsecase } from '@usecase/auth/passkey.auth.usecase';
 import { GetTrainingUsecase } from '@usecase/training/getTraining.usecase';
 import { GetWorkoutsUsecase } from '@usecase/workout/get.workouts.usecase';
 import { GetGlossaryUsecase } from '@usecase/glossary/get.glossary.usecase';
+import { GetExerciceUsecase } from '@usecase/exercice/get.exercice.usecase';
 import { GetTrainingsUsecase } from '@usecase/training/getTrainings.usecase';
 import { GetExercicesUsecase } from '@usecase/exercice/getExercices.usecase';
 import { PasswordServiceReal } from '@service/password/password.service.real';
@@ -54,6 +55,7 @@ export class Inversify {
   getTrainingUsecase: GetTrainingUsecase;
   updPasswordUsecase: UpdPasswordUsecase;
   authPasskeyUsecase: AuthPasskeyUsecase;
+  getExerciceUsecase: GetExerciceUsecase;
   getTrainingsUsecase: GetTrainingsUsecase;
   passwordLessService: PasswordLessService;
   getExercicesUsecase: GetExercicesUsecase;
@@ -103,6 +105,7 @@ export class Inversify {
     this.updPasswordUsecase = new UpdPasswordUsecase(this);
     this.getGlossaryUsecase = new GetGlossaryUsecase(this);
     this.getWorkoutsUsecase = new GetWorkoutsUsecase(this);
+    this.getExerciceUsecase = new GetExerciceUsecase(this);
     this.getExercicesUsecase = new GetExercicesUsecase(this);
     this.getTrainingsUsecase = new GetTrainingsUsecase(this);
     this.deletePasskeyUsecase = new DeletePasskeyUsecase(this);

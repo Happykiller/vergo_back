@@ -4,7 +4,7 @@ import { jumping_jacks } from '@service/db/fake/mock/jumping_jacks';
 
 export class BdbServiceExerciceFake
   implements
-    Pick<BddService, 'getExercices'>
+    Pick<BddService, 'getExercices' | 'getExercice'>
 {
   exerciceCollection: ExerciceDbModel[];
 

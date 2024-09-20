@@ -93,6 +93,10 @@ type ExerciceModelResolver {
   title: [LanguageModelResolver!]!
 }
 
+input GetExerciceResolverDto {
+  id: String!
+}
+
 input GetTrainingResolverDto {
   id: String!
 }
@@ -148,6 +152,7 @@ type PasskeyResolverModel {
 type Query {
   auth(dto: AuthAuthResolverDto!): AuthModelResolver!
   auth_passkey(dto: PasskeyAuthResolverDto!): AuthModelResolver!
+  exercice(dto: GetExerciceResolverDto!): ExerciceModelResolver!
   exercices(dto: GetTrainingResolverDto): [ExerciceModelResolver!]!
   getSessionInfo: AuthModelResolver!
   get_private_trainings: [TrainingModelResolver!]!
