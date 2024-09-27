@@ -12,6 +12,8 @@ export class FindMostAccurateFileUsecase {
 
   execute(collection: CollectionItem[], words: string[]): any  {
     try {
+      //console.log(JSON.stringify(collection.map(elt => elt.words)))
+
       // Function to find the positions of matching subsequences
       const findMatchingSubsequencePositions = (itemWords: string[], words: string[]): number[] => {
         let positions: number[] = [];

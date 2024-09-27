@@ -60,16 +60,20 @@ export class ImageService {
        */
       let filePath = 'not_found.jpg';
       if(mostAccurateFile) {
-        inversify.loggerService.log(
+        /*inversify.loggerService.log(
           'info',
           `Successfully found '${mostAccurateFile.name}' (from ${from}) for ${filename}`,
-        );
+        );*/
+        console.log([
+          words,
+          mostAccurateFile.words
+        ])
         filePath = join(this.imagesPath, mostAccurateFile.name);
       } else {
-        inversify.loggerService.log(
+        /*inversify.loggerService.log(
           'info',
           `Not found (from ${from}) for ${filename}`,
-        );
+        );*/
       }
       
       let image;

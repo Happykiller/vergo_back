@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "scissor_kicks",
+  "title": [
+      {
+          "lang": "fr",
+          "value": "Ciseaux"
+      },
+      {
+          "lang": "en",
+          "value": "Scissor Kicks"
+      }
+  ],
+  "description": [
+      {
+          "lang": "fr",
+          "value": "Allongez-vous sur le dos avec les mains placées sous les fesses pour soutenir le bas du dos. Soulevez légèrement les jambes du sol et effectuez un mouvement croisé en alternant les jambes, l'une au-dessus de l'autre, comme des ciseaux. Gardez le bas du dos bien plaqué au sol."
+      },
+      {
+          "lang": "en",
+          "value": "Lie on your back with your hands placed under your buttocks to support your lower back. Slightly lift your legs off the ground and perform a crisscross motion, alternating legs over and under each other like scissors. Keep your lower back pressed firmly against the ground."
+      }
+  ],
+  "image": "scissor-kicks"
+}
