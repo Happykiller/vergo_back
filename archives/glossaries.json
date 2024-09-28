@@ -90,7 +90,6 @@
         "plural": "athlètes",
         "singular": "athlète",
         "common_misspellings": [
-          "athlete",
           "athlet"
         ],
         "slang": [
@@ -568,10 +567,7 @@
         ],
         "plural": "poses",
         "singular": "pose",
-        "common_misspellings": [
-          "pose",
-          "pose"
-        ],
+        "common_misspellings": [],
         "slang": [
           "position"
         ]
@@ -2059,7 +2055,6 @@
         "plural": "introductions",
         "singular": "introduction",
         "common_misspellings": [
-          "introduction",
           "intoduction"
         ],
         "slang": []
@@ -3164,8 +3159,7 @@
         "plural": "deadlifts",
         "singular": "deadlift",
         "common_misspellings": [
-          "deadlft",
-          "deadlift"
+          "deadlft"
         ],
         "slang": []
       },
@@ -3301,7 +3295,6 @@
         "plural": "pull-overs",
         "singular": "pull-over",
         "common_misspellings": [
-          "pullover",
           "pull-over"
         ],
         "slang": []
@@ -3405,8 +3398,7 @@
         "plural": "shrugs",
         "singular": "shrug",
         "common_misspellings": [
-          "shrugg",
-          "shrug"
+          "shrugg"
         ],
         "slang": []
       },
@@ -3835,7 +3827,6 @@
         "plural": "bars",
         "singular": "bar",
         "common_misspellings": [
-          "bar",
           "barr"
         ],
         "slang": []
@@ -3849,7 +3840,6 @@
         "plural": "bars",
         "singular": "bar",
         "common_misspellings": [
-          "bar",
           "barr"
         ],
         "slang": []
@@ -3865,8 +3855,7 @@
         "plural": "hops",
         "singular": "hop",
         "common_misspellings": [
-          "hopp",
-          "hop"
+          "hopp"
         ],
         "slang": [
           "jump"
@@ -4032,7 +4021,6 @@
         "plural": "méds",
         "singular": "méd",
         "common_misspellings": [
-          "med",
           "méd"
         ],
         "slang": []
@@ -4062,8 +4050,7 @@
         "plural": "balles",
         "singular": "balle",
         "common_misspellings": [
-          "bale",
-          "ball"
+          "bale"
         ],
         "slang": []
       }
@@ -4077,8 +4064,7 @@
         "plural": "russians",
         "singular": "russian",
         "common_misspellings": [
-          "russin",
-          "russian"
+          "russin"
         ],
         "slang": []
       },
@@ -4472,8 +4458,7 @@
         "plural": "postures",
         "singular": "posture",
         "common_misspellings": [
-          "postur",
-          "posture"
+          "postur"
         ],
         "slang": [
           "pose"
@@ -4502,7 +4487,6 @@
         "plural": "six",
         "singular": "six",
         "common_misspellings": [
-          "six",
           "sxi"
         ],
         "slang": []
@@ -4622,7 +4606,6 @@
         "plural": "tutoriels",
         "singular": "tutoriel",
         "common_misspellings": [
-          "tutorial",
           "tutorie"
         ],
         "slang": []
@@ -4727,7 +4710,6 @@
         "plural": "bosus",
         "singular": "bosu",
         "common_misspellings": [
-          "bosu",
           "boso"
         ],
         "slang": []
@@ -4740,7 +4722,6 @@
         "plural": "bosus",
         "singular": "bosu",
         "common_misspellings": [
-          "bosu",
           "boso"
         ],
         "slang": []
@@ -5325,7 +5306,6 @@
         "plural": "sets",
         "singular": "set",
         "common_misspellings": [
-          "set",
           "sett"
         ],
         "slang": []
@@ -5688,7 +5668,6 @@
         "plural": "tris",
         "singular": "tri",
         "common_misspellings": [
-          "tri",
           "trii"
         ],
         "slang": []
@@ -5702,7 +5681,6 @@
         "plural": "tris",
         "singular": "tri",
         "common_misspellings": [
-          "tri",
           "trii"
         ],
         "slang": []
@@ -5748,8 +5726,7 @@
         "plural": "skulls",
         "singular": "skull",
         "common_misspellings": [
-          "skul",
-          "skull"
+          "skul"
         ],
         "slang": []
       },
@@ -5875,7 +5852,6 @@
         "plural": "germans",
         "singular": "german",
         "common_misspellings": [
-          "german",
           "germn"
         ],
         "slang": []
@@ -5904,7 +5880,6 @@
         "plural": "sits",
         "singular": "sit",
         "common_misspellings": [
-          "sit",
           "sitt"
         ],
         "slang": []
@@ -6059,8 +6034,7 @@
         "plural": "ploughs",
         "singular": "plough",
         "common_misspellings": [
-          "plow",
-          "plough"
+          "plow"
         ],
         "slang": []
       },
@@ -6087,7 +6061,6 @@
         "plural": "halasanas",
         "singular": "halasana",
         "common_misspellings": [
-          "halasana",
           "halasna"
         ],
         "slang": []
@@ -6100,7 +6073,6 @@
         "plural": "halasanas",
         "singular": "halasana",
         "common_misspellings": [
-          "halasana",
           "halasna"
         ],
         "slang": []
@@ -6144,7 +6116,6 @@
         "plural": "cobras",
         "singular": "cobra",
         "common_misspellings": [
-          "cobra",
           "cobraa"
         ],
         "slang": []
@@ -6158,7 +6129,6 @@
         "plural": "cobras",
         "singular": "cobra",
         "common_misspellings": [
-          "cobra",
           "cobraa"
         ],
         "slang": []
@@ -6199,8 +6169,7 @@
         "plural": "karanis",
         "singular": "karani",
         "common_misspellings": [
-          "karni",
-          "karani"
+          "karni"
         ],
         "slang": []
       },
@@ -6210,8 +6179,7 @@
         "plural": "karanis",
         "singular": "karani",
         "common_misspellings": [
-          "karni",
-          "karani"
+          "karni"
         ],
         "slang": []
       }
@@ -6291,8 +6259,7 @@
         "plural": "gases",
         "singular": "gas",
         "common_misspellings": [
-          "gass",
-          "gas"
+          "gass"
         ],
         "slang": [
           "fuel"
@@ -6322,8 +6289,7 @@
         "plural": "muktas",
         "singular": "mukta",
         "common_misspellings": [
-          "muktaa",
-          "mukta"
+          "muktaa"
         ],
         "slang": []
       },
@@ -6335,8 +6301,7 @@
         "plural": "muktas",
         "singular": "mukta",
         "common_misspellings": [
-          "muktaa",
-          "mukta"
+          "muktaa"
         ],
         "slang": []
       }
@@ -6350,8 +6315,7 @@
         "plural": "jatharas",
         "singular": "jathara",
         "common_misspellings": [
-          "jathraa",
-          "jathara"
+          "jathraa"
         ],
         "slang": []
       },
@@ -6363,8 +6327,7 @@
         "plural": "jatharas",
         "singular": "jathara",
         "common_misspellings": [
-          "jathraa",
-          "jathara"
+          "jathraa"
         ],
         "slang": []
       }
@@ -6462,8 +6425,7 @@
         "plural": "bhujangs",
         "singular": "bhujang",
         "common_misspellings": [
-          "bhujangg",
-          "bhujang"
+          "bhujangg"
         ],
         "slang": []
       },
@@ -6475,8 +6437,7 @@
         "plural": "bhujangs",
         "singular": "bhujang",
         "common_misspellings": [
-          "bhujangg",
-          "bhujang"
+          "bhujangg"
         ],
         "slang": []
       }
@@ -6518,7 +6479,6 @@
         "plural": "jalandharas",
         "singular": "jalandhara",
         "common_misspellings": [
-          "jalandhara",
           "jalandhra"
         ],
         "slang": []
@@ -6531,7 +6491,6 @@
         "plural": "jalandharas",
         "singular": "jalandhara",
         "common_misspellings": [
-          "jalandhara",
           "jalandhra"
         ],
         "slang": []
@@ -6697,7 +6656,6 @@
         "plural": "seals",
         "singular": "seal",
         "common_misspellings": [
-          "seal",
           "seel"
         ],
         "slang": [
@@ -6765,7 +6723,6 @@
         "plural": "joints",
         "singular": "joint",
         "common_misspellings": [
-          "joint",
           "jiont"
         ],
         "slang": [
@@ -6781,7 +6738,6 @@
         "plural": "joints",
         "singular": "joint",
         "common_misspellings": [
-          "joint",
           "jont"
         ],
         "slang": [
@@ -6965,8 +6921,7 @@
         "plural": "biceps",
         "singular": "bicep",
         "common_misspellings": [
-          "bicepp",
-          "bicep"
+          "bicepp"
         ],
         "slang": [
           "arm muscle"
@@ -6980,7 +6935,6 @@
         "plural": "biceps",
         "singular": "biceps",
         "common_misspellings": [
-          "bicep",
           "bicepps"
         ],
         "slang": [
@@ -7014,7 +6968,6 @@
         "plural": "contrôles",
         "singular": "contrôle",
         "common_misspellings": [
-          "control",
           "contôle"
         ],
         "slang": [
@@ -7066,8 +7019,7 @@
         "plural": "pulls",
         "singular": "pull",
         "common_misspellings": [
-          "pul",
-          "pull"
+          "pul"
         ],
         "slang": [
           "tug"
@@ -7099,8 +7051,7 @@
         "plural": "heels",
         "singular": "heel",
         "common_misspellings": [
-          "heal",
-          "heel"
+          "heal"
         ],
         "slang": []
       },
@@ -8043,7 +7994,6 @@
         "plural": "dancers",
         "singular": "dancer",
         "common_misspellings": [
-          "dancer",
           "dancerr"
         ],
         "slang": [
@@ -8243,8 +8193,7 @@
         "plural": "unsupporteds",
         "singular": "unsupported",
         "common_misspellings": [
-          "unsuported",
-          "unsupported"
+          "unsuported"
         ],
         "slang": [
           "unassisted"
@@ -8427,8 +8376,7 @@
         "plural": "taps",
         "singular": "tap",
         "common_misspellings": [
-          "tp",
-          "tap"
+          "tp"
         ],
         "slang": [
           "tapoter"
@@ -8544,8 +8492,7 @@
         "plural": "inchworms",
         "singular": "inchworm",
         "common_misspellings": [
-          "inchwormm",
-          "inchworm"
+          "inchwormm"
         ],
         "slang": []
       },
@@ -8616,7 +8563,6 @@
         "plural": "longs",
         "singular": "long",
         "common_misspellings": [
-          "long",
           "lonng"
         ],
         "slang": []
@@ -8751,7 +8697,6 @@
         "plural": "bags",
         "singular": "bag",
         "common_misspellings": [
-          "bag",
           "bagg"
         ],
         "slang": []
@@ -8866,7 +8811,6 @@
         "plural": "fetuses",
         "singular": "fetus",
         "common_misspellings": [
-          "fetus",
           "fetuss"
         ],
         "slang": []
@@ -8880,8 +8824,7 @@
         "plural": "foetus",
         "singular": "foetus",
         "common_misspellings": [
-          "foetus",
-          "fetus"
+          "foetus"
         ],
         "slang": []
       }
@@ -8896,8 +8839,7 @@
         "plural": "tripods",
         "singular": "tripod",
         "common_misspellings": [
-          "tripodd",
-          "tripod"
+          "tripodd"
         ],
         "slang": []
       },
@@ -8939,7 +8881,6 @@
         "plural": "transparents",
         "singular": "transparent",
         "common_misspellings": [
-          "transparent",
           "transprent"
         ],
         "slang": []
@@ -8955,8 +8896,7 @@
         "plural": "equestrians",
         "singular": "equestrian",
         "common_misspellings": [
-          "equestrain",
-          "equestrian"
+          "equestrain"
         ],
         "slang": []
       },
@@ -9044,8 +8984,7 @@
         "plural": "lats",
         "singular": "lat",
         "common_misspellings": [
-          "latt",
-          "lat"
+          "latt"
         ],
         "slang": []
       },
@@ -9057,7 +8996,6 @@
         "plural": "lats",
         "singular": "lat",
         "common_misspellings": [
-          "lat",
           "latéral"
         ],
         "slang": []
@@ -9453,7 +9391,6 @@
         "plural": "flûtes",
         "singular": "flûte",
         "common_misspellings": [
-          "flute",
           "flûtt"
         ],
         "slang": []
@@ -9497,7 +9434,6 @@
         "plural": "trivikramasanas",
         "singular": "trivikramasana",
         "common_misspellings": [
-          "trivikramasana",
           "trivikramsana"
         ],
         "slang": []
@@ -9510,7 +9446,6 @@
         "plural": "trivikramasanas",
         "singular": "trivikramasana",
         "common_misspellings": [
-          "trivikramasana",
           "trivikramsana"
         ],
         "slang": []
@@ -9671,8 +9606,7 @@
         "plural": "fallens",
         "singular": "fallen",
         "common_misspellings": [
-          "falln",
-          "fallen"
+          "falln"
         ],
         "slang": []
       },
@@ -9728,7 +9662,6 @@
         "plural": "stitis",
         "singular": "stiti",
         "common_misspellings": [
-          "stiti",
           "stitii"
         ],
         "slang": []
@@ -9741,7 +9674,6 @@
         "plural": "stitis",
         "singular": "stiti",
         "common_misspellings": [
-          "stiti",
           "stitii"
         ],
         "slang": []
@@ -9787,7 +9719,6 @@
         "plural": "sunkens",
         "singular": "sunken",
         "common_misspellings": [
-          "sunken",
           "sunkenn"
         ],
         "slang": []
@@ -9881,7 +9812,6 @@
         "plural": "foldeds",
         "singular": "folded",
         "common_misspellings": [
-          "folded",
           "foldedd"
         ],
         "slang": []
@@ -10094,8 +10024,7 @@
         "plural": "alanasans",
         "singular": "alanasan",
         "common_misspellings": [
-          "alanassan",
-          "alanasan"
+          "alanassan"
         ],
         "slang": []
       },
@@ -10108,8 +10037,7 @@
         "plural": "alanasans",
         "singular": "alanasan",
         "common_misspellings": [
-          "alanassan",
-          "alanasan"
+          "alanassan"
         ],
         "slang": []
       }
@@ -10455,8 +10383,7 @@
         "plural": "hathas",
         "singular": "hatha",
         "common_misspellings": [
-          "hata",
-          "hatha"
+          "hata"
         ],
         "slang": []
       },
@@ -10469,8 +10396,7 @@
         "plural": "hathas",
         "singular": "hatha",
         "common_misspellings": [
-          "hata",
-          "hatha"
+          "hata"
         ],
         "slang": []
       }
@@ -10739,7 +10665,6 @@
         "plural": "skateurs",
         "singular": "skateur",
         "common_misspellings": [
-          "skater",
           "skatteur"
         ],
         "slang": []
@@ -10977,8 +10902,7 @@
         "plural": "bandes",
         "singular": "bande",
         "common_misspellings": [
-          "bnde",
-          "band"
+          "bnde"
         ],
         "slang": []
       }
@@ -10993,8 +10917,7 @@
         "plural": "girondas",
         "singular": "gironda",
         "common_misspellings": [
-          "girnda",
-          "gironda"
+          "girnda"
         ],
         "slang": []
       },
@@ -11007,8 +10930,7 @@
         "plural": "girondas",
         "singular": "gironda",
         "common_misspellings": [
-          "girnda",
-          "gironda"
+          "girnda"
         ],
         "slang": []
       }
@@ -11261,8 +11183,7 @@
         "plural": "physicals",
         "singular": "physical",
         "common_misspellings": [
-          "phsical",
-          "physical"
+          "phsical"
         ],
         "slang": []
       },
@@ -11613,8 +11534,7 @@
         "plural": "hundreds",
         "singular": "hundred",
         "common_misspellings": [
-          "hundrd",
-          "hundred"
+          "hundrd"
         ],
         "slang": []
       },
@@ -11746,10 +11666,7 @@
         ],
         "plural": "crucifix",
         "singular": "crucifix",
-        "common_misspellings": [
-          "crucifix",
-          "crucifix"
-        ],
+        "common_misspellings": [],
         "slang": []
       }
     },
@@ -12267,8 +12184,7 @@
         "plural": "delts",
         "singular": "delt",
         "common_misspellings": [
-          "dellt",
-          "delt"
+          "dellt"
         ],
         "slang": []
       },
@@ -12709,7 +12625,6 @@
         "plural": "splendids",
         "singular": "splendid",
         "common_misspellings": [
-          "splendid",
           "splenid"
         ],
         "slang": []
@@ -12723,7 +12638,6 @@
         "plural": "splendides",
         "singular": "splendide",
         "common_misspellings": [
-          "splendid",
           "splenide"
         ],
         "slang": []
@@ -12783,8 +12697,7 @@
         "plural": "remarquables",
         "singular": "remarquable",
         "common_misspellings": [
-          "remarqable",
-          "remarkable"
+          "remarqable"
         ],
         "slang": []
       }
@@ -13099,7 +13012,6 @@
         "plural": "splendiferouses",
         "singular": "splendiferous",
         "common_misspellings": [
-          "splendiferous",
           "splendifrous"
         ],
         "slang": []
@@ -13158,10 +13070,7 @@
         ],
         "plural": "majestics",
         "singular": "majestic",
-        "common_misspellings": [
-          "majestic",
-          "majestic"
-        ],
+        "common_misspellings": [],
         "slang": []
       },
       "french": {
@@ -13284,7 +13193,6 @@
         "plural": "martials",
         "singular": "martial",
         "common_misspellings": [
-          "martial",
           "martiall"
         ],
         "slang": []
@@ -13298,7 +13206,6 @@
         "plural": "martiaux",
         "singular": "martial",
         "common_misspellings": [
-          "martial",
           "martiall"
         ],
         "slang": []
@@ -13690,8 +13597,7 @@
         "plural": "lefts",
         "singular": "left",
         "common_misspellings": [
-          "leftt",
-          "left"
+          "leftt"
         ],
         "slang": []
       },
@@ -13980,7 +13886,6 @@
         "plural": "crabes",
         "singular": "crabe",
         "common_misspellings": [
-          "crab",
           "crabe"
         ],
         "slang": []
@@ -14143,7 +14048,7 @@
           "sideways",
           "horizontally"
         ],
-        "plural": [],
+        "plural": "",
         "singular": "laterally",
         "common_misspellings": [
           "lateral",
@@ -14157,7 +14062,7 @@
           "de côté",
           "horizontalement"
         ],
-        "plural": [],
+        "plural": "",
         "singular": "latéralement",
         "common_misspellings": [
           "latéralment",
@@ -14173,7 +14078,7 @@
           "till",
           "up to"
         ],
-        "plural": [],
+        "plural": "",
         "singular": "until",
         "common_misspellings": [
           "untill",
@@ -14187,7 +14092,7 @@
           "en attendant",
           "jusqu'au"
         ],
-        "plural": [],
+        "plural": "",
         "singular": "jusqu'à",
         "common_misspellings": [
           "jusqua",
@@ -14220,8 +14125,7 @@
         "plural": "horizontaux",
         "singular": "horizontal",
         "common_misspellings": [
-          "horizontale",
-          "horizontal"
+          "horizontale"
         ],
         "slang": []
       }
@@ -14233,7 +14137,7 @@
           "backed",
           "upheld"
         ],
-        "plural": [],
+        "plural": "",
         "singular": "supported",
         "common_misspellings": [
           "supportd",
@@ -14247,7 +14151,7 @@
           "appuyé",
           "maintenu"
         ],
-        "plural": [],
+        "plural": "",
         "singular": "soutenu",
         "common_misspellings": [
           "soutenue",
@@ -14353,11 +14257,10 @@
           "heavy",
           "burdened"
         ],
-        "plural": [],
+        "plural": "",
         "singular": "weighted",
         "common_misspellings": [
-          "weigted",
-          "weighted"
+          "weigted"
         ],
         "slang": []
       },
@@ -14367,7 +14270,7 @@
           "lourd",
           "chargé"
         ],
-        "plural": [],
+        "plural": "",
         "singular": "lesté",
         "common_misspellings": [
           "lesté",
@@ -14530,7 +14433,6 @@
         "plural": "bottles",
         "singular": "bottle",
         "common_misspellings": [
-          "bottle",
           "botle"
         ],
         "slang": []
@@ -14557,7 +14459,7 @@
           "employing",
           "utilizing"
         ],
-        "plural": [],
+        "plural": "",
         "singular": "using",
         "common_misspellings": [
           "uisng",
@@ -14571,7 +14473,7 @@
           "en employant",
           "en utilisant"
         ],
-        "plural": [],
+        "plural": "",
         "singular": "en utilisant",
         "common_misspellings": [
           "en utilizant",
@@ -14714,7 +14616,6 @@
         "plural": "externals",
         "singular": "external",
         "common_misspellings": [
-          "external",
           "externl"
         ],
         "slang": []
@@ -14871,7 +14772,6 @@
         "plural": "runs",
         "singular": "run",
         "common_misspellings": [
-          "run",
           "runn"
         ],
         "slang": []
@@ -15110,7 +15010,6 @@
         "plural": "hams",
         "singular": "ham",
         "common_misspellings": [
-          "ham",
           "hamm"
         ],
         "slang": []
@@ -15170,8 +15069,7 @@
         "plural": "gymnastics",
         "singular": "gymnastic",
         "common_misspellings": [
-          "gymnatic",
-          "gymnastic"
+          "gymnatic"
         ],
         "slang": []
       },
@@ -15230,7 +15128,6 @@
         "plural": "hangings",
         "singular": "hanging",
         "common_misspellings": [
-          "hanging",
           "hangging"
         ],
         "slang": []
@@ -15320,7 +15217,6 @@
         "plural": "spots",
         "singular": "spot",
         "common_misspellings": [
-          "spot",
           "spott"
         ],
         "slang": []
@@ -15380,7 +15276,6 @@
         "plural": "twistings",
         "singular": "twisting",
         "common_misspellings": [
-          "twisting",
           "twistng"
         ],
         "slang": []
@@ -15407,7 +15302,7 @@
           "upside-down",
           "reversed"
         ],
-        "plural": [],
+        "plural": "",
         "singular": "inverted",
         "common_misspellings": [
           "invertd",
@@ -15421,7 +15316,7 @@
           "à l'envers",
           "renversé"
         ],
-        "plural": [],
+        "plural": "",
         "singular": "inversé",
         "common_misspellings": [
           "inversé",
@@ -15440,7 +15335,6 @@
         "plural": "jeffersons",
         "singular": "jefferson",
         "common_misspellings": [
-          "jefferson",
           "jeffersn"
         ],
         "slang": []
@@ -15454,7 +15348,6 @@
         "plural": "jeffersons",
         "singular": "jefferson",
         "common_misspellings": [
-          "jefferson",
           "jeffersn"
         ],
         "slang": []
@@ -15556,10 +15449,9 @@
         "synonyms": [
           "northwest"
         ],
-        "plural": [],
+        "plural": "",
         "singular": "nw",
         "common_misspellings": [
-          "nw",
           "nwest"
         ],
         "slang": []
@@ -15569,7 +15461,7 @@
         "synonyms": [
           "nord-ouest"
         ],
-        "plural": [],
+        "plural": "",
         "singular": "nw",
         "common_misspellings": [
           "nwo",
@@ -15646,7 +15538,6 @@
         "plural": "goblets",
         "singular": "goblet",
         "common_misspellings": [
-          "goblet",
           "gobllt"
         ],
         "slang": []
@@ -15673,7 +15564,7 @@
           "paddling",
           "sculling"
         ],
-        "plural": [],
+        "plural": "",
         "singular": "rowing",
         "common_misspellings": [
           "rowingg",
@@ -15687,7 +15578,7 @@
           "ramage",
           "scull"
         ],
-        "plural": [],
+        "plural": "",
         "singular": "aviron",
         "common_misspellings": [
           "avirron",
@@ -15732,10 +15623,9 @@
           "genuflecting",
           "crouching"
         ],
-        "plural": [],
+        "plural": "",
         "singular": "kneeling",
         "common_misspellings": [
-          "kneeling",
           "kneelng"
         ],
         "slang": []
@@ -15746,7 +15636,7 @@
           "se prosterner",
           "s'accroupir"
         ],
-        "plural": [],
+        "plural": "",
         "singular": "agenouillé",
         "common_misspellings": [
           "agenouillé",
@@ -15765,7 +15655,6 @@
         "plural": "flexors",
         "singular": "flexor",
         "common_misspellings": [
-          "flexor",
           "flexr"
         ],
         "slang": []
