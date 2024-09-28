@@ -3,6 +3,18 @@ import { Inversify } from '@src/inversify/investify';
 
 type CollectionItem = { words: string[] };
 
+// Définition du type pour found_stats
+type FoundStats = {
+  accuracy: number; 
+  wordsWeight: number;
+};
+
+// Définition du type principal avec propriétés obligatoires et flexibilité supplémentaire
+type SearchResponse = {
+  words: string[]; // Propriété obligatoire
+  found_stats: FoundStats; // Propriété obligatoire
+} & Record<string, any>; // Permet d'ajouter n'importe quelles autres propriétés
+
 export class FindMostAccurateFileUsecase {
   inversify: Inversify;
 
@@ -10,7 +22,7 @@ export class FindMostAccurateFileUsecase {
     this.inversify = inversify;
   }
 
-  execute(collection: CollectionItem[], words: string[]): any  {
+  execute(collection: CollectionItem[], words: string[]): SearchResponse {
     try {
       //console.log(JSON.stringify(collection.map(elt => elt.words)))
 

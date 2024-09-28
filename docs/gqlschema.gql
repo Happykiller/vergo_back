@@ -150,6 +150,10 @@ type PasskeyResolverModel {
 }
 
 type Query {
+  ai_get_glossary: [String!]!
+  ai_get_images: [[String!]!]!
+  ai_get_tokenized: [[[String!]!]!]!
+  ai_get_training_datas: [[[String!]!]!]!
   auth(dto: AuthAuthResolverDto!): AuthModelResolver!
   auth_passkey(dto: PasskeyAuthResolverDto!): AuthModelResolver!
   exercice(dto: GetExerciceResolverDto!): ExerciceModelResolver!

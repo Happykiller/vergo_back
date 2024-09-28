@@ -30,6 +30,7 @@ export class GetNormalizedTrainingUsecase {
         const words:string[] = await this.inversify.tokenizeUsecase.execute(exercice_slug_asked);
         let resp = this.inversify.findMostAccurateFileUsecase.execute(exercices_db, words);
         if (resp) {
+          console.log('resp', resp, resp.slug)
           this.mapping_slug[exercice_slug_asked] = resp.slug;
         }
       }

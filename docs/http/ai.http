@@ -1,0 +1,39 @@
+###
+POST {{host}}/graphql
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+Authorization: Bearer {{token}}
+
+query {
+  ai_get_glossary
+}
+
+###
+POST {{host}}/graphql
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+Authorization: Bearer {{token}}
+
+query {
+  ai_get_images
+}
+
+###
+POST {{host}}/graphql
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+Authorization: Bearer {{token}}
+
+query {
+  ai_get_training_datas
+}
+
+###
+POST {{host}}/graphql
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+Authorization: Bearer {{token}}
+
+query {
+  ai_get_tokenized 
+}

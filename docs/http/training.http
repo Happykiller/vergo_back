@@ -165,7 +165,7 @@ X-REQUEST-TYPE: GraphQL
 query {
   training_normalized (
     dto: {
-      id: "66b1ecee43812dbcda7843fa"
+      id: "66af92ab43812dbcda7843e6"
     }
   ) {
     slugs

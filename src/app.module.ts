@@ -5,6 +5,7 @@ import { ThrottlerModule } from '@nestjs/throttler';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 
 import { config } from '@src/config';
+import { AiModule } from '@presentation/ai/ai.module';
 import { AuthModule } from '@presentation/auth/auth.module';
 import { UserModule } from '@presentation/user/user.module';
 import { ImageModule } from '@presentation/image/image.module';
@@ -16,6 +17,7 @@ import { ExerciceModule } from '@presentation/exercice/exercice.module';
 
 @Module({
   imports: [
+    AiModule,
     UserModule,
     AuthModule,
     ImageModule,

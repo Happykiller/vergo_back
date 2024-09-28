@@ -1,7 +1,7 @@
-import * as fs from 'fs';
 import { join } from 'path';
 import * as sharp from 'sharp';
 
+import common from '@src/common/common';
 import inversify, { Inversify } from '@src/inversify/investify';
 
 interface CachedData {
@@ -43,7 +43,7 @@ export class ImageService {
         fileList = this.cachedFileList.files;
       } else {
         from = 'disk';
-        fileList = await this.getFileList();
+        fileList = await common.getFileList();
         this.cachedFileList = {
           files: fileList,
           timestamp: currentTime
@@ -60,20 +60,16 @@ export class ImageService {
        */
       let filePath = 'not_found.jpg';
       if(mostAccurateFile) {
-        /*inversify.loggerService.log(
+        inversify.loggerService.log(
           'info',
           `Successfully found '${mostAccurateFile.name}' (from ${from}) for ${filename}`,
-        );*/
-        console.log([
-          words,
-          mostAccurateFile.words
-        ])
+        );
         filePath = join(this.imagesPath, mostAccurateFile.name);
       } else {
-        /*inversify.loggerService.log(
+        inversify.loggerService.log(
           'info',
           `Not found (from ${from}) for ${filename}`,
-        );*/
+        );
       }
       
       let image;
@@ -105,28 +101,5 @@ export class ImageService {
     } catch (error) {
       throw new Error('Image error processing image');
     }
-  }
-
-  // Fonction pour obtenir la liste des fichiers
-  getFileList = async (): Promise<any[]> => {
-    const files = fs.readdirSync(this.imagesPath);
-
-    let fileList = [];
-    for(let file of files) {
-      const fullPath = join(this.imagesPath, file);
-      const stats = fs.statSync(fullPath);
-
-      let listWord = await this.inversify.tokenizeUsecase.execute(file);
-
-      fileList.push({
-        name: file,
-        words: listWord,
-        isDirectory: stats.isDirectory(),
-        size: stats.size,
-        lastModified: stats.mtime
-      });
-    }
-
-    return fileList;
   }
 }

@@ -13,10 +13,6 @@ export class GetGlossaryUsecase {
     if(this.glossary === undefined) {
       this.inversify.loggerService.debug('GetGlossaryUsecase#execute: Load glossary');
       this.glossary = await this.inversify.bddService.getGlossary();
-
-      /*const { _id, ...rest } = this.glossary; // Exclure la clé _id
-      const values = Object.keys(rest);
-          console.log(JSON.stringify(values))*/
     }
       
     return this.glossary;

@@ -38,19 +38,23 @@ export class TokenizeUsecase {
     dto = this.replaceTermsWithKeys(dto, this.glossary);
     response = this.processFileName(dto);
     response = this.removeStopWords(response);
+
+    // 1. Éliminer les doublons en préservant l'ordre initial
+    response = response.filter((item, index) => response.indexOf(item) === index);
+
     response = this.singularizeWords(response);
-      
+
     return response;
   }
 
   singularizeWords(words: string[]): string[] {
     return words.map(word => pluralize.singular(word));
   }
-  
+
   // Fonction pour retirer les stopwords d'une liste de mots
   removeStopWords(words: string[]): string[] {
     let wordsEnToRemove: string[] = ['up'];
-    let wordsEnToAdd: string[] = ['doing', 'doign', 'working', 'view', 'illustration', 'vector', 'praticing', 'background', 'white', 'exercise', 'flat', 'nw', 'null'];
+    let wordsEnToAdd: string[] = ['doing', 'doign', 'working', 'view', 'illustration', 'vector', 'praticing', 'background', 'white', 'exercise', 'flat', 'nw', 'null', 'isolated', 'backgound', 'practice', 'workout', 'fitness', 'horizontal', 'free'];
 
     let wordsFrToRemove: string[] = [];
     let wordsFrToAdd: string[] = [];
@@ -65,10 +69,10 @@ export class TokenizeUsecase {
   removeFileExtension(fileName: string): string {
     const lastDotIndex = fileName.lastIndexOf('.');
     if (lastDotIndex === -1) return fileName; // Aucun point trouvé, retourner le nom original
-  
+
     return fileName.substring(0, lastDotIndex);
   }
-  
+
   escapeRegExp(string: string): string {
     return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   }
@@ -86,7 +90,7 @@ export class TokenizeUsecase {
 
     return words;
   }
-  
+
   replaceTermsWithKeys(text: string, glossary: { [key: string]: GlossaryEntry }): string {
     try {
       for (const key in glossary) {
@@ -105,7 +109,7 @@ export class TokenizeUsecase {
             ...glossary[key].french.common_misspellings,
             ...glossary[key].french.slang,
           ];
-  
+
           // Filter out undefined or null values
           const filteredTerms = terms.filter(term => term);
           const escapedTerms = filteredTerms.map(term => this.escapeRegExp(term)).join('|');
@@ -114,7 +118,7 @@ export class TokenizeUsecase {
         }
       }
       return text;
-    } catch(ex) {
+    } catch (ex) {
       return text;
     }
   }
