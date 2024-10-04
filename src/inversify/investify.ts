@@ -33,6 +33,8 @@ import { PasswordLessService } from '@service/passwordless/passwordless.service'
 import { SearchWorkoutsUsecase } from '@usecase/workout/search.workouts.usecase';
 import { UpdateTrainingUsecase } from '@usecase/training/update.training.usecase';
 import { CreateTrainingUsecase } from '@usecase/training/create.training.usecase';
+import { CreateExerciceUsecase } from '@usecase/exercice/create.exercice.usecase';
+import { UpdateExerciceUsecase } from '@usecase/exercice/update.exercice.usecase';
 import { FindMostAccurateFileUsecase } from '@usecase/ai/findMostAccurateFile.usecase';
 import { GetImagesTokenizedUsecase } from '@usecase/image/get.images.tokenized.usecase';
 import { GetByUserIdPasskeyUsecase } from '@usecase/passkey/getByUserId.passkey.usecase';
@@ -65,6 +67,8 @@ export class Inversify {
   getExercicesUsecase: GetExercicesUsecase;
   deletePasskeyUsecase: DeletePasskeyUsecase;
   createPasskeyUsecase: CreatePasskeyUsecase;
+  createExerciceUsecase: CreateExerciceUsecase;
+  updateExerciceUsecase: UpdateExerciceUsecase;
   createTrainingUsecase: CreateTrainingUsecase;
   updateTrainingUsecase: UpdateTrainingUsecase;
   searchWorkoutsUsecase: SearchWorkoutsUsecase;
@@ -117,6 +121,8 @@ export class Inversify {
     this.getTrainingsUsecase = new GetTrainingsUsecase(this);
     this.deletePasskeyUsecase = new DeletePasskeyUsecase(this);
     this.createPasskeyUsecase = new CreatePasskeyUsecase(this);
+    this.createExerciceUsecase = new CreateExerciceUsecase(this);
+    this.updateExerciceUsecase = new UpdateExerciceUsecase(this);
     this.createTrainingUsecase = new CreateTrainingUsecase(this);
     this.updateTrainingUsecase = new UpdateTrainingUsecase(this);
     this.searchWorkoutsUsecase = new SearchWorkoutsUsecase(this);

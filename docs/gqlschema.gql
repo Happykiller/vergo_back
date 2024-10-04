@@ -26,6 +26,13 @@ type AuthModelResolver {
   role: String!
 }
 
+input CreateExerciceDtoResolver {
+  description: [LanguageDtoResolver!]!
+  image: String!
+  slug: String!
+  title: [LanguageDtoResolver!]!
+}
+
 input CreatePasskeyRegistrationCredentialResolverDto {
   algorithm: String!
   id: String!
@@ -86,6 +93,10 @@ input DeletePasskeyResolverDto {
 }
 
 type ExerciceModelResolver {
+  contributors: [UserModelResolver!]
+  contributors_id: [String!]
+  creator: UserModelResolver
+  creator_id: String
   description: [LanguageModelResolver!]!
   id: String!
   image: String
@@ -106,6 +117,11 @@ input GetUserResolverDto {
   id: String
 }
 
+input LanguageDtoResolver {
+  lang: String!
+  value: String!
+}
+
 type LanguageModelResolver {
   lang: String!
   value: String!
@@ -115,6 +131,8 @@ type Mutation {
   create_passkey(dto: CreatePasskeyResolverDto!): PasskeyResolverModel!
   create_user(dto: CreateUserResolverDto!): UserModelResolver!
   delete_passkey(dto: DeletePasskeyResolverDto!): Boolean!
+  exercice_create(dto: CreateExerciceDtoResolver!): ExerciceModelResolver!
+  exercice_update(dto: UpdateExerciceDtoResolver!): Boolean!
   training_create(dto: CreateTrainingDtoResolver!): TrainingModelResolver!
   training_update(dto: UpdateTrainingDtoResolver!): Boolean!
   update_password(dto: UpdPasswordAuthResolverDto!): AuthModelResolver!
@@ -241,6 +259,14 @@ input UpdPasswordAuthResolverDto {
   conf_value: String!
   new_value: String!
   old_value: String!
+}
+
+input UpdateExerciceDtoResolver {
+  description: [LanguageDtoResolver!]
+  id: String!
+  image: String
+  slug: String
+  title: [LanguageDtoResolver!]
 }
 
 input UpdateTrainingDtoResolver {

@@ -14,6 +14,8 @@ import { WorkoutDefDbModel } from '@service/db/model/workout.def.db.model';
 import { DeletePasskeyDbDto } from '@service/db/dto/delete.passkey.db.dto';
 import { UpdateTrainingDbDto } from '@service/db/dto/update.training.db.dto';
 import { CreateTrainingDbDto } from '@service/db/dto/create.training.db.dto';
+import { CreateExerciceDbDto } from '@service/db/dto/create.exercice.db.dto';
+import { UpdateExerciceDbDto } from '@service/db/dto/update.exercice.db.dto';
 import { GetPasskeyByUserIdDbDto } from '@service/db/dto/getByUserId.passkey.db.dto';
 
 export interface BddService {
@@ -45,6 +47,8 @@ export interface BddService {
    */
   getExercice(dto: GetExerciceDbDto): Promise<ExerciceDbModel>;
   getExercices(): Promise<ExerciceDbModel[]>;
+  createExercice(dto: CreateExerciceDbDto): Promise<ExerciceDbModel>;
+  updateExercice(dto: UpdateExerciceDbDto): Promise<ExerciceDbModel>;
   /**
    * Workout
    */

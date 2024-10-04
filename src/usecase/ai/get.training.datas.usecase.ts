@@ -52,7 +52,7 @@ export class GetTrainingDatasUsecase {
       })
     }
 
-    console.log(JSON.stringify(exercices_db))
+    //console.log(JSON.stringify(exercices_db))
 
     let response:any = exercices_db.map(elt => [elt.tokenized, elt.found.words]);
     return response;

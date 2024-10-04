@@ -1,7 +1,7 @@
 import { join } from 'path';
 import * as sharp from 'sharp';
 
-import common from '@src/common/common';
+import { Common } from '@src/common/common';
 import inversify, { Inversify } from '@src/inversify/investify';
 
 interface CachedData {
@@ -10,6 +10,7 @@ interface CachedData {
 }
 
 export class ImageService {
+  common: Common;
   private readonly inversify: Inversify;
   private readonly imagesPath = 'images/';
   private cachedFileList: CachedData | null = null;
@@ -17,6 +18,7 @@ export class ImageService {
 
   constructor(inversify: Inversify) {
     this.inversify = inversify;
+    this.common = new Common(inversify);
   }
 
   /**
@@ -43,7 +45,7 @@ export class ImageService {
         fileList = this.cachedFileList.files;
       } else {
         from = 'disk';
-        fileList = await common.getFileList();
+        fileList = await this.common.getFileList();
         this.cachedFileList = {
           files: fileList,
           timestamp: currentTime

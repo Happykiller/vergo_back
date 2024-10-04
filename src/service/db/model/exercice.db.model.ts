@@ -6,4 +6,7 @@ export class ExerciceDbModel {
   title: LanguageDbModel[];
   description: LanguageDbModel[];
   image: string;
+  creator_id?: string;
+  contributors_id?: string[];
+  active?: boolean;
 }

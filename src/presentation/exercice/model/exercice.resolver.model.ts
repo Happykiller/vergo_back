@@ -20,4 +20,8 @@ export class ExerciceModelResolver {
   description: LanguageModelResolver[];
   @Field(() => String, { nullable: true })
   image?: string;
+  @Field(() => String, { nullable: true })
+  creator_id?: string;
+  @Field(() => [String], { nullable: true })
+  contributors_id?: string[];
 }
