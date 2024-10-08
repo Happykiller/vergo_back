@@ -46,6 +46,21 @@ export class Common {
       nodes: paginatedList  // Paginated list
     };
   }
+
+  order_img(elts: string[][]): string[][] {
+    // 1. Éliminer les doublons au sein de chaque sous-tableau sans modifier l'ordre
+    const uniqueSubArrays = elts.map(subArray => Array.from(new Set(subArray)));
+  
+    // 2. Trier les sous-tableaux par la concaténation de leurs éléments
+    const sortedSubArrays = uniqueSubArrays.sort((a, b) => {
+      const aStr = a.join('');
+      const bStr = b.join('');
+      return aStr.localeCompare(bStr);
+    });
+  
+    return sortedSubArrays;
+  }    
+  
 }
 
 const common = new Common();

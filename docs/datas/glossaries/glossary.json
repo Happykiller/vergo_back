@@ -1556,40 +1556,6 @@
       ]
     }
   },
-  "jumping": {
-    "english": {
-      "base": "jumping",
-      "synonyms": [
-        "leaping",
-        "bouncing"
-      ],
-      "plural": "jumpings",
-      "singular": "jumping",
-      "common_misspellings": [
-        "juping",
-        "jumpingg"
-      ],
-      "slang": [
-        "hopping"
-      ]
-    },
-    "french": {
-      "base": "sauter",
-      "synonyms": [
-        "bondir",
-        "rebondir"
-      ],
-      "plural": "sauts",
-      "singular": "saut",
-      "common_misspellings": [
-        "sauter",
-        "sauterr"
-      ],
-      "slang": [
-        "bondir"
-      ]
-    }
-  },
   "jack": {
     "english": {
       "base": "jack",
@@ -1625,7 +1591,8 @@
       "base": "jump",
       "synonyms": [
         "leap",
-        "bounce"
+        "bounce",
+        "jumping"
       ],
       "plural": "jumps",
       "singular": "jump",
@@ -15552,7 +15519,6 @@
     "english": {
       "base": "skipping",
       "synonyms": [
-        "jumping",
         "hopping"
       ],
       "plural": "skippings",

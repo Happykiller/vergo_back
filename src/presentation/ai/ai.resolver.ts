@@ -1,12 +1,13 @@
-import { Args, InputType, Query, Resolver } from '@nestjs/graphql';
+import { Query, Resolver } from '@nestjs/graphql';
 
+import common from '@presentation/common/common';
 import { Inject, UseGuards } from '@nestjs/common';
 import { Inversify } from '@src/inversify/investify';
+import { USER_ROLE } from '@presentation/guard/userRole';
+import { Roles } from '@presentation/guard/roles.decorator';
+import { RolesGuard } from '@presentation/guard/roles.guard';
+import { GqlAuthGuard } from '@presentation/guard/gql.auth.guard';
 import { GlossaryUsecaseModel } from '@src/usecase/glossary/model/glossary.usecase.model';
-import { Roles } from '../guard/roles.decorator';
-import { USER_ROLE } from '../guard/userRole';
-import { GqlAuthGuard } from '../guard/gql.auth.guard';
-import { RolesGuard } from '../guard/roles.guard';
 
 @Resolver('AiResolver')
 export class AiResolver {
@@ -37,25 +38,8 @@ export class AiResolver {
   )
   async ai_get_images(): Promise<string[][]> {
     const elts:string[][] = await this.inversify.getImagesTokenizedUsecase.execute();
-
-    // 1. Convertir chaque élément en chaîne primitive et trier les éléments de chaque sous-tableau
-    const sortedSubArrays = elts.map(subArray => {
-      return Array.from(new Set(subArray.map(item => item.toString()))).sort((a, b) => a.localeCompare(b));
-    });
-
-    // 2. Trier les sous-tableaux en fonction des critères
-    const sortedNestedArray = sortedSubArrays.sort((a, b) => {
-      for (let i = 0; i < Math.min(a.length, b.length); i++) {
-        const comparison = a[i].localeCompare(b[i]); // Assurer que a[i] et b[i] sont bien de type string primitif
-        if (comparison !== 0) {
-          return comparison;
-        }
-      }
-      // Si tous les éléments comparés sont identiques, trier par longueur de sous-tableau
-      return a.length - b.length;
-    });
-
-    return sortedNestedArray;
+    const ordered_image = common.order_img(elts);
+    return ordered_image;
   }
 
   @Roles(USER_ROLE.USER, USER_ROLE.ADMIN)
