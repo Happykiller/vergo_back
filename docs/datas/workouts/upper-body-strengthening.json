@@ -1,0 +1,24 @@
+{
+  "_id": ObjectId(),
+  "slug": "upper-body-strengthening",
+  "title": [
+      {
+          "lang": "fr",
+          "value": "Renforcement Haut du Corps"
+      },
+      {
+          "lang": "en",
+          "value": "Body Workout Strengthening"
+      }
+  ],
+  "description": [
+      {
+          "lang": "fr",
+          "value": "Un entraînement complet du haut du corps visant à renforcer les muscles des bras, des épaules, du dos et de la poitrine. Idéal pour développer la force, l'endurance et améliorer la posture tout en sculptant le haut du corps."
+      },
+      {
+          "lang": "en",
+          "value": "A complete upper body workout designed to strengthen the muscles of the arms, shoulders, back, and chest. Perfect for building strength, endurance, and improving posture while sculpting the upper body."
+      }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "_id": ObjectId(),
+  "slug": "cooldown",
+  "title": [
+      {
+          "lang": "fr",
+          "value": "Retour au Calme"
+      },
+      {
+          "lang": "en",
+          "value": "Cooldown"
+      }
+  ],
+  "description": [
+      {
+          "lang": "fr",
+          "value": "Un ensemble d'exercices légers et d'étirements conçus pour favoriser la récupération après un entraînement intense. Le retour au calme aide à détendre les muscles, à réduire les tensions et à améliorer la flexibilité tout en favorisant une récupération optimale."
+      },
+      {
+          "lang": "en",
+          "value": "A set of light exercises and stretches designed to promote recovery after an intense workout. The cooldown helps relax muscles, reduce tension, and improve flexibility while supporting optimal recovery."
+      }
+  ]
+}

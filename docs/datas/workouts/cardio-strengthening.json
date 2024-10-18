@@ -1,0 +1,24 @@
+{
+  "_id": ObjectId(),
+  "slug": "cardio-strengthening",
+  "title": [
+      {
+          "lang": "fr",
+          "value": "Renforcement Cardio"
+      },
+      {
+          "lang": "en",
+          "value": "Cardio Strengthening"
+      }
+  ],
+  "description": [
+      {
+          "lang": "fr",
+          "value": "Un entraînement cardiovasculaire intensif conçu pour améliorer l'endurance, renforcer le système cardiovasculaire et brûler des calories. Il combine des exercices d'aérobie et des mouvements dynamiques pour augmenter la capacité cardiaque tout en tonifiant l'ensemble du corps."
+      },
+      {
+          "lang": "en",
+          "value": "An intensive cardiovascular workout designed to enhance endurance, strengthen the cardiovascular system, and burn calories. It combines aerobic exercises and dynamic movements to increase heart capacity while toning the entire body."
+      }
+  ]
+}

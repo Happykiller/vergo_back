@@ -1,0 +1,24 @@
+{
+  "_id": ObjectId(),
+  "slug": "abdominal-strengthening",
+  "title": [
+      {
+          "lang": "fr",
+          "value": "Renforcement Abdominal"
+      },
+      {
+          "lang": "en",
+          "value": "Abdominal Strengthening"
+      }
+  ],
+  "description": [
+      {
+          "lang": "fr",
+          "value": "Un entraînement axé sur le renforcement des muscles abdominaux, visant à améliorer la stabilité du tronc, la posture, et à développer une ceinture abdominale solide et tonifiée. Idéal pour ceux qui cherchent à augmenter leur force centrale et à affiner leur taille."
+      },
+      {
+          "lang": "en",
+          "value": "A workout focused on strengthening the abdominal muscles, aimed at improving core stability, posture, and developing a strong and toned midsection. Ideal for those looking to enhance core strength and slim the waistline."
+      }
+  ]
+}

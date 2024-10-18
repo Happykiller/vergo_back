@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "sit_up_with_weight",
+  "title": [
+      {
+          "lang": "fr",
+          "value": "Sit-up avec Poids"
+      },
+      {
+          "lang": "en",
+          "value": "Sit-up with Weight"
+      }
+  ],
+  "description": [
+      {
+          "lang": "fr",
+          "value": "Allongé sur le dos, genoux fléchis et pieds à plat au sol, tenez un poids contre votre poitrine. Contractez les abdominaux et relevez-vous en position assise, puis redescendez lentement en contrôlant le mouvement."
+      },
+      {
+          "lang": "en",
+          "value": "Lie on your back with your knees bent and feet flat on the ground, holding a weight against your chest. Engage your core and sit up, then lower yourself back down slowly, controlling the movement."
+      }
+  ],
+  "image": "sit-up-with-weight"
+}

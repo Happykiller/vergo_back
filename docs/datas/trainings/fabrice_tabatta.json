@@ -1,0 +1,123 @@
+{
+  "slug": "fabrice_tabatta_chambery",
+  "label": "Fabrice: Tabatta Chambéry",
+  "gender": "man",
+  "workout": [
+    {
+      "slug": "warm-up",
+      "sets": [
+        {
+          "rep": 2,
+          "slugs": [
+            "jumping jacks",
+            "jump rope"
+          ],
+          "duration": 40,
+          "rest": 20
+        }
+      ]
+    },
+    {
+      "slug": "legs",
+      "sets": [
+        {
+          "rep": 8,
+          "sets": [
+            {
+              "rep": 2,
+              "slugs": [
+                "jump squat",
+                "jump lunges"
+              ],
+              "duration": 20,
+              "rest": 10
+            }
+          ],
+          "pause": 60
+        }
+      ]
+    },
+    {
+      "slug": "upper-body-strengthening",
+      "sets": [
+        {
+          "rep": 8,
+          "sets": [
+            {
+              "rep": 2,
+              "slugs": [
+                "push up",
+                "dips"
+              ],
+              "duration": 20,
+              "rest": 10
+            }
+          ],
+          "pause": 60
+        }
+      ]
+    },
+    {
+      "slug": "cardio-strengthening",
+      "sets": [
+        {
+          "rep": 8,
+          "sets": [
+            {
+              "rep": 2,
+              "slugs": [
+                "burpee",
+                "mountain climbers"
+              ],
+              "duration": 20,
+              "rest": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "abdominal-strengthening",
+      "sets": [
+        {
+          "rep": 8,
+          "sets": [
+            {
+              "rep": 2,
+              "slugs": [
+                "sit up with weight",
+                "plank to push-up"
+              ],
+              "duration": 20,
+              "rest": 10
+            }
+          ],
+          "pause": 60
+        }
+      ]
+    },
+    {
+      "slug": "cooldown",
+      "sets": [
+        {
+          "rep": 3,
+          "slugs": [
+            "quadriceps stretch",
+            "shoulder tricep stretch",
+            "hamstring stretch"
+          ],
+          "sets": [
+            {
+              "rep": 2,
+              "slugs": [
+                "left",
+                "right"
+              ],
+              "duration": 20
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

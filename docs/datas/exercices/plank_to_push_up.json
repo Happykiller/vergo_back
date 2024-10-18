@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "plank_to_push_up",
+  "title": [
+      {
+          "lang": "fr",
+          "value": "Gainage avec Passage en Pompes"
+      },
+      {
+          "lang": "en",
+          "value": "Plank to Push-up"
+      }
+  ],
+  "description": [
+      {
+          "lang": "fr",
+          "value": "Commencez en position de gainage sur les avant-bras, corps aligné. Passez sur une main, puis sur l'autre, pour arriver en position de pompe. Redescendez ensuite une main à la fois pour revenir en position de gainage. Alternez les bras à chaque répétition."
+      },
+      {
+          "lang": "en",
+          "value": "Start in a plank position on your forearms with your body aligned. Transition onto one hand, then the other, to reach a push-up position. Lower one arm at a time back to the plank position. Alternate arms with each repetition."
+      }
+  ],
+  "image": "plank-to-push-up"
+}
