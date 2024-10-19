@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "neck_stretch",
+  "title": [
+      {
+          "lang": "fr",
+          "value": "Étirement du Cou"
+      },
+      {
+          "lang": "en",
+          "value": "Neck Stretch"
+      }
+  ],
+  "description": [
+      {
+          "lang": "fr",
+          "value": "En position assise ou debout, penchez doucement la tête sur le côté pour rapprocher l'oreille de l'épaule, puis maintenez la position. Répétez de l'autre côté pour un étirement complet du cou."
+      },
+      {
+          "lang": "en",
+          "value": "While seated or standing, gently tilt your head to one side, bringing your ear toward your shoulder, and hold the position. Repeat on the other side for a full neck stretch."
+      }
+  ],
+  "image": "neck-stretch"
+}

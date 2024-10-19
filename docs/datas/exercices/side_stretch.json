@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "side_stretch",
+  "title": [
+      {
+          "lang": "fr",
+          "value": "Étirement Latéral"
+      },
+      {
+          "lang": "en",
+          "value": "Side Stretch"
+      }
+  ],
+  "description": [
+      {
+          "lang": "fr",
+          "value": "Debout, les pieds écartés à la largeur des hanches, levez un bras au-dessus de votre tête et inclinez votre corps sur le côté opposé. Maintenez la position pour étirer le flanc, puis répétez de l'autre côté."
+      },
+      {
+          "lang": "en",
+          "value": "Stand with your feet hip-width apart, raise one arm over your head, and lean your body to the opposite side. Hold the position to stretch the side, then repeat on the other side."
+      }
+  ],
+  "image": "side-bends"
+}

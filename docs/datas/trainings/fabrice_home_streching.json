@@ -1,0 +1,163 @@
+{
+  "slug": "seance_stretching_15min",
+  "label": "Stretching de 15 minutes",
+  "workout": [
+    {
+      "slug": "stretching",
+      "sets": [
+        {
+          "rep": 1,
+          "slugs": [
+            "neck stretch"
+          ],
+          "sets": [
+            {
+              "rep": 2,
+              "slugs": [
+                "left",
+                "right"
+              ],
+              "duration": 30
+            }
+          ],
+          "pause": 10
+        },
+        {
+          "rep": 1,
+          "slugs": [
+            "shoulder stretch"
+          ],
+          "sets": [
+            {
+              "rep": 2,
+              "slugs": [
+                "left",
+                "right"
+              ],
+              "duration": 30
+            }
+          ],
+          "pause": 10
+        },
+        {
+          "rep": 1,
+          "slugs": [
+            "child's pose"
+          ],
+          "duration": 60,
+          "pause": 10
+        },
+        {
+          "rep": 1,
+          "slugs": [
+            "quadriceps stretch"
+          ],
+          "sets": [
+            {
+              "rep": 2,
+              "slugs": [
+                "left",
+                "right"
+              ],
+              "duration": 30
+            }
+          ],
+          "pause": 10
+        },
+        {
+          "rep": 1,
+          "slugs": [
+            "hamstring stretch"
+          ],
+          "sets": [
+            {
+              "rep": 2,
+              "slugs": [
+                "left",
+                "right"
+              ],
+              "duration": 30
+            }
+          ],
+          "pause": 10
+        },
+        {
+          "rep": 1,
+          "slugs": [
+            "calf stretch"
+          ],
+          "sets": [
+            {
+              "rep": 2,
+              "slugs": [
+                "left",
+                "right"
+              ],
+              "duration": 30
+            }
+          ],
+          "pause": 10
+        },
+        {
+          "rep": 1,
+          "slugs": [
+            "glute stretch"
+          ],
+          "sets": [
+            {
+              "rep": 2,
+              "slugs": [
+                "left",
+                "right"
+              ],
+              "duration": 30
+            }
+          ],
+          "pause": 10
+        },
+        {
+          "rep": 1,
+          "slugs": [
+            "butterfly stretch"
+          ],
+          "duration": 60,
+          "pause": 10
+        },
+        {
+          "rep": 1,
+          "slugs": [
+            "tricep stretch"
+          ],
+          "sets": [
+            {
+              "rep": 2,
+              "slugs": [
+                "left",
+                "right"
+              ],
+              "duration": 30
+            }
+          ],
+          "pause": 10
+        },
+        {
+          "rep": 1,
+          "slugs": [
+            "side stretch"
+          ],
+          "sets": [
+            {
+              "rep": 2,
+              "slugs": [
+                "left",
+                "right"
+              ],
+              "duration": 30
+            }
+          ],
+          "pause": 10
+        }
+      ]
+    }
+  ]
+}
