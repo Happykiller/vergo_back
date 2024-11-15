@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "butterfly_stretch",
+  "title": [
+      {
+          "lang": "fr",
+          "value": "Étirement Papillon"
+      },
+      {
+          "lang": "en",
+          "value": "Butterfly Stretch"
+      }
+  ],
+  "description": [
+      {
+          "lang": "fr",
+          "value": "Asseyez-vous sur le sol, les pieds joints devant vous et les genoux écartés vers l'extérieur. Tenez vos pieds avec vos mains et poussez doucement vos genoux vers le sol pour étirer les muscles de l'intérieur des cuisses."
+      },
+      {
+          "lang": "en",
+          "value": "Sit on the floor with your feet together in front of you and your knees bent outward. Hold your feet with your hands and gently press your knees toward the ground to stretch the inner thigh muscles."
+      }
+  ],
+  "image": "butterfly-stretch"
+}

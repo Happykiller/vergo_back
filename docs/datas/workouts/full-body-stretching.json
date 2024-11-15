@@ -1,0 +1,24 @@
+{
+  "_id": ObjectId(),
+  "slug": "full-body-stretching",
+  "title": [
+    {
+      "lang": "fr",
+      "value": "Étirements Corps Complet"
+    },
+    {
+      "lang": "en",
+      "value": "Full Body Stretching"
+    }
+  ],
+  "description": [
+    {
+      "lang": "fr",
+      "value": "Une séance d'étirements complète visant à améliorer la flexibilité, la mobilité articulaire et à réduire les tensions musculaires dans tout le corps. Parfait pour la récupération après un effort ou pour maintenir une bonne souplesse au quotidien."
+    },
+    {
+      "lang": "en",
+      "value": "A full-body stretching session designed to improve flexibility, joint mobility, and reduce muscle tension throughout the body. Perfect for post-workout recovery or maintaining everyday flexibility."
+    }
+  ]
+}

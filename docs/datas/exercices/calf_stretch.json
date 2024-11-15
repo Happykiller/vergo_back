@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId(),
+  "slug": "calf_stretch",
+  "title": [
+      {
+          "lang": "fr",
+          "value": "Étirement des Mollets"
+      },
+      {
+          "lang": "en",
+          "value": "Calf Stretch"
+      }
+  ],
+  "description": [
+      {
+          "lang": "fr",
+          "value": "Placez-vous debout face à un mur, une jambe devant l'autre. Pliez légèrement le genou avant tout en gardant la jambe arrière tendue et le talon au sol. Poussez contre le mur pour sentir l'étirement dans le mollet de la jambe arrière."
+      },
+      {
+          "lang": "en",
+          "value": "Stand facing a wall with one leg in front of the other. Slightly bend the front knee while keeping the back leg straight and the heel on the ground. Press against the wall to feel the stretch in the calf of the back leg."
+      }
+  ],
+  "image": "calf-stretch"
+}
