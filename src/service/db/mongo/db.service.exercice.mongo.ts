@@ -66,7 +66,7 @@ export class BdbServiceExerciceMongo
     }
 
     if (dto.title) {
-      set.label = dto.title;
+      set.title = dto.title;
     }
 
     if (dto.description) {
