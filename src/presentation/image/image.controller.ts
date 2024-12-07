@@ -25,9 +25,10 @@ export class ImageController {
     @Res() res: Response,
     @Query('width') width?: number,
     @Query('height') height?: number,
+    @Query('v2') v2?: boolean,
   ): Promise<void> {
     try {
-      const image = await this.inversify.imageService.getImage(filename, width?parseInt(width as unknown as string):null, height?parseInt(height as unknown as string):null);
+      const image = await this.inversify.imageService.getImage(filename, width?parseInt(width as unknown as string):null, height?parseInt(height as unknown as string):null, v2);
       res.writeHead(HttpStatus.OK, { 'Content-Type': 'image/jpeg' });
       res.end(image);
     } catch (error) {

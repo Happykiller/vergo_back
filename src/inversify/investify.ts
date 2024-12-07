@@ -2,6 +2,7 @@ import { Db } from 'mongodb';
 import { config } from '@src/config';
 import { logger } from '@src/common/logger/logger';
 import { BddService } from '@service/db/db.service';
+import { HttpService } from '@service/http/http.service';
 import { AuthUsecase } from '@usecase/auth/auth.usecase';
 import { ImageService } from '@service/image/image.service';
 import { CryptService } from '@service/crypt/crypt.service';
@@ -41,12 +42,14 @@ import { GetByUserIdPasskeyUsecase } from '@usecase/passkey/getByUserId.passkey.
 import { PasswordLessServiceFake } from '@service/passwordless/passwordless.service.fake';
 import { PasswordLessServiceReal } from '@service/passwordless/passwordlless.service.real';
 import { GetNormalizedTrainingUsecase } from '@usecase/training/getNormalized.training.usecase';
+import { HttpServiceReal } from '@src/service/http/http.service.real';
 
 export class Inversify {
   mongo: Db;
   loggerService: any;
   bddService: BddService;
   authUsecase: AuthUsecase;
+  httpService: HttpService;
   cryptService: CryptService;
   imageService: ImageService;
   encodeService: EncodeService;
@@ -82,6 +85,7 @@ export class Inversify {
     /**
      * Services
      */
+    this.httpService = new HttpServiceReal();
     this.cryptService = new CryptServiceReal();
     this.encodeService = new EncodeServiceReal();
     this.passwordService = new PasswordServiceReal();

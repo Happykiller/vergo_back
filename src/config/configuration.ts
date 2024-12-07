@@ -26,6 +26,11 @@ export class Configuration {
     name?: string;
   };
 
+  public puppet?: {
+    url?: string;
+    token?: string;
+  }
+
   /**
    * request limitation per second
    * DOC https://docs.nestjs.com/security/rate-limiting

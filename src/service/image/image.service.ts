@@ -3,6 +3,7 @@ import * as sharp from 'sharp';
 
 import { Common } from '@src/common/common';
 import inversify, { Inversify } from '@src/inversify/investify';
+import { config } from '@src/config';
 
 interface CachedData {
   files: any[];
@@ -26,9 +27,10 @@ export class ImageService {
    * @param filename Nom du fichier image
    * @param width Largeur souhaitée, optionnelle
    * @param height Hauteur souhaitée, optionnelle
+   * @param v2 for use AI
    * @returns Buffer de l'image traitée
    */
-  async getImage(filename: string, width?: number, height?: number): Promise<Buffer> {
+  async getImage(filename: string, width?: number, height?: number, v2?:boolean): Promise<Buffer> {
     try {
       /**
        * tokenize request
@@ -52,10 +54,45 @@ export class ImageService {
         };
       }
 
-      /**
-       * find response
-       */
-      let mostAccurateFile = this.inversify.findMostAccurateFileUsecase.execute(fileList, words);
+      let mostAccurateFile;
+      if(v2) {
+        console.log('words', words)
+
+        const url = `${config.puppet.url}/search`; // Variable d'environnement pour l'hôte
+        const token = config.puppet.token; // Variable d'environnement pour le token
+  
+        const headers = {
+          Authorization: `Bearer ${token}`,
+          'Content-Type': 'application/json',
+        };
+  
+        const body = {
+          name: 'puppet-o3',
+          neural_network_type: 'SIAMESE',
+          vector: words,
+        };
+  
+        try {
+          const response:any = await this.inversify.httpService.post(url, body, headers);
+          console.log('Response:', response);
+
+          function findMatchingFile(fileList, findWords) {
+            return fileList.find((file) =>
+              findWords.every((word) => file.words.includes(word))
+            );
+          }
+          
+          // Chercher la correspondance
+          mostAccurateFile = findMatchingFile(fileList, response.find);
+        } catch (error) {
+          console.error('Error:', error);
+        }
+      } else {
+        /**
+         * find response
+         */
+        mostAccurateFile = this.inversify.findMostAccurateFileUsecase.execute(fileList, words);
+      }
 
       /**
        * display response

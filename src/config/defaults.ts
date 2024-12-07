@@ -30,6 +30,10 @@ const defaults: Configuration = {
       expiresIn: '8h',
     },
   },
+  puppet: {
+    url: 'http://localhost',
+    token: 'token'
+  },
   db: {
     connection_string:
       merged.DB_CONN_STRING || 'mongodb://root:password@localhost:27017/',
