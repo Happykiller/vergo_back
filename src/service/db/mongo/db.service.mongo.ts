@@ -1,6 +1,7 @@
 import { applyMixins } from '@src/common/applyMixins';
 import { BddServiceUserMongo } from '@service/db/mongo/db.service.user.mongo';
 import { BddServiceTestMongo } from '@service/db/mongo/db.service.test.mongo';
+import { BdbServiceImageMongo } from '@service/db/mongo/db.service.image.mongo';
 import { BddServicePasskeyMongo } from '@service/db/mongo/db.service.passkey.mongo';
 import { BdbServiceWorkoutMongo } from '@service/db/mongo/db.service.workout.mongo';
 import { BddServiceTrainingMongo } from '@service/db/mongo/db.service.training.mongo';
@@ -12,6 +13,7 @@ class BddServiceMongo {}
 applyMixins(BddServiceMongo, [
   BddServiceUserMongo,
   BddServiceTestMongo,
+  BdbServiceImageMongo,
   BddServicePasskeyMongo,
   BdbServiceWorkoutMongo,
   BddServiceTrainingMongo,

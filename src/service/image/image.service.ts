@@ -1,9 +1,9 @@
 import { join } from 'path';
 import * as sharp from 'sharp';
 
+import { config } from '@src/config';
 import { Common } from '@src/common/common';
 import inversify, { Inversify } from '@src/inversify/investify';
-import { config } from '@src/config';
 
 interface CachedData {
   files: any[];
@@ -15,7 +15,7 @@ export class ImageService {
   private readonly inversify: Inversify;
   private readonly imagesPath = 'images/';
   private cachedFileList: CachedData | null = null;
-  private cacheTTL: number = 60 * 60 * 1000; // 60min * 60s * 1000 ms
+  private cacheTTL: number = 24 * 60 * 60 * 1000; // 24h * 60min * 60s * 1000 ms
 
   constructor(inversify: Inversify) {
     this.inversify = inversify;
@@ -56,8 +56,6 @@ export class ImageService {
 
       let mostAccurateFile;
       if(v2) {
-        console.log('words', words)
-
         const url = `${config.puppet.url}/search`; // Variable d'environnement pour l'hôte
         const token = config.puppet.token; // Variable d'environnement pour le token
   
@@ -74,7 +72,11 @@ export class ImageService {
   
         try {
           const response:any = await this.inversify.httpService.post(url, body, headers);
-          console.log('Response:', response);
+
+          inversify.loggerService.log(
+            'debug',
+            `AI service response '${JSON.stringify(response)}' from ${JSON.stringify(words)}`,
+          );
 
           function findMatchingFile(fileList, findWords) {
             return fileList.find((file) =>
@@ -85,7 +87,10 @@ export class ImageService {
           // Chercher la correspondance
           mostAccurateFile = findMatchingFile(fileList, response.find);
         } catch (error) {
-          console.error('Error:', error);
+          inversify.loggerService.log(
+            'error',
+            error,
+          );
         }
       } else {
         /**
@@ -106,7 +111,7 @@ export class ImageService {
         filePath = join(this.imagesPath, mostAccurateFile.name);
       } else {
         inversify.loggerService.log(
-          'info',
+          'error',
           `Not found (from ${from}) for ${filename}`,
         );
       }

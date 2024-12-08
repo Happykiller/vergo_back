@@ -17,6 +17,7 @@ import { CreateTrainingDbDto } from '@service/db/dto/create.training.db.dto';
 import { CreateExerciceDbDto } from '@service/db/dto/create.exercice.db.dto';
 import { UpdateExerciceDbDto } from '@service/db/dto/update.exercice.db.dto';
 import { GetPasskeyByUserIdDbDto } from '@service/db/dto/getByUserId.passkey.db.dto';
+import { ImageDbModel } from './model/image.db.model';
 
 export interface BddService {
   test(): Promise<boolean>;
@@ -57,4 +58,9 @@ export interface BddService {
    * Glossary
    */
   getGlossary(): Promise<GlossaryDbModel>;
+  /**
+   * Image
+   */
+  getImages(): Promise<ImageDbModel[]>;
+  setImages(dto: ImageDbModel[]): Promise<ImageDbModel[]>;
 }

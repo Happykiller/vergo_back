@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 
+import { ERRORS } from '@src/common/ERROR';
 import inversify, { Inversify } from '@src/inversify/investify';
-import { ERRORS } from './ERROR';
 
 export class Common {
   private readonly inversify: Inversify;
@@ -12,7 +12,7 @@ export class Common {
   }
 
   // Fonction pour obtenir la liste des fichiers
-  getFileList = async (): Promise<any[]> => {
+  getFileList = async (dto?: {refresh: boolean}): Promise<any[]> => {
     try {
       const files = fs.readdirSync(this.imagesPath);
 
@@ -25,6 +25,8 @@ export class Common {
           words: listWord
         });
       }
+
+      await this.inversify.bddService.setImages(fileList);
 
       return fileList;
     } catch(e) {
