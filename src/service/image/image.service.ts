@@ -97,6 +97,11 @@ export class ImageService {
          * find response
          */
         mostAccurateFile = this.inversify.findMostAccurateFileUsecase.execute(fileList, words);
+
+        inversify.loggerService.log(
+          'debug',
+          `Logic service response '${JSON.stringify(mostAccurateFile)}' from ${JSON.stringify(words)}`,
+        );
       }
 
       /**
