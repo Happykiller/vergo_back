@@ -88,6 +88,10 @@ export class ImageService {
           mostAccurateFile = findMatchingFile(fileList, response.find);
         } catch (error) {
           inversify.loggerService.log(
+            'debug',
+            url, body, headers
+          );
+          inversify.loggerService.log(
             'error',
             error,
           );

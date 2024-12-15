@@ -22,7 +22,7 @@ const logger = createLogger({
     }),
     format.json(),
   ),
-  defaultMeta: { module: 'seguri' },
+  defaultMeta: { module: 'vergo_back' },
   transports: [new transports.Console()],
 });
 

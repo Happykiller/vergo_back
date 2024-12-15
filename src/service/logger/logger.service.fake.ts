@@ -1,20 +1,27 @@
+// src\service\logger\logger.service.fake.ts
 /* istanbul ignore file */
 import { LoggerService } from '@service/logger/logger.service';
 
 export class LoggerServiceFake implements LoggerService {
   log(...args: any[]): void {
-    console.log(args);
+    console.log(this.formatArgs(args));
   }
 
   info(...args: any[]): void {
-    console.info(args);
+    console.info(this.formatArgs(args));
   }
 
   debug(...args: any[]): void {
-    console.debug(args);
+    console.debug(this.formatArgs(args));
   }
 
   error(...args: any[]): void {
-    console.error(args);
+    console.error(this.formatArgs(args));
+  }
+
+  private formatArgs(args: any[]): string {
+    return args
+      .map(arg => (typeof arg === 'object' ? JSON.stringify(arg, null, 2) : arg))
+      .join(' ');
   }
 }
