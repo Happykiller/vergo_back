@@ -1,6 +1,4 @@
 ## Fichier : docker-compose.yml
-version: '3.8'
-
 services:
   vergo_back:
     image: vergo_back
