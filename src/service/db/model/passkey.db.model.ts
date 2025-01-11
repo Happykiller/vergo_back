@@ -1,3 +1,5 @@
+import { RegistrationJSON } from "@passwordless-id/webauthn/dist/esm/types";
+
 export default interface PasskeyDbModel {
   id: string;
   label: string;
@@ -5,16 +7,6 @@ export default interface PasskeyDbModel {
   hostname: string;
   user_code: string;
   challenge: string;
-  registration: {
-    username: string;
-    credential: {
-      id: string;
-      publicKey: string;
-      algorithm: string;
-    };
-    authenticatorData: string;
-    clientData: string;
-    attestationData: string;
-  };
+  registration: RegistrationJSON;
   active: boolean;
 }

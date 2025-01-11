@@ -1,4 +1,15 @@
 import { Field, InputType } from '@nestjs/graphql';
+import { RegistrationJSON } from '@passwordless-id/webauthn/dist/esm/types';
+
+@InputType()
+export class UserDto {
+  @Field(() => String)
+  id: string;
+  @Field(() => String)
+  name: string;
+  @Field(() => String)
+  displayName: string;
+}
 
 @InputType()
 export class CreatePasskeyRegistrationCredentialResolverDto {
@@ -8,20 +19,20 @@ export class CreatePasskeyRegistrationCredentialResolverDto {
   publicKey: string;
   @Field(() => String)
   algorithm: string;
+  @Field(() => [String])
+  transports: string[];
 }
 
 @InputType()
 export class CreatePasskeyRegistrationResolverDto {
-  @Field(() => String)
-  username: string;
+  @Field(() => UserDto)
+  user: UserDto;
   @Field(() => CreatePasskeyRegistrationCredentialResolverDto)
   credential: CreatePasskeyRegistrationCredentialResolverDto;
   @Field(() => String)
   authenticatorData: string;
   @Field(() => String)
   clientData: string;
-  @Field(() => String)
-  attestationData: string;
 }
 
 @InputType()
@@ -33,5 +44,5 @@ export class CreatePasskeyResolverDto {
   @Field(() => String)
   challenge: string;
   @Field(() => CreatePasskeyRegistrationResolverDto)
-  registration: CreatePasskeyRegistrationResolverDto;
+  registration: RegistrationJSON;
 }

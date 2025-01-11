@@ -51,8 +51,7 @@ export class AuthResolver {
   async auth_passkey(
     @Args('dto') dto: PasskeyAuthResolverDto,
   ): Promise<AuthModelResolver> {
-    const userSession: UserSessionUsecaseModel =
-      await this.inversify.authPasskeyUsecase.execute(dto);
+    const userSession: UserSessionUsecaseModel = await this.inversify.authPasskeyUsecase.execute(dto);
 
     if (!userSession) {
       throw new UnauthorizedException('Credentials wrong');
