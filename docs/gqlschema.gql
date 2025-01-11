@@ -37,14 +37,14 @@ input CreatePasskeyRegistrationCredentialResolverDto {
   algorithm: String!
   id: String!
   publicKey: String!
+  transports: [String!]!
 }
 
 input CreatePasskeyRegistrationResolverDto {
-  attestationData: String!
   authenticatorData: String!
   clientData: String!
   credential: CreatePasskeyRegistrationCredentialResolverDto!
-  username: String!
+  user: UserDto!
 }
 
 input CreatePasskeyResolverDto {
@@ -149,12 +149,16 @@ type PaginatedTrainingsResolverModel {
 }
 
 input PasskeyAuthResolverDto {
-  authenticatorData: String!
-  clientData: String!
-  credentialId: String!
-  signature: String!
-  userHandle: String!
+  authentication: PasskeyAuthenticationDto!
   user_code: String!
+}
+
+input PasskeyAuthenticationDto {
+  authenticatorAttachment: String!
+  id: String!
+  rawId: String!
+  response: PasskeyResponseDto!
+  type: String!
 }
 
 type PasskeyResolverModel {
@@ -165,6 +169,13 @@ type PasskeyResolverModel {
   label: String!
   user_code: String!
   user_id: String!
+}
+
+input PasskeyResponseDto {
+  authenticatorData: String!
+  clientDataJSON: String!
+  signature: String!
+  userHandle: String!
 }
 
 type Query {
@@ -275,6 +286,12 @@ input UpdateTrainingDtoResolver {
   label: String
   slug: String
   workout: [WorkoutDtoResolver!]
+}
+
+input UserDto {
+  displayName: String!
+  id: String!
+  name: String!
 }
 
 type UserModelResolver {

@@ -29,7 +29,7 @@ export class PasskeyResolver {
     @CurrentSession() session: UserSession,
     @Args('dto') dto: CreatePasskeyResolverDto,
   ): Promise<PasskeyResolverModel> {
-    const response = await this.inversify.createPasskeyUsecase.execute({
+    const response:any = await this.inversify.createPasskeyUsecase.execute({
       ...dto,
       user_id: session.id,
       user_code: session.code,
@@ -52,7 +52,7 @@ export class PasskeyResolver {
   async passkeys_for_user(
     @CurrentSession() session: UserSession,
   ): Promise<PasskeyResolverModel[]> {
-    const entities = await this.inversify.getByUserIdPasskeyUsecase.execute({
+    const entities:any = await this.inversify.getByUserIdPasskeyUsecase.execute({
       user_id: session.id,
     });
     return entities.map((passkey) => {

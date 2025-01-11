@@ -15,8 +15,6 @@ export class PasskeyResponseDto {
 
 @InputType()
 export class PasskeyAuthenticationDto {
-  @Field(() => Object)
-  clientExtensionResults: Record<string, any>; // Pour des objets dynamiques
   @Field(() => String)
   id: string;
   @Field(() => String)

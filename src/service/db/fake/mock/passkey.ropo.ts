@@ -1,12 +1,16 @@
 import PasskeyDbModel from '@src/service/db/model/passkey.db.model';
 
-export const passkeyRopo: PasskeyDbModel = {
+export const passkeyRopo: any = {
   id: '6607bc84d339c751cadc7694',
   label: 'test',
   hostname: 'localhost',
   challenge: '376dc26c-8ece-4374-a0c4-3a465523f2e5',
   registration: {
-      username: 'faro',
+      user: {
+        id: "7f26f9ab-4fbc-4103-807f-ed145acb7ecc",
+        name: "faro",
+        displayName: "faro"
+      },
       credential: {
           id: 'ApYnkOh-EYEXH-cTv52xmwoHTac-CTHgzbVTzG_iR8o',
           publicKey: 'MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEoCNLnsOcP-OihmptvE2DrZLj1OhBYWX-1zeZxgGj79MaUbcBEw7UrLzZdnf5Vs2bfyNg2g3etUhiwfiXoOkapw==',

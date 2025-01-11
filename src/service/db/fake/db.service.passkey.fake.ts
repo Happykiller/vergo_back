@@ -39,7 +39,7 @@ export class BddServicePasskeyFake
   }
 
   getPasskey(dto: GetPasskeyDbDto): Promise<PasskeyDbModel> {
-    const entity = this.getPasskeyCollection().find((elt) => {
+    const entity:any = this.getPasskeyCollection().find((elt:any) => {
       if (!elt.active) return false;
       else if (dto.passkey_id) {
         return elt.id === dto.passkey_id;
