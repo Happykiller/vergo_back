@@ -1,9 +1,8 @@
 import { Field, InputType } from '@nestjs/graphql';
+import { AuthenticationEncoded } from '@passwordless-id/webauthn/dist/esm/types';
 
 @InputType()
-export class PasskeyAuthResolverDto {
-  @Field(() => String)
-  user_code: string;
+export class PasskeyAuthAuthenticationResolverDto {
   @Field(() => String)
   credentialId: string;
   @Field(() => String)
@@ -14,4 +13,13 @@ export class PasskeyAuthResolverDto {
   signature: string;
   @Field(() => String)
   userHandle: string;
+}
+
+
+@InputType()
+export class PasskeyAuthResolverDto {
+  @Field(() => String)
+  user_code: string;
+  @Field(() => PasskeyAuthAuthenticationResolverDto)
+  authentication: AuthenticationEncoded;
 }

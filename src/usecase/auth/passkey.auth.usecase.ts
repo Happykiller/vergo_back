@@ -1,3 +1,5 @@
+import { server } from '@passwordless-id/webauthn' ;
+
 import { ERRORS } from '@src/common/ERROR';
 import { Inversify } from '@src/inversify/investify';
 import { UserUsecaseModel } from '@usecase/user/model/user.usecase.model';
@@ -14,13 +16,12 @@ export class AuthPasskeyUsecase {
   async execute(dto: PasskeyAuthUsecaseDto): Promise<UserSessionUsecaseModel> {
     try {
 
-      const user: UserUsecaseModel =
-        await this.inversify.getUserUsecase.execute({
-          code: dto.user_code,
-        });
+      const user: UserUsecaseModel = await this.inversify.getUserUsecase.execute({
+        code: dto.user_code,
+      });
 
       const passkey = await this.inversify.bddService.getPasskey({
-        credential_id: dto.credentialId,
+        credential_id: dto.authentication.credentialId,
       });
 
       /* istanbul ignore next */
@@ -31,9 +32,11 @@ export class AuthPasskeyUsecase {
         verbose: false, // optional, enables debug logs containing sensitive information
       };
 
+      //const authenticationParsed = await server.verifyAuthentication(dto.authentication, passkey.registration.credential, expected)
+
       await this.inversify.passwordLessService.verifyAuthentication(
-        dto,
-        passkey.registration.credential as any,
+        dto.authentication,
+        passkey.registration.credential,
         expected,
       );
 

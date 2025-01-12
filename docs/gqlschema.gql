@@ -148,12 +148,16 @@ type PaginatedTrainingsResolverModel {
   totalCount: Int!
 }
 
-input PasskeyAuthResolverDto {
+input PasskeyAuthAuthenticationResolverDto {
   authenticatorData: String!
   clientData: String!
   credentialId: String!
   signature: String!
   userHandle: String!
+}
+
+input PasskeyAuthResolverDto {
+  authentication: PasskeyAuthAuthenticationResolverDto!
   user_code: String!
 }
 

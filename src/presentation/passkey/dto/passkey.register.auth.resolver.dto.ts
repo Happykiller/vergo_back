@@ -1,4 +1,5 @@
 import { Field, InputType } from '@nestjs/graphql';
+import { RegistrationEncoded } from '@passwordless-id/webauthn/dist/esm/types';
 
 @InputType()
 export class CreatePasskeyRegistrationCredentialResolverDto {
@@ -33,5 +34,5 @@ export class CreatePasskeyResolverDto {
   @Field(() => String)
   challenge: string;
   @Field(() => CreatePasskeyRegistrationResolverDto)
-  registration: CreatePasskeyRegistrationResolverDto;
+  registration: RegistrationEncoded;
 }
