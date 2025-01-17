@@ -1,4 +1,4 @@
-import { RegistrationEncoded } from "@passwordless-id/webauthn/dist/esm/types";
+import { RegistrationInfo, RegistrationJSON } from "@passwordless-id/webauthn/dist/esm/types";
 
 export default interface PasskeyDbModel {
   id: string;
@@ -7,6 +7,7 @@ export default interface PasskeyDbModel {
   hostname: string;
   user_code: string;
   challenge: string;
-  registration: RegistrationEncoded;
+  registration: RegistrationJSON;
+  registrationParsed: RegistrationInfo;
   active: boolean;
 }

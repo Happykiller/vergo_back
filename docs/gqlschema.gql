@@ -33,25 +33,11 @@ input CreateExerciceDtoResolver {
   title: [LanguageDtoResolver!]!
 }
 
-input CreatePasskeyRegistrationCredentialResolverDto {
-  algorithm: String!
-  id: String!
-  publicKey: String!
-}
-
-input CreatePasskeyRegistrationResolverDto {
-  attestationData: String!
-  authenticatorData: String!
-  clientData: String!
-  credential: CreatePasskeyRegistrationCredentialResolverDto!
-  username: String!
-}
-
 input CreatePasskeyResolverDto {
   challenge: String!
   hostname: String!
   label: String!
-  registration: CreatePasskeyRegistrationResolverDto!
+  registration: RegisterPasskeyResolverDto!
 }
 
 input CreateTrainingDtoResolver {
@@ -149,16 +135,23 @@ type PaginatedTrainingsResolverModel {
 }
 
 input PasskeyAuthAuthenticationResolverDto {
-  authenticatorData: String!
-  clientData: String!
-  credentialId: String!
-  signature: String!
-  userHandle: String!
+  authenticatorAttachment: String
+  id: String!
+  rawId: String!
+  response: PasskeyAuthResponseResolverDto!
+  type: String!
 }
 
 input PasskeyAuthResolverDto {
   authentication: PasskeyAuthAuthenticationResolverDto!
   user_code: String!
+}
+
+input PasskeyAuthResponseResolverDto {
+  authenticatorData: String!
+  clientDataJSON: String!
+  signature: String!
+  userHandle: String
 }
 
 type PasskeyResolverModel {
@@ -192,6 +185,29 @@ type Query {
   user(dto: GetUserResolverDto!): UserModelResolver!
   users: [UserModelResolver!]!
   workouts(limit: Int, offset: Int, order_by: OrderResolverDto): WorkoutsPaginatedResolverModel!
+}
+
+input RegisterPasskeyResolverDto {
+  authenticatorAttachment: String!
+  id: String!
+  rawId: String!
+  response: RegisterResponsePasskeyResolverDto!
+  type: String!
+  user: RegisterUserPasskeyResolverDto!
+}
+
+input RegisterResponsePasskeyResolverDto {
+  attestationObject: String!
+  authenticatorData: String!
+  clientDataJSON: String!
+  publicKey: String!
+  publicKeyAlgorithm: Float!
+  transports: [String!]!
+}
+
+input RegisterUserPasskeyResolverDto {
+  id: String!
+  name: String!
 }
 
 type SearchWorkoutsPaginatedNodeResolverModel {

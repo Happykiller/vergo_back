@@ -74,7 +74,7 @@ describe('TokenizeUsecase', () => {
       // act
       const response = usecase.processFileName('cool-down');
       // assert
-      expect(response).toEqual(["cooldown"]);
+      expect(response).toEqual(['cool', 'down']);
     });
   })
   

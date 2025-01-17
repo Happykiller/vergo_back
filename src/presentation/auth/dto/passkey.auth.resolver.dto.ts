@@ -1,25 +1,36 @@
 import { Field, InputType } from '@nestjs/graphql';
-import { AuthenticationEncoded } from '@passwordless-id/webauthn/dist/esm/types';
+import { AuthenticationJSON } from '@passwordless-id/webauthn/dist/esm/types';
+
+@InputType()
+class PasskeyAuthResponseResolverDto {
+  @Field(() => String)
+  authenticatorData: string;
+  @Field(() => String)
+  clientDataJSON: string;
+  @Field(() => String)
+  signature: string;
+  @Field(() => String, { nullable: true })
+  userHandle?: string;
+}
 
 @InputType()
 export class PasskeyAuthAuthenticationResolverDto {
   @Field(() => String)
-  credentialId: string;
+  id: string;
   @Field(() => String)
-  authenticatorData: string;
+  rawId: string;
   @Field(() => String)
-  clientData: string;
-  @Field(() => String)
-  signature: string;
-  @Field(() => String)
-  userHandle: string;
+  type: string;
+  @Field(() => String, { nullable: true })
+  authenticatorAttachment?: string;
+  @Field(() => PasskeyAuthResponseResolverDto)
+  response: PasskeyAuthResponseResolverDto;
 }
-
 
 @InputType()
 export class PasskeyAuthResolverDto {
   @Field(() => String)
   user_code: string;
   @Field(() => PasskeyAuthAuthenticationResolverDto)
-  authentication: AuthenticationEncoded;
+  authentication: AuthenticationJSON;
 }

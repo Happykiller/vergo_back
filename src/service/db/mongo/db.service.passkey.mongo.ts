@@ -43,7 +43,7 @@ export class BddServicePasskeyMongo
         active: true,
         $or: [
           { _id: new ObjectId(dto.passkey_id) },
-          { 'registration.credential.id': dto.credential_id },
+          { 'registration.id': dto.credential_id },
         ],
       };
       const options = {};
@@ -59,6 +59,7 @@ export class BddServicePasskeyMongo
         user_id: doc.user_id,
         hostname: doc.hostname,
         registration: doc.registration,
+        registrationParsed: doc.registrationParsed,
         challenge: doc.challenge,
         active: doc.active,
       });

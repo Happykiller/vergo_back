@@ -1,5 +1,6 @@
 import { UserDbModel } from '@service/db/model/user.db.model';
 import { GetUserDbDto } from '@service/db/dto/get.user.db.dto';
+import { ImageDbModel } from '@service/db/model/image.db.model';
 import PasskeyDbModel from '@service/db/model/passkey.db.model';
 import GlossaryDbModel from '@service/db/model/glossary.db.model';
 import { CreateUserDbDto } from '@service/db/dto/create.user.db.dto';
@@ -17,7 +18,6 @@ import { CreateTrainingDbDto } from '@service/db/dto/create.training.db.dto';
 import { CreateExerciceDbDto } from '@service/db/dto/create.exercice.db.dto';
 import { UpdateExerciceDbDto } from '@service/db/dto/update.exercice.db.dto';
 import { GetPasskeyByUserIdDbDto } from '@service/db/dto/getByUserId.passkey.db.dto';
-import { ImageDbModel } from './model/image.db.model';
 
 export interface BddService {
   test(): Promise<boolean>;
