@@ -1,7 +1,7 @@
 import { server } from '@passwordless-id/webauthn';
 import { AuthenticationInfo, AuthenticationJSON, CredentialInfo, RegistrationInfo, RegistrationJSON } from '@passwordless-id/webauthn/dist/esm/types';
 
-import { PasswordLessService } from '@src/service/passwordless/passwordless.service';
+import { PasswordLessService } from '@service/passwordless/passwordless.service';
 
 
 export class PasswordLessServiceReal implements PasswordLessService {

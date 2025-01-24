@@ -1,4 +1,3 @@
-import { server } from '@passwordless-id/webauthn';
 import { RegistrationInfo } from '@passwordless-id/webauthn/dist/esm/types';
 
 import { ERRORS } from '@src/common/ERROR';

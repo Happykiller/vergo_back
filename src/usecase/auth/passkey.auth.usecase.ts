@@ -1,5 +1,3 @@
-import { server } from '@passwordless-id/webauthn';
-
 import { ERRORS } from '@src/common/ERROR';
 import { Inversify } from '@src/inversify/investify';
 import { UserUsecaseModel } from '@usecase/user/model/user.usecase.model';
