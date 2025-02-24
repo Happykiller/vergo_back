@@ -13,6 +13,7 @@ import { BddServiceFake } from '@service/db/fake/db.service.fake';
 import { PasswordService } from '@service/password/password.service';
 import { CryptServiceReal } from '@service/crypt/crypt.service.real';
 import { BddServiceMongo } from '@service/db/mongo/db.service.mongo';
+import { HttpServiceReal } from '@src/service/http/http.service.real';
 import { CreateUserUsecase } from '@usecase/user/create.user.usecase';
 import { GetAllUserUsecase } from '@usecase/user/get_all.user.usecase';
 import { UpdPasswordUsecase } from '@usecase/auth/updPassword.usecase';
@@ -42,7 +43,6 @@ import { GetByUserIdPasskeyUsecase } from '@usecase/passkey/getByUserId.passkey.
 import { PasswordLessServiceFake } from '@service/passwordless/passwordless.service.fake';
 import { PasswordLessServiceReal } from '@service/passwordless/passwordlless.service.real';
 import { GetNormalizedTrainingUsecase } from '@usecase/training/getNormalized.training.usecase';
-import { HttpServiceReal } from '@src/service/http/http.service.real';
 
 export class Inversify {
   mongo: Db;
