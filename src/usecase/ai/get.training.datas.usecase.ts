@@ -10,6 +10,8 @@ interface BucketRange {
   label: string;
 }
 
+type TrainingPair = [string[], string[], any];
+
 export class GetTrainingDatasUsecase {
   inversify: Inversify;
   common: Common;
@@ -40,10 +42,20 @@ export class GetTrainingDatasUsecase {
     fs.writeFileSync(fileName, JSON.stringify(data, null, 2), 'utf8');
   }
 
+  extractGlossaryFromWordsImgs(words_imgs: string[][]): string[] {
+    // Aplatir le tableau de tableaux en un seul tableau de chaînes
+    const flattenedWords = words_imgs.flat();
+    // Normaliser chaque mot en minuscules et en supprimant les espaces superflus, puis extraire les valeurs uniques avec un Set
+    const glossarySet = new Set(flattenedWords.map(word => word.toLowerCase().trim()));
+    return Array.from(glossarySet);
+  }
+
   async execute(): Promise<[string[], string[]][]> {
+    const that = this;
     // Récupération des données
     const imgs = await this.common.getFileList();
     let words_imgs = imgs.map(elt => elt.words);
+    const glossary = this.extractGlossaryFromWordsImgs(words_imgs);
 
     const exercices = await this.inversify.getExercicesUsecase.execute();
     const exercices_db = [];
@@ -112,6 +124,8 @@ export class GetTrainingDatasUsecase {
     }
     shuffleArray(pool);
 
+    //this.createFile('o3_debug', pool);
+
     // Définition des buckets avec la nouvelle répartition
     const bucketRanges: BucketRange[] = [
       { lower: 0.0, upper: 0.0, label: "0.0-0.0" },
@@ -166,6 +180,25 @@ export class GetTrainingDatasUsecase {
     }
 
     // Affichage de la taille de chaque bucket
+    console.log('Affichage de la taille de chaque bucket')
+    for (let i = 0; i < buckets.length; i++) {
+      console.log(`Bucket ${bucketRanges[i].label} length => ${buckets[i].length}`);
+    }
+
+    const bucketRange1: BucketRange = { lower: 0.001, upper: 0.1, label: "0.001-0.1" };
+    const add1 = generateBucketDocumentPairs(bucketRange1, 200 - buckets[1].length, glossary)
+    console.log(add1[0])
+
+    const bucketRange10: BucketRange = { lower: 0.9, upper: 0.999, label: "0.9-0.999" };
+    const add10 = generateBucketDocumentPairs(bucketRange10, 200 - buckets[10].length, glossary)
+    console.log(add10[0])
+
+    // Ajout des nouvelles paires aux buckets existants
+    buckets[1] = buckets[1].concat(add1);
+    buckets[10] = buckets[10].concat(add10);
+
+    // Affichage de la taille de chaque bucket après complétion
+    console.log('Affichage de la taille de chaque bucket après complétion')
     for (let i = 0; i < buckets.length; i++) {
       console.log(`Bucket ${bucketRanges[i].label} length => ${buckets[i].length}`);
     }
@@ -197,7 +230,7 @@ export class GetTrainingDatasUsecase {
     balancedBuckets.forEach(bucket => {
       // On mélange d'abord le bucket pour tirer des éléments aléatoirement
       shuffleArray(bucket);
-    
+
       // On calcule le nombre d'éléments à extraire pour ce bucket
       let count = baseTestCountPerBucket;
       if (remainder > 0) {
@@ -206,12 +239,12 @@ export class GetTrainingDatasUsecase {
       }
       // Au cas où le bucket aurait moins d'éléments que count
       count = Math.min(count, bucket.length);
-    
+
       // On retire aléatoirement 'count' éléments du bucket pour le test
       // splice retire et renvoie les éléments extraits
       const bucketTest = bucket.splice(0, count);
       testSet.push(...bucketTest);
-    
+
       // Le reste du bucket constituera le training set
       trainingSet.push(...bucket);
     });
@@ -222,6 +255,107 @@ export class GetTrainingDatasUsecase {
 
     this.createFile('o3_train', trainingSet);
     this.createFile('o3_test', testSet);
+
+    // Fonction pour générer un document aléatoire à partir du glossaire.
+    // On choisit un nombre aléatoire de mots compris entre minWords et maxWords.
+    function generateRandomDocumentFromGlossary(glossary: string[], minWords = 3, maxWords = 20): string[] {
+      const length = Math.floor(Math.random() * (maxWords - minWords + 1)) + minWords;
+      const document: string[] = [];
+      for (let i = 0; i < length; i++) {
+        const randomIndex = Math.floor(Math.random() * glossary.length);
+        document.push(glossary[randomIndex]);
+      }
+      return document;
+    }
+
+    /**
+     * Génère une version perturbée d'un document de base en remplaçant aléatoirement certains mots.
+     * @param baseDoc Le document de base
+     * @param glossary Glossaire utilisé pour le remplacement
+     * @param perturbationProbability Probabilité de remplacer un mot (par défaut 0.1)
+     * @returns Un nouveau document avec quelques mots remplacés
+     */
+    function generatePerturbedDocument(
+      baseDoc: string[],
+      glossary: string[],
+      perturbationProbability: number = 0.1
+    ): string[] {
+      return baseDoc.map(word => {
+        if (Math.random() < perturbationProbability) {
+          // Remplacer le mot par un mot aléatoire différent
+          let newWord = word;
+          // Boucler jusqu'à obtenir un mot différent pour éviter un remplacement identique
+          while (newWord === word) {
+            newWord = glossary[Math.floor(Math.random() * glossary.length)];
+          }
+          return newWord;
+        }
+        return word;
+      });
+    }
+
+    /**
+ * Génère un document différent de baseDoc en excluant les mots déjà présents dans baseDoc (si possible).
+ * Cela permet d'obtenir des documents avec peu ou pas de chevauchement.
+ */
+    function generateDissimilarDocument(
+      baseDoc: string[],
+      glossary: string[],
+      minWords = 3,
+      maxWords = 20
+    ): string[] {
+      // Commencez par prendre un mot aléatoire du baseDoc
+      const commonWord = baseDoc[Math.floor(Math.random() * baseDoc.length)];
+      // Génération d'un document avec quelques mots aléatoires en excluant commonWord pour le reste
+      const remainingDoc = generateRandomDocumentFromGlossary(
+        glossary.filter(word => word !== commonWord),
+        minWords - 1,
+        maxWords - 1
+      );
+      // Retourne un document qui inclut au moins ce mot commun
+      return [commonWord, ...remainingDoc];
+    }
+
+
+    /**
+     * Génère un nombre souhaité de paires de documents (baseDoc et perturbedDoc)
+     * dont la similarité, calculée via CalculateSimilarityUsecase, se situe dans l'intervalle défini par bucketRange.
+     * @param bucketRange L'intervalle de similarité visé (ex: { lower: 0.9, upper: 0.999, label: "0.9-0.999" })
+     * @param targetCount Nombre de paires à générer
+     * @param glossary Liste de mots à utiliser pour générer les documents
+     * @returns Un tableau de TrainingPair contenant [document1, document2, similarityStats]
+     */
+    function generateBucketDocumentPairs(
+      bucketRange: BucketRange,
+      targetCount: number,
+      glossary: string[]
+    ): TrainingPair[] {
+      const results: TrainingPair[] = [];
+      let iteration = 0;
+      const maxIterations = 100000000;
+
+      while (results.length < targetCount && iteration < maxIterations) {
+        iteration++;
+        // Génération d'un document de base
+        const baseDoc = generateRandomDocumentFromGlossary(glossary);
+        let secondDoc: string[];
+        // Pour les buckets à faible similarité, on veut des documents très différents
+        if (bucketRange.upper <= 0.1) {
+          secondDoc = generateDissimilarDocument(baseDoc, glossary);
+        } else {
+          // Pour les buckets à forte similarité, on utilise la perturbation
+          secondDoc = generatePerturbedDocument(baseDoc, glossary, 0.1);
+        }
+        // Calcul de la similarité entre baseDoc et perturbedDoc
+        const similarityStats = that.calculateSimilarityUsecase.execute(baseDoc, secondDoc);
+        const similarity = similarityStats.similarity;
+        // Si la similarité se situe dans le bucket souhaité, on conserve la paire
+        if (similarity >= bucketRange.lower && similarity <= bucketRange.upper) {
+          results.push([baseDoc, secondDoc, similarity]);
+        }
+      }
+      return results;
+    }
 
     return [];
   }
