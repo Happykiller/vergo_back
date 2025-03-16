@@ -8,13 +8,15 @@ interface BucketRange {
   lower: number;
   upper: number;
   label: string;
-  size: number;
+  records: any[];
 }
 
 export class GetTrainingDatasUsecase {
   inversify: Inversify;
   common: Common;
   calculateSimilarityUsecase: CalculateSimilarityUsecase;
+  bucketSizeMax = 0; //-1 unable, 0 min bucket, x size
+  poolTestSize = 20;
 
   constructor(inversify: Inversify) {
     this.inversify = inversify;
@@ -132,7 +134,7 @@ export class GetTrainingDatasUsecase {
     }
 
     // Formatage du pool au format [source, ref, similarity]
-    let pool:[string[], string[], number][] = resultat.map(r => [
+    let pool: [string[], string[], number][] = resultat.map(r => [
       r.source,
       r.ref,
       r.similarityResult.similarity
@@ -140,31 +142,36 @@ export class GetTrainingDatasUsecase {
 
     pool = this.shuffleArray(pool);
 
+    const info: any = {
+      poolSize: pool.length,
+      bucketDetails: [],
+    };
+
     console.log(`Taille du pool : ${pool.length}`);
 
     //this.createFile('o3_debug', pool);
 
     // Définition des buckets avec la nouvelle répartition
     const buckets: BucketRange[] = [
-      { lower: 0.0, upper: 0.0, label: "0.0-0.0", size:0 },
-      { lower: 0.0, upper: 0.1, label: "0.0-0.1", size:0 },
-      { lower: 0.1, upper: 0.2, label: "0.1-0.2", size:0 },
-      { lower: 0.2, upper: 0.3, label: "0.2-0.3", size:0 },
-      { lower: 0.3, upper: 0.4, label: "0.3-0.4", size:0 },
-      { lower: 0.4, upper: 0.5, label: "0.4-0.5", size:0 },
-      { lower: 0.5, upper: 0.6, label: "0.5-0.6", size:0 },
-      { lower: 0.6, upper: 0.7, label: "0.6-0.7", size:0 },
-      { lower: 0.7, upper: 0.8, label: "0.7-0.8", size:0 },
-      { lower: 0.8, upper: 0.9, label: "0.8-0.9", size:0 },
-      { lower: 0.9, upper: 1.0, label: "0.9-1.0", size:0 },
-      { lower: 1.0, upper: 1.0, label: "1.0-1.0", size:0 },
+      { lower: 0.0, upper: 0.0, label: "0.0-0.0", records: [] },
+      { lower: 0.0, upper: 0.1, label: "0.0-0.1", records: [] },
+      { lower: 0.1, upper: 0.2, label: "0.1-0.2", records: [] },
+      { lower: 0.2, upper: 0.3, label: "0.2-0.3", records: [] },
+      { lower: 0.3, upper: 0.4, label: "0.3-0.4", records: [] },
+      { lower: 0.4, upper: 0.5, label: "0.4-0.5", records: [] },
+      { lower: 0.5, upper: 0.6, label: "0.5-0.6", records: [] },
+      { lower: 0.6, upper: 0.7, label: "0.6-0.7", records: [] },
+      { lower: 0.7, upper: 0.8, label: "0.7-0.8", records: [] },
+      { lower: 0.8, upper: 0.9, label: "0.8-0.9", records: [] },
+      { lower: 0.9, upper: 1.0, label: "0.9-1.0", records: [] },
+      { lower: 1.0, upper: 1.0, label: "1.0-1.0", records: [] },
     ];
 
     for (const triple of pool) {
       const similarity: number = triple[2];
       const bucketIndex = this.getBucketIndex(similarity, buckets);
       if (bucketIndex !== -1) {
-        buckets[bucketIndex].size +=1;
+        buckets[bucketIndex].records.push(triple);
       } else {
         console.warn(`La similarité ${similarity} ne correspond à aucune plage définie.`);
       }
@@ -173,29 +180,58 @@ export class GetTrainingDatasUsecase {
     // Affichage de la taille de chaque bucket
     console.log('Affichage de la taille de chaque bucket')
     for (let i = 0; i < buckets.length; i++) {
-      console.log(`Bucket ${buckets[i].label} length => ${buckets[i].size}`);
+      console.log(`Bucket ${buckets[i].label} length => ${buckets[i].records.length}`);
+      info.bucketDetails.push({
+        label: buckets[i].label,
+        length: buckets[i].records.length
+      });
     }
+
+    let finalPool: [string[], string[], number][];
+
+    if (this.bucketSizeMax === -1) {
+      // -1 => on ne filtre pas, on garde tout
+      finalPool = pool;
+    } else if (this.bucketSizeMax === 0) {
+      // =0 => on cherche la taille minimale parmi tous les buckets
+      const minBucketSize = Math.min(...buckets.map(b => b.records.length));
+      // puis on prend cette même quantité (minBucketSize) dans chacun des buckets
+      finalPool = buckets.flatMap(bucket => bucket.records.slice(0, minBucketSize));
+    } else {
+      // > 0 => on prend bucketSizeMax éléments dans chaque bucket
+      finalPool = buckets.flatMap(bucket => bucket.records.slice(0, this.bucketSizeMax));
+    }
+
+    // On mélange finalPool pour éviter un ordre systématique
+    finalPool = this.shuffleArray(finalPool);
+
+    console.log(`Taille du finalPool : ${finalPool.length}`);
+    info.finalPoolSize = finalPool.length;
 
     let testSet: [string[], string[], number][] = [];
     let trainingSet: [string[], string[], number][] = [];
 
-    const testSetPart1 = pool.splice(0, 10);
+    const testSetPart1 = finalPool.splice(0, this.poolTestSize/2);
 
     // 2) On ajoute encore 10 éléments (slice) mais sans les retirer du pool
-    const testSetPart2 = pool.slice(0, 10);
+    const testSetPart2 = finalPool.slice(0, this.poolTestSize/2);
 
     // 3) On fusionne ces deux séries d'éléments pour obtenir testSet
     testSet = [...testSetPart1, ...testSetPart2];
 
     // 4) La variable pool a déjà perdu 10 éléments (ceux de testSetPart1),
     //    les 10 éléments de testSetPart2 sont toujours dedans, donc trainingSet devient le pool actuel
-    trainingSet = pool;
+    trainingSet = finalPool;
 
     console.log(`Taille du jeu de test : ${testSet.length}`);
+    info.testSetSize = testSet.length;
+
     console.log(`Taille du jeu d'entraînement : ${trainingSet.length}`);
+    info.trainingSetSize = trainingSet.length;
 
     this.createFile('o3_train', trainingSet);
     this.createFile('o3_test', testSet);
+    this.createFile('o3_info', info);
 
     return [];
   }
