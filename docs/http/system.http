@@ -9,3 +9,16 @@ query {
     version
   }
 }
+
+###
+POST {{host}}/graphql
+Content-Type: application/json
+Authorization: Bearer {{token}}
+X-REQUEST-TYPE: GraphQL
+
+query {  
+  test_mail {
+    success
+    message
+  }
+}

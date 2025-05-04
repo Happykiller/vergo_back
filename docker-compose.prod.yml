@@ -1,4 +1,4 @@
-## Fichier : docker-compose.yml
+# docker-compose.yml
 services:
   vergo_back:
     image: vergo_back
@@ -10,3 +10,9 @@ services:
       - 'host.docker.internal:host-gateway'
     volumes:
       - ./images:/usr/src/app/images
+    networks:
+      - interservices
+
+networks:
+  interservices:
+    external: true

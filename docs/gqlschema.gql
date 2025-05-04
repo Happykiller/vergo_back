@@ -178,6 +178,7 @@ type Query {
   passkeys_for_user: [PasskeyResolverModel!]!
   searchWorkoutsPaginated(dto: SearchWorkoutsResolverDto!, limit: Int, offset: Int, order_by: OrderResolverDto): SearchWorkoutsPaginatedResolverModel!
   systemInfo: SystemInfoResolverModel!
+  test_mail: SendMailSystemResolverModel!
   training(dto: GetTrainingResolverDto!): TrainingModelResolver!
   training_normalized(dto: GetTrainingResolverDto!): [TrainingNormalizedResolverModel!]!
   trainings: [TrainingModelResolver!]!
@@ -222,6 +223,11 @@ type SearchWorkoutsPaginatedResolverModel {
 
 input SearchWorkoutsResolverDto {
   workouts_slug: [String!]!
+}
+
+type SendMailSystemResolverModel {
+  message: String!
+  success: Boolean!
 }
 
 input SetDtoResolver {

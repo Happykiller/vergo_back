@@ -1,8 +1,8 @@
+// src\inversify\investify.ts
 import { Db } from 'mongodb';
 import { config } from '@src/config';
 import { logger } from '@src/common/logger/logger';
 import { BddService } from '@service/db/db.service';
-import { HttpService } from '@service/http/http.service';
 import { AuthUsecase } from '@usecase/auth/auth.usecase';
 import { ImageService } from '@service/image/image.service';
 import { CryptService } from '@service/crypt/crypt.service';
@@ -13,11 +13,9 @@ import { BddServiceFake } from '@service/db/fake/db.service.fake';
 import { PasswordService } from '@service/password/password.service';
 import { CryptServiceReal } from '@service/crypt/crypt.service.real';
 import { BddServiceMongo } from '@service/db/mongo/db.service.mongo';
-import { HttpServiceReal } from '@src/service/http/http.service.real';
 import { CreateUserUsecase } from '@usecase/user/create.user.usecase';
 import { GetAllUserUsecase } from '@usecase/user/get_all.user.usecase';
 import { UpdPasswordUsecase } from '@usecase/auth/updPassword.usecase';
-import { LoggerServiceFake } from '@service/logger/logger.service.fake';
 import { EncodeServiceReal } from '@service/encode/encode.service.real';
 import { AuthPasskeyUsecase } from '@usecase/auth/passkey.auth.usecase';
 import { GetTokenizedUsecase } from '@usecase/ai/get.tokenized.usecase';
@@ -43,6 +41,7 @@ import { GetByUserIdPasskeyUsecase } from '@usecase/passkey/getByUserId.passkey.
 import { PasswordLessServiceFake } from '@service/passwordless/passwordless.service.fake';
 import { PasswordLessServiceReal } from '@service/passwordless/passwordlless.service.real';
 import { GetNormalizedTrainingUsecase } from '@usecase/training/getNormalized.training.usecase';
+import { HttpService, HttpServiceReal, LoggerServiceFake, MorgansService, MorgansServiceReal } from '@happykiller/sunny-apis';
 
 export class Inversify {
   mongo: Db;
@@ -53,6 +52,7 @@ export class Inversify {
   cryptService: CryptService;
   imageService: ImageService;
   encodeService: EncodeService;
+  morgansServce: MorgansService;
   getUserUsecase: GetUserUsecase;
   tokenizeUsecase: TokenizeUsecase;
   passwordService: PasswordService;
@@ -75,7 +75,7 @@ export class Inversify {
   createTrainingUsecase: CreateTrainingUsecase;
   updateTrainingUsecase: UpdateTrainingUsecase;
   searchWorkoutsUsecase: SearchWorkoutsUsecase;
-  getTrainingDatasUsecase : GetTrainingDatasUsecase;
+  getTrainingDatasUsecase: GetTrainingDatasUsecase;
   getImagesTokenizedUsecase: GetImagesTokenizedUsecase;
   getByUserIdPasskeyUsecase: GetByUserIdPasskeyUsecase;
   findMostAccurateFileUsecase: FindMostAccurateFileUsecase;
@@ -85,6 +85,7 @@ export class Inversify {
     /**
      * Services
      */
+    this.morgansServce = new MorgansServiceReal(this, config.morgans.url);
     this.httpService = new HttpServiceReal();
     this.cryptService = new CryptServiceReal();
     this.encodeService = new EncodeServiceReal();

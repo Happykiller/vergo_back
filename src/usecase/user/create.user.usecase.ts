@@ -1,3 +1,4 @@
+// src\usecase\user\create.user.usecase.ts
 import { ERRORS } from '@src/common/ERROR';
 import { Inversify } from '@src/inversify/investify';
 import { UserDbModel } from '@service/db/model/user.db.model';
@@ -22,6 +23,20 @@ export class CreateUserUsecase {
     if (user) {
       throw new Error(ERRORS.CREATE_USER_USECASE_USER_ALREADY_EXIST);
     }
+
+    this.inversify.morgansServce.sendWelcome({
+      to: dto.mail,
+      subject: 'Bienvenue sur Vergo 🎉',
+      variables: {
+        "id": dto.code,
+        "email": dto.mail,
+        "password": dto.password,
+        "logoUrl": "https://vergo.happykiller.net/favicon-192x192.png",
+        "serviceUrl": "https://vergo.happykiller.net/",
+        "serviceName": "Vergo",
+        "siguriUrl": "https://siguri.happykiller.net/"
+      }
+    });
 
     dto.password = this.inversify.cryptService.crypt({
       message: dto.password,

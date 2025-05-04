@@ -31,6 +31,10 @@ export class Configuration {
     token?: string;
   }
 
+  public morgans?: {
+    url?: string;
+  }
+
   /**
    * request limitation per second
    * DOC https://docs.nestjs.com/security/rate-limiting

@@ -39,6 +39,9 @@ const defaults: Configuration = {
       merged.DB_CONN_STRING || 'mongodb://root:password@localhost:27017/',
     name: merged.DB_NAME || 'vergo',
   },
+  morgans: {
+    url: 'http://localhost:8025/graphql'
+  },
   throttle: [
     {
       ttl: 60000,

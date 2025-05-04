@@ -1,8 +1,9 @@
+// src\usecase\user\get.user.usecase.ts
+import { ERRORS } from '@src/common/ERROR';
 import { Inversify } from '@src/inversify/investify';
+import { UserDbModel } from '@service/db/model/user.db.model';
 import { UserUsecaseModel } from '@usecase/user/model/user.usecase.model';
 import { GetUserUsecaseDto } from '@usecase/user/dto/get.user.usecase.dto';
-import { UserDbModel } from '../../service/db/model/user.db.model';
-import { ERRORS } from '../../common/ERROR';
 
 export class GetUserUsecase {
   inversify: Inversify;

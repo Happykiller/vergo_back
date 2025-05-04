@@ -1,7 +1,12 @@
+// src\presentation\system\system.resolver.ts
 import { Query, Resolver } from '@nestjs/graphql';
 
 import { version } from '../../../package.json';
+import inversify from '@src/inversify/investify';
+import { USER_ROLE } from '@presentation/guard/userRole';
+import { Roles } from '@presentation/guard/roles.decorator';
 import { SystemInfoResolverModel } from '@presentation/system/model/info.system.resolver.model';
+import { SendMailSystemResolverModel } from '@presentation/system/model/send_mail.system.resolver.model';
 
 @Resolver('SystemResolver')
 export class SystemResolver {
@@ -13,5 +18,11 @@ export class SystemResolver {
     return {
       version,
     };
+  }
+
+  @Roles(USER_ROLE.ADMIN)
+  @Query(() => SendMailSystemResolverModel)
+  async test_mail(): Promise<SendMailSystemResolverModel> {
+    return await inversify.morgansServce.sendTest('fabrice.rosito@gmail.com');
   }
 }
