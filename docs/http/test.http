@@ -1,0 +1,10 @@
+###
+POST {{host}}/graphql
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+
+query {  
+  ping {
+    message
+  }
+}

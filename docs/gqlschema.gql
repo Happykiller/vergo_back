@@ -164,6 +164,10 @@ type PasskeyResolverModel {
   user_id: String!
 }
 
+type PingResponse {
+  message: String!
+}
+
 type Query {
   ai_get_glossary: [String!]!
   ai_get_images: [[String!]!]!
@@ -176,6 +180,7 @@ type Query {
   getSessionInfo: AuthModelResolver!
   get_private_trainings: [TrainingModelResolver!]!
   passkeys_for_user: [PasskeyResolverModel!]!
+  ping: PingResponse!
   searchWorkoutsPaginated(dto: SearchWorkoutsResolverDto!, limit: Int, offset: Int, order_by: OrderResolverDto): SearchWorkoutsPaginatedResolverModel!
   systemInfo: SystemInfoResolverModel!
   test_mail: SendMailSystemResolverModel!

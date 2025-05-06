@@ -5,10 +5,11 @@ import { ThrottlerModule } from '@nestjs/throttler';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 
 import { config } from '@src/config';
+import inversify from './inversify/investify';
 import { AiModule } from '@presentation/ai/ai.module';
-import { AuthModule } from '@presentation/auth/auth.module';
 import { UserModule } from '@presentation/user/user.module';
 import { ImageModule } from '@presentation/image/image.module';
+import { AuthModule, TestModule } from '@happykiller/sunny-apis';
 import { SystemModule } from '@presentation/system/system.module';
 import { WorkoutModule } from '@presentation/workout/workout.module';
 import { PasskeyModule } from '@presentation/passkey/passkey.module';
@@ -17,9 +18,14 @@ import { ExerciceModule } from '@presentation/exercice/exercice.module';
 
 @Module({
   imports: [
+    TestModule,
     AiModule,
     UserModule,
-    AuthModule,
+    AuthModule.forRoot({
+      jwtConfig: config.jwt,
+      appConfig: config,
+      inversify,
+    }),
     ImageModule,
     SystemModule,
     PasskeyModule,
