@@ -1,3 +1,4 @@
-import { PasskeyAuthResolverDto } from '@presentation/auth/dto/passkey.auth.resolver.dto';
+// src\usecase\auth\dto\passkey.auth.usecase.dto.ts
+import { PasskeyAuthResolverDto } from "@happykiller/sunny-apis";
 
 export class PasskeyAuthUsecaseDto extends PasskeyAuthResolverDto {}

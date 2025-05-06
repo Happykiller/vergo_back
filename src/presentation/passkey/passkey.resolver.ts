@@ -1,16 +1,12 @@
+// src\presentation\passkey\passkey.resolver.ts
 import { Inject, UseGuards } from '@nestjs/common';
 import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
 
 import { Inversify } from '@src/inversify/investify';
-import { USER_ROLE } from '@presentation/guard/userRole';
-import { Roles } from '@presentation/guard/roles.decorator';
-import { RolesGuard } from '@presentation/guard/roles.guard';
-import { UserSession } from '@presentation/auth/jwt.strategy';
-import { GqlAuthGuard } from '@presentation/guard/gql.auth.guard';
-import { CurrentSession } from '@presentation/guard/userSession.decorator';
 import { PasskeyResolverModel } from '@presentation/passkey/model/passkey.resolver.model';
 import { DeletePasskeyResolverDto } from '@presentation/passkey/dto/delete.passkey.resolver.dto';
 import { CreatePasskeyResolverDto } from '@presentation/passkey/dto/passkey.register.auth.resolver.dto';
+import { CurrentSession, GqlAuthGuard, Roles, RolesGuard, USER_ROLE, UserSessionResolverModel } from '@happykiller/sunny-apis';
 
 @Resolver('PasskeyResolver')
 export class PasskeyResolver {
@@ -26,7 +22,7 @@ export class PasskeyResolver {
     (): typeof PasskeyResolverModel => PasskeyResolverModel,
   )
   async create_passkey(
-    @CurrentSession() session: UserSession,
+    @CurrentSession() session: UserSessionResolverModel,
     @Args('dto') dto: CreatePasskeyResolverDto,
   ): Promise<PasskeyResolverModel> {
     const response = await this.inversify.createPasskeyUsecase.execute({
@@ -50,7 +46,7 @@ export class PasskeyResolver {
   /* eslint-disable @typescript-eslint/no-unused-vars */
   @Query((returns) => [PasskeyResolverModel])
   async passkeys_for_user(
-    @CurrentSession() session: UserSession,
+    @CurrentSession() session: UserSessionResolverModel,
   ): Promise<PasskeyResolverModel[]> {
     const entities = await this.inversify.getByUserIdPasskeyUsecase.execute({
       user_id: session.id,
@@ -73,7 +69,7 @@ export class PasskeyResolver {
   /* eslint-disable @typescript-eslint/no-unused-vars */
   @Mutation((returns) => Boolean)
   async delete_passkey(
-    @CurrentSession() session: UserSession,
+    @CurrentSession() session: UserSessionResolverModel,
     @Args('dto') dto: DeletePasskeyResolverDto,
   ): Promise<boolean> {
     this.inversify.deletePasskeyUsecase.execute({

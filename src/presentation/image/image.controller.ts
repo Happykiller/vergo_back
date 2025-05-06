@@ -1,9 +1,10 @@
+// src\presentation\image\image.controller.ts
 import { Response } from 'express';
 import * as mime from 'mime-types';
 import { Controller, Get, Param, Res, HttpStatus, Inject, UseGuards, Query } from '@nestjs/common';
 
 import { Inversify } from '@src/inversify/investify';
-import { CustomAuthGuard } from '@presentation/guard/custom.auth.guard';
+import { CustomAuthGuard } from '@happykiller/sunny-apis';
 
 @Controller('image')
 export class ImageController {

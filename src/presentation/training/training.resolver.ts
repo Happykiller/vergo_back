@@ -1,3 +1,4 @@
+// src\presentation\training\training.resolver.ts
 import { Inject, UseGuards } from '@nestjs/common';
 import {
   Resolver,
@@ -10,14 +11,9 @@ import {
 } from '@nestjs/graphql';
 
 import { Inversify } from '@src/inversify/investify';
-import { USER_ROLE } from '@presentation/guard/userRole';
-import { Roles } from '@presentation/guard/roles.decorator';
-import { RolesGuard } from '@presentation/guard/roles.guard';
-import { UserSession } from '@presentation/auth/jwt.strategy';
-import { GqlAuthGuard } from '@presentation/guard/gql.auth.guard';
+import { CurrentSession, GqlAuthGuard, Roles, RolesGuard, USER_ROLE, UserSessionResolverModel } from '@happykiller/sunny-apis';
 import { OrderResolverDto } from '@presentation/dto/order.resolver.dto';
 import { UserUsecaseModel } from '@usecase/user/model/user.usecase.model';
-import { CurrentSession } from '@presentation/guard/userSession.decorator';
 import { UserModelResolver } from '@presentation/user/model/user.resolver.model';
 import { TrainingUsecaseModel } from '@usecase/training/model/training.usecase.model';
 import { TrainingModelResolver } from '@presentation/training/model/training.resolver.model';
@@ -68,7 +64,7 @@ export class TrainingResolver {
   /* eslint-disable @typescript-eslint/no-unused-vars */
   @Mutation((returns) => TrainingModelResolver)
   async training_create(
-    @CurrentSession() session: UserSession,
+    @CurrentSession() session: UserSessionResolverModel,
     @Args('dto') dto: CreateTrainingDtoResolver,
   ): Promise<TrainingModelResolver> {
     return await this.inversify.createTrainingUsecase.execute({
@@ -82,7 +78,7 @@ export class TrainingResolver {
   /* eslint-disable @typescript-eslint/no-unused-vars */
   @Query((returns) => [TrainingModelResolver])
   async trainings(
-    @CurrentSession() session: UserSession,
+    @CurrentSession() session: UserSessionResolverModel,
   ): Promise<TrainingModelResolver[]> {
     return this.inversify.getTrainingsUsecase.execute();
   }
@@ -92,7 +88,7 @@ export class TrainingResolver {
   /* eslint-disable @typescript-eslint/no-unused-vars */
   @Query((returns) => [TrainingModelResolver])
   async get_private_trainings(
-    @CurrentSession() session: UserSession,
+    @CurrentSession() session: UserSessionResolverModel,
   ): Promise<TrainingModelResolver[]> {
     return this.inversify.getTrainingsUsecase.execute({
       private: true,
@@ -105,7 +101,7 @@ export class TrainingResolver {
   /* eslint-disable @typescript-eslint/no-unused-vars */
   @Query(() => PaginatedTrainingsResolverModel)
   async trainingsPaginated(
-    @CurrentSession() session: UserSession,
+    @CurrentSession() session: UserSessionResolverModel,
     @Args('offset', { type: () => Int, nullable: true }) offset = 1,
     @Args('limit', { type: () => Int, nullable: true }) limit = 10,
     @Args('orderBy', { type: () => OrderResolverDto, nullable: true }) orderBy?: OrderResolverDto,
@@ -122,7 +118,7 @@ export class TrainingResolver {
   /* eslint-disable @typescript-eslint/no-unused-vars */
   @Query((returns) => TrainingModelResolver)
   async training(
-    @CurrentSession() session: UserSession,
+    @CurrentSession() session: UserSessionResolverModel,
     @Args('dto') dto: GetTrainingResolverDto,
   ): Promise<TrainingModelResolver> {
     return this.inversify.getTrainingUsecase.execute(dto);
@@ -133,7 +129,7 @@ export class TrainingResolver {
   /* eslint-disable @typescript-eslint/no-unused-vars */
   @Query((returns) => [TrainingNormalizedResolverModel])
   async training_normalized(
-    @CurrentSession() session: UserSession,
+    @CurrentSession() session: UserSessionResolverModel,
     @Args('dto') dto: GetTrainingResolverDto,
   ): Promise<TrainingNormalizedResolverModel[]> {
     return this.inversify.getNormalizedTrainingUsecase.execute(dto);
@@ -144,7 +140,7 @@ export class TrainingResolver {
   /* eslint-disable @typescript-eslint/no-unused-vars */
   @Mutation(() => Boolean)
   async training_update(
-    @CurrentSession() session: UserSession,
+    @CurrentSession() session: UserSessionResolverModel,
     @Args('dto') dto: UpdateTrainingDtoResolver,
   ): Promise<boolean> {
     return this.inversify.updateTrainingUsecase.execute({

@@ -2,12 +2,9 @@ import { Inject, UseGuards } from '@nestjs/common';
 import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
 
 import { Inversify } from '@src/inversify/investify';
-import { USER_ROLE } from '@presentation/guard/userRole';
-import { Roles } from '@presentation/guard/roles.decorator';
-import { RolesGuard } from '@presentation/guard/roles.guard';
-import { GqlAuthGuard } from '@presentation/guard/gql.auth.guard';
 import { UserModelResolver } from '@presentation/user/model/user.resolver.model';
 import { GetUserResolverDto } from '@presentation/user/dto/get.user.resolver.dto';
+import { GqlAuthGuard, Roles, RolesGuard, USER_ROLE } from '@happykiller/sunny-apis';
 import { CreateUserResolverDto } from '@presentation/user/dto/create.user.resolver.dto';
 
 /* eslint-disable @typescript-eslint/no-unused-vars */

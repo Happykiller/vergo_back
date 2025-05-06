@@ -1,4 +1,5 @@
-import { USER_ROLE } from '@presentation/guard/userRole';
+// src\service\db\fake\mock\user.ropo.ts
+import { USER_ROLE } from '@happykiller/sunny-apis';
 import { UserDbModel } from '@service/db/model/user.db.model';
 
 export const userRopo: UserDbModel = {

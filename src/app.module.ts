@@ -9,29 +9,36 @@ import inversify from './inversify/investify';
 import { AiModule } from '@presentation/ai/ai.module';
 import { UserModule } from '@presentation/user/user.module';
 import { ImageModule } from '@presentation/image/image.module';
-import { AuthModule, TestModule } from '@happykiller/sunny-apis';
+import { AuthGuardModule, AuthModule } from '@happykiller/sunny-apis';
 import { SystemModule } from '@presentation/system/system.module';
 import { WorkoutModule } from '@presentation/workout/workout.module';
 import { PasskeyModule } from '@presentation/passkey/passkey.module';
 import { TrainingModule } from '@presentation/training/training.module';
 import { ExerciceModule } from '@presentation/exercice/exercice.module';
+import { TestModule } from './presentation/test/test.module';
+import { Reflector } from '@nestjs/core';
 
 @Module({
   imports: [
-    TestModule,
     AiModule,
-    UserModule,
+    TestModule,
+    //TestModule,
+    //UserModule,
+    AuthGuardModule.forRoot({
+      appConfig: config,
+      inversify,
+    }),
     AuthModule.forRoot({
       jwtConfig: config.jwt,
       appConfig: config,
       inversify,
     }),
-    ImageModule,
-    SystemModule,
-    PasskeyModule,
-    WorkoutModule,
-    ExerciceModule,
-    TrainingModule,
+    //ImageModule,
+    //SystemModule,
+    //PasskeyModule,
+    //WorkoutModule,
+    //ExerciceModule,
+    //TrainingModule,
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
       subscriptions: {
