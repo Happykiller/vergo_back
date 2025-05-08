@@ -1,3 +1,4 @@
+// src\usecase\training\getTrainings.usecase.ts
 import { Inversify } from '@src/inversify/investify';
 import { TrainingUsecaseModel } from '@usecase/training/model/training.usecase.model';
 
@@ -21,11 +22,7 @@ export class GetTrainingsUsecase {
 
     if(dto) {
       const user = await this.inversify.getUserUsecase.execute({id: dto.session.id});
-      if(user.private_trainings) {
-        entities = entities.filter(entity => (entity.isPrivate && user.private_trainings.includes(entity.id)));
-      } else {
-        entities = [];
-      }
+      entities = entities.filter(entity => (entity.isPrivate && entity.invites_id.includes(user.id)));
     } else {
       entities = entities.filter(entity => !entity.isPrivate);
     }

@@ -1,3 +1,4 @@
+// src\service\db\model\training.db.model.ts
 export interface TrainingDbModel {
   id: string;
   slug: string;
@@ -7,6 +8,7 @@ export interface TrainingDbModel {
   workout: WorkoutDbModel[];
   creator_id?: string;
   contributors_id?: string[];
+  invites_id?: string[];
   active?: boolean;
 }
 

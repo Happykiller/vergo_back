@@ -20,7 +20,7 @@ export class ImageController {
   }
 
   @Get(':filename')
-  @UseGuards(makeAuthGuard('graphql', [USER_ROLE.ALL]))
+  @UseGuards(makeAuthGuard('http', [USER_ROLE.ALL]))
   async getImage(
     @Param('filename') filename: string, 
     @Res() res: Response,

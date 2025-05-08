@@ -53,7 +53,7 @@ export class Inversify {
   httpService: HttpService;
   cryptService: CryptService;
   imageService: ImageService;
-  morgansServce: MorgansService;
+  morgansService: MorgansService;
   getUserUsecase: GetUserUsecase;
   tokenizeUsecase: TokenizeUsecase;
   getAllUserUsecase: GetAllUserUsecase;
@@ -85,7 +85,7 @@ export class Inversify {
     /**
      * Services
      */
-    this.morgansServce = new MorgansServiceReal(this, config.morgans.url);
+    this.morgansService = new MorgansServiceReal(this, config.morgans.url);
     this.httpService = new HttpServiceReal();
     this.cryptService = new CryptServiceReal(config);
     this.imageService = new ImageService(this);
