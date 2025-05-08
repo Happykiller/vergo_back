@@ -3,21 +3,10 @@ import { Db } from 'mongodb';
 import { config } from '@src/config';
 import { logger } from '@src/common/logger/logger';
 import { BddService } from '@service/db/db.service';
-import { AuthUsecase } from '@usecase/auth/auth.usecase';
 import { ImageService } from '@service/image/image.service';
-import { CryptService } from '@service/crypt/crypt.service';
-import { EncodeService } from '@service/encode/encode.service';
 import { TokenizeUsecase } from '@usecase/ai/tokenize.usecase';
-import { GetUserUsecase } from '@usecase/user/get.user.usecase';
 import { BddServiceFake } from '@service/db/fake/db.service.fake';
-import { PasswordService } from '@service/password/password.service';
-import { CryptServiceReal } from '@service/crypt/crypt.service.real';
 import { BddServiceMongo } from '@service/db/mongo/db.service.mongo';
-import { CreateUserUsecase } from '@usecase/user/create.user.usecase';
-import { GetAllUserUsecase } from '@usecase/user/get_all.user.usecase';
-import { UpdPasswordUsecase } from '@usecase/auth/updPassword.usecase';
-import { EncodeServiceReal } from '@service/encode/encode.service.real';
-import { AuthPasskeyUsecase } from '@usecase/auth/passkey.auth.usecase';
 import { GetTokenizedUsecase } from '@usecase/ai/get.tokenized.usecase';
 import { GetTrainingUsecase } from '@usecase/training/getTraining.usecase';
 import { GetWorkoutsUsecase } from '@usecase/workout/get.workouts.usecase';
@@ -25,11 +14,7 @@ import { GetGlossaryUsecase } from '@usecase/glossary/get.glossary.usecase';
 import { GetExerciceUsecase } from '@usecase/exercice/get.exercice.usecase';
 import { GetTrainingsUsecase } from '@usecase/training/getTrainings.usecase';
 import { GetExercicesUsecase } from '@usecase/exercice/getExercices.usecase';
-import { PasswordServiceReal } from '@service/password/password.service.real';
-import { DeletePasskeyUsecase } from '@usecase/passkey/delete.passkey.usecase';
-import { CreatePasskeyUsecase } from '@usecase/passkey/create.passkey.usecase';
 import { GetTrainingDatasUsecase } from '@usecase/ai/get.training.datas.usecase';
-import { PasswordLessService } from '@service/passwordless/passwordless.service';
 import { SearchWorkoutsUsecase } from '@usecase/workout/search.workouts.usecase';
 import { UpdateTrainingUsecase } from '@usecase/training/update.training.usecase';
 import { CreateTrainingUsecase } from '@usecase/training/create.training.usecase';
@@ -37,11 +22,28 @@ import { CreateExerciceUsecase } from '@usecase/exercice/create.exercice.usecase
 import { UpdateExerciceUsecase } from '@usecase/exercice/update.exercice.usecase';
 import { FindMostAccurateFileUsecase } from '@usecase/ai/findMostAccurateFile.usecase';
 import { GetImagesTokenizedUsecase } from '@usecase/image/get.images.tokenized.usecase';
-import { GetByUserIdPasskeyUsecase } from '@usecase/passkey/getByUserId.passkey.usecase';
-import { PasswordLessServiceFake } from '@service/passwordless/passwordless.service.fake';
-import { PasswordLessServiceReal } from '@service/passwordless/passwordlless.service.real';
 import { GetNormalizedTrainingUsecase } from '@usecase/training/getNormalized.training.usecase';
-import { HttpService, HttpServiceReal, LoggerServiceFake, MorgansService, MorgansServiceReal } from '@happykiller/sunny-apis';
+import {
+  CreateUserUsecase,
+  GetAllUserUsecase,
+  GetUserUsecase,
+  AuthUsecase,
+  CryptService,
+  CryptServiceReal,
+  HttpService,
+  HttpServiceReal,
+  LoggerServiceFake,
+  MorgansService,
+  MorgansServiceReal,
+  PasswordLessService,
+  PasswordLessServiceFake,
+  PasswordLessServiceReal,
+  UpdPasswordUsecase,
+  AuthPasskeyUsecase,
+  DeletePasskeyUsecase,
+  CreatePasskeyUsecase,
+  GetByUserIdPasskeyUsecase,
+} from '@happykiller/sunny-apis';
 
 export class Inversify {
   mongo: Db;
@@ -51,11 +53,9 @@ export class Inversify {
   httpService: HttpService;
   cryptService: CryptService;
   imageService: ImageService;
-  encodeService: EncodeService;
   morgansServce: MorgansService;
   getUserUsecase: GetUserUsecase;
   tokenizeUsecase: TokenizeUsecase;
-  passwordService: PasswordService;
   getAllUserUsecase: GetAllUserUsecase;
   createUserUsecase: CreateUserUsecase;
   getWorkoutsUsecase: GetWorkoutsUsecase;
@@ -87,18 +87,16 @@ export class Inversify {
      */
     this.morgansServce = new MorgansServiceReal(this, config.morgans.url);
     this.httpService = new HttpServiceReal();
-    this.cryptService = new CryptServiceReal();
-    this.encodeService = new EncodeServiceReal();
-    this.passwordService = new PasswordServiceReal();
+    this.cryptService = new CryptServiceReal(config);
     this.imageService = new ImageService(this);
     if (config.env.mode === 'prod') {
       this.loggerService = logger;
-      this.bddService = new BddServiceMongo() as BddService;
+      this.bddService = new BddServiceMongo(this, config) as BddService;
       this.bddService.initConnection();
       this.passwordLessService = new PasswordLessServiceReal();
     } else if (config.env.mode === 'dev') {
       this.loggerService = new LoggerServiceFake();
-      this.bddService = new BddServiceMongo() as BddService;
+      this.bddService = new BddServiceMongo(this, config) as BddService;
       this.bddService.initConnection();
       this.passwordLessService = new PasswordLessServiceReal();
     } else {

@@ -31,10 +31,7 @@ export class SearchWorkoutsUsecase {
       /**
        * find response
        */
-      const found = this.inversify.findMostAccurateFileUsecase.execute(
-        new_entities,
-        workout_slug_tokenised
-      );
+      const found = this.inversify.findMostAccurateFileUsecase.execute(new_entities, workout_slug_tokenised);
       response.push({
         search: workout_slug,
         search_token: workout_slug_tokenised,

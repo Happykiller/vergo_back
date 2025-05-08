@@ -11,10 +11,7 @@ import {
 } from '@nestjs/graphql';
 
 import { Inversify } from '@src/inversify/investify';
-import { CurrentSession, GqlAuthGuard, Roles, RolesGuard, USER_ROLE, UserSessionResolverModel } from '@happykiller/sunny-apis';
 import { OrderResolverDto } from '@presentation/dto/order.resolver.dto';
-import { UserUsecaseModel } from '@usecase/user/model/user.usecase.model';
-import { UserModelResolver } from '@presentation/user/model/user.resolver.model';
 import { TrainingUsecaseModel } from '@usecase/training/model/training.usecase.model';
 import { TrainingModelResolver } from '@presentation/training/model/training.resolver.model';
 import { GetTrainingResolverDto } from '@presentation/training/dto/get.training.resolver.dto';
@@ -22,6 +19,7 @@ import { CreateTrainingDtoResolver } from '@presentation/training/dto/create.tra
 import { UpdateTrainingDtoResolver } from '@presentation/training/dto/update.training.resolver.dto';
 import { PaginatedTrainingsResolverModel } from '@presentation/training/model/pagined.trainings.resolver.model';
 import { TrainingNormalizedResolverModel } from '@presentation/training/model/training.normalized.resolver.model';
+import { CurrentSession, makeAuthGuard, USER_ROLE, UserModelResolver, UserSessionResolverModel, UserUsecaseModel } from '@happykiller/sunny-apis';
 
 /* eslint-disable @typescript-eslint/no-unused-vars */
 @Resolver((of) => TrainingModelResolver)
@@ -59,8 +57,7 @@ export class TrainingResolver {
     }
   }
 
-  @Roles(USER_ROLE.USER, USER_ROLE.ADMIN)
-  @UseGuards(GqlAuthGuard, RolesGuard)
+  @UseGuards(makeAuthGuard('graphql', [USER_ROLE.ALL]))
   /* eslint-disable @typescript-eslint/no-unused-vars */
   @Mutation((returns) => TrainingModelResolver)
   async training_create(
@@ -73,8 +70,7 @@ export class TrainingResolver {
     });
   }
   
-  @Roles(USER_ROLE.USER, USER_ROLE.ADMIN)
-  @UseGuards(GqlAuthGuard, RolesGuard)
+  @UseGuards(makeAuthGuard('graphql', [USER_ROLE.ALL]))
   /* eslint-disable @typescript-eslint/no-unused-vars */
   @Query((returns) => [TrainingModelResolver])
   async trainings(
@@ -83,8 +79,7 @@ export class TrainingResolver {
     return this.inversify.getTrainingsUsecase.execute();
   }
 
-  @Roles(USER_ROLE.USER, USER_ROLE.ADMIN)
-  @UseGuards(GqlAuthGuard, RolesGuard)
+  @UseGuards(makeAuthGuard('graphql', [USER_ROLE.ALL]))
   /* eslint-disable @typescript-eslint/no-unused-vars */
   @Query((returns) => [TrainingModelResolver])
   async get_private_trainings(
@@ -96,8 +91,7 @@ export class TrainingResolver {
     });
   }
 
-  @Roles(USER_ROLE.USER, USER_ROLE.ADMIN)
-  @UseGuards(GqlAuthGuard, RolesGuard)
+  @UseGuards(makeAuthGuard('graphql', [USER_ROLE.ALL]))
   /* eslint-disable @typescript-eslint/no-unused-vars */
   @Query(() => PaginatedTrainingsResolverModel)
   async trainingsPaginated(
@@ -113,8 +107,7 @@ export class TrainingResolver {
     };
   }
 
-  @Roles(USER_ROLE.USER, USER_ROLE.ADMIN)
-  @UseGuards(GqlAuthGuard, RolesGuard)
+  @UseGuards(makeAuthGuard('graphql', [USER_ROLE.ALL]))
   /* eslint-disable @typescript-eslint/no-unused-vars */
   @Query((returns) => TrainingModelResolver)
   async training(
@@ -124,8 +117,7 @@ export class TrainingResolver {
     return this.inversify.getTrainingUsecase.execute(dto);
   }
 
-  @Roles(USER_ROLE.USER, USER_ROLE.ADMIN)
-  @UseGuards(GqlAuthGuard, RolesGuard)
+  @UseGuards(makeAuthGuard('graphql', [USER_ROLE.ALL]))
   /* eslint-disable @typescript-eslint/no-unused-vars */
   @Query((returns) => [TrainingNormalizedResolverModel])
   async training_normalized(
@@ -135,8 +127,7 @@ export class TrainingResolver {
     return this.inversify.getNormalizedTrainingUsecase.execute(dto);
   }
 
-  @Roles(USER_ROLE.USER, USER_ROLE.ADMIN)
-  @UseGuards(GqlAuthGuard, RolesGuard)
+  @UseGuards(makeAuthGuard('graphql', [USER_ROLE.ALL]))
   /* eslint-disable @typescript-eslint/no-unused-vars */
   @Mutation(() => Boolean)
   async training_update(

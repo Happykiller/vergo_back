@@ -12,6 +12,7 @@ const dotenvlocal = require('dotenv').config({
 const merged = Object.assign({}, dotenv, dotenvlocal);
 
 const defaults: Configuration = {
+  app_name: 'vergo',
   version,
   env: {
     mode: 'defaults',

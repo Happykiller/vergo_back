@@ -1,22 +1,19 @@
 // src\presentation\ai\ai.resolver.ts
 import { Query, Resolver } from '@nestjs/graphql';
-
 import { Inject, UseGuards } from '@nestjs/common';
+
 import { Inversify } from '@src/inversify/investify';
-import { Roles, RolesGuard, USER_ROLE } from '@happykiller/sunny-apis';
-import { GlossaryUsecaseModel } from '@src/usecase/glossary/model/glossary.usecase.model';
+import { makeAuthGuard, USER_ROLE } from '@happykiller/sunny-apis';
+import { GlossaryUsecaseModel } from '@usecase/glossary/model/glossary.usecase.model';
 
 @Resolver('AiResolver')
 export class AiResolver {
   constructor(
     @Inject('Inversify')
     private inversify: Inversify,
-  ) {
-    console.log('✅ AiResolver loaded');
-  }
+  ) {}
 
-  @Roles(USER_ROLE.USER, USER_ROLE.ADMIN)
-  @UseGuards(RolesGuard)
+  @UseGuards(makeAuthGuard('graphql', [USER_ROLE.ALL]))
   @Query(
     /* istanbul ignore next */
     () => [String],

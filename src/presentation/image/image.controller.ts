@@ -4,7 +4,7 @@ import * as mime from 'mime-types';
 import { Controller, Get, Param, Res, HttpStatus, Inject, UseGuards, Query } from '@nestjs/common';
 
 import { Inversify } from '@src/inversify/investify';
-import { CustomAuthGuard } from '@happykiller/sunny-apis';
+import { makeAuthGuard, USER_ROLE } from '@happykiller/sunny-apis';
 
 @Controller('image')
 export class ImageController {
@@ -20,7 +20,7 @@ export class ImageController {
   }
 
   @Get(':filename')
-  @UseGuards(CustomAuthGuard)
+  @UseGuards(makeAuthGuard('graphql', [USER_ROLE.ALL]))
   async getImage(
     @Param('filename') filename: string, 
     @Res() res: Response,

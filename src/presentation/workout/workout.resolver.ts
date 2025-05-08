@@ -12,9 +12,9 @@ import { Inversify } from '@src/inversify/investify';
 import { OrderResolverDto } from '@presentation/dto/order.resolver.dto';
 import { SearchWorkoutsResolverDto } from '@presentation/workout/dto/workout.resolver.dto';
 import { WorkoutDefModelResolver } from '@presentation/workout/model/workout.def.resolver.model';
+import { CurrentSession, makeAuthGuard, USER_ROLE, UserSessionResolverModel } from '@happykiller/sunny-apis';
 import { WorkoutsPaginatedResolverModel } from '@presentation/workout/model/workouts.pagined.resolver.model';
 import { SearchWorkoutsPaginatedResolverModel } from '@presentation/workout/model/pagined.workouts.resolver.model';
-import { CurrentSession, GqlAuthGuard, Roles, RolesGuard, USER_ROLE, UserSessionResolverModel } from '@happykiller/sunny-apis';
 
 /* eslint-disable @typescript-eslint/no-unused-vars */
 @Resolver((of) => WorkoutDefModelResolver)
@@ -24,8 +24,7 @@ export class WorkoutResolver {
     private inversify: Inversify,
   ) {}
   
-  @Roles(USER_ROLE.USER, USER_ROLE.ADMIN)
-  @UseGuards(GqlAuthGuard, RolesGuard)
+  @UseGuards(makeAuthGuard('graphql', [USER_ROLE.ALL]))
   /* eslint-disable @typescript-eslint/no-unused-vars */
   @Query((returns) => WorkoutsPaginatedResolverModel)
   async workouts(
@@ -44,8 +43,7 @@ export class WorkoutResolver {
     return paginateResults;
   }
 
-  @Roles(USER_ROLE.USER, USER_ROLE.ADMIN)
-  @UseGuards(GqlAuthGuard, RolesGuard)
+  @UseGuards(makeAuthGuard('graphql', [USER_ROLE.ALL]))
   /* eslint-disable @typescript-eslint/no-unused-vars */
   @Query(() => SearchWorkoutsPaginatedResolverModel)
   async searchWorkoutsPaginated(

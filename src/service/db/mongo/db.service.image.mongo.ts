@@ -2,8 +2,8 @@ import { Collection } from 'mongodb';
 
 import inversify from '@src/inversify/investify';
 import { BddService } from '@service/db/db.service';
-import { ImageDbModel } from '@service/db/model/image.db.model';
 import { CreateImageDbDto } from '../dto/create.image.db.dto';
+import { ImageDbModel } from '@service/db/model/image.db.model';
 
 export class BdbServiceImageMongo
   implements

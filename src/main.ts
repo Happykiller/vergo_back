@@ -1,3 +1,4 @@
+// src\main.ts
 import * as bodyParser from 'body-parser';
 import { NestFactory } from '@nestjs/core';
 import { NextFunction, Request, Response } from 'express';
@@ -6,7 +7,7 @@ import { config } from '@src/config';
 import { AppModule } from '@src/app.module';
 import { ValidationPipe } from '@nestjs/common';
 import inversify from '@src/inversify/investify';
-import { NestLogger } from '@presentation/common/nestLogger';
+import { configureAuthGuardFactory, NestLogger } from '@happykiller/sunny-apis';
 
 async function bootstrap() {
   inversify.loggerService.log(
@@ -18,6 +19,10 @@ async function bootstrap() {
   require('events').EventEmitter.defaultMaxListeners = 50;
   const app = await NestFactory.create(AppModule, {
     logger: new NestLogger(),
+  });
+  configureAuthGuardFactory({
+    inversify,
+    appConfig: config,
   });
   app.use(bodyParser.json({ limit: '50KB' }));
   app.use(bodyParser.urlencoded({ limit: '50KB', extended: true }));

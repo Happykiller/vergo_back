@@ -5,25 +5,19 @@ import { ThrottlerModule } from '@nestjs/throttler';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 
 import { config } from '@src/config';
+import { version } from '../package.json';
 import inversify from './inversify/investify';
 import { AiModule } from '@presentation/ai/ai.module';
-import { UserModule } from '@presentation/user/user.module';
 import { ImageModule } from '@presentation/image/image.module';
-import { AuthGuardModule, AuthModule } from '@happykiller/sunny-apis';
-import { SystemModule } from '@presentation/system/system.module';
 import { WorkoutModule } from '@presentation/workout/workout.module';
-import { PasskeyModule } from '@presentation/passkey/passkey.module';
 import { TrainingModule } from '@presentation/training/training.module';
 import { ExerciceModule } from '@presentation/exercice/exercice.module';
-import { TestModule } from './presentation/test/test.module';
-import { Reflector } from '@nestjs/core';
+import { AuthGuardModule, AuthModule, PasskeyModule, SystemModule, TestModule, UserModule } from '@happykiller/sunny-apis';
 
 @Module({
   imports: [
-    AiModule,
+    // Sunny
     TestModule,
-    //TestModule,
-    //UserModule,
     AuthGuardModule.forRoot({
       appConfig: config,
       inversify,
@@ -33,12 +27,23 @@ import { Reflector } from '@nestjs/core';
       appConfig: config,
       inversify,
     }),
-    //ImageModule,
-    //SystemModule,
-    //PasskeyModule,
-    //WorkoutModule,
-    //ExerciceModule,
-    //TrainingModule,
+    SystemModule.forRoot({
+      version,
+      inversify,
+    }),
+    PasskeyModule.forRoot({
+      inversify,
+    }),
+    UserModule.forRoot({
+      inversify,
+    }),
+    // Project
+    AiModule,
+    ImageModule,
+    WorkoutModule,
+    ExerciceModule,
+    TrainingModule,
+    // Other
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
       subscriptions: {

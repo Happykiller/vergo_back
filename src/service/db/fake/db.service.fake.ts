@@ -1,12 +1,10 @@
-import { applyMixins } from '@src/common/applyMixins';
-import { BddServiceUserFake } from '@service/db/fake/db.service.user.fake';
-import { BddServiceTestFake } from '@service/db/fake/db.service.test.fake';
+// src\service\db\fake\db.service.fake.ts
 import { BddServiceImageFake } from '@service/db/fake/db.service.image.fake';
-import { BddServicePasskeyFake } from '@service/db/fake/db.service.passkey.fake';
 import { BdbServiceWorkoutFake } from '@service/db/fake/db.service.workout.fake';
 import { BdbServiceTrainingFake } from '@service/db/fake/db.service.training.fake';
 import { BdbServiceExerciceFake } from '@service/db/fake/db.service.exercice.fake';
 import { BdbServiceGlossaryFake } from '@service/db/fake/db.service.glossary.fake';
+import { applyMixins, BddServicePasskeyFake, BddServiceTestFake, BddServiceUserFake } from '@happykiller/sunny-apis';
 
 class BddServiceFake {}
 

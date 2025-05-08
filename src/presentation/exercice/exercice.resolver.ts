@@ -1,3 +1,4 @@
+// src\presentation\exercice\exercice.resolver.ts
 import { Inject, UseGuards } from '@nestjs/common';
 import {
   Resolver,
@@ -9,15 +10,13 @@ import {
 } from '@nestjs/graphql';
 
 import { Inversify } from '@src/inversify/investify';
-import { UserUsecaseModel } from '@usecase/user/model/user.usecase.model';
-import { UserModelResolver } from '@presentation/user/model/user.resolver.model';
 import { TrainingModelResolver } from '@presentation/training/model/training.resolver.model';
 import { ExerciceModelResolver } from '@presentation/exercice/model/exercice.resolver.model';
 import { GetTrainingResolverDto } from '@presentation/training/dto/get.training.resolver.dto';
 import { GetExerciceResolverDto } from '@presentation/exercice/dto/get.exercice.resolver.dto';
 import { CreateExerciceDtoResolver } from '@presentation/exercice/dto/create.exercice.resolver.dto';
 import { UpdateExerciceDtoResolver } from '@presentation/exercice/dto/update.exercice.resolver.dto';
-import { CurrentSession, GqlAuthGuard, Roles, RolesGuard, USER_ROLE, UserSessionResolverModel } from '@happykiller/sunny-apis';
+import { CurrentSession, makeAuthGuard, USER_ROLE, UserModelResolver, UserSessionResolverModel, UserUsecaseModel } from '@happykiller/sunny-apis';
 
 /* eslint-disable @typescript-eslint/no-unused-vars */
 @Resolver((of) => ExerciceModelResolver)
@@ -25,9 +24,7 @@ export class ExerciceResolver {
   constructor(
     @Inject('Inversify')
     private inversify: Inversify,
-  ) {
-    console.log('ExerciceResolver loaded');
-  }
+  ) {}
 
   @ResolveField(() => UserModelResolver, { nullable: true })
   async creator(@Parent() training:ExerciceModelResolver):Promise<UserModelResolver> {
@@ -57,8 +54,7 @@ export class ExerciceResolver {
     }
   }
 
-  @Roles(USER_ROLE.USER, USER_ROLE.ADMIN)
-  @UseGuards(GqlAuthGuard, RolesGuard)
+  @UseGuards(makeAuthGuard('graphql', [USER_ROLE.ALL]))
   /* eslint-disable @typescript-eslint/no-unused-vars */
   @Mutation((returns) => ExerciceModelResolver)
   async exercice_create(
@@ -71,8 +67,7 @@ export class ExerciceResolver {
     });
   }
   
-  @Roles(USER_ROLE.USER, USER_ROLE.ADMIN)
-  @UseGuards(GqlAuthGuard, RolesGuard)
+  @UseGuards(makeAuthGuard('graphql', [USER_ROLE.ALL]))
   /* eslint-disable @typescript-eslint/no-unused-vars */
   @Query((returns) => [ExerciceModelResolver])
   async exercices (
@@ -82,8 +77,7 @@ export class ExerciceResolver {
     return this.inversify.getExercicesUsecase.execute();
   }
 
-  @Roles(USER_ROLE.USER, USER_ROLE.ADMIN)
-  @UseGuards(GqlAuthGuard, RolesGuard)
+  @UseGuards(makeAuthGuard('graphql', [USER_ROLE.ALL]))
   /* eslint-disable @typescript-eslint/no-unused-vars */
   @Query((returns) => ExerciceModelResolver)
   async exercice (
@@ -93,8 +87,7 @@ export class ExerciceResolver {
     return this.inversify.getExerciceUsecase.execute(dto);
   }
 
-  @Roles(USER_ROLE.USER, USER_ROLE.ADMIN)
-  @UseGuards(GqlAuthGuard, RolesGuard)
+  @UseGuards(makeAuthGuard('graphql', [USER_ROLE.ALL]))
   /* eslint-disable @typescript-eslint/no-unused-vars */
   @Mutation(() => Boolean)
   async exercice_update(

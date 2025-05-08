@@ -1,4 +1,6 @@
 export class Configuration {
+  public app_name?: string;
+
   public version?: string;
 
   public env?: {
