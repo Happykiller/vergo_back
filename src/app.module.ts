@@ -47,20 +47,10 @@ import { AuthGuardModule, AuthModule, PasskeyModule, SystemModule, TestModule, U
     // Other
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
-      subscriptions: {
-        'graphql-ws': {
-          path: '/graphql',
-          onConnect: (context: any) => {
-            // eslint-disable-next-line @typescript-eslint/no-unused-vars
-            const { connectionParams, subscriptions } = context;
-            return { req: { Authorization: connectionParams.Authorization } };
-          },
-        },
-      },
       playground: config.graphQL.playground,
       introspection: config.graphQL.introspection,
       autoSchemaFile: config.graphQL.schemaFileName,
-      sortSchema: true,  // optionnel, pour trier les types dans le schéma généré
+      sortSchema: true,
       context: ({ req, res }) => {
         return { req, res };
       },
