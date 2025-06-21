@@ -16,7 +16,7 @@ reset: down
 
 # Build the Docker image and save it as a tarball
 tar: 
-	docker build -t vergo_back -f Dockerfile .
+	docker build --no-cache -t vergo_back -f Dockerfile .
 	docker save vergo_back -o vergo_back.tar
 
 # Install the Docker image by loading it from a tarball and running it
