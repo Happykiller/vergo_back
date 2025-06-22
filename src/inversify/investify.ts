@@ -44,8 +44,10 @@ import {
   CreatePasskeyUsecase,
   GetByUserIdPasskeyUsecase,
 } from '@happykiller/sunny-apis';
+import type { ConfigurationBase, InversifyInterface } from '@happykiller/sunny-apis';
 
-export class Inversify {
+
+export class Inversify implements InversifyInterface {
   mongo: Db;
   loggerService: any;
   bddService: BddService;
@@ -112,7 +114,7 @@ export class Inversify {
     this.getUserUsecase = new GetUserUsecase(this);
     this.tokenizeUsecase = new TokenizeUsecase(this);
     this.getAllUserUsecase = new GetAllUserUsecase(this);
-    this.createUserUsecase = new CreateUserUsecase(this);
+    this.createUserUsecase = new CreateUserUsecase(this, config as ConfigurationBase);
     this.getTrainingUsecase = new GetTrainingUsecase(this);
     this.authPasskeyUsecase = new AuthPasskeyUsecase(this);
     this.updPasswordUsecase = new UpdPasswordUsecase(this);
