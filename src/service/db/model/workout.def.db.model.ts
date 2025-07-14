@@ -1,4 +1,5 @@
-import { LanguageDbModel } from "@service/db/model/language.db.model";
+// src\service\db\model\workout.def.db.model.ts
+import { LanguageDbModel } from '@service/db/model/language.db.model';
 
 export class WorkoutDefDbModel {
   id: string;

@@ -1,3 +1,4 @@
+// src\usecase\workout\get.workouts.usecase.ts
 import { Inversify } from '@src/inversify/investify';
 import { WorkoutDefUsecaseModel } from '@usecase/workout/model/workout.def.usecase.model';
 
@@ -9,9 +10,8 @@ export class GetWorkoutsUsecase {
   }
 
   async execute(): Promise<WorkoutDefUsecaseModel[]> {
-    const entities: WorkoutDefUsecaseModel[] =
-      await this.inversify.bddService.getWorkouts();
-      
+    const entities: WorkoutDefUsecaseModel[] = await this.inversify.bddService.getWorkouts();
+
     return entities;
   }
 }

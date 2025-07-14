@@ -1,12 +1,13 @@
+// src\usecase\training\getNormalized.training.usecase.spec.ts
 import { describe, expect, it } from '@jest/globals';
 import { mock, MockProxy } from 'jest-mock-extended';
 
 import { hiit } from '@service/db/fake/mock/hiit';
 import { BddService } from '@service/db/db.service';
 import { Inversify } from '@src/inversify/investify';
+import { LoggerService } from '@happykiller/sunny-apis';
 import { glossaryFake } from '@service/db/fake/mock/glossary';
 import { TokenizeUsecase } from '@usecase/ai/tokenize.usecase';
-import { LoggerService } from '@service/logger/logger.service';
 import { man_chest_arm } from '@service/db/fake/mock/man_chest_arm';
 import { training_test } from '@service/db/fake/mock/training.test';
 import { jumping_jacks } from '@service/db/fake/mock/jumping_jacks';
