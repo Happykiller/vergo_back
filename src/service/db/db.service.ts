@@ -11,6 +11,7 @@ import { UpdateTrainingDbDto } from '@service/db/dto/update.training.db.dto';
 import { CreateTrainingDbDto } from '@service/db/dto/create.training.db.dto';
 import { CreateExerciceDbDto } from '@service/db/dto/create.exercice.db.dto';
 import { UpdateExerciceDbDto } from '@service/db/dto/update.exercice.db.dto';
+import { TrainingStatDbModel } from '@service/db/model/training-stat.db.model';
 
 export interface BddService extends BddServiceBase {
   /**
@@ -40,4 +41,9 @@ export interface BddService extends BddServiceBase {
    */
   getImages(): Promise<ImageDbModel[]>;
   setImages(dto: ImageDbModel[]): Promise<ImageDbModel[]>;
+  /**
+   * Image
+   */
+  insertTrainingStat(stat: Omit<TrainingStatDbModel, 'id'>): Promise<TrainingStatDbModel>;
+  getStatsByUsergId(user_id: string): Promise<TrainingStatDbModel[]>;
 }

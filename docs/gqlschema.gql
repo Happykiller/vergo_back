@@ -120,6 +120,7 @@ type Mutation {
   exercice_create(dto: CreateExerciceDtoResolver!): ExerciceModelResolver!
   exercice_update(dto: UpdateExerciceDtoResolver!): Boolean!
   training_create(dto: CreateTrainingDtoResolver!): TrainingModelResolver!
+  training_stat_save(dto: SaveTrainingStatDtoResolver!): TrainingStatModelResolver!
   training_update(dto: UpdateTrainingDtoResolver!): Boolean!
   update_password(dto: UpdPasswordAuthResolverDto!): AuthModelResolver!
 }
@@ -176,6 +177,7 @@ type Query {
   exercices(dto: GetTrainingResolverDto): [ExerciceModelResolver!]!
   getSessionInfo: AuthModelResolver!
   get_private_trainings: [TrainingModelResolver!]!
+  my_training_stats: [TrainingStatModelResolver!]!
   passkeys_for_user: [PasskeyResolverModel!]!
   ping: PingResponse!
   searchWorkoutsPaginated(dto: SearchWorkoutsResolverDto!, limit: Int, offset: Int, order_by: OrderResolverDto): SearchWorkoutsPaginatedResolverModel!
@@ -211,6 +213,14 @@ input RegisterResponsePasskeyResolverDto {
 input RegisterUserPasskeyResolverDto {
   id: String!
   name: String!
+}
+
+input SaveTrainingStatDtoResolver {
+  completed: Boolean!
+  durationInSeconds: Float!
+  end: String!
+  start: String!
+  training_id: String!
 }
 
 type SearchWorkoutsPaginatedNodeResolverModel {
@@ -281,6 +291,17 @@ type TrainingNormalizedResolverModel {
   slugs: [String!]!
   type: String!
   weight: Float
+}
+
+type TrainingStatModelResolver {
+  completed: Boolean!
+  created_at: String!
+  durationInSeconds: Float!
+  end: String!
+  id: String!
+  start: String!
+  training_id: String!
+  user_id: String
 }
 
 input UpdPasswordAuthResolverDto {

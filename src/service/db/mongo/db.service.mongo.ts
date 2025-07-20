@@ -4,6 +4,7 @@ import { BdbServiceWorkoutMongo } from '@service/db/mongo/db.service.workout.mon
 import { BddServiceTrainingMongo } from '@service/db/mongo/db.service.training.mongo';
 import { BdbServiceExerciceMongo } from '@service/db/mongo/db.service.exercice.mongo';
 import { BdbServiceGlossaryMongo } from '@service/db/mongo/db.service.glossary.mongo';
+import { BddServiceTrainingStatMongo } from '@service/db/mongo/db.service.training-stat.mongo';
 import { applyInstanceMixins, BddServiceInitMongo, BddServicePasskeyMongo, BddServiceTestMongo, BddServiceUserMongo } from '@happykiller/sunny-apis';
 
 class BddServiceMongo {
@@ -20,7 +21,8 @@ class BddServiceMongo {
       BdbServiceWorkoutMongo,
       BddServiceTrainingMongo,
       BdbServiceExerciceMongo,
-      BdbServiceGlossaryMongo
+      BdbServiceGlossaryMongo,
+      BddServiceTrainingStatMongo
     ], [inversify, config]);
   }
 }

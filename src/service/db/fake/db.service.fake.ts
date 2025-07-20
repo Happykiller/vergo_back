@@ -4,6 +4,7 @@ import { BdbServiceWorkoutFake } from '@service/db/fake/db.service.workout.fake'
 import { BdbServiceTrainingFake } from '@service/db/fake/db.service.training.fake';
 import { BdbServiceExerciceFake } from '@service/db/fake/db.service.exercice.fake';
 import { BdbServiceGlossaryFake } from '@service/db/fake/db.service.glossary.fake';
+import { BddServiceTrainingStatFake } from '@service/db/fake/bdd.service.training-stat.fake';
 import { applyMixins, BddServicePasskeyFake, BddServiceTestFake, BddServiceUserFake } from '@happykiller/sunny-apis';
 
 class BddServiceFake {}
@@ -17,6 +18,7 @@ applyMixins(BddServiceFake, [
   BdbServiceTrainingFake,
   BdbServiceExerciceFake,
   BdbServiceGlossaryFake,
+  BddServiceTrainingStatFake
 ]);
 
 export { BddServiceFake };

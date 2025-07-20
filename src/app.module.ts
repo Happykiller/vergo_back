@@ -13,6 +13,7 @@ import { ImageModule } from '@presentation/image/image.module';
 import { WorkoutModule } from '@presentation/workout/workout.module';
 import { TrainingModule } from '@presentation/training/training.module';
 import { ExerciceModule } from '@presentation/exercice/exercice.module';
+import { TrainingStatModule } from '@presentation/training-stat/training-stat.module';
 import { AuthGuardModule, AuthModule, PasskeyModule, SystemModule, TestModule, UserModule } from '@happykiller/sunny-apis';
 
 @Module({
@@ -44,6 +45,7 @@ import { AuthGuardModule, AuthModule, PasskeyModule, SystemModule, TestModule, U
     WorkoutModule,
     ExerciceModule,
     TrainingModule,
+    TrainingStatModule,
     // Other
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,

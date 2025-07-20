@@ -22,7 +22,9 @@ import { CreateExerciceUsecase } from '@usecase/exercice/create.exercice.usecase
 import { UpdateExerciceUsecase } from '@usecase/exercice/update.exercice.usecase';
 import { FindMostAccurateFileUsecase } from '@usecase/ai/findMostAccurateFile.usecase';
 import { GetImagesTokenizedUsecase } from '@usecase/image/get.images.tokenized.usecase';
+import { SaveTrainingStatUsecase } from '@usecase/training-stat/save.training-stat.usecase';
 import { GetNormalizedTrainingUsecase } from '@usecase/training/getNormalized.training.usecase';
+import { GetTrainingStatsByUserIdUsecase } from '@usecase/training-stat/get.training-stats-by-user.usecase';
 import {
   CreateUserUsecase,
   GetAllUserUsecase,
@@ -77,11 +79,13 @@ export class Inversify implements InversifyInterface {
   createTrainingUsecase: CreateTrainingUsecase;
   updateTrainingUsecase: UpdateTrainingUsecase;
   searchWorkoutsUsecase: SearchWorkoutsUsecase;
+  saveTrainingStatUsecase: SaveTrainingStatUsecase;
   getTrainingDatasUsecase: GetTrainingDatasUsecase;
   getImagesTokenizedUsecase: GetImagesTokenizedUsecase;
   getByUserIdPasskeyUsecase: GetByUserIdPasskeyUsecase;
   findMostAccurateFileUsecase: FindMostAccurateFileUsecase;
   getNormalizedTrainingUsecase: GetNormalizedTrainingUsecase;
+  getTrainingStatsByUserIdUsecase: GetTrainingStatsByUserIdUsecase;
 
   constructor() {
     /**
@@ -131,11 +135,13 @@ export class Inversify implements InversifyInterface {
     this.createTrainingUsecase = new CreateTrainingUsecase(this);
     this.updateTrainingUsecase = new UpdateTrainingUsecase(this);
     this.searchWorkoutsUsecase = new SearchWorkoutsUsecase(this);
+    this.saveTrainingStatUsecase = new SaveTrainingStatUsecase(this);
     this.getTrainingDatasUsecase = new GetTrainingDatasUsecase(this);
     this.getImagesTokenizedUsecase = new GetImagesTokenizedUsecase(this);
     this.getByUserIdPasskeyUsecase = new GetByUserIdPasskeyUsecase(this);
     this.findMostAccurateFileUsecase = new FindMostAccurateFileUsecase(this);
     this.getNormalizedTrainingUsecase = new GetNormalizedTrainingUsecase(this);
+    this.getTrainingStatsByUserIdUsecase = new GetTrainingStatsByUserIdUsecase(this);
   }
 }
 

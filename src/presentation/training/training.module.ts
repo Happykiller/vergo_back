@@ -1,3 +1,4 @@
+// src\presentation\training\training.module.ts
 import { Module } from '@nestjs/common';
 
 import inversify from '@src/inversify/investify';
