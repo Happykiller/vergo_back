@@ -25,6 +25,7 @@ import { GetImagesTokenizedUsecase } from '@usecase/image/get.images.tokenized.u
 import { SaveTrainingStatUsecase } from '@usecase/training-stat/save.training-stat.usecase';
 import { GetNormalizedTrainingUsecase } from '@usecase/training/getNormalized.training.usecase';
 import { GetTrainingStatsByUserIdUsecase } from '@usecase/training-stat/get.training-stats-by-user.usecase';
+import { GetTrainingStatsSessionsUsecase } from '@usecase/training-stat/get.training-stats.sessions.usecase';
 import {
   CreateUserUsecase,
   GetAllUserUsecase,
@@ -86,6 +87,8 @@ export class Inversify implements InversifyInterface {
   findMostAccurateFileUsecase: FindMostAccurateFileUsecase;
   getNormalizedTrainingUsecase: GetNormalizedTrainingUsecase;
   getTrainingStatsByUserIdUsecase: GetTrainingStatsByUserIdUsecase;
+  getTrainingStatsSessionsUsecase: GetTrainingStatsSessionsUsecase;
+  
 
   constructor() {
     /**
@@ -98,12 +101,10 @@ export class Inversify implements InversifyInterface {
     if (config.env.mode === 'prod') {
       this.loggerService = logger;
       this.bddService = new BddServiceMongo(this, config) as BddService;
-      this.bddService.initConnection();
       this.passwordLessService = new PasswordLessServiceReal();
     } else if (config.env.mode === 'dev') {
       this.loggerService = new LoggerServiceFake();
       this.bddService = new BddServiceMongo(this, config) as BddService;
-      this.bddService.initConnection();
       this.passwordLessService = new PasswordLessServiceReal();
     } else {
       this.loggerService = new LoggerServiceFake();
@@ -142,6 +143,13 @@ export class Inversify implements InversifyInterface {
     this.findMostAccurateFileUsecase = new FindMostAccurateFileUsecase(this);
     this.getNormalizedTrainingUsecase = new GetNormalizedTrainingUsecase(this);
     this.getTrainingStatsByUserIdUsecase = new GetTrainingStatsByUserIdUsecase(this);
+    this.getTrainingStatsSessionsUsecase = new GetTrainingStatsSessionsUsecase(this);
+  }
+
+  async init() {
+    if (config.env.mode === 'prod' || config.env.mode === 'dev') {
+      await this.bddService.initConnection();
+    }
   }
 }
 

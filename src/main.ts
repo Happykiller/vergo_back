@@ -15,6 +15,8 @@ async function bootstrap() {
     `Environnement selected: ${config.env.mode} on port ${config.env.port ?? 3000}`,
   );
 
+  await inversify.init();
+
   /* eslint-disable @typescript-eslint/no-var-requires */
   require('events').EventEmitter.defaultMaxListeners = 50;
   const app = await NestFactory.create(AppModule, {

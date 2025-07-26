@@ -176,6 +176,7 @@ type Query {
   exercice(dto: GetExerciceResolverDto!): ExerciceModelResolver!
   exercices(dto: GetTrainingResolverDto): [ExerciceModelResolver!]!
   getSessionInfo: AuthModelResolver!
+  getUserKpis: UserKpiModelResolver!
   get_private_trainings: [TrainingModelResolver!]!
   my_training_stats: [TrainingStatModelResolver!]!
   passkeys_for_user: [PasskeyResolverModel!]!
@@ -326,6 +327,10 @@ input UpdateTrainingDtoResolver {
   workout: [WorkoutDtoResolver!]
 }
 
+type UserKpiModelResolver {
+  sessions: [UserSessionKpiModelResolver!]!
+}
+
 type UserModelResolver {
   code: String
   description: String
@@ -334,6 +339,13 @@ type UserModelResolver {
   name_first: String
   name_last: String
   role: String
+}
+
+type UserSessionKpiModelResolver {
+  date: String!
+  duration: Float!
+  id: String!
+  label: String!
 }
 
 type WorkoutDefModelResolver {
