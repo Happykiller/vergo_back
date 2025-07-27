@@ -3,10 +3,11 @@ import { Inject, UseGuards } from '@nestjs/common';
 import { Inversify } from '@src/inversify/investify';
 import { Resolver, Query, Mutation, Args } from '@nestjs/graphql';
 
+import { UserKpiModelResolver } from '@presentation/training-stat/model/user-kpi.model';
 import { TrainingStatModelResolver } from '@presentation/training-stat/model/training-stat.resolver.model';
 import { makeAuthGuard, USER_ROLE, CurrentSession, UserSessionResolverModel } from '@happykiller/sunny-apis';
 import { SaveTrainingStatDtoResolver } from '@presentation/training-stat/dto/save.training-stat.resolver.dto';
-import { UserKpiModelResolver } from './model/user-kpi.model';
+import common from '@src/presentation/common/common';
 
 @Resolver(() => TrainingStatModelResolver)
 export class TrainingStatResolver {
@@ -40,6 +41,8 @@ export class TrainingStatResolver {
     @CurrentSession() session: UserSessionResolverModel
   ) {
     const sessions = await this.inversify.getTrainingStatsSessionsUsecase.execute(session.id);
-    return { sessions };
+    const activities = await this.inversify.getTrainingStatsActivitiesUsecase.execute(session.id);
+    await common.sleep(500);
+    return { sessions, activities };
   }
 }

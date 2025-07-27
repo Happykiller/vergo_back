@@ -11,6 +11,11 @@ query {
       label
       date
       duration
+      completed
+    }
+    activities {
+      date
+      duration
     }
   }
 }

@@ -6,6 +6,7 @@ export interface TrainingStatSessionModel {
   label: string;
   date: string;
   duration: number;
+  completed: boolean;
 }
 
 export class GetTrainingStatsSessionsUsecase {
@@ -27,10 +28,13 @@ export class GetTrainingStatsSessionsUsecase {
           label: training.label,
           date: stat.start,
           duration: stat.durationInSeconds,
+          completed: stat.completed
         };
       }),
     );
 
-    return enriched;
+    return enriched
+      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+      .slice(0, 5);
   }
 }

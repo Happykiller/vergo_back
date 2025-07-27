@@ -61,7 +61,8 @@ export class Common {
   
     return sortedSubArrays;
   }    
-  
+
+  sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 const common = new Common();

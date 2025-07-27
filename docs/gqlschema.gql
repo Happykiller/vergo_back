@@ -2,6 +2,11 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+type ActiviyKpiModelResolver {
+  date: String!
+  duration: Float!
+}
+
 input AuthAuthResolverDto {
   """User code for the session"""
   login: String!
@@ -243,6 +248,14 @@ type SendMailSystemResolverModel {
   success: Boolean!
 }
 
+type SessionKpiModelResolver {
+  completed: Boolean!
+  date: String!
+  duration: Float!
+  id: String!
+  label: String!
+}
+
 input SetDtoResolver {
   duration: Float
   ite: Float
@@ -328,7 +341,8 @@ input UpdateTrainingDtoResolver {
 }
 
 type UserKpiModelResolver {
-  sessions: [UserSessionKpiModelResolver!]!
+  activities: [ActiviyKpiModelResolver!]!
+  sessions: [SessionKpiModelResolver!]!
 }
 
 type UserModelResolver {
@@ -339,13 +353,6 @@ type UserModelResolver {
   name_first: String
   name_last: String
   role: String
-}
-
-type UserSessionKpiModelResolver {
-  date: String!
-  duration: Float!
-  id: String!
-  label: String!
 }
 
 type WorkoutDefModelResolver {

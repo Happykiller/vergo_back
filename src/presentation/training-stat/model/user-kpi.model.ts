@@ -2,7 +2,7 @@
 import { Field, ObjectType } from '@nestjs/graphql';
 
 @ObjectType()
-export class UserSessionKpiModelResolver {
+export class SessionKpiModelResolver {
   @Field()
   id: string;
 
@@ -14,10 +14,24 @@ export class UserSessionKpiModelResolver {
 
   @Field()
   duration: number;
+
+  @Field()
+  completed: boolean;
+}
+
+@ObjectType()
+export class ActiviyKpiModelResolver {
+  @Field()
+  date: string;
+
+  @Field()
+  duration: number;
 }
 
 @ObjectType()
 export class UserKpiModelResolver {
-  @Field(() => [UserSessionKpiModelResolver])
-  sessions: UserSessionKpiModelResolver[];
+  @Field(() => [SessionKpiModelResolver])
+  sessions: SessionKpiModelResolver[];
+  @Field(() => [ActiviyKpiModelResolver])
+  activities: ActiviyKpiModelResolver[];
 }

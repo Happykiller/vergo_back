@@ -26,6 +26,7 @@ import { SaveTrainingStatUsecase } from '@usecase/training-stat/save.training-st
 import { GetNormalizedTrainingUsecase } from '@usecase/training/getNormalized.training.usecase';
 import { GetTrainingStatsByUserIdUsecase } from '@usecase/training-stat/get.training-stats-by-user.usecase';
 import { GetTrainingStatsSessionsUsecase } from '@usecase/training-stat/get.training-stats.sessions.usecase';
+import { getTrainingStatsActivitiesUsecase } from '@usecase/training-stat/get.training-stats.activities.usecase';
 import {
   CreateUserUsecase,
   GetAllUserUsecase,
@@ -88,7 +89,7 @@ export class Inversify implements InversifyInterface {
   getNormalizedTrainingUsecase: GetNormalizedTrainingUsecase;
   getTrainingStatsByUserIdUsecase: GetTrainingStatsByUserIdUsecase;
   getTrainingStatsSessionsUsecase: GetTrainingStatsSessionsUsecase;
-  
+  getTrainingStatsActivitiesUsecase: getTrainingStatsActivitiesUsecase;
 
   constructor() {
     /**
@@ -144,6 +145,7 @@ export class Inversify implements InversifyInterface {
     this.getNormalizedTrainingUsecase = new GetNormalizedTrainingUsecase(this);
     this.getTrainingStatsByUserIdUsecase = new GetTrainingStatsByUserIdUsecase(this);
     this.getTrainingStatsSessionsUsecase = new GetTrainingStatsSessionsUsecase(this);
+    this.getTrainingStatsActivitiesUsecase = new getTrainingStatsActivitiesUsecase(this);
   }
 
   async init() {
