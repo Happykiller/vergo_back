@@ -21,10 +21,7 @@ export class StatsSeeder {
       role: user.role,
     };
 
-    const allTrainings = await this.inversify.getTrainingsUsecase.execute({
-      private: false,
-      session,
-    });
+    const allTrainings = await this.inversify.getTrainingsUsecase.execute();
 
     if (allTrainings.length === 0) {
       console.log('⚠️ No trainings found for this user.');
@@ -37,7 +34,10 @@ export class StatsSeeder {
       const durationInMinutes = this.randomInt(10, 180);
       const durationInSeconds = durationInMinutes * 60;
 
-      const end = new Date();
+      const now = new Date();
+      const sixMonthsAgo = new Date();
+      sixMonthsAgo.setMonth(now.getMonth() - 6);
+      const end = new Date(sixMonthsAgo.getTime() + Math.random() * (now.getTime() - sixMonthsAgo.getTime()));
       const start = new Date(end.getTime() - durationInSeconds * 1000);
 
       const dto: SaveTrainingStatUsecaseDto = {
