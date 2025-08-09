@@ -24,6 +24,7 @@ import { FindMostAccurateFileUsecase } from '@usecase/ai/findMostAccurateFile.us
 import { GetImagesTokenizedUsecase } from '@usecase/image/get.images.tokenized.usecase';
 import { SaveTrainingStatUsecase } from '@usecase/training-stat/save.training-stat.usecase';
 import { GetNormalizedTrainingUsecase } from '@usecase/training/getNormalized.training.usecase';
+import { GetUserGamificationUsecase } from '@usecase/training-stat/get.user-gamification.usecase';
 import { GetTrainingStatsByUserIdUsecase } from '@usecase/training-stat/get.training-stats-by-user.usecase';
 import { GetTrainingStatsSessionsUsecase } from '@usecase/training-stat/get.training-stats.sessions.usecase';
 import { getTrainingStatsActivitiesUsecase } from '@usecase/training-stat/get.training-stats.activities.usecase';
@@ -85,6 +86,7 @@ export class Inversify implements InversifyInterface {
   getTrainingDatasUsecase: GetTrainingDatasUsecase;
   getImagesTokenizedUsecase: GetImagesTokenizedUsecase;
   getByUserIdPasskeyUsecase: GetByUserIdPasskeyUsecase;
+  getUserGamificationUsecase: GetUserGamificationUsecase;
   findMostAccurateFileUsecase: FindMostAccurateFileUsecase;
   getNormalizedTrainingUsecase: GetNormalizedTrainingUsecase;
   getTrainingStatsByUserIdUsecase: GetTrainingStatsByUserIdUsecase;
@@ -141,6 +143,7 @@ export class Inversify implements InversifyInterface {
     this.getTrainingDatasUsecase = new GetTrainingDatasUsecase(this);
     this.getImagesTokenizedUsecase = new GetImagesTokenizedUsecase(this);
     this.getByUserIdPasskeyUsecase = new GetByUserIdPasskeyUsecase(this);
+    this.getUserGamificationUsecase = new GetUserGamificationUsecase(this);
     this.findMostAccurateFileUsecase = new FindMostAccurateFileUsecase(this);
     this.getNormalizedTrainingUsecase = new GetNormalizedTrainingUsecase(this);
     this.getTrainingStatsByUserIdUsecase = new GetTrainingStatsByUserIdUsecase(this);

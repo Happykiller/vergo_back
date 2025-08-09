@@ -4,7 +4,7 @@
 
 type ActiviyKpiModelResolver {
   date: String!
-  duration: Float!
+  duration: Int!
 }
 
 input AuthAuthResolverDto {
@@ -95,6 +95,16 @@ type ExerciceModelResolver {
   title: [LanguageModelResolver!]!
 }
 
+type GamificationModelResolver {
+  league: LeagueModelResolver!
+  level: Int!
+  levelProgressPct: Int!
+  levelXp: Int!
+  levelXpToNext: Int!
+  weeklyLeague: LeagueModelResolver
+  xp: Int!
+}
+
 input GetExerciceResolverDto {
   id: String!
 }
@@ -116,6 +126,14 @@ input LanguageDtoResolver {
 type LanguageModelResolver {
   lang: String!
   value: String!
+}
+
+type LeagueModelResolver {
+  code: String!
+  minutes: Int!
+  nextCode: String
+  nextThreshold: Int
+  threshold: Int!
 }
 
 type Mutation {
@@ -251,7 +269,7 @@ type SendMailSystemResolverModel {
 type SessionKpiModelResolver {
   completed: Boolean!
   date: String!
-  duration: Float!
+  duration: Int!
   id: String!
   label: String!
 }
@@ -342,6 +360,7 @@ input UpdateTrainingDtoResolver {
 
 type UserKpiModelResolver {
   activities: [ActiviyKpiModelResolver!]!
+  gamification: GamificationModelResolver!
   sessions: [SessionKpiModelResolver!]!
 }
 
