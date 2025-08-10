@@ -1,6 +1,15 @@
 import { Field, Int, ObjectType } from '@nestjs/graphql';
 
 @ObjectType()
+export class BadgeModelResolver {
+  @Field() code: string;
+  @Field() earned: boolean;
+  @Field({ nullable: true }) earnedAt?: string;
+  // Assumption: no JSON scalar available; stringify meta.
+  @Field({ nullable: true }) meta?: string;
+}
+
+@ObjectType()
 export class LeagueModelResolver {
   @Field() code: string;
   @Field(() => Int) minutes: number;
@@ -40,4 +49,5 @@ export class UserKpiModelResolver {
   @Field(() => [SessionKpiModelResolver]) sessions: SessionKpiModelResolver[];
   @Field(() => [ActiviyKpiModelResolver]) activities: ActiviyKpiModelResolver[];
   @Field(() => GamificationModelResolver) gamification: GamificationModelResolver;
+  @Field(() => [BadgeModelResolver]) badges: BadgeModelResolver[];
 }

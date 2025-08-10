@@ -6,7 +6,12 @@ import { Inversify } from '@src/inversify/investify';
 import { TrainingStatModelResolver } from '@presentation/training-stat/model/training-stat.resolver.model';
 import { makeAuthGuard, USER_ROLE, CurrentSession, UserSessionResolverModel } from '@happykiller/sunny-apis';
 import { SaveTrainingStatDtoResolver } from '@presentation/training-stat/dto/save.training-stat.resolver.dto';
-import { GamificationModelResolver, LeagueModelResolver, UserKpiModelResolver } from '@presentation/training-stat/model/user-kpi.model';
+import {
+  GamificationModelResolver,
+  LeagueModelResolver,
+  UserKpiModelResolver,
+  BadgeModelResolver,
+} from '@presentation/training-stat/model/user-kpi.model';
 
 @Resolver(() => TrainingStatModelResolver)
 export class TrainingStatResolver {
@@ -42,6 +47,7 @@ export class TrainingStatResolver {
     const sessions = await this.inversify.getTrainingStatsSessionsUsecase.execute(session.id);
     const activities = await this.inversify.getTrainingStatsActivitiesUsecase.execute(session.id);
     const gam = await this.inversify.getUserGamificationUsecase.execute(session.id, { includeWeekly: true });
+    const badgesDomain = await this.inversify.getUserBadgesUsecase.execute(session.id);
 
     const toLeague = (x: any): LeagueModelResolver => ({
       code: x.code,
@@ -60,6 +66,13 @@ export class TrainingStatResolver {
       weeklyLeague: gam.weeklyLeague ? toLeague(gam.weeklyLeague) : undefined,
     };
 
-    return { sessions, activities, gamification };
+    const badges: BadgeModelResolver[] = badgesDomain.map(b => ({
+      code: b.code,
+      earned: b.earned,
+      earnedAt: b.earnedAt,
+      meta: b.meta ? JSON.stringify(b.meta) : undefined, // see Assumption above
+    }));
+
+    return { sessions, activities, gamification, badges };
   }
 }

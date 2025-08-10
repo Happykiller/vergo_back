@@ -31,6 +31,13 @@ type AuthModelResolver {
   role: String!
 }
 
+type BadgeModelResolver {
+  code: String!
+  earned: Boolean!
+  earnedAt: String
+  meta: String
+}
+
 input CreateExerciceDtoResolver {
   description: [LanguageDtoResolver!]!
   image: String!
@@ -360,6 +367,7 @@ input UpdateTrainingDtoResolver {
 
 type UserKpiModelResolver {
   activities: [ActiviyKpiModelResolver!]!
+  badges: [BadgeModelResolver!]!
   gamification: GamificationModelResolver!
   sessions: [SessionKpiModelResolver!]!
 }

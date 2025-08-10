@@ -38,5 +38,11 @@ query {
         nextThreshold
       }
     }
+    badges {
+      code
+      earned
+      earnedAt
+      meta
+    }
   }
 }
