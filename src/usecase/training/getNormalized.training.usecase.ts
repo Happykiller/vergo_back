@@ -17,21 +17,24 @@ export class GetNormalizedTrainingUsecase {
         await this.inversify.bddService.getTraining(dto);
 
       const exercices = await this.inversify.getExercicesUsecase.execute();
-      const exercices_db = [];
-      for(let exercice of exercices) {
-        exercices_db.push({
+      const exercices_db = await Promise.all(
+        exercices.map(async (exercice) => ({
           slug: exercice.slug,
           words: await this.inversify.tokenizeUsecase.execute(exercice.slug)
-        })
-      }
+        }))
+      );
 
       const exercice_slugs_asked = this.getExercices(training);
-      for(let exercice_slug_asked of exercice_slugs_asked) {
-        const words:string[] = await this.inversify.tokenizeUsecase.execute(exercice_slug_asked);
-        let resp = this.inversify.findMostAccurateFileUsecase.execute(exercices_db, words);
+      const slugMappings = await Promise.all(
+        Array.from(exercice_slugs_asked).map(async (slug) => {
+          const words: string[] = await this.inversify.tokenizeUsecase.execute(slug);
+          const resp = this.inversify.findMostAccurateFileUsecase.execute(exercices_db, words);
+          return { slug, resp };
+        })
+      );
+      for (const { slug, resp } of slugMappings) {
         if (resp) {
-          //console.log('resp', resp, resp.slug)
-          this.mapping_slug[exercice_slug_asked] = resp.slug;
+          this.mapping_slug[slug] = resp.slug;
         }
       }
   

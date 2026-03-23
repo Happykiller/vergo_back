@@ -32,15 +32,16 @@ export class TokenizeUsecase {
 
   async execute(dto: string): Promise<string[]> {
     let response = [];
-    this.glossary = await this.inversify.getGlossaryUsecase.execute();
+    if (!this.glossary) {
+      this.glossary = await this.inversify.getGlossaryUsecase.execute();
+    }
 
     dto = this.removeFileExtension(dto);
     dto = this.replaceTermsWithKeys(dto, this.glossary);
     response = this.processFileName(dto);
     response = this.removeStopWords(response);
 
-    // 1. Éliminer les doublons en préservant l'ordre initial
-    response = response.filter((item, index) => response.indexOf(item) === index);
+    response = Array.from(new Set(response));
 
     response = this.singularizeWords(response);
 
@@ -78,11 +79,7 @@ export class TokenizeUsecase {
   }
 
   processFileName(fileName: string): string[] {
-    // Retirer l'extension du fichier
-    const lastDotIndex = fileName.lastIndexOf('.');
-    const baseName = lastDotIndex !== -1 ? fileName.substring(0, lastDotIndex) : fileName;
-
-    // Remplacer tous les caractères non-alphanumériques par un espace
+    const baseName = this.removeFileExtension(fileName);
     const cleanedName = baseName.replace(/[^a-zA-Z]/g, ' ');
 
     // Diviser en mots et exclure les mots de moins de 2 caractères
@@ -93,29 +90,26 @@ export class TokenizeUsecase {
 
   replaceTermsWithKeys(text: string, glossary: { [key: string]: GlossaryEntry }): string {
     try {
-      for (const key in glossary) {
-        if (glossary.hasOwnProperty(key)) {
+      for (const [key, entry] of Object.entries(glossary)) {
           const terms = [
-            glossary[key].english.base,
-            ...glossary[key].english.synonyms,
-            glossary[key].english.plural,
-            glossary[key].english.singular,
-            ...glossary[key].english.common_misspellings,
-            ...glossary[key].english.slang,
-            glossary[key].french.base,
-            ...glossary[key].french.synonyms,
-            glossary[key].french.plural,
-            glossary[key].french.singular,
-            ...glossary[key].french.common_misspellings,
-            ...glossary[key].french.slang,
+            entry.english.base,
+            ...entry.english.synonyms,
+            entry.english.plural,
+            entry.english.singular,
+            ...entry.english.common_misspellings,
+            ...entry.english.slang,
+            entry.french.base,
+            ...entry.french.synonyms,
+            entry.french.plural,
+            entry.french.singular,
+            ...entry.french.common_misspellings,
+            ...entry.french.slang,
           ];
 
-          // Filter out undefined or null values
           const filteredTerms = terms.filter(term => term);
           const escapedTerms = filteredTerms.map(term => this.escapeRegExp(term)).join('|');
           const regex = new RegExp(`(?<=^|[\\W_])(${escapedTerms})(?=$|[\\W_])`, 'gi');
           text = text.replace(regex, key);
-        }
       }
       return text;
     } catch (ex) {

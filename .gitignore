@@ -63,3 +63,4 @@ src/config/prod.ts
 vergo_back.tar
 account.md
 images/
+.claude/

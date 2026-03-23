@@ -40,9 +40,10 @@ export class TrainingStatResolver {
   async getUserKpis(
     @CurrentSession() session: UserSessionResolverModel
   ) {
-    const sessions = await this.inversify.getTrainingStatsSessionsUsecase.execute(session.id);
-    const activities = await this.inversify.getTrainingStatsActivitiesUsecase.execute(session.id);
-    await common.sleep(500);
+    const [sessions, activities] = await Promise.all([
+      this.inversify.getTrainingStatsSessionsUsecase.execute(session.id),
+      this.inversify.getTrainingStatsActivitiesUsecase.execute(session.id),
+    ]);
     return { sessions, activities };
   }
 }

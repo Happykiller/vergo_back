@@ -10,7 +10,7 @@ export class GetTrainingStatsByUserIdUsecase {
   }
 
   async execute(user_id: string): Promise<TrainingStatUsecaseModel[]> {
-    const results = await this.inversify.bddService.getStatsByUsergId(user_id);
+    const results = await this.inversify.bddService.getStatsByUserId(user_id);
 
     return results.map((s) => ({
       id: s.id,

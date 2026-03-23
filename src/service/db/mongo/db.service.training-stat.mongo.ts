@@ -20,7 +20,7 @@ export class BddServiceTrainingStatMongo {
     };
   }
 
-  async getStatsByUsergId(user_id: string): Promise<TrainingStatDbModel[]> {
+  async getStatsByUserId(user_id: string): Promise<TrainingStatDbModel[]> {
     const cursor = (await this.getCollection()).find({ user_id });
     const results: TrainingStatDbModel[] = [];
 

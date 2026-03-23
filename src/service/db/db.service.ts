@@ -45,5 +45,5 @@ export interface BddService extends BddServiceBase {
    * Image
    */
   insertTrainingStat(stat: Omit<TrainingStatDbModel, 'id'>): Promise<TrainingStatDbModel>;
-  getStatsByUsergId(user_id: string): Promise<TrainingStatDbModel[]>;
+  getStatsByUserId(user_id: string): Promise<TrainingStatDbModel[]>;
 }

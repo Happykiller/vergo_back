@@ -1,4 +1,3 @@
-// src/usecase/training-stat/get.training-stats.sessions.usecase.ts
 import { Inversify } from '@src/inversify/investify';
 
 export interface TrainingStatActivityModel {
@@ -6,7 +5,7 @@ export interface TrainingStatActivityModel {
   duration: number;
 }
 
-export class getTrainingStatsActivitiesUsecase {
+export class GetTrainingStatsActivitiesUsecase {
   inversify: Inversify;
 
   constructor(inversify: Inversify) {
@@ -18,16 +17,8 @@ export class getTrainingStatsActivitiesUsecase {
     const sixMonthsAgo = new Date();
     sixMonthsAgo.setMonth(sixMonthsAgo.getMonth() - 6);
 
-    const enriched = await Promise.all(
-      stats.map(async (stat) => {
-        return {
-          date: stat.start,
-          duration: stat.durationInSeconds
-        };
-      }),
-    );
-
-    return enriched
+    return stats
+      .map((stat) => ({ date: stat.start, duration: stat.durationInSeconds }))
       .filter((s) => new Date(s.date) >= sixMonthsAgo)
       .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
   }

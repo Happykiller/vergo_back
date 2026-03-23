@@ -16,7 +16,7 @@ export class BddServiceTrainingStatFake {
     return trainingStat;
   }
 
-  async getStatsByUsergId(user_id: string): Promise<TrainingStatDbModel[]> {
+  async getStatsByUserId(user_id: string): Promise<TrainingStatDbModel[]> {
     return this.collection.filter((s) => s.user_id === user_id);
   }
 }

@@ -24,7 +24,6 @@ export class FindMostAccurateFileUsecase {
 
   execute(collection: CollectionItem[], words: string[]): SearchResponse {
     try {
-      //console.log(JSON.stringify(collection.map(elt => elt.words)))
 
       // Function to find the positions of matching subsequences
       const findMatchingSubsequencePositions = (itemWords: string[], words: string[]): number[] => {
@@ -110,14 +109,11 @@ export class FindMostAccurateFileUsecase {
         };
       });
 
-      /**
-       * Calcul accurency
-       */
       results = results.map(result => {
         result.item = {
           ... result.item,
           found_stats: {
-            accurency: result.positions.length / words.length,
+            accuracy: result.positions.length / words.length,
             wordsWeight: words.length / result.item.words.length
           }
         }
@@ -144,7 +140,7 @@ export class FindMostAccurateFileUsecase {
        */
       if (results.length === 0) {
         throw new Error(ERRORS.AI_FIND_NOTHING_FOUND);
-      } else if (results[0]?.item.found_stats.accurency < 0.33) {
+      } else if (results[0]?.item.found_stats.accuracy < 0.33) {
         throw new Error(ERRORS.AI_FIND_INSUFFISANT_ACCURACY);
       }
 
