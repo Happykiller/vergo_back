@@ -1,13 +1,13 @@
 # Vergo Back
 
-**Vergo Back** is the backend API for the Vergo service — a fitness coaching platform with guided workouts, exercise tracking, session statistics, and gamification features.  
-It is built with [NestJS](https://nestjs.com/) in **TypeScript**, following a **hexagonal architecture** to ensure maintainability, scalability, and testability.
+**Vergo Back** is the backend API for the Vergo service — a fitness coaching platform with guided workouts, exercise tracking, session statistics, and gamification features.
+It is built with [NestJS](https://nestjs.com/) in **TypeScript**, following a **clean 3-layer architecture** to ensure maintainability, scalability, and testability.
 
 ---
 
 ## 🚀 Features
 
-- **Hexagonal architecture** separating domain logic from infrastructure
+- **Clean architecture** (presentation/usecase/service layers)
 - **GraphQL API** (Apollo) and WebSocket support
 - **Authentication & Authorization** (JWT, role-based access control)
 - **Gamification** (XP, levels, leagues)
@@ -23,16 +23,14 @@ It is built with [NestJS](https://nestjs.com/) in **TypeScript**, following a **
 
 ## 📂 Project Structure
 
-```
-
+```text
 src/
-presentation/   # Controllers / GraphQL resolvers (input/output models)
-usecase/        # Application services & domain use cases
-service/        # Adapters (DB, external APIs, etc.)
-inversify/      # Dependency injection configuration
-cli/            # Command-line tools (e.g., seeders)
-
-````
+  presentation/   # Controllers / GraphQL resolvers (input/output models)
+  usecase/        # Application services & domain use cases
+  service/        # Adapters (DB, external APIs, etc.)
+  inversify/      # Dependency injection configuration
+  cli/            # Command-line tools (e.g., seeders)
+```
 
 **Configuration paths** (from `tsconfig.json`):
 
@@ -56,23 +54,40 @@ cli/            # Command-line tools (e.g., seeders)
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-org/vergo_back.git
+git clone https://github.com/Happykiller/vergo_back.git
 cd vergo_back
 
 # Install dependencies
 npm install
-````
+```
+
+---
+
+## ⚡ Quick Start
+
+```bash
+# 1) Install dependencies
+npm install
+
+# 2) Start the API in mock mode (no MongoDB required)
+npm run start:mock
+```
+
+Then open GraphQL Playground at `http://localhost:3000/graphql`.
 
 ---
 
 ## ⚙️ Configuration
 
-Create an `.env` file at the root based on `.env.example`:
+The app loads environment variables from `.env`, then overrides them with `.env.local` when present.
+
+Create a `.env` file at the root (you can also use `.env.local`):
 
 ```env
 NODE_ENV=dev
-PORT=3000
-MONGO_URI=mongodb://localhost:27017/vergo
+APP_PORT=3000
+DB_CONN_STRING=mongodb://localhost:27017/
+DB_NAME=vergo
 JWT_SECRET=change_me
 ```
 
@@ -117,8 +132,8 @@ npm run test:e2e
 
 Test configurations:
 
-* `jest.json` → Unit tests (`*.spec.ts`)
-* `jest-e2e.json` → E2E tests (`*.e2e-spec.ts`)
+- `jest.json` → Unit tests (`*.spec.ts`)
+- `jest-e2e.json` → E2E tests (`*.e2e-spec.ts`)
 
 ---
 
@@ -156,7 +171,7 @@ npm run seed:stats -- <USER_ID>
 
 # Directly via ts-node
 npx ts-node -r tsconfig-paths/register src/cli/seed-stats.ts <USER_ID>
-````
+```
 
 **Example:**
 
@@ -166,21 +181,29 @@ npm run seed:stats -- 64c5cce2a3c71234abcd5678
 
 **Notes:**
 
-* `<USER_ID>` is **mandatory**. The script will exit with an error if omitted.
-* The script logs the current environment from `config.env.mode`.
-* It initializes the NestJS application context to access services and dependencies via **Inversify**.
-* Data is seeded via `StatsSeeder` in `src/seeds/stats.seeder.ts`.
-* The CLI automatically closes the application context after execution.
+- `<USER_ID>` is **mandatory**. The script will exit with an error if omitted.
+- The script logs the current environment from `config.env.mode`.
+- It initializes the NestJS application context to access services and dependencies via **Inversify**.
+- Data is seeded via `StatsSeeder` in `src/seeds/stats.seeder.ts`.
+- The CLI automatically closes the application context after execution.
+
+---
+
+## Troubleshooting
+
+- **MongoDB connection error**: use `npm run start:mock` to run without MongoDB, or verify `DB_CONN_STRING` / `DB_NAME`.
+- **GraphQL not reachable**: confirm the app is running and test `http://localhost:3000/graphql`.
+- **Wrong environment behavior**: check `NODE_ENV` (`dev`, `mock`, `test`, `prod`) in your shell or `.env` files.
 
 ---
 
 ## 🏗️ Architecture Principles
 
-* **Ports & Adapters**: Business logic (`usecase/`) is framework-agnostic.
-* **Dependency Injection**: Managed by `Inversify`.
-* **DTO Validation**: Using `class-validator` / `class-transformer`.
-* **Error Handling**: Domain errors mapped to HTTP/GraphQL errors.
-* **Observability**: Structured logging & future-ready for metrics/tracing.
+- **Ports & Adapters**: Business logic (`usecase/`) is framework-agnostic.
+- **Dependency Injection**: Managed by `Inversify`.
+- **DTO Validation**: Using `class-validator` / `class-transformer`.
+- **Error Handling**: Domain errors mapped to HTTP/GraphQL errors.
+- **Observability**: Structured logging & future-ready for metrics/tracing.
 
 ---
 
