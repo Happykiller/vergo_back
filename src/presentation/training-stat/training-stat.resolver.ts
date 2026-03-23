@@ -1,13 +1,17 @@
 // src\presentation\training-stat\training-stat.resolver.ts
-import { Inject, UseGuards } from '@nestjs/common';
-import { Inversify } from '@src/inversify/investify';
 import { Resolver, Query, Mutation, Args } from '@nestjs/graphql';
 
-import { UserKpiModelResolver } from '@presentation/training-stat/model/user-kpi.model';
+import { Inject, UseGuards } from '@nestjs/common';
+import { Inversify } from '@src/inversify/investify';
 import { TrainingStatModelResolver } from '@presentation/training-stat/model/training-stat.resolver.model';
 import { makeAuthGuard, USER_ROLE, CurrentSession, UserSessionResolverModel } from '@happykiller/sunny-apis';
 import { SaveTrainingStatDtoResolver } from '@presentation/training-stat/dto/save.training-stat.resolver.dto';
-import common from '@src/presentation/common/common';
+import {
+  GamificationModelResolver,
+  LeagueModelResolver,
+  UserKpiModelResolver,
+  BadgeModelResolver,
+} from '@presentation/training-stat/model/user-kpi.model';
 
 @Resolver(() => TrainingStatModelResolver)
 export class TrainingStatResolver {
@@ -40,10 +44,35 @@ export class TrainingStatResolver {
   async getUserKpis(
     @CurrentSession() session: UserSessionResolverModel
   ) {
-    const [sessions, activities] = await Promise.all([
-      this.inversify.getTrainingStatsSessionsUsecase.execute(session.id),
-      this.inversify.getTrainingStatsActivitiesUsecase.execute(session.id),
-    ]);
-    return { sessions, activities };
+    const sessions = await this.inversify.getTrainingStatsSessionsUsecase.execute(session.id);
+    const activities = await this.inversify.getTrainingStatsActivitiesUsecase.execute(session.id);
+    const gam = await this.inversify.getUserGamificationUsecase.execute(session.id, { includeWeekly: true });
+    const badgesDomain = await this.inversify.getUserBadgesUsecase.execute(session.id);
+
+    const toLeague = (x: any): LeagueModelResolver => ({
+      code: x.code,
+      minutes: x.minutes,
+      threshold: x.threshold,
+      nextCode: x.next?.code,
+      nextThreshold: x.next?.threshold,
+    });
+    const gamification: GamificationModelResolver = {
+      xp: gam.xp,
+      level: gam.level,
+      levelXp: gam.levelXp,
+      levelXpToNext: gam.levelXpToNext,
+      levelProgressPct: gam.levelProgressPct,
+      league: toLeague(gam.league),
+      weeklyLeague: gam.weeklyLeague ? toLeague(gam.weeklyLeague) : undefined,
+    };
+
+    const badges: BadgeModelResolver[] = badgesDomain.map(b => ({
+      code: b.code,
+      earned: b.earned,
+      earnedAt: b.earnedAt,
+      meta: b.meta ? JSON.stringify(b.meta) : undefined, // see Assumption above
+    }));
+
+    return { sessions, activities, gamification, badges };
   }
 }

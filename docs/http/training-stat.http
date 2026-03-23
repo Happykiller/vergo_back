@@ -17,5 +17,32 @@ query {
       date
       duration
     }
+    gamification {
+      xp
+      level
+      levelXp
+      levelXpToNext
+      levelProgressPct
+      league {
+        code
+        minutes
+        threshold
+        nextCode
+        nextThreshold
+      }
+      weeklyLeague {
+        code
+        minutes
+        threshold
+        nextCode
+        nextThreshold
+      }
+    }
+    badges {
+      code
+      earned
+      earnedAt
+      meta
+    }
   }
 }

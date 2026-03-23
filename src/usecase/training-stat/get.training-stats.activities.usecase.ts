@@ -1,4 +1,5 @@
 import { Inversify } from '@src/inversify/investify';
+import { TrainingStatUsecaseModel } from '@usecase/training-stat/model/training-stat.usecase.model';
 
 export interface TrainingStatActivityModel {
   date: string;
@@ -13,7 +14,7 @@ export class GetTrainingStatsActivitiesUsecase {
   }
 
   async execute(userId: string): Promise<TrainingStatActivityModel[]> {
-    const stats = await this.inversify.getTrainingStatsByUserIdUsecase.execute(userId);
+    const stats:TrainingStatUsecaseModel[] = await this.inversify.getTrainingStatsByUserIdUsecase.execute(userId);
     const sixMonthsAgo = new Date();
     sixMonthsAgo.setMonth(sixMonthsAgo.getMonth() - 6);
 
