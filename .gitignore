@@ -64,3 +64,9 @@ vergo_back.tar
 account.md
 images/
 .claude/
+
+# AI agent symlinks (point to AGENTS.md)
+CLAUDE.md
+GEMINI.md
+CODEX.md
+.codex
