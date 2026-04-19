@@ -25,7 +25,8 @@ import { AuthGuardModule, AuthModule, PasskeyModule, SystemModule, TestModule, U
       inversify,
     }),
     AuthModule.forRoot({
-      jwtConfig: config.jwt,
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      jwtConfig: config.jwt as any,
       appConfig: config,
       inversify,
     }),
@@ -49,7 +50,8 @@ import { AuthGuardModule, AuthModule, PasskeyModule, SystemModule, TestModule, U
     // Other
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
-      playground: config.graphQL.playground,
+      playground: false,
+      graphiql: config.env.mode !== 'prod',
       introspection: config.graphQL.introspection,
       autoSchemaFile: config.graphQL.schemaFileName,
       sortSchema: true,

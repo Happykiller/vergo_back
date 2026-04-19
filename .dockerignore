@@ -2,6 +2,7 @@
 node_modules
 npm-debug.log
 yarn-error.log
+.npm
 
 # TypeScript specific
 dist
@@ -28,16 +29,27 @@ docker-compose.prod.yml
 .DS_Store
 .git
 .gitignore
+.env
+.env.*
+.codex
+.claude
+.agents
+.mcp.json
+AGENTS.md
+CLAUDE.md
+CODEX.md
+GEMINI.md
 
 # Testing
 coverage
 *.test.ts
 *.spec.ts
 
+archives
 docs
 *.tar
 images
-.eslintrc.js
+eslint.config.cjs
 .prettierrc
 jest-e2e.json
 jest.json

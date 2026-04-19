@@ -20,7 +20,7 @@ const defaults: Configuration = {
   },
   graphQL: {
     schemaFileName: true,
-    playground: true,
+    playground: false,
     introspection: true,
     installSubscriptionHandlers: true,
   },

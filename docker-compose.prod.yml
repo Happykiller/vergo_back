@@ -6,6 +6,7 @@ services:
     restart: always
     volumes:
       - ./images:/usr/src/app/images
+      - ./logs:/usr/src/app/logs
     networks:
       - interservices
 

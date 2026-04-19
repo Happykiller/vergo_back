@@ -9,98 +9,66 @@ import { CreateExerciceDbDto } from '../dto/create.exercice.db.dto';
 
 export class BdbServiceExerciceMongo
   implements
-    Pick<BddService, 'getExercices' | 'getExercice'>
+    Pick<BddService, 'getExercices' | 'getExercice' | 'createExercice' | 'updateExercice'>
 {
   private async getExerciceCollection(): Promise<Collection> {
     return inversify.mongo.collection('exercices');
   }
 
+  private mapDoc(doc: any): ExerciceDbModel {
+    const tmp: any = { id: doc._id.toString(), ...doc };
+    delete tmp._id;
+    return tmp;
+  }
+
   async getExercices(): Promise<ExerciceDbModel[]> {
-    // Query for a movie that has the title 'The Room'
-    const query = {};
-    const options = {};
-    // Execute query
-    const results = (await this.getExerciceCollection()).find(query, options);
-
+    const results = (await this.getExerciceCollection()).find({});
     const response: ExerciceDbModel[] = [];
-    // Print returned documents
     for await (const doc of results) {
-      const tmp: any = {
-        id: doc._id.toString(),
-        ... doc
-      };
-      response.push(tmp);
+      response.push(this.mapDoc(doc));
     }
-
     return response;
   }
 
   async getExercice(dto: GetExerciceDbDto): Promise<ExerciceDbModel> {
     try {
-      const query = {
-        _id: new ObjectId(dto.id)
-      };
-      const options = {};
-      // Execute query
       const doc: any = await (
         await this.getExerciceCollection()
-      ).findOne(query, options);
+      ).findOne({ _id: new ObjectId(dto.id) });
 
-      const tmp: any = {
-        id: doc._id.toString(),
-        ... doc
-      };
-      delete tmp._id;
-
-      return Promise.resolve(tmp);
+      return this.mapDoc(doc);
     } catch (e) {
       return null;
     }
   }
 
-  async updateExercice(dto: UpdateExerciceDbDto): Promise<boolean> {
+  async updateExercice(dto: UpdateExerciceDbDto): Promise<ExerciceDbModel> {
     const set: any = {};
 
-    if (dto.slug) {
-      set.slug = dto.slug;
-    }
+    if (dto.slug !== undefined) set.slug = dto.slug;
+    if (dto.title !== undefined) set.title = dto.title;
+    if (dto.description !== undefined) set.description = dto.description;
+    if (dto.image !== undefined) set.image = dto.image;
 
-    if (dto.title) {
-      set.title = dto.title;
-    }
-
-    if (dto.description) {
-      set.description = dto.description;
-    }
-
-    if (dto.image) {
-      set.image = dto.image;
-    }
-
-    await (
+    const doc: any = await (
       await this.getExerciceCollection()
-    ).updateOne(
+    ).findOneAndUpdate(
       { _id: new ObjectId(dto.id) },
-      {
-        $set: set,
-      },
+      { $set: set },
+      { returnDocument: 'after' },
     );
 
-    return true;
+    if (!doc) return null;
+    return this.mapDoc(doc);
   }
 
   async createExercice(dto: CreateExerciceDbDto): Promise<ExerciceDbModel> {
     try {
       const result = await (
         await this.getExerciceCollection()
-      ).insertOne({
-        ...dto
-      });
+      ).insertOne({ ...dto });
 
-      return Promise.resolve({
-        id: result.insertedId.toString(),
-        ...dto,
-      });
+      return { id: result.insertedId.toString(), ...dto };
     } catch (e) {
       return null;
     }

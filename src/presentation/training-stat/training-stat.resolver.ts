@@ -9,6 +9,7 @@ import { SaveTrainingStatDtoResolver } from '@presentation/training-stat/dto/sav
 import {
   GamificationModelResolver,
   LeagueModelResolver,
+  TrainingVolumeModelResolver,
   UserKpiModelResolver,
   BadgeModelResolver,
 } from '@presentation/training-stat/model/user-kpi.model';
@@ -47,6 +48,7 @@ export class TrainingStatResolver {
     const sessions = await this.inversify.getTrainingStatsSessionsUsecase.execute(session.id);
     const activities = await this.inversify.getTrainingStatsActivitiesUsecase.execute(session.id);
     const gam = await this.inversify.getUserGamificationUsecase.execute(session.id, { includeWeekly: true });
+    const volume = await this.inversify.getTrainingVolumeUsecase.execute(session.id);
     const badgesDomain = await this.inversify.getUserBadgesUsecase.execute(session.id);
 
     const toLeague = (x: any): LeagueModelResolver => ({
@@ -65,6 +67,13 @@ export class TrainingStatResolver {
       league: toLeague(gam.league),
       weeklyLeague: gam.weeklyLeague ? toLeague(gam.weeklyLeague) : undefined,
     };
+    const trainingVolume: TrainingVolumeModelResolver = {
+      last15Days: volume.last15Days,
+      last30Days: volume.last30Days,
+      last90Days: volume.last90Days,
+      last6Months: volume.last6Months,
+      last1Year: volume.last1Year,
+    };
 
     const badges: BadgeModelResolver[] = badgesDomain.map(b => ({
       code: b.code,
@@ -73,6 +82,6 @@ export class TrainingStatResolver {
       meta: b.meta ? JSON.stringify(b.meta) : undefined, // see Assumption above
     }));
 
-    return { sessions, activities, gamification, badges };
+    return { sessions, activities, gamification, volume: trainingVolume, badges };
   }
 }

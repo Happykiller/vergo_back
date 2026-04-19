@@ -41,9 +41,9 @@ export class GetUserGamificationUsecase {
       ? 100
       : Math.max(0, Math.min(100, (levelXp / (nextLevelXp - prevLevelXp)) * 100));
 
-    // --- League (monthly by default) ---
-    const monthlyMinutes = this.sumMinutes(this.filterCurrentMonth(stats));
-    const league = this.computeLeague(monthlyMinutes);
+    // --- League (rolling 30-day window) ---
+    const rolling30DayMinutes = this.sumMinutes(this.filterLastDays(stats, 30));
+    const league = this.computeLeague(rolling30DayMinutes);
 
     // --- Weekly optional ---
     let weeklyLeague: GamificationLeague | undefined;
@@ -71,23 +71,21 @@ export class GetUserGamificationUsecase {
     return stats.reduce((acc, s) => acc + Math.max(0, Math.floor((s.durationInSeconds || 0) / 60)), 0);
   }
 
-  /** Filter stats in current calendar month (local time) */
-  private filterCurrentMonth(stats: TrainingStatUsecaseModel[]): TrainingStatUsecaseModel[] {
+  /** Filter stats in the last N days (rolling window) */
+  private filterLastDays(stats: TrainingStatUsecaseModel[], days: number): TrainingStatUsecaseModel[] {
     const now = new Date();
-    const y = now.getFullYear();
-    const m = now.getMonth();
+    const from = new Date(now);
+    from.setDate(now.getDate() - days);
+
     return stats.filter((s) => {
       const d = new Date(s.start);
-      return d.getFullYear() === y && d.getMonth() === m;
+      return d >= from;
     });
   }
 
   /** Filter stats in the last 7 days (rolling window) */
   private filterLast7Days(stats: TrainingStatUsecaseModel[]): TrainingStatUsecaseModel[] {
-    const now = new Date();
-    const from = new Date(now);
-    from.setDate(now.getDate() - 7);
-    return stats.filter((s) => new Date(s.start) >= from);
+    return this.filterLastDays(stats, 7);
   }
 
   /** Level from XP using soft exponential curve with closed-form inverse */

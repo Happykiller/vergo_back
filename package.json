@@ -1,6 +1,6 @@
 {
   "name": "vergo_back",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "Apis for Vergo service",
   "author": "Fabrice Rosito<fabrice.rosito@gmail.com>",
   "license": "MIT",
@@ -19,9 +19,17 @@
     "eros": "eros_gql",
     "link:sunny": "npm link @happykiller/sunny-apis",
     "up:sunny": "npm install @happykiller/sunny-apis@latest --force",
-    "seed:stats": "env NODE_ENV=dev ts-node -r tsconfig-paths/register src/cli/seed-stats.ts"
+    "seed:stats": "env NODE_ENV=dev ts-node -r tsconfig-paths/register src/cli/seed-stats.ts",
+    "reset:password": "env NODE_ENV=dev ts-node -r tsconfig-paths/register src/cli/reset-password.ts"
+  },
+  "overrides": {
+    "@apollo/server-plugin-landing-page-graphql-playground": {
+      "@apollo/server": "^5.5.0"
+    }
   },
   "dependencies": {
+    "@apollo/server": "^5.5.0",
+    "@as-integrations/express5": "^1.1.2",
     "@happykiller/sunny-apis": "^0.8.2",
     "@nestjs/apollo": "^13.2.5",
     "@nestjs/common": "^11.1.19",
@@ -63,10 +71,10 @@
     "@types/supertest": "^7.2.0",
     "@typescript-eslint/eslint-plugin": "^8.58.2",
     "@typescript-eslint/parser": "^8.58.2",
+    "eros_gql": "^1.2.8",
     "eslint": "^9.39.4",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.5",
-    "eros_gql": "^1.2.8",
     "jest": "^30.3.0",
     "jest-mock-extended": "^4.0.0",
     "prettier": "^3.8.3",

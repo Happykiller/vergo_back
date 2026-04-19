@@ -29,6 +29,12 @@ export class BdbServiceExerciceFake
   }
 
   updateExercice(dto: UpdateExerciceDbDto): Promise<ExerciceDbModel> {
-    throw new Error('Method not implemented.');
+    const exercice = this.getExerciceCollection().find(e => e.id === dto.id);
+    if (!exercice) return Promise.resolve(null);
+    if (dto.slug !== undefined) exercice.slug = dto.slug;
+    if (dto.title !== undefined) exercice.title = dto.title;
+    if (dto.description !== undefined) exercice.description = dto.description;
+    if (dto.image !== undefined) exercice.image = dto.image;
+    return Promise.resolve({ ...exercice });
   }
 }

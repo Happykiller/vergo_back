@@ -343,6 +343,20 @@ type TrainingStatModelResolver {
   user_id: String
 }
 
+type TrainingVolumeModelResolver {
+  last1Year: TrainingVolumePeriodModelResolver!
+  last6Months: TrainingVolumePeriodModelResolver!
+  last15Days: TrainingVolumePeriodModelResolver!
+  last30Days: TrainingVolumePeriodModelResolver!
+  last90Days: TrainingVolumePeriodModelResolver!
+}
+
+type TrainingVolumePeriodModelResolver {
+  hours: Float!
+  minutes: Int!
+  sessionsCount: Int!
+}
+
 input UpdPasswordAuthResolverDto {
   conf_value: String!
   new_value: String!
@@ -370,6 +384,7 @@ type UserKpiModelResolver {
   badges: [BadgeModelResolver!]!
   gamification: GamificationModelResolver!
   sessions: [SessionKpiModelResolver!]!
+  volume: TrainingVolumeModelResolver!
 }
 
 type UserModelResolver {

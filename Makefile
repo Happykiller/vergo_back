@@ -1,6 +1,7 @@
 # Makefile
 # Mark targets as not file-dependent; they are always executed
 .PHONY: start startall down reset tar install help
+.DEFAULT_GOAL := help
 
 start: 
 	docker compose up -d
@@ -35,4 +36,7 @@ help:
 	@echo "\033[33m make startall\033[39m : Build et démarre le projet"
 	@echo "\033[33m make down\033[39m     : Stop le projet"
 	@echo "\033[33m make reset\033[39m    : Reset les containers, les volumes, les networks et les données local"
+	@echo "\033[33m make tar\033[39m      : Build l'image Docker et génère vergo_back.tar"
+	@echo "\033[33m make install\033[39m  : Charge le tar Docker et démarre la stack de prod"
+	@echo "\033[33m make help\033[39m     : Affiche cette aide"
 	@echo ""

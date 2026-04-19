@@ -29,6 +29,7 @@ import { GetUserGamificationUsecase } from '@usecase/training-stat/get.user-gami
 import { GetTrainingStatsByUserIdUsecase } from '@usecase/training-stat/get.training-stats-by-user.usecase';
 import { GetTrainingStatsSessionsUsecase } from '@usecase/training-stat/get.training-stats.sessions.usecase';
 import { GetTrainingStatsActivitiesUsecase } from '@usecase/training-stat/get.training-stats.activities.usecase';
+import { GetTrainingVolumeUsecase } from '@usecase/training-stat/get.training-volume.usecase';
 import {
   CreateUserUsecase,
   GetAllUserUsecase,
@@ -94,6 +95,7 @@ export class Inversify implements InversifyInterface {
   getTrainingStatsByUserIdUsecase: GetTrainingStatsByUserIdUsecase;
   getTrainingStatsSessionsUsecase: GetTrainingStatsSessionsUsecase;
   getTrainingStatsActivitiesUsecase: GetTrainingStatsActivitiesUsecase;
+  getTrainingVolumeUsecase: GetTrainingVolumeUsecase;
 
   constructor() {
     /**
@@ -152,6 +154,7 @@ export class Inversify implements InversifyInterface {
     this.getTrainingStatsByUserIdUsecase = new GetTrainingStatsByUserIdUsecase(this);
     this.getTrainingStatsSessionsUsecase = new GetTrainingStatsSessionsUsecase(this);
     this.getTrainingStatsActivitiesUsecase = new GetTrainingStatsActivitiesUsecase(this);
+    this.getTrainingVolumeUsecase = new GetTrainingVolumeUsecase(this);
   }
 
   async init() {

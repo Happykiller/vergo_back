@@ -1,4 +1,4 @@
-import { Field, Int, ObjectType } from '@nestjs/graphql';
+import { Field, Float, Int, ObjectType } from '@nestjs/graphql';
 
 @ObjectType()
 export class BadgeModelResolver {
@@ -45,9 +45,26 @@ export class ActiviyKpiModelResolver {
 }
 
 @ObjectType()
+export class TrainingVolumePeriodModelResolver {
+  @Field(() => Int) sessionsCount: number;
+  @Field(() => Int) minutes: number;
+  @Field(() => Float) hours: number;
+}
+
+@ObjectType()
+export class TrainingVolumeModelResolver {
+  @Field(() => TrainingVolumePeriodModelResolver) last15Days: TrainingVolumePeriodModelResolver;
+  @Field(() => TrainingVolumePeriodModelResolver) last30Days: TrainingVolumePeriodModelResolver;
+  @Field(() => TrainingVolumePeriodModelResolver) last90Days: TrainingVolumePeriodModelResolver;
+  @Field(() => TrainingVolumePeriodModelResolver) last6Months: TrainingVolumePeriodModelResolver;
+  @Field(() => TrainingVolumePeriodModelResolver) last1Year: TrainingVolumePeriodModelResolver;
+}
+
+@ObjectType()
 export class UserKpiModelResolver {
   @Field(() => [SessionKpiModelResolver]) sessions: SessionKpiModelResolver[];
   @Field(() => [ActiviyKpiModelResolver]) activities: ActiviyKpiModelResolver[];
   @Field(() => GamificationModelResolver) gamification: GamificationModelResolver;
+  @Field(() => TrainingVolumeModelResolver) volume: TrainingVolumeModelResolver;
   @Field(() => [BadgeModelResolver]) badges: BadgeModelResolver[];
 }

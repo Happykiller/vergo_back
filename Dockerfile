@@ -1,28 +1,28 @@
-# Base image
-FROM node:20-alpine
+# Build stage: compile the application with dev dependencies available.
+FROM node:20-alpine AS builder
 
-# Create app directory
 WORKDIR /usr/src/app
 
-# Copy application dependency manifests to the container image.
-# A wildcard is used to ensure copying both package.json AND package-lock.json (when available).
-# Copying this first prevents re-running npm install on every code change.
 COPY --chown=node:node package*.json ./
-
-# Install app dependencies using the `npm ci` command instead of `npm install`
 RUN npm ci
 
-# Bundle app source
 COPY --chown=node:node . .
-
-# Creates a "dist" folder with the production build
 RUN npm run build
 
-# Set NODE_ENV environment variable
+# Runtime stage: keep only production dependencies and runtime assets.
+FROM node:20-alpine AS runner
+
+WORKDIR /usr/src/app
+
 ENV NODE_ENV=prod
 
-# Running `npm ci` removes the existing node_modules directory and passing in --only=production ensures that only the production dependencies are installed. This ensures that the node_modules directory is as optimized as possible
-RUN npm ci --only=production && npm cache clean --force
+COPY --chown=node:node package*.json ./
+RUN npm ci --omit=dev && npm cache clean --force
 
-# Start the server using the production build
+COPY --from=builder --chown=node:node /usr/src/app/dist ./dist
+COPY --from=builder --chown=node:node /usr/src/app/not_found.jpg ./not_found.jpg
+RUN mkdir -p /usr/src/app/logs && chown -R node:node /usr/src/app
+
+USER node
+
 CMD [ "node", "dist/src/main.js" ]
