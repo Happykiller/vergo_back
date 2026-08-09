@@ -3,7 +3,7 @@
 #
 # Ici rien n'est copié : le code ET node_modules arrivent par bind mount depuis
 # l'hôte (voir ../docker-compose.dev.yml). L'image ne sert qu'à figer la version
-# de Node sur celle de la production (20 ; l'hôte tourne en 22).
+# de Node sur celle de la production (22).
 #
 # Prérequis : `npm install` doit avoir été lancé sur l'hôte au préalable.
 #
@@ -12,7 +12,7 @@
 # variante glibc (@img/sharp-linux-x64). Alpine étant en musl, elle refuserait
 # de se charger. La prod, elle, installe ses propres binaires dans l'image et
 # peut donc rester en alpine.
-FROM node:20-bookworm-slim
+FROM node:22-bookworm-slim
 
 WORKDIR /usr/src/app
 

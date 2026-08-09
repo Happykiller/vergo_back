@@ -1,9 +1,12 @@
 {
   "name": "vergo_back",
-  "version": "1.5.0",
+  "version": "2.0.0",
   "description": "Apis for Vergo service",
   "author": "Fabrice Rosito<fabrice.rosito@gmail.com>",
   "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "build": "nest build",
     "start": "env NODE_ENV=prod nest start",
