@@ -6,8 +6,7 @@ export class ComebackRule implements BadgeRule {
   readonly code = 'COMEBACK' as const;
 
   evaluate(ctx: BadgeContext): BadgeResult {
-    const sorted = [...ctx.stats]
-      .sort((a, b) => new Date(a.start).getTime() - new Date(b.start).getTime());
+    const sorted = [...ctx.stats].sort((a, b) => new Date(a.start).getTime() - new Date(b.start).getTime());
 
     if (sorted.length === 0) return { code: this.code, earned: false };
 

@@ -18,7 +18,7 @@ applyMixins(BddServiceFake, [
   BdbServiceTrainingFake,
   BdbServiceExerciceFake,
   BdbServiceGlossaryFake,
-  BddServiceTrainingStatFake
+  BddServiceTrainingStatFake,
 ]);
 
 export { BddServiceFake };

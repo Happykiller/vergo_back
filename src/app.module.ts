@@ -25,7 +25,6 @@ import { AuthGuardModule, AuthModule, PasskeyModule, SystemModule, TestModule, U
       inversify,
     }),
     AuthModule.forRoot({
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       jwtConfig: config.jwt as any,
       appConfig: config,
       inversify,

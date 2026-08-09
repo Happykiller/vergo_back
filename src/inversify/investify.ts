@@ -53,7 +53,6 @@ import {
 } from '@happykiller/sunny-apis';
 import type { ConfigurationBase, InversifyInterface } from '@happykiller/sunny-apis';
 
-
 export class Inversify implements InversifyInterface {
   mongo: Db;
   loggerService: any;

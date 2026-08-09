@@ -1,9 +1,9 @@
 // src\usecase\training\dto\update.training.usecase.dto.ts
-import { WorkoutDbModel } from "@service/db/model/training.db.model";
-import { UserSession } from "@happykiller/sunny-apis/dist/graphql/auth/jwt.strategy";
+import { WorkoutDbModel } from '@service/db/model/training.db.model';
+import { UserSession } from '@happykiller/sunny-apis/dist/graphql/auth/jwt.strategy';
 
 export interface UpdateTrainingUsecaseDto {
-  session: UserSession,
+  session: UserSession;
   training: {
     id: string;
     slug?: string;
@@ -11,5 +11,5 @@ export interface UpdateTrainingUsecaseDto {
     gender?: string;
     isPrivate?: boolean;
     workout?: WorkoutDbModel[];
-  }
+  };
 }

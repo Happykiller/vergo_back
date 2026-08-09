@@ -80,7 +80,7 @@ export class GetTrainingDatasUsecase {
   async execute(): Promise<[string[], string[]][]> {
     // Récupération des données
     const imgs = await this.common.getFileList();
-    let words_imgs = imgs.map(elt => elt.words);
+    const words_imgs = imgs.map((elt) => elt.words);
 
     const exercices = await this.inversify.getExercicesUsecase.execute();
     const exercices_db = [];
@@ -97,13 +97,13 @@ export class GetTrainingDatasUsecase {
         // Si contient déjà "man", on ajoute la version d'origine
         // et on génère la version avec "woman" (en remplaçant toutes les occurrences)
         exercices_db.push(words);
-        const replacedByWoman = words.map(token => token === 'man' ? 'woman' : token);
+        const replacedByWoman = words.map((token) => (token === 'man' ? 'woman' : token));
         exercices_db.push(replacedByWoman);
       } else if (hasWoman) {
         // Si contient déjà "woman", on ajoute la version d'origine
         // et on génère la version avec "man"
         exercices_db.push(words);
-        const replacedByMan = words.map(token => token === 'woman' ? 'man' : token);
+        const replacedByMan = words.map((token) => (token === 'woman' ? 'man' : token));
         exercices_db.push(replacedByMan);
       } else {
         // Sinon, on ajoute les deux versions en préfixant par "man" et "woman"
@@ -120,10 +120,10 @@ export class GetTrainingDatasUsecase {
       resultat.push({
         source: exercices_db[i],
         ref: exercices_db[i],
-        similarityResult
+        similarityResult,
       });
       for (let j = 0; j < words_imgs.length; j++) {
-        let similarityResult = this.calculateSimilarityUsecase.execute(exercices_db[i], words_imgs[j]);
+        const similarityResult = this.calculateSimilarityUsecase.execute(exercices_db[i], words_imgs[j]);
         // On enregistre le résultat sous forme de triplet
         resultat.push({
           source: exercices_db[i],
@@ -134,11 +134,7 @@ export class GetTrainingDatasUsecase {
     }
 
     // Formatage du pool au format [source, ref, similarity]
-    let pool: [string[], string[], number][] = resultat.map(r => [
-      r.source,
-      r.ref,
-      r.similarityResult.similarity
-    ]);
+    let pool: [string[], string[], number][] = resultat.map((r) => [r.source, r.ref, r.similarityResult.similarity]);
 
     pool = this.shuffleArray(pool);
 
@@ -153,18 +149,18 @@ export class GetTrainingDatasUsecase {
 
     // Définition des buckets avec la nouvelle répartition
     const buckets: BucketRange[] = [
-      { lower: 0.0, upper: 0.0, label: "0.0-0.0", records: [] },
-      { lower: 0.0, upper: 0.1, label: "0.0-0.1", records: [] },
-      { lower: 0.1, upper: 0.2, label: "0.1-0.2", records: [] },
-      { lower: 0.2, upper: 0.3, label: "0.2-0.3", records: [] },
-      { lower: 0.3, upper: 0.4, label: "0.3-0.4", records: [] },
-      { lower: 0.4, upper: 0.5, label: "0.4-0.5", records: [] },
-      { lower: 0.5, upper: 0.6, label: "0.5-0.6", records: [] },
-      { lower: 0.6, upper: 0.7, label: "0.6-0.7", records: [] },
-      { lower: 0.7, upper: 0.8, label: "0.7-0.8", records: [] },
-      { lower: 0.8, upper: 0.9, label: "0.8-0.9", records: [] },
-      { lower: 0.9, upper: 1.0, label: "0.9-1.0", records: [] },
-      { lower: 1.0, upper: 1.0, label: "1.0-1.0", records: [] },
+      { lower: 0.0, upper: 0.0, label: '0.0-0.0', records: [] },
+      { lower: 0.0, upper: 0.1, label: '0.0-0.1', records: [] },
+      { lower: 0.1, upper: 0.2, label: '0.1-0.2', records: [] },
+      { lower: 0.2, upper: 0.3, label: '0.2-0.3', records: [] },
+      { lower: 0.3, upper: 0.4, label: '0.3-0.4', records: [] },
+      { lower: 0.4, upper: 0.5, label: '0.4-0.5', records: [] },
+      { lower: 0.5, upper: 0.6, label: '0.5-0.6', records: [] },
+      { lower: 0.6, upper: 0.7, label: '0.6-0.7', records: [] },
+      { lower: 0.7, upper: 0.8, label: '0.7-0.8', records: [] },
+      { lower: 0.8, upper: 0.9, label: '0.8-0.9', records: [] },
+      { lower: 0.9, upper: 1.0, label: '0.9-1.0', records: [] },
+      { lower: 1.0, upper: 1.0, label: '1.0-1.0', records: [] },
     ];
 
     for (const triple of pool) {
@@ -178,12 +174,12 @@ export class GetTrainingDatasUsecase {
     }
 
     // Affichage de la taille de chaque bucket
-    console.log('Affichage de la taille de chaque bucket')
+    console.log('Affichage de la taille de chaque bucket');
     for (let i = 0; i < buckets.length; i++) {
       console.log(`Bucket ${buckets[i].label} length => ${buckets[i].records.length}`);
       info.bucketDetails.push({
         label: buckets[i].label,
-        length: buckets[i].records.length
+        length: buckets[i].records.length,
       });
     }
 
@@ -194,12 +190,12 @@ export class GetTrainingDatasUsecase {
       finalPool = pool;
     } else if (this.bucketSizeMax === 0) {
       // =0 => on cherche la taille minimale parmi tous les buckets
-      const minBucketSize = Math.min(...buckets.map(b => b.records.length));
+      const minBucketSize = Math.min(...buckets.map((b) => b.records.length));
       // puis on prend cette même quantité (minBucketSize) dans chacun des buckets
-      finalPool = buckets.flatMap(bucket => bucket.records.slice(0, minBucketSize));
+      finalPool = buckets.flatMap((bucket) => bucket.records.slice(0, minBucketSize));
     } else {
       // > 0 => on prend bucketSizeMax éléments dans chaque bucket
-      finalPool = buckets.flatMap(bucket => bucket.records.slice(0, this.bucketSizeMax));
+      finalPool = buckets.flatMap((bucket) => bucket.records.slice(0, this.bucketSizeMax));
     }
 
     // On mélange finalPool pour éviter un ordre systématique
@@ -211,10 +207,10 @@ export class GetTrainingDatasUsecase {
     let testSet: [string[], string[], number][] = [];
     let trainingSet: [string[], string[], number][] = [];
 
-    const testSetPart1 = finalPool.splice(0, this.poolTestSize/2);
+    const testSetPart1 = finalPool.splice(0, this.poolTestSize / 2);
 
     // 2) On ajoute encore 10 éléments (slice) mais sans les retirer du pool
-    const testSetPart2 = finalPool.slice(0, this.poolTestSize/2);
+    const testSetPart2 = finalPool.slice(0, this.poolTestSize / 2);
 
     // 3) On fusionne ces deux séries d'éléments pour obtenir testSet
     testSet = [...testSetPart1, ...testSetPart2];

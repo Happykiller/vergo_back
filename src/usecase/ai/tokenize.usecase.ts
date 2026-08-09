@@ -49,20 +49,41 @@ export class TokenizeUsecase {
   }
 
   singularizeWords(words: string[]): string[] {
-    return words.map(word => pluralize.singular(word));
+    return words.map((word) => pluralize.singular(word));
   }
 
   // Fonction pour retirer les stopwords d'une liste de mots
   removeStopWords(words: string[]): string[] {
-    let wordsEnToRemove: string[] = ['up'];
-    let wordsEnToAdd: string[] = ['doing', 'doign', 'working', 'view', 'illustration', 'vector', 'praticing', 'background', 'white', 'exercise', 'flat', 'nw', 'null', 'isolated', 'backgound', 'practice', 'workout', 'fitness', 'horizontal', 'free'];
+    const wordsEnToRemove: string[] = ['up'];
+    const wordsEnToAdd: string[] = [
+      'doing',
+      'doign',
+      'working',
+      'view',
+      'illustration',
+      'vector',
+      'praticing',
+      'background',
+      'white',
+      'exercise',
+      'flat',
+      'nw',
+      'null',
+      'isolated',
+      'backgound',
+      'practice',
+      'workout',
+      'fitness',
+      'horizontal',
+      'free',
+    ];
 
-    let wordsFrToRemove: string[] = [];
-    let wordsFrToAdd: string[] = [];
+    const wordsFrToRemove: string[] = [];
+    const wordsFrToAdd: string[] = [];
 
-    let filteredEnWords = eng.filter(word => !wordsEnToRemove.includes(word));
-    let filteredFrWords = fra.filter(word => !wordsFrToRemove.includes(word));
-    let filteredWords = filteredEnWords.concat(wordsEnToAdd).concat(filteredFrWords).concat(wordsFrToAdd);
+    const filteredEnWords = eng.filter((word) => !wordsEnToRemove.includes(word));
+    const filteredFrWords = fra.filter((word) => !wordsFrToRemove.includes(word));
+    const filteredWords = filteredEnWords.concat(wordsEnToAdd).concat(filteredFrWords).concat(wordsFrToAdd);
 
     return removeStopwords(words, filteredWords);
   }
@@ -83,7 +104,7 @@ export class TokenizeUsecase {
     const cleanedName = baseName.replace(/[^a-zA-Z]/g, ' ');
 
     // Diviser en mots et exclure les mots de moins de 2 caractères
-    const words = cleanedName.split(' ').filter(word => word.length >= 2);
+    const words = cleanedName.split(' ').filter((word) => word.length >= 2);
 
     return words;
   }
@@ -91,25 +112,25 @@ export class TokenizeUsecase {
   replaceTermsWithKeys(text: string, glossary: { [key: string]: GlossaryEntry }): string {
     try {
       for (const [key, entry] of Object.entries(glossary)) {
-          const terms = [
-            entry.english.base,
-            ...entry.english.synonyms,
-            entry.english.plural,
-            entry.english.singular,
-            ...entry.english.common_misspellings,
-            ...entry.english.slang,
-            entry.french.base,
-            ...entry.french.synonyms,
-            entry.french.plural,
-            entry.french.singular,
-            ...entry.french.common_misspellings,
-            ...entry.french.slang,
-          ];
+        const terms = [
+          entry.english.base,
+          ...entry.english.synonyms,
+          entry.english.plural,
+          entry.english.singular,
+          ...entry.english.common_misspellings,
+          ...entry.english.slang,
+          entry.french.base,
+          ...entry.french.synonyms,
+          entry.french.plural,
+          entry.french.singular,
+          ...entry.french.common_misspellings,
+          ...entry.french.slang,
+        ];
 
-          const filteredTerms = terms.filter(term => term);
-          const escapedTerms = filteredTerms.map(term => this.escapeRegExp(term)).join('|');
-          const regex = new RegExp(`(?<=^|[\\W_])(${escapedTerms})(?=$|[\\W_])`, 'gi');
-          text = text.replace(regex, key);
+        const filteredTerms = terms.filter((term) => term);
+        const escapedTerms = filteredTerms.map((term) => this.escapeRegExp(term)).join('|');
+        const regex = new RegExp(`(?<=^|[\\W_])(${escapedTerms})(?=$|[\\W_])`, 'gi');
+        text = text.replace(regex, key);
       }
       return text;
     } catch (ex) {

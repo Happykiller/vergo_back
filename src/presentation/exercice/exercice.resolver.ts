@@ -1,13 +1,6 @@
 // src\presentation\exercice\exercice.resolver.ts
 import { Inject, UseGuards } from '@nestjs/common';
-import {
-  Resolver,
-  Query,
-  Args,
-  ResolveField,
-  Parent,
-  Mutation,
-} from '@nestjs/graphql';
+import { Resolver, Query, Args, ResolveField, Parent, Mutation } from '@nestjs/graphql';
 
 import { Inversify } from '@src/inversify/investify';
 import { TrainingModelResolver } from '@presentation/training/model/training.resolver.model';
@@ -23,15 +16,15 @@ import { CurrentSession, makeAuthGuard, USER_ROLE, UserModelResolver, UserSessio
 export class ExerciceResolver {
   constructor(
     @Inject('Inversify')
-    private inversify: Inversify,
+    private inversify: Inversify
   ) {}
 
   @ResolveField(() => UserModelResolver, { nullable: true })
-  async creator(@Parent() training:ExerciceModelResolver):Promise<UserModelResolver> {
+  async creator(@Parent() training: ExerciceModelResolver): Promise<UserModelResolver> {
     try {
-      const user:UserUsecaseModel = await this.inversify.getUserUsecase.execute({
-        id: training.creator_id
-      })
+      const user: UserUsecaseModel = await this.inversify.getUserUsecase.execute({
+        id: training.creator_id,
+      });
       return user;
     } catch (e) {
       return null;
@@ -39,13 +32,13 @@ export class ExerciceResolver {
   }
 
   @ResolveField(() => [UserModelResolver], { nullable: true })
-  async contributors(@Parent() training:TrainingModelResolver):Promise<UserModelResolver[]> {
-    let contributors = [];
+  async contributors(@Parent() training: TrainingModelResolver): Promise<UserModelResolver[]> {
+    const contributors = [];
     try {
-      for(let user_id of training.contributors_id) {
-        const user:UserUsecaseModel = await this.inversify.getUserUsecase.execute({
-          id: user_id
-        })
+      for (const user_id of training.contributors_id) {
+        const user: UserUsecaseModel = await this.inversify.getUserUsecase.execute({
+          id: user_id,
+        });
         contributors.push(user);
       }
       return contributors;
@@ -59,20 +52,20 @@ export class ExerciceResolver {
   @Mutation((returns) => ExerciceModelResolver)
   async exercice_create(
     @CurrentSession() session: UserSessionResolverModel,
-    @Args('dto') dto: CreateExerciceDtoResolver,
+    @Args('dto') dto: CreateExerciceDtoResolver
   ): Promise<ExerciceModelResolver> {
     return await this.inversify.createExerciceUsecase.execute({
       session,
-      exercice: dto
+      exercice: dto,
     });
   }
-  
+
   @UseGuards(makeAuthGuard('graphql', [USER_ROLE.ALL]))
   /* eslint-disable @typescript-eslint/no-unused-vars */
   @Query((returns) => [ExerciceModelResolver])
-  async exercices (
+  async exercices(
     @CurrentSession() session: UserSessionResolverModel,
-    @Args('dto', { nullable: true }) dto?: GetTrainingResolverDto,
+    @Args('dto', { nullable: true }) dto?: GetTrainingResolverDto
   ): Promise<ExerciceModelResolver[]> {
     return this.inversify.getExercicesUsecase.execute();
   }
@@ -80,23 +73,16 @@ export class ExerciceResolver {
   @UseGuards(makeAuthGuard('graphql', [USER_ROLE.ALL]))
   /* eslint-disable @typescript-eslint/no-unused-vars */
   @Query((returns) => ExerciceModelResolver)
-  async exercice (
-    @CurrentSession() session: UserSessionResolverModel,
-    @Args('dto') dto: GetExerciceResolverDto,
-  ): Promise<ExerciceModelResolver> {
+  async exercice(@CurrentSession() session: UserSessionResolverModel, @Args('dto') dto: GetExerciceResolverDto): Promise<ExerciceModelResolver> {
     return this.inversify.getExerciceUsecase.execute(dto);
   }
 
   @UseGuards(makeAuthGuard('graphql', [USER_ROLE.ALL]))
-  /* eslint-disable @typescript-eslint/no-unused-vars */
   @Mutation(() => Boolean)
-  async exercice_update(
-    @CurrentSession() session: UserSessionResolverModel,
-    @Args('dto') dto: UpdateExerciceDtoResolver,
-  ): Promise<boolean> {
+  async exercice_update(@CurrentSession() session: UserSessionResolverModel, @Args('dto') dto: UpdateExerciceDtoResolver): Promise<boolean> {
     await this.inversify.updateExerciceUsecase.execute({
       session,
-      exercice: dto
+      exercice: dto,
     });
 
     return true;

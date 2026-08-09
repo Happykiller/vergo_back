@@ -9,8 +9,8 @@ interface Params {
   /** If true, compute an additional weekly league snapshot */
   includeWeekly?: boolean;
   /** Factor tuning for level curve */
-  base?: number;      // default 45
-  growth?: number;    // default 1.35
+  base?: number; // default 45
+  growth?: number; // default 1.35
 }
 
 export class GetUserGamificationUsecase {
@@ -24,8 +24,7 @@ export class GetUserGamificationUsecase {
   async execute(userId: string, params: Params = {}): Promise<GamificationUsecaseModel> {
     const { includeWeekly = true, base = 45, growth = 1.35 } = params;
 
-    const stats: TrainingStatUsecaseModel[] =
-      await this.inversify.getTrainingStatsByUserIdUsecase.execute(userId);
+    const stats: TrainingStatUsecaseModel[] = await this.inversify.getTrainingStatsByUserIdUsecase.execute(userId);
 
     // --- XP total (in minutes) ---
     const totalMinutes = this.sumMinutes(stats);
@@ -37,9 +36,7 @@ export class GetUserGamificationUsecase {
     const nextLevelXp = this.xpNeededForLevel(level + 1, base, growth);
     const levelXp = xp - prevLevelXp;
     const levelXpToNext = Math.max(nextLevelXp - xp, 0);
-    const levelProgressPct = nextLevelXp === prevLevelXp
-      ? 100
-      : Math.max(0, Math.min(100, (levelXp / (nextLevelXp - prevLevelXp)) * 100));
+    const levelProgressPct = nextLevelXp === prevLevelXp ? 100 : Math.max(0, Math.min(100, (levelXp / (nextLevelXp - prevLevelXp)) * 100));
 
     // --- League (rolling 30-day window) ---
     const rolling30DayMinutes = this.sumMinutes(this.filterLastDays(stats, 30));
@@ -91,7 +88,7 @@ export class GetUserGamificationUsecase {
   /** Level from XP using soft exponential curve with closed-form inverse */
   private levelFromXp(xp: number, base: number, growth: number): number {
     // level 1 starts at xp=0
-    const inner = ((xp / base) * (growth - 1)) + 1;
+    const inner = (xp / base) * (growth - 1) + 1;
     if (inner <= 1) return 1;
     const lvl = Math.floor(Math.log(inner) / Math.log(growth)) + 1;
     return Math.max(1, lvl);
@@ -106,12 +103,12 @@ export class GetUserGamificationUsecase {
   /** Compute league by thresholds; mode is label-only (monthly vs weekly) */
   private computeLeague(minutes: number, mode: 'MONTHLY' | 'WEEKLY' = 'MONTHLY'): GamificationLeague {
     // Thresholds are minutes; tuning friendly & readable.
-    const bands: Array<{ code: LeagueCode;  threshold: number }> = [
+    const bands: Array<{ code: LeagueCode; threshold: number }> = [
       { code: 'UNRANKED', threshold: 0 },
-      { code: 'BRONZE', threshold: mode === 'MONTHLY' ? 60   : 15 },
-      { code: 'SILVER', threshold: mode === 'MONTHLY' ? 180  : 45 },
-      { code: 'GOLD', threshold: mode === 'MONTHLY' ? 360  : 90 },
-      { code: 'PLATINUM', threshold: mode === 'MONTHLY' ? 720  : 180 },
+      { code: 'BRONZE', threshold: mode === 'MONTHLY' ? 60 : 15 },
+      { code: 'SILVER', threshold: mode === 'MONTHLY' ? 180 : 45 },
+      { code: 'GOLD', threshold: mode === 'MONTHLY' ? 360 : 90 },
+      { code: 'PLATINUM', threshold: mode === 'MONTHLY' ? 720 : 180 },
       { code: 'DIAMOND', threshold: mode === 'MONTHLY' ? 1200 : 300 },
       { code: 'LEGEND', threshold: mode === 'MONTHLY' ? 1800 : 450 },
     ];

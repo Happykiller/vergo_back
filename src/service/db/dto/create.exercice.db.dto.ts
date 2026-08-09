@@ -1,4 +1,4 @@
-import { LanguageDbModel } from "@service/db/model/language.db.model";
+import { LanguageDbModel } from '@service/db/model/language.db.model';
 
 export class CreateExerciceDbDto {
   slug: string;

@@ -5,7 +5,7 @@ type CollectionItem = { words: string[] };
 
 // Définition du type pour found_stats
 type FoundStats = {
-  accuracy: number; 
+  accuracy: number;
   wordsWeight: number;
 };
 
@@ -24,15 +24,14 @@ export class FindMostAccurateFileUsecase {
 
   execute(collection: CollectionItem[], words: string[]): SearchResponse {
     try {
-
       // Function to find the positions of matching subsequences
       const findMatchingSubsequencePositions = (itemWords: string[], words: string[]): number[] => {
-        let positions: number[] = [];
+        const positions: number[] = [];
 
-        for(let word of words) {
+        for (const word of words) {
           const pos = itemWords.indexOf(word);
-          if(pos >= 0) {
-            positions.push(pos)
+          if (pos >= 0) {
+            positions.push(pos);
           }
         }
 
@@ -41,93 +40,93 @@ export class FindMostAccurateFileUsecase {
 
       const getResultWithMostPositions = (data: any[]): any[] => {
         let maxPositions = 0;
-        let result: any[] = [];
-      
-        data.forEach(item => {
+        const result: any[] = [];
+
+        data.forEach((item) => {
           if (item.positions.length > maxPositions) {
             maxPositions = item.positions.length;
           }
         });
 
-        data.forEach(item => {
+        data.forEach((item) => {
           if (item.positions.length === maxPositions) {
             result.push({
               ...item,
-              weight: item.positions.reduce((acc, curr) => acc + curr, 0)
+              weight: item.positions.reduce((acc, curr) => acc + curr, 0),
             });
           }
         });
-      
+
         return result;
-      }
+      };
 
       const getResultWithWeight = (data: any[]): any[] => {
         let min = 999;
-        let result: any[] = [];
-      
-        data.forEach(item => {
+        const result: any[] = [];
+
+        data.forEach((item) => {
           if (item.weight < min) {
             min = item.weight;
           }
         });
 
-        data.forEach(item => {
+        data.forEach((item) => {
           if (item.weight === min) {
             result.push(item);
           }
         });
-      
+
         return result;
-      }
+      };
 
       const getResultSmaller = (datas: any[]): any[] => {
         let min = 999;
-        let result: any[] = [];
-      
-        datas.forEach(data => {
+        const result: any[] = [];
+
+        datas.forEach((data) => {
           if (data.item.words.length < min) {
             min = data.item.words.length;
           }
         });
 
-        datas.forEach(data => {
+        datas.forEach((data) => {
           if (data.item.words.length === min) {
             result.push(data);
           }
         });
-      
+
         return result;
-      }
+      };
 
       /**
        * Collect the results with positions
        */
-      let results: any[] = collection.map(item => {
-        return { 
-          item, 
-          positions: findMatchingSubsequencePositions(item.words, words) 
+      let results: any[] = collection.map((item) => {
+        return {
+          item,
+          positions: findMatchingSubsequencePositions(item.words, words),
         };
       });
 
-      results = results.map(result => {
+      results = results.map((result) => {
         result.item = {
-          ... result.item,
+          ...result.item,
           found_stats: {
             accuracy: result.positions.length / words.length,
-            wordsWeight: words.length / result.item.words.length
-          }
-        }
+            wordsWeight: words.length / result.item.words.length,
+          },
+        };
         return result;
       });
 
       /**
        * Filter out results with max positions
        */
-      results = getResultWithMostPositions(results.filter(result => result.positions.length > 0));
+      results = getResultWithMostPositions(results.filter((result) => result.positions.length > 0));
 
       /**
        * Get by min Weight
-       */  
+       */
       results = getResultWithWeight(results);
 
       /**
@@ -147,7 +146,7 @@ export class FindMostAccurateFileUsecase {
       const response = results[0]?.item;
 
       return response;
-    } catch(ex) {
+    } catch (ex) {
       this.inversify.loggerService.error(ex.message);
     }
   }

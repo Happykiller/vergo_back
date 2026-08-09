@@ -4,9 +4,7 @@ import { jumping_jacks } from '@service/db/fake/mock/jumping_jacks';
 import { CreateExerciceDbDto } from '../dto/create.exercice.db.dto';
 import { UpdateExerciceDbDto } from '../dto/update.exercice.db.dto';
 
-export class BdbServiceExerciceFake
-  implements
-    Pick<BddService, 'getExercices' | 'getExercice' | 'createExercice' | 'updateExercice'> {
+export class BdbServiceExerciceFake implements Pick<BddService, 'getExercices' | 'getExercice' | 'createExercice' | 'updateExercice'> {
   exerciceCollection: ExerciceDbModel[];
 
   getExerciceCollection(): ExerciceDbModel[] {
@@ -29,7 +27,7 @@ export class BdbServiceExerciceFake
   }
 
   updateExercice(dto: UpdateExerciceDbDto): Promise<ExerciceDbModel> {
-    const exercice = this.getExerciceCollection().find(e => e.id === dto.id);
+    const exercice = this.getExerciceCollection().find((e) => e.id === dto.id);
     if (!exercice) return Promise.resolve(null);
     if (dto.slug !== undefined) exercice.slug = dto.slug;
     if (dto.title !== undefined) exercice.title = dto.title;

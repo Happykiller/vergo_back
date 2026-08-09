@@ -1,14 +1,6 @@
 // src\presentation\training\training.resolver.ts
 import { Inject, UseGuards } from '@nestjs/common';
-import {
-  Resolver,
-  Query,
-  Args,
-  Int,
-  ResolveField,
-  Parent,
-  Mutation
-} from '@nestjs/graphql';
+import { Resolver, Query, Args, Int, ResolveField, Parent, Mutation } from '@nestjs/graphql';
 
 import { Inversify } from '@src/inversify/investify';
 import { OrderResolverDto } from '@presentation/dto/order.resolver.dto';
@@ -26,15 +18,15 @@ import { CurrentSession, makeAuthGuard, USER_ROLE, UserModelResolver, UserSessio
 export class TrainingResolver {
   constructor(
     @Inject('Inversify')
-    private inversify: Inversify,
+    private inversify: Inversify
   ) {}
 
   @ResolveField(() => UserModelResolver, { nullable: true })
-  async creator(@Parent() training:TrainingModelResolver):Promise<UserModelResolver> {
+  async creator(@Parent() training: TrainingModelResolver): Promise<UserModelResolver> {
     try {
-      const user:UserUsecaseModel = await this.inversify.getUserUsecase.execute({
-        id: training.creator_id
-      })
+      const user: UserUsecaseModel = await this.inversify.getUserUsecase.execute({
+        id: training.creator_id,
+      });
       return user;
     } catch (e) {
       return null;
@@ -42,13 +34,13 @@ export class TrainingResolver {
   }
 
   @ResolveField(() => [UserModelResolver], { nullable: true })
-  async contributors(@Parent() training:TrainingModelResolver):Promise<UserModelResolver[]> {
-    let contributors = [];
+  async contributors(@Parent() training: TrainingModelResolver): Promise<UserModelResolver[]> {
+    const contributors = [];
     try {
-      for(let user_id of training.contributors_id) {
-        const user:UserUsecaseModel = await this.inversify.getUserUsecase.execute({
-          id: user_id
-        })
+      for (const user_id of training.contributors_id) {
+        const user: UserUsecaseModel = await this.inversify.getUserUsecase.execute({
+          id: user_id,
+        });
         contributors.push(user);
       }
       return contributors;
@@ -62,32 +54,28 @@ export class TrainingResolver {
   @Mutation((returns) => TrainingModelResolver)
   async training_create(
     @CurrentSession() session: UserSessionResolverModel,
-    @Args('dto') dto: CreateTrainingDtoResolver,
+    @Args('dto') dto: CreateTrainingDtoResolver
   ): Promise<TrainingModelResolver> {
     return await this.inversify.createTrainingUsecase.execute({
       session,
-      training: dto
+      training: dto,
     });
   }
-  
+
   @UseGuards(makeAuthGuard('graphql', [USER_ROLE.ALL]))
   /* eslint-disable @typescript-eslint/no-unused-vars */
   @Query((returns) => [TrainingModelResolver])
-  async trainings(
-    @CurrentSession() session: UserSessionResolverModel,
-  ): Promise<TrainingModelResolver[]> {
+  async trainings(@CurrentSession() session: UserSessionResolverModel): Promise<TrainingModelResolver[]> {
     return this.inversify.getTrainingsUsecase.execute();
   }
 
   @UseGuards(makeAuthGuard('graphql', [USER_ROLE.ALL]))
   /* eslint-disable @typescript-eslint/no-unused-vars */
   @Query((returns) => [TrainingModelResolver])
-  async get_private_trainings(
-    @CurrentSession() session: UserSessionResolverModel,
-  ): Promise<TrainingModelResolver[]> {
+  async get_private_trainings(@CurrentSession() session: UserSessionResolverModel): Promise<TrainingModelResolver[]> {
     return this.inversify.getTrainingsUsecase.execute({
       private: true,
-      session
+      session,
     });
   }
 
@@ -98,22 +86,19 @@ export class TrainingResolver {
     @CurrentSession() session: UserSessionResolverModel,
     @Args('offset', { type: () => Int, nullable: true }) offset = 1,
     @Args('limit', { type: () => Int, nullable: true }) limit = 10,
-    @Args('orderBy', { type: () => OrderResolverDto, nullable: true }) orderBy?: OrderResolverDto,
+    @Args('orderBy', { type: () => OrderResolverDto, nullable: true }) orderBy?: OrderResolverDto
   ): Promise<PaginatedTrainingsResolverModel> {
-    const items:TrainingUsecaseModel[] = await this.inversify.getTrainingsUsecase.execute()
+    const items: TrainingUsecaseModel[] = await this.inversify.getTrainingsUsecase.execute();
     return {
       nodes: items,
-      totalCount: items.length
+      totalCount: items.length,
     };
   }
 
   @UseGuards(makeAuthGuard('graphql', [USER_ROLE.ALL]))
   /* eslint-disable @typescript-eslint/no-unused-vars */
   @Query((returns) => TrainingModelResolver)
-  async training(
-    @CurrentSession() session: UserSessionResolverModel,
-    @Args('dto') dto: GetTrainingResolverDto,
-  ): Promise<TrainingModelResolver> {
+  async training(@CurrentSession() session: UserSessionResolverModel, @Args('dto') dto: GetTrainingResolverDto): Promise<TrainingModelResolver> {
     return this.inversify.getTrainingUsecase.execute(dto);
   }
 
@@ -122,21 +107,17 @@ export class TrainingResolver {
   @Query((returns) => [TrainingNormalizedResolverModel])
   async training_normalized(
     @CurrentSession() session: UserSessionResolverModel,
-    @Args('dto') dto: GetTrainingResolverDto,
+    @Args('dto') dto: GetTrainingResolverDto
   ): Promise<TrainingNormalizedResolverModel[]> {
     return this.inversify.getNormalizedTrainingUsecase.execute(dto);
   }
 
   @UseGuards(makeAuthGuard('graphql', [USER_ROLE.ALL]))
-  /* eslint-disable @typescript-eslint/no-unused-vars */
   @Mutation(() => Boolean)
-  async training_update(
-    @CurrentSession() session: UserSessionResolverModel,
-    @Args('dto') dto: UpdateTrainingDtoResolver,
-  ): Promise<boolean> {
+  async training_update(@CurrentSession() session: UserSessionResolverModel, @Args('dto') dto: UpdateTrainingDtoResolver): Promise<boolean> {
     return this.inversify.updateTrainingUsecase.execute({
       session,
-      training: dto
+      training: dto,
     });
   }
 }

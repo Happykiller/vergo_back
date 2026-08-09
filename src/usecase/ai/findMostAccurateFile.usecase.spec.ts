@@ -21,28 +21,34 @@ describe('FindMostAccurateFileUsecase', () => {
       // act
       // assert
       expect(usecase).toBeDefined();
-    })
+    });
 
     it('should found', async () => {
       // arrange
       // act
       const response = await usecase.execute(
-        [{
-          words: ['one', 'two']
-        }]
-        , ['one']);
+        [
+          {
+            words: ['one', 'two'],
+          },
+        ],
+        ['one']
+      );
       // assert
-      expect(response).toEqual({"found_stats": {"accuracy": 1, "wordsWeight": 0.5}, "words": ["one", "two"]});
+      expect(response).toEqual({ found_stats: { accuracy: 1, wordsWeight: 0.5 }, words: ['one', 'two'] });
     });
 
     it('should AI_FIND_INSUFFISANT_ACCURACY', async () => {
       // arrange
       // act
       await usecase.execute(
-        [{
-          words: ['one', 'two', 'tree', 'four'],
-        }]
-        , ['one', 'five', 'six', 'seven']);
+        [
+          {
+            words: ['one', 'two', 'tree', 'four'],
+          },
+        ],
+        ['one', 'five', 'six', 'seven']
+      );
       // assert
       expect(mockLoggerService.error).toHaveBeenCalledWith(ERRORS.AI_FIND_INSUFFISANT_ACCURACY);
     });
@@ -51,12 +57,15 @@ describe('FindMostAccurateFileUsecase', () => {
       // arrange
       // act
       await usecase.execute(
-        [{
-          words: ['one', 'two', 'tree', 'four'],
-        }]
-        , ['five', 'six', 'seven']);
+        [
+          {
+            words: ['one', 'two', 'tree', 'four'],
+          },
+        ],
+        ['five', 'six', 'seven']
+      );
       // assert
       expect(mockLoggerService.error).toHaveBeenCalledWith(ERRORS.AI_FIND_NOTHING_FOUND);
     });
-  })
-})
+  });
+});

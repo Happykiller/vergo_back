@@ -21,24 +21,24 @@ describe('TokenizeUsecase', () => {
       // act
       // assert
       expect(usecase).toBeDefined();
-    })
+    });
 
     it('should tokenize `un pied push` => ["foot", "push"]', async () => {
       // arrange
       // act
       const response = await usecase.execute('un pied push');
       // assert
-      expect(response).toEqual(["foot", "push"]);
+      expect(response).toEqual(['foot', 'push']);
     });
-  
+
     it('should tokenize `butt_kicks.jpg` => ["butt", "kick"]', async () => {
       // arrange
       // act
       const response = await usecase.execute('butt_kicks.jpg');
       // assert
-      expect(response).toEqual(["butt", "kick"]);
+      expect(response).toEqual(['butt', 'kick']);
     });
-  })
+  });
 
   describe('#replaceTermsWithKeys', () => {
     it('should nominal', async () => {
@@ -56,7 +56,7 @@ describe('TokenizeUsecase', () => {
       // assert
       expect(response).toEqual(null);
     });
-  })
+  });
 
   describe('#processFileName', () => {
     it('should nominal', async () => {
@@ -64,9 +64,9 @@ describe('TokenizeUsecase', () => {
       // act
       const response = usecase.processFileName('try.one.ts');
       // assert
-      expect(response).toEqual(["try", "one"]);
+      expect(response).toEqual(['try', 'one']);
     });
-  })
+  });
 
   describe('#processFileName', () => {
     it('should cool-down => cooldown', async () => {
@@ -76,6 +76,5 @@ describe('TokenizeUsecase', () => {
       // assert
       expect(response).toEqual(['cool', 'down']);
     });
-  })
-  
-})
+  });
+});

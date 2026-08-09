@@ -28,13 +28,11 @@ export class GetTrainingStatsSessionsUsecase {
           label: training.label,
           date: stat.start,
           duration: stat.durationInSeconds,
-          completed: stat.completed
+          completed: stat.completed,
         };
-      }),
+      })
     );
 
-    return enriched
-      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-      .slice(0, 5);
+    return enriched.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).slice(0, 5);
   }
 }

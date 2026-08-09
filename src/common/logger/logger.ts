@@ -20,7 +20,7 @@ const logger = createLogger({
     format.timestamp({
       format: 'YYYY-MM-DD HH:mm:ss',
     }),
-    format.json(),
+    format.json()
   ),
   defaultMeta: { module: 'vergo_back' },
   transports: [new transports.Console()],
@@ -47,7 +47,7 @@ if (process.env.NODE_ENV === 'prod') {
       format: 'YYYY-MM-DD HH:mm:ss',
     }),
     format.colorize(),
-    myFormat,
+    myFormat
   );
 }
 

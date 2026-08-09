@@ -9,16 +9,14 @@ export class CreateTrainingUsecase {
     this.inversify = inversify;
   }
 
-  async execute(
-    dto: CreateTrainingUsecaseDto,
-  ): Promise<TrainingUsecaseModel> {
+  async execute(dto: CreateTrainingUsecaseDto): Promise<TrainingUsecaseModel> {
     const training = await this.inversify.bddService.createTraining({
       slug: dto.training.slug,
       label: dto.training.label,
       gender: dto.training.gender,
       workout: dto.training.workout,
       creator_id: dto.session.id,
-      contributors_id: [dto.session.id]
+      contributors_id: [dto.session.id],
     });
     return training;
   }

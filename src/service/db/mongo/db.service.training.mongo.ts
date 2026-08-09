@@ -7,9 +7,7 @@ import { GetTrainingDbDto } from '@service/db/dto/get.training.db.dto';
 import { UpdateTrainingDbDto } from '@service/db/dto/update.training.db.dto';
 import { CreateTrainingDbDto } from '@service/db/dto/create.training.db.dto';
 
-export class BddServiceTrainingMongo
-  implements Pick<BddService, 'getTrainings' | 'getTraining' | 'updateTraining' | 'createTraining'>
-{
+export class BddServiceTrainingMongo implements Pick<BddService, 'getTrainings' | 'getTraining' | 'updateTraining' | 'createTraining'> {
   private async getTrainingCollection(): Promise<Collection> {
     return inversify.mongo.collection('trainings');
   }
@@ -27,7 +25,7 @@ export class BddServiceTrainingMongo
     for await (const doc of results) {
       const tmp: any = {
         id: doc._id.toString(),
-        ... doc
+        ...doc,
       };
       delete tmp._id;
       response.push(tmp);
@@ -39,17 +37,15 @@ export class BddServiceTrainingMongo
   async getTraining(dto: GetTrainingDbDto): Promise<TrainingDbModel> {
     try {
       const query = {
-        _id: new ObjectId(dto.id)
+        _id: new ObjectId(dto.id),
       };
       const options = {};
       // Execute query
-      const doc: any = await (
-        await this.getTrainingCollection()
-      ).findOne(query, options);
+      const doc: any = await (await this.getTrainingCollection()).findOne(query, options);
 
       const tmp: any = {
         id: doc._id.toString(),
-        ... doc
+        ...doc,
       };
       delete tmp._id;
 
@@ -84,7 +80,7 @@ export class BddServiceTrainingMongo
       { _id: new ObjectId(dto.id) },
       {
         $set: set,
-      },
+      }
     );
 
     return true;
@@ -95,7 +91,7 @@ export class BddServiceTrainingMongo
       const result = await (
         await this.getTrainingCollection()
       ).insertOne({
-        ...dto
+        ...dto,
       });
 
       return Promise.resolve({

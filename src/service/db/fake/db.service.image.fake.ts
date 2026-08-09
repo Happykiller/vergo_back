@@ -1,13 +1,10 @@
-import { ObjectId } from "mongodb";
+import { ObjectId } from 'mongodb';
 
-import { BddService } from "@service/db/db.service";
-import { ImageDbModel } from "@service/db/model/image.db.model";
-import { CreateImageDbDto } from "@service/db/dto/create.image.db.dto";
+import { BddService } from '@service/db/db.service';
+import { ImageDbModel } from '@service/db/model/image.db.model';
+import { CreateImageDbDto } from '@service/db/dto/create.image.db.dto';
 
-export class BddServiceImageFake
-  implements
-    Pick<BddService, 'getImages' | 'setImages'>
-{
+export class BddServiceImageFake implements Pick<BddService, 'getImages' | 'setImages'> {
   imageCollection: ImageDbModel[];
 
   getImageCollection(): ImageDbModel[] {
@@ -22,12 +19,12 @@ export class BddServiceImageFake
   }
 
   setImages(dto: CreateImageDbDto[]): Promise<ImageDbModel[]> {
-    this.imageCollection = dto.map(elt => {
+    this.imageCollection = dto.map((elt) => {
       return {
         id: new ObjectId().toString(),
         ...elt,
-      }
-    })
+      };
+    });
 
     return Promise.resolve(this.getImageCollection());
   }

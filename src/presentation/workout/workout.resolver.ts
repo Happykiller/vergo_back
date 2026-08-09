@@ -1,11 +1,6 @@
 // src\presentation\workout\workout.resolver.ts
 import { Inject, UseGuards } from '@nestjs/common';
-import {
-  Resolver,
-  Query,
-  Args,
-  Int
-} from '@nestjs/graphql';
+import { Resolver, Query, Args, Int } from '@nestjs/graphql';
 
 import common from '@presentation/common/common';
 import { Inversify } from '@src/inversify/investify';
@@ -21,9 +16,9 @@ import { SearchWorkoutsPaginatedResolverModel } from '@presentation/workout/mode
 export class WorkoutResolver {
   constructor(
     @Inject('Inversify')
-    private inversify: Inversify,
+    private inversify: Inversify
   ) {}
-  
+
   @UseGuards(makeAuthGuard('graphql', [USER_ROLE.ALL]))
   /* eslint-disable @typescript-eslint/no-unused-vars */
   @Query((returns) => WorkoutsPaginatedResolverModel)
@@ -31,34 +26,33 @@ export class WorkoutResolver {
     @CurrentSession() session: UserSessionResolverModel,
     @Args('offset', { type: () => Int, nullable: true }) offset = 0,
     @Args('limit', { type: () => Int, nullable: true }) limit = 10,
-    @Args('order_by', { type: () => OrderResolverDto, nullable: true }) order_by?: OrderResolverDto,
+    @Args('order_by', { type: () => OrderResolverDto, nullable: true }) order_by?: OrderResolverDto
   ): Promise<WorkoutsPaginatedResolverModel> {
     const results = await this.inversify.getWorkoutsUsecase.execute();
     const paginateResults = common.paginate({
       list: results,
       offset,
       limit,
-      order_by: order_by as unknown as any
+      order_by: order_by as unknown as any,
     });
     return paginateResults;
   }
 
   @UseGuards(makeAuthGuard('graphql', [USER_ROLE.ALL]))
-  /* eslint-disable @typescript-eslint/no-unused-vars */
   @Query(() => SearchWorkoutsPaginatedResolverModel)
   async searchWorkoutsPaginated(
     @Args('dto') dto: SearchWorkoutsResolverDto,
     @CurrentSession() session: UserSessionResolverModel,
     @Args('offset', { type: () => Int, nullable: true }) offset = 0,
     @Args('limit', { type: () => Int, nullable: true }) limit = 10,
-    @Args('order_by', { type: () => OrderResolverDto, nullable: true }) order_by?: OrderResolverDto,
+    @Args('order_by', { type: () => OrderResolverDto, nullable: true }) order_by?: OrderResolverDto
   ): Promise<SearchWorkoutsPaginatedResolverModel> {
     const results = await this.inversify.searchWorkoutsUsecase.execute(dto);
     const paginateResults = common.paginate({
       list: results,
       offset,
       limit,
-      order_by: order_by as unknown as any
+      order_by: order_by as unknown as any,
     });
     return paginateResults;
   }

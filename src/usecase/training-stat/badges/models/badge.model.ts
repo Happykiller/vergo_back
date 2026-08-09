@@ -1,13 +1,5 @@
 // src\usecases\badges\models\badge.model.ts
-export type BadgeCode =
-  | 'FIRST_STEP'
-  | 'COMEBACK'
-  | 'MACHINE'
-  | 'LOYAL'
-  | 'SPRINTER'
-  | 'MARATHONER'
-  | 'UNSTOPPABLE'
-  | 'FULL_BODY_WARRIOR';
+export type BadgeCode = 'FIRST_STEP' | 'COMEBACK' | 'MACHINE' | 'LOYAL' | 'SPRINTER' | 'MARATHONER' | 'UNSTOPPABLE' | 'FULL_BODY_WARRIOR';
 
 export interface BadgeResult {
   code: BadgeCode;
@@ -24,7 +16,7 @@ export interface BadgeContext {
     id: string;
     training_id: string;
     start: string; // ISO
-    end: string;   // ISO
+    end: string; // ISO
     durationInSeconds: number;
     completed: boolean;
     created_at: string;

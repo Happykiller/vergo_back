@@ -1,4 +1,4 @@
-import { WorkoutDbModel } from "@service/db/model/training.db.model";
+import { WorkoutDbModel } from '@service/db/model/training.db.model';
 
 export interface CreateTrainingDbDto {
   slug: string;

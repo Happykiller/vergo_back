@@ -7,8 +7,7 @@ import { GetTrainingVolumeUsecase } from '@usecase/training-stat/get.training-vo
 
 describe('GetTrainingVolumeUsecase', () => {
   const mockInversify: MockProxy<Inversify> = mock<Inversify>();
-  const mockGetTrainingStatsByUserIdUsecase: MockProxy<GetTrainingStatsByUserIdUsecase> =
-    mock<GetTrainingStatsByUserIdUsecase>();
+  const mockGetTrainingStatsByUserIdUsecase: MockProxy<GetTrainingStatsByUserIdUsecase> = mock<GetTrainingStatsByUserIdUsecase>();
 
   mockInversify.getTrainingStatsByUserIdUsecase = mockGetTrainingStatsByUserIdUsecase;
 

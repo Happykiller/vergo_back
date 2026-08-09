@@ -1,9 +1,6 @@
 import { Inversify } from '@src/inversify/investify';
 import { TrainingStatUsecaseModel } from '@usecase/training-stat/model/training-stat.usecase.model';
-import {
-  TrainingVolumePeriodUsecaseModel,
-  TrainingVolumeUsecaseModel,
-} from '@usecase/training-stat/model/training-volume.usecase.model';
+import { TrainingVolumePeriodUsecaseModel, TrainingVolumeUsecaseModel } from '@usecase/training-stat/model/training-volume.usecase.model';
 
 export class GetTrainingVolumeUsecase {
   inversify: Inversify;

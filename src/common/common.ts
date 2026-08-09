@@ -12,27 +12,27 @@ export class Common {
   }
 
   // Fonction pour obtenir la liste des fichiers
-  getFileList = async (dto?: {refresh: boolean}): Promise<any[]> => {
+  getFileList = async (dto?: { refresh: boolean }): Promise<any[]> => {
     try {
       const files = fs.readdirSync(this.imagesPath);
 
-      let fileList = [];
-      for(let file of files) {
-        let listWord = await this.inversify.tokenizeUsecase.execute(file);
+      const fileList = [];
+      for (const file of files) {
+        const listWord = await this.inversify.tokenizeUsecase.execute(file);
 
         fileList.push({
           name: file,
-          words: listWord
+          words: listWord,
         });
       }
 
       await this.inversify.bddService.setImages(fileList);
 
       return fileList;
-    } catch(e) {
+    } catch (e) {
       throw ERRORS.GET_FILE_LIST_FAIL;
     }
-  }
+  };
 }
 
 const common = new Common(inversify);

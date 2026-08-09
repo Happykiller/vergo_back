@@ -8,7 +8,7 @@ import { SaveTrainingStatUsecaseDto } from '@usecase/training-stat/dto/save.trai
 export class StatsSeeder {
   trainings = 42;
 
-  constructor(private readonly inversify: Inversify) { }
+  constructor(private readonly inversify: Inversify) {}
 
   async run(userId: string) {
     console.log(`🔁 Seeding training stats for user: ${userId}`);
