@@ -32,8 +32,8 @@ const defaults: Configuration = {
     },
   },
   puppet: {
-    url: 'http://localhost',
-    token: 'token'
+    url: merged.PUPPET_URL || 'http://localhost',
+    token: merged.PUPPET_TOKEN || 'token'
   },
   db: {
     connection_string:
@@ -41,7 +41,7 @@ const defaults: Configuration = {
     name: merged.DB_NAME || 'vergo',
   },
   morgans: {
-    url: 'http://localhost:8025/graphql'
+    url: merged.MORGANS_URL || 'http://localhost:8025/graphql'
   },
   throttle: [
     {

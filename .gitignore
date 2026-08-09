@@ -51,6 +51,8 @@ report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 
 # Local
 .env.local
+# Variante de .env.local pour l'API en conteneur (docker-compose.dev.yml).
+.env.docker
 dist
 .webpack
 .serverless/**/*.zip
