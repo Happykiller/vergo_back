@@ -1,6 +1,6 @@
 {
   "name": "vergo_back",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Apis for Vergo service",
   "author": "Fabrice Rosito<fabrice.rosito@gmail.com>",
   "license": "MIT",
@@ -57,6 +57,7 @@
     "pluralize": "^8.0.0",
     "sharp": "^0.34.5",
     "stopword": "^3.1.5",
+    "uuid": "^14.0.1",
     "winston": "^3.19.0",
     "winston-daily-rotate-file": "^5.0.0"
   },
@@ -83,8 +84,7 @@
     "ts-jest": "^29.4.12",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.66.0",
-    "uuid": "^14.0.1"
+    "typescript-eslint": "^8.66.0"
   },
   "optionalDependencies": {
     "@img/sharp-win32-x64": "^0.34.5"
