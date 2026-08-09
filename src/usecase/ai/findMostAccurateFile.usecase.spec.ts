@@ -32,7 +32,7 @@ describe('FindMostAccurateFileUsecase', () => {
         }]
         , ['one']);
       // assert
-      expect(response).toEqual({"found_stats": {"accurency": 1, "wordsWeight": 0.5}, "words": ["one", "two"]});
+      expect(response).toEqual({"found_stats": {"accuracy": 1, "wordsWeight": 0.5}, "words": ["one", "two"]});
     });
 
     it('should AI_FIND_INSUFFISANT_ACCURACY', async () => {
