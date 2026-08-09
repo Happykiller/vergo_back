@@ -8,10 +8,7 @@ import inversify from '@src/inversify/investify';
 import { prompt } from '@src/cli/cli.util';
 
 async function bootstrap() {
-  inversify.loggerService.log(
-    'info',
-    `Environnement selected: ${config.env.mode}`,
-  );
+  inversify.loggerService.log('info', `Environnement selected: ${config.env.mode}`);
 
   await inversify.init();
   const app = await NestFactory.createApplicationContext(AppModule);

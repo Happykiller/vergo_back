@@ -8,22 +8,26 @@ import { BddServiceTrainingStatMongo } from '@service/db/mongo/db.service.traini
 import { applyInstanceMixins, BddServiceInitMongo, BddServicePasskeyMongo, BddServiceTestMongo, BddServiceUserMongo } from '@happykiller/sunny-apis';
 
 class BddServiceMongo {
-  constructor(inversify:any, config:any) {
-    applyInstanceMixins(this, [
-      // Sunny
-      BddServiceUserMongo, 
-      BddServiceInitMongo,
-      BddServiceTestMongo,
-      BddServiceUserMongo, 
-      BddServicePasskeyMongo,
-      // Project
-      BdbServiceImageMongo,
-      BdbServiceWorkoutMongo,
-      BddServiceTrainingMongo,
-      BdbServiceExerciceMongo,
-      BdbServiceGlossaryMongo,
-      BddServiceTrainingStatMongo
-    ], [inversify, config]);
+  constructor(inversify: any, config: any) {
+    applyInstanceMixins(
+      this,
+      [
+        // Sunny
+        BddServiceUserMongo,
+        BddServiceInitMongo,
+        BddServiceTestMongo,
+        BddServiceUserMongo,
+        BddServicePasskeyMongo,
+        // Project
+        BdbServiceImageMongo,
+        BdbServiceWorkoutMongo,
+        BddServiceTrainingMongo,
+        BdbServiceExerciceMongo,
+        BdbServiceGlossaryMongo,
+        BddServiceTrainingStatMongo,
+      ],
+      [inversify, config]
+    );
   }
 }
 

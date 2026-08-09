@@ -41,8 +41,7 @@ export class GetUserBadgesUsecase {
 
   /** Public entry point: pull stats then evaluate rules. */
   async execute(userId: string, params: GetUserBadgesParams = {}): Promise<BadgeResult[]> {
-    const stats: TrainingStatUsecaseModel[] =
-      await this.inversify.getTrainingStatsByUserIdUsecase.execute(userId);
+    const stats: TrainingStatUsecaseModel[] = await this.inversify.getTrainingStatsByUserIdUsecase.execute(userId);
 
     const ctx: BadgeContext = {
       stats,
@@ -60,13 +59,14 @@ export class GetUserBadgesUsecase {
       ts: r.earned && r.earnedAt ? new Date(r.earnedAt).getTime() : -1,
     }));
 
-    scored.sort((a, b) =>
-      // 1) earned desc
-      b.earnedScore - a.earnedScore ||
-      // 2) earnedAt desc
-      b.ts - a.ts ||
-      // 3) code asc (deterministic)
-      a.r.code.localeCompare(b.r.code)
+    scored.sort(
+      (a, b) =>
+        // 1) earned desc
+        b.earnedScore - a.earnedScore ||
+        // 2) earnedAt desc
+        b.ts - a.ts ||
+        // 3) code asc (deterministic)
+        a.r.code.localeCompare(b.r.code)
     );
 
     return scored.map((s) => s.r);

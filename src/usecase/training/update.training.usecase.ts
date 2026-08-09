@@ -9,14 +9,12 @@ export class UpdateTrainingUsecase {
     this.inversify = inversify;
   }
 
-  async execute(
-    dto: UpdateTrainingUsecaseDto,
-  ): Promise<boolean> {
+  async execute(dto: UpdateTrainingUsecaseDto): Promise<boolean> {
     const training = await this.inversify.getTrainingUsecase.execute({
       id: dto.training.id,
     });
 
-    if (!(training?.contributors_id?.find(contributor_id => contributor_id === dto.session.id))) {
+    if (!training?.contributors_id?.find((contributor_id) => contributor_id === dto.session.id)) {
       throw new Error(ERRORS.UPDATE_TRAINING_NOT_ALLOWED);
     }
 
@@ -26,7 +24,7 @@ export class UpdateTrainingUsecase {
         slug: dto.training.slug,
         label: dto.training.label,
         gender: dto.training.gender,
-        workout: dto.training.workout
+        workout: dto.training.workout,
       });
 
       return true;

@@ -9,10 +9,7 @@ import { StatsSeeder } from '@src/seeds/stats.seeder';
 import { prompt } from '@src/cli/cli.util';
 
 async function bootstrap() {
-  inversify.loggerService.log(
-    'info',
-    `Environnement selected: ${config.env.mode}`,
-  );
+  inversify.loggerService.log('info', `Environnement selected: ${config.env.mode}`);
 
   await inversify.init();
 

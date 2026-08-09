@@ -1,10 +1,7 @@
 import { BddService } from '@service/db/db.service';
 import GlossaryDbModel from '@service/db/model/glossary.db.model';
 
-export class BdbServiceGlossaryFake
-  implements
-    Pick<BddService, 'getGlossary'>
-{
+export class BdbServiceGlossaryFake implements Pick<BddService, 'getGlossary'> {
   glossaryCollection: GlossaryDbModel;
 
   getGlossaryCollection(): GlossaryDbModel {

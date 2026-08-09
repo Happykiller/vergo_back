@@ -3,7 +3,7 @@ export interface TrainingStatDbModel {
   id: string;
   training_id: string;
   start: string; // ISO string
-  end: string;   // ISO string
+  end: string; // ISO string
   durationInSeconds: number;
   completed: boolean;
   user_id?: string;

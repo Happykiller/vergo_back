@@ -4,7 +4,7 @@ import { TrainingUsecaseModel } from '@usecase/training/model/training.usecase.m
 
 export class GetNormalizedTrainingUsecase {
   inversify: Inversify;
-  mapping_slug:any;
+  mapping_slug: any;
 
   constructor(inversify: Inversify) {
     this.inversify = inversify;
@@ -13,14 +13,13 @@ export class GetNormalizedTrainingUsecase {
   async execute(dto: GetTraingUsecaseDto): Promise<any> {
     try {
       this.mapping_slug = {};
-      const training: TrainingUsecaseModel =
-        await this.inversify.bddService.getTraining(dto);
+      const training: TrainingUsecaseModel = await this.inversify.bddService.getTraining(dto);
 
       const exercices = await this.inversify.getExercicesUsecase.execute();
       const exercices_db = await Promise.all(
         exercices.map(async (exercice) => ({
           slug: exercice.slug,
-          words: await this.inversify.tokenizeUsecase.execute(exercice.slug)
+          words: await this.inversify.tokenizeUsecase.execute(exercice.slug),
         }))
       );
 
@@ -37,91 +36,91 @@ export class GetNormalizedTrainingUsecase {
           this.mapping_slug[slug] = resp.slug;
         }
       }
-  
+
       const normalized = this.flatten(training);
-        
+
       return normalized;
     } catch (ex) {
-      this.inversify.loggerService.error(ex.message)
+      this.inversify.loggerService.error(ex.message);
       return [];
     }
   }
 
   flatten = (training: TrainingUsecaseModel): [] => {
-    let response:any = [];
-    for(const workout of training.workout) {
-      for(const set of workout.sets) {
+    let response: any = [];
+    for (const workout of training.workout) {
+      for (const set of workout.sets) {
         response = response.concat(this.flattenSequence(set, [workout.slug]));
       }
     }
 
     return response;
-  }
+  };
 
   getExercices = (training: TrainingUsecaseModel): Set<string> => {
-    let response:Set<string> = new Set();
-    for(const workout of training.workout) {
-      for(const set of workout.sets) {
+    let response: Set<string> = new Set();
+    for (const workout of training.workout) {
+      for (const set of workout.sets) {
         response = new Set([...response, ...this.getExerciesDeep(set)]);
       }
     }
 
     return response;
-  }
+  };
 
   getExerciesDeep = (set: any): Set<string> => {
-    let response:Set<string> = new Set();
-    if(set.slugs) {
+    let response: Set<string> = new Set();
+    if (set.slugs) {
       response = new Set([...response, ...set.slugs]);
     }
-    if(set.sets) {
-      for(const seq of set.sets) {
+    if (set.sets) {
+      for (const seq of set.sets) {
         response = new Set([...response, ...this.getExerciesDeep(seq)]);
       }
     }
     return response;
-  }
+  };
 
   flattenSequence = (set: any, slugs: string[]): [] => {
-    let response:any = [];
+    let response: any = [];
     let last_slug = null;
     for (let i = 0; i < set.rep; i++) {
-      let under_slugs = [...slugs.map(slug => (this.mapping_slug[slug]??slug))]
-      if(set.slugs && set.slugs[i]) {
-        last_slug = this.mapping_slug[set.slugs[i]]??set.slugs[i];
+      const under_slugs = [...slugs.map((slug) => this.mapping_slug[slug] ?? slug)];
+      if (set.slugs && set.slugs[i]) {
+        last_slug = this.mapping_slug[set.slugs[i]] ?? set.slugs[i];
         under_slugs.push(last_slug);
       } else if (set.slugs && last_slug) {
         under_slugs.push(last_slug);
       }
-      if(set.duration) {
+      if (set.duration) {
         response.push({
           slugs: under_slugs,
           type: 'effort',
           duration: set.duration,
           ite: set.ite,
-          weight: set.weight
+          weight: set.weight,
         });
       }
-      if(set.sets) {
-        for(const seq of set.sets) {
+      if (set.sets) {
+        for (const seq of set.sets) {
           response = response.concat(this.flattenSequence(seq, under_slugs));
         }
       }
-      if(set.rest) {
+      if (set.rest) {
         response.push({
           slugs: under_slugs,
           type: 'rest',
-          duration: set.rest
+          duration: set.rest,
         });
       }
     }
-    if(set.pause) {
+    if (set.pause) {
       response.push({
-        slugs: slugs.map(slug => (this.mapping_slug[slug]??slug)),
+        slugs: slugs.map((slug) => this.mapping_slug[slug] ?? slug),
         type: 'pause',
-        duration: set.pause
+        duration: set.pause,
       });
     }
     return response;
-  }
+  };
 }

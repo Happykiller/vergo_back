@@ -10,16 +10,16 @@ import { GlossaryUsecaseModel } from '@usecase/glossary/model/glossary.usecase.m
 export class AiResolver {
   constructor(
     @Inject('Inversify')
-    private inversify: Inversify,
+    private inversify: Inversify
   ) {}
 
   @UseGuards(makeAuthGuard('graphql', [USER_ROLE.ALL]))
   @Query(
     /* istanbul ignore next */
-    () => [String],
+    () => [String]
   )
   async ai_get_glossary(): Promise<string[]> {
-    const glossary:GlossaryUsecaseModel = await this.inversify.getGlossaryUsecase.execute();
+    const glossary: GlossaryUsecaseModel = await this.inversify.getGlossaryUsecase.execute();
     const { _id, ...rest } = glossary; // Exclure la clé _id
     const values = Object.keys(rest);
     // Utiliser un Set pour éliminer les doublons, puis trier le tableau

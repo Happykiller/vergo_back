@@ -7,10 +7,7 @@ import { GetExerciceDbDto } from '@service/db/dto/get.exercice.db.dto';
 import { UpdateExerciceDbDto } from '../dto/update.exercice.db.dto';
 import { CreateExerciceDbDto } from '../dto/create.exercice.db.dto';
 
-export class BdbServiceExerciceMongo
-  implements
-    Pick<BddService, 'getExercices' | 'getExercice' | 'createExercice' | 'updateExercice'>
-{
+export class BdbServiceExerciceMongo implements Pick<BddService, 'getExercices' | 'getExercice' | 'createExercice' | 'updateExercice'> {
   private async getExerciceCollection(): Promise<Collection> {
     return inversify.mongo.collection('exercices');
   }
@@ -32,9 +29,7 @@ export class BdbServiceExerciceMongo
 
   async getExercice(dto: GetExerciceDbDto): Promise<ExerciceDbModel> {
     try {
-      const doc: any = await (
-        await this.getExerciceCollection()
-      ).findOne({ _id: new ObjectId(dto.id) });
+      const doc: any = await (await this.getExerciceCollection()).findOne({ _id: new ObjectId(dto.id) });
 
       return this.mapDoc(doc);
     } catch (e) {
@@ -52,11 +47,7 @@ export class BdbServiceExerciceMongo
 
     const doc: any = await (
       await this.getExerciceCollection()
-    ).findOneAndUpdate(
-      { _id: new ObjectId(dto.id) },
-      { $set: set },
-      { returnDocument: 'after' },
-    );
+    ).findOneAndUpdate({ _id: new ObjectId(dto.id) }, { $set: set }, { returnDocument: 'after' });
 
     if (!doc) return null;
     return this.mapDoc(doc);
@@ -64,9 +55,7 @@ export class BdbServiceExerciceMongo
 
   async createExercice(dto: CreateExerciceDbDto): Promise<ExerciceDbModel> {
     try {
-      const result = await (
-        await this.getExerciceCollection()
-      ).insertOne({ ...dto });
+      const result = await (await this.getExerciceCollection()).insertOne({ ...dto });
 
       return { id: result.insertedId.toString(), ...dto };
     } catch (e) {

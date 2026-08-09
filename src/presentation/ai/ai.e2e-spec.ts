@@ -19,7 +19,7 @@ describe('SystemModule (e2e)', () => {
     config.jwt.secret,
     {
       expiresIn: '24h', // expires in 24 hours
-    },
+    }
   );
   const authorization: string = 'Bearer ' + token;
 

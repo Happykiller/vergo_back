@@ -5,10 +5,7 @@ import { BddService } from '@service/db/db.service';
 import { CreateImageDbDto } from '../dto/create.image.db.dto';
 import { ImageDbModel } from '@service/db/model/image.db.model';
 
-export class BdbServiceImageMongo
-  implements
-    Pick<BddService, 'getImages' |'setImages'>
-{
+export class BdbServiceImageMongo implements Pick<BddService, 'getImages' | 'setImages'> {
   private async getImageCollection(): Promise<Collection> {
     return inversify.mongo.collection('images');
   }
@@ -25,7 +22,7 @@ export class BdbServiceImageMongo
     for await (const doc of results) {
       const tmp: any = {
         id: doc._id.toString(),
-        ... doc
+        ...doc,
       };
       delete tmp._id;
       response.push(tmp);
@@ -36,9 +33,7 @@ export class BdbServiceImageMongo
 
   async setImages(dto: CreateImageDbDto[]): Promise<ImageDbModel[]> {
     try {
-      await (
-        await this.getImageCollection()
-      ).deleteMany({});
+      await (await this.getImageCollection()).deleteMany({});
 
       await (
         await this.getImageCollection()

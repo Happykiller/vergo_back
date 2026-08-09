@@ -4,10 +4,7 @@ import inversify from '@src/inversify/investify';
 import { BddService } from '@service/db/db.service';
 import { WorkoutDefDbModel } from '@service/db/model/workout.def.db.model';
 
-export class BdbServiceWorkoutMongo
-  implements
-    Pick<BddService, 'getWorkouts'>
-{
+export class BdbServiceWorkoutMongo implements Pick<BddService, 'getWorkouts'> {
   private async getWorkoutCollection(): Promise<Collection> {
     return inversify.mongo.collection('workouts');
   }
@@ -24,7 +21,7 @@ export class BdbServiceWorkoutMongo
     for await (const doc of results) {
       const tmp: any = {
         id: doc._id.toString(),
-        ... doc
+        ...doc,
       };
       delete tmp._id;
       response.push(tmp);

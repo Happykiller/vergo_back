@@ -30,12 +30,12 @@ export class ImageService {
    * @param v2 for use AI
    * @returns Buffer de l'image traitée
    */
-  async getImage(filename: string, width?: number, height?: number, v2?:boolean): Promise<Buffer> {
+  async getImage(filename: string, width?: number, height?: number, v2?: boolean): Promise<Buffer> {
     try {
       /**
        * tokenize request
        */
-      let words = await this.inversify.tokenizeUsecase.execute(filename);
+      const words = await this.inversify.tokenizeUsecase.execute(filename);
 
       /***
        * The list
@@ -50,51 +50,40 @@ export class ImageService {
         fileList = await this.common.getFileList();
         this.cachedFileList = {
           files: fileList,
-          timestamp: currentTime
+          timestamp: currentTime,
         };
       }
 
       let mostAccurateFile;
-      if(v2) {
+      if (v2) {
         const url = `${config.puppet.url}/search`; // Variable d'environnement pour l'hôte
         const token = config.puppet.token; // Variable d'environnement pour le token
-  
+
         const headers = {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json',
         };
-  
+
         const body = {
           name: 'puppet-o3',
           neural_network_type: 'SIAMESE',
           vector: words,
         };
-  
-        try {
-          const response:any = await this.inversify.httpService.post(url, body, headers);
 
-          inversify.loggerService.log(
-            'debug',
-            `AI service response '${JSON.stringify(response)}' from ${JSON.stringify(words)}`,
-          );
+        try {
+          const response: any = await this.inversify.httpService.post(url, body, headers);
+
+          inversify.loggerService.log('debug', `AI service response '${JSON.stringify(response)}' from ${JSON.stringify(words)}`);
 
           function findMatchingFile(fileList, findWords) {
-            return fileList.find((file) =>
-              findWords.every((word) => file.words.includes(word))
-            );
+            return fileList.find((file) => findWords.every((word) => file.words.includes(word)));
           }
-          
+
           // Chercher la correspondance
           mostAccurateFile = findMatchingFile(fileList, response.find);
         } catch (error) {
-          inversify.loggerService.log(
-            'debug',
-            url, body, headers
-          );
-          inversify.loggerService.log(
-            'error',
-            error,
-          );
+          inversify.loggerService.log('debug', url, body, headers);
+          inversify.loggerService.log('error', error);
         }
       } else {
         /**
@@ -102,29 +91,20 @@ export class ImageService {
          */
         mostAccurateFile = this.inversify.findMostAccurateFileUsecase.execute(fileList, words);
 
-        inversify.loggerService.log(
-          'debug',
-          `Logic service response '${JSON.stringify(mostAccurateFile)}' from ${JSON.stringify(words)}`,
-        );
+        inversify.loggerService.log('debug', `Logic service response '${JSON.stringify(mostAccurateFile)}' from ${JSON.stringify(words)}`);
       }
 
       /**
        * display response
        */
       let filePath = 'not_found.jpg';
-      if(mostAccurateFile) {
-        inversify.loggerService.log(
-          'info',
-          `Successfully found '${mostAccurateFile.name}' (from ${from}) for ${filename}`,
-        );
+      if (mostAccurateFile) {
+        inversify.loggerService.log('info', `Successfully found '${mostAccurateFile.name}' (from ${from}) for ${filename}`);
         filePath = join(this.imagesPath, mostAccurateFile.name);
       } else {
-        inversify.loggerService.log(
-          'error',
-          `Not found (from ${from}) for ${filename}`,
-        );
+        inversify.loggerService.log('error', `Not found (from ${from}) for ${filename}`);
       }
-      
+
       let image;
       try {
         // Lire l'image d'origine
@@ -145,9 +125,7 @@ export class ImageService {
         if (height) resizeOptions.height = height;
 
         // Appliquer le redimensionnement
-        image = await sharp(image)
-          .resize(resizeOptions)
-          .toBuffer();
+        image = await sharp(image).resize(resizeOptions).toBuffer();
       }
 
       return image;

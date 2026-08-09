@@ -8,11 +8,10 @@ export class GetTokenizedUsecase {
   }
 
   async execute(): Promise<[string[], string[]][]> {
-
     const exercices = await this.inversify.getExercicesUsecase.execute();
-    const results:any = [];
-    for(let exercice of exercices) {
-      results.push([[exercice.slug], await this.inversify.tokenizeUsecase.execute(exercice.slug)])
+    const results: any = [];
+    for (const exercice of exercices) {
+      results.push([[exercice.slug], await this.inversify.tokenizeUsecase.execute(exercice.slug)]);
     }
 
     return results;

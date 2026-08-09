@@ -16,15 +16,13 @@ import {
 
 @Resolver(() => TrainingStatModelResolver)
 export class TrainingStatResolver {
-  constructor(
-    @Inject('Inversify') private inversify: Inversify,
-  ) {}
+  constructor(@Inject('Inversify') private inversify: Inversify) {}
 
   @UseGuards(makeAuthGuard('graphql', [USER_ROLE.ALL]))
   @Mutation(() => TrainingStatModelResolver)
   async training_stat_save(
     @CurrentSession() session: UserSessionResolverModel,
-    @Args('dto') dto: SaveTrainingStatDtoResolver,
+    @Args('dto') dto: SaveTrainingStatDtoResolver
   ): Promise<TrainingStatModelResolver> {
     return await this.inversify.saveTrainingStatUsecase.execute({
       ...dto,
@@ -34,17 +32,13 @@ export class TrainingStatResolver {
 
   @UseGuards(makeAuthGuard('graphql', [USER_ROLE.ALL]))
   @Query(() => [TrainingStatModelResolver])
-  async my_training_stats(
-    @CurrentSession() session: UserSessionResolverModel,
-  ): Promise<TrainingStatModelResolver[]> {
+  async my_training_stats(@CurrentSession() session: UserSessionResolverModel): Promise<TrainingStatModelResolver[]> {
     return await this.inversify.getTrainingStatsByUserIdUsecase.execute(session.id);
   }
 
   @UseGuards(makeAuthGuard('graphql', [USER_ROLE.ALL]))
   @Query(() => UserKpiModelResolver)
-  async getUserKpis(
-    @CurrentSession() session: UserSessionResolverModel
-  ) {
+  async getUserKpis(@CurrentSession() session: UserSessionResolverModel) {
     const sessions = await this.inversify.getTrainingStatsSessionsUsecase.execute(session.id);
     const activities = await this.inversify.getTrainingStatsActivitiesUsecase.execute(session.id);
     const gam = await this.inversify.getUserGamificationUsecase.execute(session.id, { includeWeekly: true });
@@ -75,7 +69,7 @@ export class TrainingStatResolver {
       last1Year: volume.last1Year,
     };
 
-    const badges: BadgeModelResolver[] = badgesDomain.map(b => ({
+    const badges: BadgeModelResolver[] = badgesDomain.map((b) => ({
       code: b.code,
       earned: b.earned,
       earnedAt: b.earnedAt,

@@ -13,13 +13,13 @@ export class GetImagesTokenizedUsecase {
 
   async execute(): Promise<string[][]> {
     const results = await this.common.getFileList();
-    
+
     // Suivi des doublons
     const seenSets = new Map<string, number>();
     const duplicates: Map<string, any[]> = new Map();
     const uniqueResults: string[][] = [];
 
-    results.forEach(result => {
+    results.forEach((result) => {
       // Convertir la liste en chaîne triée pour comparaison unique
       const key = JSON.stringify([...result.words]);
 
@@ -28,7 +28,10 @@ export class GetImagesTokenizedUsecase {
 
         // Ajouter l'élément d'origine dans la liste des doublons
         if (!duplicates.has(key)) {
-          duplicates.set(key, results.filter(r => JSON.stringify([...r.words]) === key));
+          duplicates.set(
+            key,
+            results.filter((r) => JSON.stringify([...r.words]) === key)
+          );
         }
       } else {
         seenSets.set(key, 1);
@@ -41,7 +44,7 @@ export class GetImagesTokenizedUsecase {
       this.inversify.loggerService.log(
         'debug',
         `Duplicate found: ${JSON.parse(key)}, Count: ${items.length}`,
-        items.map(item => item.name)
+        items.map((item) => item.name)
       );
     });
 

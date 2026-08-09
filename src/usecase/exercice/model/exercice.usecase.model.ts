@@ -1,3 +1,3 @@
-import { ExerciceDbModel } from "@service/db/model/exercice.db.model";
+import { ExerciceDbModel } from '@service/db/model/exercice.db.model';
 
-export interface ExerciceUsecaseModel extends ExerciceDbModel {}
+export type ExerciceUsecaseModel = ExerciceDbModel;

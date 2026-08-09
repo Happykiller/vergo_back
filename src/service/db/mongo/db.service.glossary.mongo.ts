@@ -4,10 +4,7 @@ import inversify from '@src/inversify/investify';
 import { BddService } from '@service/db/db.service';
 import GlossaryDbModel from '@service/db/model/glossary.db.model';
 
-export class BdbServiceGlossaryMongo
-  implements
-    Pick<BddService, 'getGlossary'>
-{
+export class BdbServiceGlossaryMongo implements Pick<BddService, 'getGlossary'> {
   private async getGlossariesCollection(): Promise<Collection> {
     return inversify.mongo.collection('glossaries');
   }
@@ -23,7 +20,7 @@ export class BdbServiceGlossaryMongo
     // Print returned documents
     for await (const doc of results) {
       const tmp: any = {
-        ... doc
+        ...doc,
       };
       delete tmp._id;
       response.push(tmp);

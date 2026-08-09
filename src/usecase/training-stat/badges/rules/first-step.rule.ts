@@ -5,9 +5,7 @@ export class FirstStepRule implements BadgeRule {
   readonly code = 'FIRST_STEP' as const;
 
   evaluate(ctx: BadgeContext): BadgeResult {
-    const sorted = [...ctx.stats]
-      .filter(s => s.completed)
-      .sort((a, b) => new Date(a.start).getTime() - new Date(b.start).getTime());
+    const sorted = [...ctx.stats].filter((s) => s.completed).sort((a, b) => new Date(a.start).getTime() - new Date(b.start).getTime());
 
     if (sorted.length === 0) {
       return { code: this.code, earned: false };

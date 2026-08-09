@@ -1,6 +1,6 @@
 // src\usecase\exercice\dto\create.exercice.usecase.dto.ts
-import { LanguageDbModel } from "@service/db/model/language.db.model";
-import { UserSession } from "@happykiller/sunny-apis/dist/graphql/auth/jwt.strategy";
+import { LanguageDbModel } from '@service/db/model/language.db.model';
+import { UserSession } from '@happykiller/sunny-apis/dist/graphql/auth/jwt.strategy';
 
 export class CreateExerciceUsecaseDto {
   session: UserSession;
@@ -12,5 +12,5 @@ export class CreateExerciceUsecaseDto {
     creator_id?: string;
     contributors_id?: string[];
     active?: boolean;
-  }
+  };
 }

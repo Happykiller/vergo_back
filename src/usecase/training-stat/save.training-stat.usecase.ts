@@ -10,9 +10,7 @@ export class SaveTrainingStatUsecase {
     this.inversify = inversify;
   }
 
-  async execute(
-    dto: SaveTrainingStatUsecaseDto
-  ): Promise<TrainingStatUsecaseModel> {
+  async execute(dto: SaveTrainingStatUsecaseDto): Promise<TrainingStatUsecaseModel> {
     const created = await this.inversify.bddService.insertTrainingStat({
       training_id: dto.training_id,
       start: dto.start,

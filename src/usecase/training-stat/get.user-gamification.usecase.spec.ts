@@ -7,8 +7,7 @@ import { GetUserGamificationUsecase } from '@usecase/training-stat/get.user-gami
 
 describe('GetUserGamificationUsecase', () => {
   const mockInversify: MockProxy<Inversify> = mock<Inversify>();
-  const mockGetTrainingStatsByUserIdUsecase: MockProxy<GetTrainingStatsByUserIdUsecase> =
-    mock<GetTrainingStatsByUserIdUsecase>();
+  const mockGetTrainingStatsByUserIdUsecase: MockProxy<GetTrainingStatsByUserIdUsecase> = mock<GetTrainingStatsByUserIdUsecase>();
 
   mockInversify.getTrainingStatsByUserIdUsecase = mockGetTrainingStatsByUserIdUsecase;
 

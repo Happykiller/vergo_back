@@ -1,9 +1,8 @@
 import { version } from '../../package.json';
 import { Configuration } from '@src/config/configuration';
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
 const dotenv = require('dotenv').config().parsed;
-// eslint-disable-next-line @typescript-eslint/no-var-requires
+
 const dotenvlocal = require('dotenv').config({
   path: `.env.local`,
   override: true,
@@ -33,15 +32,14 @@ const defaults: Configuration = {
   },
   puppet: {
     url: merged.PUPPET_URL || 'http://localhost',
-    token: merged.PUPPET_TOKEN || 'token'
+    token: merged.PUPPET_TOKEN || 'token',
   },
   db: {
-    connection_string:
-      merged.DB_CONN_STRING || 'mongodb://root:password@localhost:27017/',
+    connection_string: merged.DB_CONN_STRING || 'mongodb://root:password@localhost:27017/',
     name: merged.DB_NAME || 'vergo',
   },
   morgans: {
-    url: merged.MORGANS_URL || 'http://localhost:8025/graphql'
+    url: merged.MORGANS_URL || 'http://localhost:8025/graphql',
   },
   throttle: [
     {

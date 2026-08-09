@@ -7,10 +7,12 @@ export class MachineRule implements BadgeRule {
 
   evaluate(ctx: BadgeContext): BadgeResult {
     const days = new Set<string>();
-    ctx.stats.forEach(s => days.add(toDateOnly(new Date(s.start))));
+    ctx.stats.forEach((s) => days.add(toDateOnly(new Date(s.start))));
     if (days.size === 0) return { code: this.code, earned: false };
 
-    const allDays = Array.from(days).map(d => new Date(d)).sort((a, b) => a.getTime() - b.getTime());
+    const allDays = Array.from(days)
+      .map((d) => new Date(d))
+      .sort((a, b) => a.getTime() - b.getTime());
     let streak = 1;
     for (let i = 1; i < allDays.length; i++) {
       const prev = allDays[i - 1];

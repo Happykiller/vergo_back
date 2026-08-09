@@ -10,9 +10,7 @@ export class UpdateExerciceUsecase {
     this.inversify = inversify;
   }
 
-  async execute(
-    dto: UpdateExerciceUsecaseDto,
-  ): Promise<ExerciceUsecaseModel> {
+  async execute(dto: UpdateExerciceUsecaseDto): Promise<ExerciceUsecaseModel> {
     const existing = await this.inversify.bddService.getExercice({ id: dto.exercice.id });
 
     if (!existing?.contributors_id?.includes(dto.session.id)) {

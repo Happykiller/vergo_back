@@ -10,9 +10,8 @@ export class GetTrainingUsecase {
   }
 
   async execute(dto: GetTraingUsecaseDto): Promise<TrainingUsecaseModel> {
-    const entity: TrainingUsecaseModel =
-      await this.inversify.bddService.getTraining(dto);
-      
+    const entity: TrainingUsecaseModel = await this.inversify.bddService.getTraining(dto);
+
     return entity;
   }
 }

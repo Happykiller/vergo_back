@@ -14,7 +14,7 @@ export class GetTrainingStatsActivitiesUsecase {
   }
 
   async execute(userId: string): Promise<TrainingStatActivityModel[]> {
-    const stats:TrainingStatUsecaseModel[] = await this.inversify.getTrainingStatsByUserIdUsecase.execute(userId);
+    const stats: TrainingStatUsecaseModel[] = await this.inversify.getTrainingStatsByUserIdUsecase.execute(userId);
     const sixMonthsAgo = new Date();
     sixMonthsAgo.setMonth(sixMonthsAgo.getMonth() - 6);
 
