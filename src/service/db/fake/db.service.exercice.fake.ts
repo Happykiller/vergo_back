@@ -14,7 +14,7 @@ export class BdbServiceExerciceFake implements Pick<BddService, 'getExercices' |
     return this.exerciceCollection;
   }
 
-  createExercice(dto: CreateExerciceDbDto): Promise<ExerciceDbModel> {
+  createExercice(_dto: CreateExerciceDbDto): Promise<ExerciceDbModel> {
     throw new Error('Method not implemented.');
   }
 

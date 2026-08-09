@@ -1,5 +1,3 @@
-import { Inversify } from '@src/inversify/investify';
-
 export class CalculateSimilarityUsecase {
   /**
    * Calcule une similarité entre un vecteur d'entrée et un vecteur de référence

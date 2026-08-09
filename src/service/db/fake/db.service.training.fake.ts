@@ -22,11 +22,11 @@ export class BdbServiceTrainingFake implements Pick<BddService, 'getTrainings' |
     return Promise.resolve(null);
   }
 
-  updateTraining(dto: UpdateTrainingDbDto): Promise<boolean> {
+  updateTraining(_dto: UpdateTrainingDbDto): Promise<boolean> {
     return Promise.resolve(true);
   }
 
-  createTraining(dto: CreateTrainingDbDto): Promise<TrainingDbModel> {
+  createTraining(_dto: CreateTrainingDbDto): Promise<TrainingDbModel> {
     return Promise.resolve(null);
   }
 }

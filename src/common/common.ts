@@ -12,7 +12,7 @@ export class Common {
   }
 
   // Fonction pour obtenir la liste des fichiers
-  getFileList = async (dto?: { refresh: boolean }): Promise<any[]> => {
+  getFileList = async (_dto?: { refresh: boolean }): Promise<any[]> => {
     try {
       const files = fs.readdirSync(this.imagesPath);
 
